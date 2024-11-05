@@ -1,0 +1,170 @@
+---
+layout: default
+---
+
+<div class="">
+    <article class="job">
+        <div class="d-flex mt-3">
+            <div class="job-info">
+                <h1>{{ page.title }}</h1>
+                <p>
+                    <i class="bi bi-building"></i>
+                    <a href="/companies/company-{{ page.company | downcase }}">{{ page.company }}</a>
+                </p>
+
+                <div class="job-tags mt-2 mb-4">
+                    {% for tag in page.job_tags %}
+                        <span class="badge text-bg-light">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="job-meta">
+        <span class="job-location me-3">
+            <i class="bi bi-geo-alt-fill"></i>
+            {{ page.location.city }}, {{ page.location.type }}
+        </span>
+        <span class="job-type me-3">
+            <i class="bi bi-briefcase-fill"></i>
+            {{ page.position_type }} ({{ page.contract_type }})
+        </span>
+
+         <span class="job-posted me-3">
+            <i class="bi bi-calendar-event"></i>
+            Posted: {{ page.date_posted | date: "%B %d, %Y" }}
+        </span>
+        <!-- <span class="job-expires">
+            <i class="bi bi-calendar-x"></i>
+            Expires: {{ page.expiration_date | date: "%B %d, %Y" }}
+        </span> -->
+        </div>
+
+        <div class="container mt-3 mb-3">
+            <div class="row">
+
+                {{% if page.conditions %}}
+                <div class="col-sm">
+                    <p class="fw-bold">
+                        <i class="bi bi-bar-chart-fill"></i>
+                        Conditions</p>
+                    <ul class="list-unstyled">
+                        {% for condition in page.conditions %}
+                            <li>{{ condition.label }} {{ condition.value }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {{% endif%}}
+                
+                
+                {{% if page.language_requirements %}}
+                <div class="col-sm">
+                    <p class="fw-bold">
+                        <i class="bi bi-bar-globe"></i>
+                        Language</p>
+                        <ul class="list-unstyled">
+                            {% for lang in page.language_requirements %}
+                                <li>{{ lang.label }}: {{ lang.value }}</li>
+                            {% endfor %}
+                            
+                            {% assign french_requirement = page.language_requirements | where: "label", "French" | first %} 
+                            <li>
+                                French: 
+                                {% if french_requirement %}
+                                    {{ french_requirement.value }}
+                                {% else %}
+                                    not required 👍
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                
+                {{% endif%}}
+                {{% if page.experience %}}
+                <div class="col-sm">
+                    <p class="fw-bold">
+                        <i class="bi bi-bar-chart-fill"></i>
+                        Experience</p>
+                        Minimum level: {{ page.experience.seniority }}
+                </div>
+                {{% endif%}}
+            </div>
+        </div>
+
+        <div class="job-description">
+            <h2>Job Description</h2>
+            <p>{{ page.description }}</p>
+        </div>
+
+        <div class="job-responsibilities">
+            <h2>Responsibilities</h2>
+            <ul>
+                {% for responsibility in page.responsibilities %}
+                <li>{{ responsibility }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="job-requirements">
+            <h2>Requirements</h2>
+            <ul>
+                {% for requirement in page.requirements %}
+                <li>{{ requirement }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% if page.nice_to_have %}
+        <div class="job-nice-to-have">
+            <h2>Nice to Have</h2>
+            <ul>
+            {% for item in page.nice_to_have %}
+                <li>{{ item }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="job-benefits">
+            <h2>Benefits</h2>
+            <ul>
+                {% for benefit in page.benefits %}
+                <li>{{ benefit }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="job-how-to-apply">
+            <h2>How to Apply</h2>
+            <p>{{ page.how_to_apply }}</p>
+            <a href="{{ page.application_url }}" class="btn btn-primary" target="_blank">Apply Now</a>
+        </div>
+
+        
+
+        <div class="job-content mt-3">
+
+            {% assign company = site.companies | where: "title", page.company | first %}
+
+            {% if company %}
+                <h2>About {{ company.title }}</h2>
+                {{ company.content | markdownify }}
+                <p>
+                    {{ company.description }}
+                </p>
+
+                <p>
+                    {{ company.more_description }}
+                </p>
+            {% endif %}
+
+            <p>
+                For more details about {{page.company}} culture, benefits, and work environment, please visit 
+                <a href="/companies/company-{{ page.company | downcase }}/">{{ page.company }}</a>.
+            </p>
+
+            
+            {{ content }}
+        </div>
+    </article>
+</div>

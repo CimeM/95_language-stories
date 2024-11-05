@@ -1,0 +1,83 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+
+// hero component modifications
+.page__title{
+      // color: #000;
+}
+.page__hero--overlay .page__lead {
+  max-width: 100%;
+}
+
+
+.masterhead__inner-wrap {
+ background-color: #005F99;
+}
+
+
+.companies-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .company-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .company-logo {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    margin-right: 15px;
+  }
+  
+  .company-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .company-info {
+    flex-grow: 1;
+  }
+  
+  .company-description {
+    margin-bottom: 10px;
+  }
+  
+  .company-tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tag {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+  
+  @media (max-width: 576px) {
+    .company-item {
+      flex-direction: column;
+    }
+  
+    .company-logo {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+  
+    .company-info {
+      width: 100%;
+    }
+  }

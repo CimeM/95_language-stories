@@ -1,0 +1,26 @@
+.page__footer-nav {
+    margin-bottom: 2em;
+  }
+  
+  .footer-nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-nav-list li {
+    margin: 0 1em;
+  }
+  
+  .footer-nav-list a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-nav-list a:hover {
+    text-decoration: underline;
+  }
+  

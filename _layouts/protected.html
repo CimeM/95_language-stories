@@ -1,0 +1,146 @@
+<!doctype html>
+{% include copyright.html %}
+<html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached masthead.html %}
+    
+    <script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+          var results = regex.exec(location.search);
+          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      // Set the password from the URL parameter
+      window.onload = function() {
+          var passwordFromUrl = getUrlParameter('password');
+          if (passwordFromUrl) {
+              document.getElementById('password-input').value = passwordFromUrl;
+          }
+      };
+
+    // Store the encrypted content in a JavaScript variable
+    var rawEncryptedContent = `{{ content | escape | replace: "'", "\\'" }}`;
+
+    function decodeHTMLEntities(text) {
+      var textArea = document.createElement('textarea');
+      textArea.innerHTML = text;
+      return textArea.value;
+    }
+
+    function checkPassword() {
+      var password = document.getElementById("password-input").value;
+      var decodedContent = decodeHTMLEntities(rawEncryptedContent);
+      var trimmedContent = decodedContent.replace(/<\/?[^>]+(>|$)/g, "").replace(/‘/g, "").replace(/’/g, "").trim();
+      var decryptedContent = decryptContent(trimmedContent, password);
+      
+      if (decryptedContent) {
+        console.log("Decryption successful");
+        document.getElementById('password-protection').style.display = 'none';
+        document.getElementById('protected-content').innerHTML = decryptedContent;
+        document.getElementById('protected-content').style.display = 'block';
+      } else {
+        console.log("Decryption failed");
+        alert("Incorrect password or invalid encrypted content. Please try again.");
+      }
+    }
+
+
+    function decryptContent(encryptedContent, password) {
+      try {
+        // Ensure encryptedContent is not empty
+        if (!encryptedContent) {
+          console.error("Encrypted content is empty");
+          return null;
+        }
+
+        // Create key from password
+        const key = CryptoJS.enc.Utf8.parse(password.padEnd(32, '\0').slice(0, 32));
+
+        // Decode the base64 content
+        const ciphertext = CryptoJS.enc.Base64.parse(encryptedContent);
+
+        // Extract IV (first 16 bytes)
+        const iv = ciphertext.clone();
+        iv.sigBytes = 16;
+        iv.clamp();
+
+        // Extract actual ciphertext
+        const actualCiphertext = ciphertext.clone();
+        actualCiphertext.words.splice(0, 4); // remove first 4 words (16 bytes)
+        actualCiphertext.sigBytes -= 16;
+
+        // Decrypt
+        const decrypted = CryptoJS.AES.decrypt(
+          { ciphertext: actualCiphertext },
+          key,
+          { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 }
+        );
+
+        // Convert to UTF-8 string
+        const decryptedStr = decrypted.toString(CryptoJS.enc.Utf8);
+
+        // Check if the decrypted string is empty or invalid
+        if (!decryptedStr || decryptedStr.trim().length === 0) {
+          console.error("Decryption resulted in empty or invalid string");
+          return null;
+        }
+
+        return decryptedStr;
+      } catch (error) {
+        console.error("Decryption error:", error.message);
+        return null;
+      }
+    }
+    </script>
+
+    <style>
+      input {
+        border: 2px solid #007BFF;
+        background-color: #f0f8ff;
+        padding: 10px; 
+        border-radius: 10px; 
+      }
+    </style>
+
+    <div class="initial-content">
+      <div id="main" role="main">
+        <div id="password-protection">
+          <p>This page is password protected. Please enter the password to view the content.</p>
+          <p>If you don't have the password, contact me.</p>
+          <input type="password" id="password-input" placeholder="Enter your password here...">
+          <button onclick="checkPassword()">Submit</button>
+        </div>
+
+        <div id="protected-content" style="display: none;">
+          {{ content }}
+        </div>
+        {% include after-content.html %}
+      </div>
+    </div>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+  </body>
+</html>

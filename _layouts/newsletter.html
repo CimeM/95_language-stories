@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<h3 class="archive__subtitle">Are You Looking for a Tech Job in PACA region?</h3>
+
+
+<p>Get job alerts from companies that value you.</p>
+
+<div class="row">
+  <div class="col-sm-12 col-md-6">
+
+    <img src="/assets/images/page/newsletter/newsletter.png">
+
+  </div>
+  
+  <div class="col-sm-12 col-md-6">
+
+    {% unless page.header.overlay_color or page.header.overlay_image %}
+      <h1 id="page-title" class="pt-2 page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
+    {% endunless %}
+
+    {% include newsletter-form.html %}
+
+  </div>
+
+</div>
+ 
+
+

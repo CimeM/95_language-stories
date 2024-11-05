@@ -1,0 +1,61 @@
+
+
+
+<form id="newsletterForm" class="d-flex align-items-center gap-2" style="background-color: transparent;">
+  <div class="flex-grow-1">
+      <label for="emailInput" class="visually-hidden">Email</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" >
+  </div>
+  <button type="submit" class="btn btn-primary mb-0">Get job alerts</button>
+</form>
+<small id="formMessage" class="form-text text-muted">New jobs, new companies and more ☝️ </small>
+
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('emailInput').value;
+      const messageElement = document.getElementById('formMessage');
+      
+      // Strict email validation
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!emailRegex.test(email)) {
+        messageElement.textContent = 'Please enter a valid email address.';
+        messageElement.style.color = 'red';
+        return;
+      }
+      
+      // Construct the API endpoint URL with the email as a query parameter
+      const apiUrl = `https://lang.rivieraapps.com/api/email_list/`;
+      
+      fetch(apiUrl, {
+        method: 'POST',
+        body: JSON.stringify({ 
+          "email": encodeURIComponent(email), 
+          "avatar": "111", 
+          "name": "stories_app" 
+        }),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Assuming the API returns a success message
+        messageElement.textContent = 'Subscription successful!';
+        messageElement.style.color = 'green';
+        document.getElementById('emailInput').value = ''; // Clear the input field
+      })
+      .catch(error => {
+        messageElement.textContent = 'An error occurred. Please try again later.';
+        messageElement.style.color = 'red';
+        console.error('Error:', error);
+      });
+    });
+</script>

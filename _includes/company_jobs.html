@@ -1,0 +1,41 @@
+{% if site.jobs %}
+  <div class="company-jobs">
+    <h2>Open Positions at {{ page.title }}</h2>
+    <ul class="job-listings">
+      {% assign company_jobs = site.jobs | where: "company", page.title | where: "published", true %}
+      {% if company_jobs.size > 0 %}
+        {% for job in company_jobs %}
+          <li class="job-listing">
+            <h3 class="job-title"><a href="{{ job.url }}">{{ job.title }}</a></h3>
+            <div class="job-meta">
+              {% if job.location %}
+                <span class="job-location">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  {{ job.location.city }}, {{ job.location.type }}
+                </span>
+              {% endif %}
+              {% if job.position_type %}
+                <span class="job-type">
+                  <i class="bi bi-briefcase-fill"></i>
+                  {{ job.position_type }}
+                </span>
+              {% endif %}
+              {% if job.date_posted %}
+                <span class="job-posted-date">
+                  <i class="bi bi-calendar-event"></i>
+                  Posted: {{ job.date_posted | date: "%B %d, %Y" }}
+                </span>
+              {% endif %}
+            </div>
+            {% if job.description %}
+              <p class="job-summary">{{ job.description | truncate: 150 }}</p>
+            {% endif %}
+            <a href="{{ job.url }}" class="btn btn-sm btn-outline-primary">View Details</a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <li class="no-jobs">No open positions at this time.</li>
+      {% endif %}
+    </ul>
+  </div>
+{% endif %}

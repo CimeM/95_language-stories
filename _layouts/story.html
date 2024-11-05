@@ -1,0 +1,199 @@
+---
+layout: default
+---
+
+<div class="archive">
+    <article class="story">
+      <div id="story-content">
+        <div id="chapter-id-0">
+          <img 
+            style="max-height:30vh; width:100%; overflow: hidden; object-fit: cover;"
+            src="{{ page.logo }}" 
+            alt="{{ page.title }}" 
+            class="img-fluid rounded-4 mb-2">
+          <h1> {{ page.title }}</h1>
+          <p> {{ page.story_tags.main }} </p>
+          <p> {{ page.description }} </p>
+        </div>
+        {% for chap in page.chapters %}
+        <div 
+          id="chapter-id-{{ forloop.index }}"
+          style="display: none;"
+        >
+          <img 
+          style="max-height:30vh; width:100%; overflow: hidden; object-fit: cover;"
+          src="{{ chap.image }}" 
+          alt="{{ chap.label }}" 
+          class="img-fluid rounded-4 mb-2">
+          
+          <ul class="nav nav-pills mb-3 nav-fill" 
+            id="pills-tab-{{ forloop.index }}" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" 
+                id="pills-home-tab-{{ forloop.index }}" 
+                data-bs-toggle="pill" 
+                data-bs-target="#pills-home-{{ forloop.index }}" 
+                type="button" role="tab" 
+                aria-controls="pills-home" aria-selected="true">
+                Story
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" 
+                id="pills-profile-tab-{{ forloop.index }}" data-bs-toggle="pill" 
+                data-bs-target="#pills-profile-{{ forloop.index }}" 
+                type="button" role="tab" 
+                  aria-controls="pills-profile" aria-selected="false">
+                Quiz
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="pills-tabContent-{{ forloop.index }}">
+            <div class="tab-pane fade show active" 
+              id="pills-home-{{ forloop.index }}" role="tabpanel" 
+              aria-labelledby="pills-home-tab-{{ forloop.index }}">
+              <h2> {{ chap.label }}</h2>
+              <p> {{ chap.content }}</p>
+            </div>
+            <div class="tab-pane fade" id="pills-profile-{{ forloop.index }}" 
+              role="tabpanel" 
+              aria-labelledby="pills-profile-tab-{{ forloop.index }}">
+              {% for q in chap.quiz %}
+              <div class="quiz-item">
+                <p class="fw-bold">{{ q.question }}</p>
+                <ul>
+                  {% for opt in q.options %}
+                  <li>
+                    <input type="radio" class="quiz-option" 
+                      {% if forloop.index0 == q.right_answer %} data-correct="true" {% endif%} 
+                    >
+                    {{ opt }}
+                  </li>
+                  {% endfor %}
+                </ul>
+                <p class="feedback" style="display: none;"></p> 
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          
+
+        </div>
+        {% endfor %}
+        <div id="chapter-id-end">
+          <h1 id="userpoints_indicator_text" >Felicitations!</h1>
+          <p class="fw-bold fs-2"><span id="userpoints_indicator"></span> ponts!</p>
+          <p> {{ page.title }} </p>
+        </div>
+      </div>
+      <!-- navigate between chapters -->
+      <div id="chapter-actions" class="d-flex justify-content-between">
+        <button id="previous-chapter" type="button" class="btn btn-secondary">
+          <i class="bi bi-chevron-left"></i>
+          Back 
+        </button>
+        <button id="next-chapter" type="button" class="btn btn-secondary">
+          Next <i class="bi bi-chevron-right"></i>
+          
+        </button>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+<script>
+  var userPoints = 0
+  const indicator = document.querySelector("#userpoints_indicator");
+  indicator.textContent = String(userPoints)
+  document.addEventListener('DOMContentLoaded', function() {
+  const quizItems = document.querySelectorAll('.quiz-item');
+  
+  quizItems.forEach(item => {
+    const options = item.querySelectorAll('.quiz-option');
+    const feedback = item.querySelector('.feedback');
+    
+    options.forEach(option => {
+      option.addEventListener('click', function() {
+        const isCorrect = this.getAttribute('data-correct') === 'true';
+        
+        options.forEach(opt => opt.disabled = true);
+        
+        if (isCorrect) {
+          feedback.textContent = "Correct! +1";
+          feedback.style.color = "green";
+          userPoints++
+        } else {
+          feedback.textContent = "Incorrect.";
+          feedback.style.color = "red";
+        }
+
+        indicator.textContent = String(userPoints);
+        if(userPoints < 1){
+          userpoints_indicator_text.textContent = "Try again!";
+        }else {
+          userpoints_indicator_text.textContent = "Felicitations!";
+        }
+        feedback.style.display = "block";
+      });
+    });
+  });
+});
+</script>
+
+<!-- navigate between chapters -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const chapters = document.querySelectorAll('[id^="chapter-id-"]');
+  const nextButton = document.getElementById('next-chapter');
+  const previousButton = document.getElementById('previous-chapter');
+  
+  let currentChapter = 0;
+  const totalChapters = chapters.length - 1; // Subtract 1 to exclude the end chapter
+
+  function showChapter(index) {
+    chapters.forEach((chapter, i) => {
+      if (i === index) {
+        chapter.style.display = 'block';
+      } else {
+        chapter.style.display = 'none';
+      }
+    });
+  }
+
+  nextButton.addEventListener('click', function() {
+    currentChapter++;
+    if (currentChapter > 0) {
+      previousButton.style.display = 'block';
+    }else{
+      previousButton.style.display = 'none'; 
+    }
+    if (currentChapter < totalChapters) {
+      showChapter(currentChapter);
+    } else if (currentChapter === totalChapters) {
+      // Show the end chapter
+      chapters.forEach(chapter => chapter.style.display = 'none');
+      document.getElementById('chapter-id-end').style.display = 'block';
+      nextButton.style.display = 'none'; // Hide the next button on the last page
+    }
+  });
+  previousButton.addEventListener('click', function() {
+    currentChapter--;
+
+    if (currentChapter < totalChapters) {
+      showChapter(currentChapter);
+      nextButton.style.display = 'block';
+    } else if (currentChapter === totalChapters) {
+      // Show the end chapter
+      chapters.forEach(chapter => chapter.style.display = 'none');
+      document.getElementById('chapter-id-end').style.display = 'block';
+      nextButton.style.display = 'none'; // Hide the next button on the last page
+    }
+  });
+
+  // Initialize by showing only the first chapter
+  showChapter(currentChapter);
+  previousButton.style.display = 'none';
+});
+</script>

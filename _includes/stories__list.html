@@ -1,0 +1,16 @@
+<ul class="stories-list">
+
+  {% for story in site.stories | where_exp: "story", "story.published != false" %}
+    <div class="col-sm-12 col-md-6 col-md-3">
+      <div class="card">
+        <img class="card-img-top" src="{{ story.logo }}" alt="{{ story.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ story.title }}</h5>
+          <p class="card-text">{{ story.description }}</p>
+          <a href="{{ story.url }}" class="btn btn-primary">Read now</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</ul>
+
