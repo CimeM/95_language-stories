@@ -13,7 +13,7 @@ description: Dans un monde où le numérique est roi, Sophie, une ingénieure en
 
 chapters:
   - label: Chapitre 1 - L'arrivée de Luci
-    image: /assets/images/stories/1/1.png
+    image: /assets/images/story_1-1.png
     imageprompt: A young woman with short dark hair sitting at a computer desk late at night, looking surprised as a small black demon appears on her desk, office setting, soft lighting
     content: "Sophie, une jeune ingénieure en cybersécurité, travaillait tard un soir dans son bureau. Elle aimait son travail, mais parfois, elle se sentait seule. Un jour, alors qu'elle écrivait du code sur son ordinateur, une petite créature noire apparut soudainement sur son bureau. 'Salut, je suis Luci!' dit-il avec un sourire malicieux. Sophie, surprise et un peu effrayée, demanda, 'Qui es-tu?' Luci répondit avec enthousiasme, 'Je suis un démon envoyé par ton cousin pour t'influencer.' Sophie ne pouvait pas croire ce qu'elle entendait. 'Un démon? Pourquoi moi?' demanda-t-elle. Luci expliqua qu'il avait été envoyé pour l'aider à prendre des décisions plus audacieuses. Sophie essaya de le chasser en disant, 'Je ne veux pas de toi ici!' Mais Luci était impossible à faire partir. Il s'assit sur son bureau et commença à jouer avec les objets autour de lui. Sophie décida alors de l'ignorer et continua son travail, mais elle ne pouvait pas s'empêcher de se demander si Luci était vraiment là pour l'aider ou pour la déranger."
     quiz:
@@ -43,7 +43,7 @@ chapters:
       right_answer: 0
 
   - label: "Chapitre 2 - Une étrange découverte"
-    image: /assets/images/stories/1/2.png
+    image: /assets/images/story_1-2.png
     imageprompt: A woman and a small black demon looking at a computer screen together, showing lines of code and a warning sign, office setting, daytime
     content: "Le lendemain matin, Sophie arriva au bureau avec une tasse de café chaud. Elle se sentait fatiguée mais déterminée à bien travailler. En se connectant à son ordinateur, elle commença à examiner les systèmes de sécurité de son entreprise. Soudain, elle remarqua une faille de sécurité dans le système qui pouvait permettre à des hackers d'entrer facilement. Luci, qui observait tout cela avec intérêt, demanda ce qui se passait. 'Regarde ça!' s'exclama Sophie en montrant l'écran. 'Il y a une énorme faille ici!' Luci s'approcha et dit avec un sourire malicieux, 'Je peux t'aider à résoudre ce problème.' À sa grande surprise, Sophie trouva l'idée intéressante et accepta son aide. 'Tu n'es peut-être pas si mauvais,' dit-elle en souriant. Ensemble, ils commencèrent à enquêter sur l'origine de la faille et découvrirent que quelqu'un avait essayé d'accéder aux données sensibles de l'entreprise."
     quiz:
@@ -73,7 +73,7 @@ chapters:
       right_answer: 2
 
   - label: "Chapitre 3 - L'enquête"
-    image: /assets/images/stories/1/3.png
+    image: /assets/images/story_1-3.png
     imageprompt: A woman and a small black demon working together at a desk covered in papers and multiple computer screens, looking focused, dim office lighting
     content: "Sophie et Luci passèrent les jours suivants à chercher des indices sur la faille de sécurité. Chaque jour après le travail, ils se réunissaient pour analyser les données ensemble. Luci utilisait ses pouvoirs démoniaques pour accéder à des informations cachées dans le système informatique que personne d'autre ne pouvait voir. Pendant ce temps, Sophie analysait les données et prenait des notes sur tout ce qu'ils trouvaient. Un soir, alors qu'ils examinaient les journaux d'accès du système, ils découvrirent que la faille était l'œuvre d'un groupe de hackers très connus dans le monde entier. 'Nous devons les arrêter,' dit Sophie avec détermination. Luci acquiesça et répondit, 'Oui, mais comment? Ils sont très intelligents.' Ensemble, ils commencèrent à planifier leur prochaine étape pour contrer les hackers."
     quiz:
@@ -103,7 +103,7 @@ chapters:
       right_answer: 0
 
   - label: "Chapitre 4 - La résolution"
-    image: /assets/images/stories/1/4.png
+    image: /assets/images/story_1-4.png
     imageprompt: A woman high-fiving a small black demon in front of a computer showing a 'System Secure' message, office setting, celebratory atmosphere
     content: "'Sophie eut une idée brillante,' pensa-t-elle un matin. Elle savait qu'ils pouvaient piéger les hackers grâce à leurs propres méthodes. Avec l'aide de Luci, elle créa un piège virtuel pour attirer les hackers dans un faux système vulnérable. Quand les hackers attaquèrent à nouveau le réseau de l'entreprise, ils tombèrent directement dans le piège que Sophie avait préparé avec soin. Grâce aux informations collectées par Luci et aux preuves fournies par Sophie, la police put intervenir rapidement et arrêter les hackers avant qu'ils ne causent plus de dégâts. Après cette aventure incroyable, Sophie regarda Luci et dit avec un sourire : 'Nous formons une bonne équipe.' Luci sourit aussi et répondit : 'Oui, même si je suis censé être maléfique.' Ils rirent ensemble et réalisèrent que leur amitié était plus forte que leurs différences."
     quiz:
