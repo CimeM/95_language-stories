@@ -12,12 +12,20 @@ layout: default
             alt="{{ page.title }}" 
             class="img-fluid rounded-4 mb-2">
           <h1> {{ page.title }}</h1>
-          <p> {{ page.story_tags.main }} </p>
+          <p> 
+            {% for tag in page.story_tags.main %}
+            <inline class="badge">#{{ tag }}</inline>
+            {% endfor %}
           <p> {{ page.description }} </p>
         </div>
+        
+        
+        {% assign index = 0 %}
         {% for chap in page.chapters %}
+     
+          {% assign index = index | plus: 1 %}  
         <div 
-          id="chapter-id-{{ forloop.index }}"
+          id="chapter-id-{{ index }}"
           style="display: none;"
         >
           <img 
@@ -26,57 +34,42 @@ layout: default
           alt="{{ chap.label }}" 
           class="img-fluid rounded-4 mb-2">
           
-          <ul class="nav nav-pills mb-3 nav-fill" 
-            id="pills-tab-{{ forloop.index }}" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" 
-                id="pills-home-tab-{{ forloop.index }}" 
-                data-bs-toggle="pill" 
-                data-bs-target="#pills-home-{{ forloop.index }}" 
-                type="button" role="tab" 
-                aria-controls="pills-home" aria-selected="true">
-                Story
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" 
-                id="pills-profile-tab-{{ forloop.index }}" data-bs-toggle="pill" 
-                data-bs-target="#pills-profile-{{ forloop.index }}" 
-                type="button" role="tab" 
-                  aria-controls="pills-profile" aria-selected="false">
-                Quiz
-              </button>
-            </li>
-          </ul>
-
-          <div class="tab-content" id="pills-tabContent-{{ forloop.index }}">
-            <div class="tab-pane fade show active" 
-              id="pills-home-{{ forloop.index }}" role="tabpanel" 
-              aria-labelledby="pills-home-tab-{{ forloop.index }}">
-              <h2> {{ chap.label }}</h2>
-              <p> {{ chap.content }}</p>
-            </div>
-            <div class="tab-pane fade" id="pills-profile-{{ forloop.index }}" 
-              role="tabpanel" 
-              aria-labelledby="pills-profile-tab-{{ forloop.index }}">
-              {% for q in chap.quiz %}
-              <div class="quiz-item">
-                <p class="fw-bold">{{ q.question }}</p>
-                <ul>
-                  {% for opt in q.options %}
-                  <li>
-                    <input type="radio" class="quiz-option" 
-                      {% if forloop.index0 == q.right_answer %} data-correct="true" {% endif%} 
-                    >
-                    {{ opt }}
-                  </li>
-                  {% endfor %}
-                </ul>
-                <p class="feedback" style="display: none;"></p> 
-              </div>
-              {% endfor %}
-            </div>
+          
+          <!-- chapter content -->
+          <div class="tab-pane show active" 
+            id="pills-home-{{ forloop.index }}"  >
+            <h2> {{ chap.label }}</h2>
+            <p> {{ chap.content }}</p>
           </div>
+
+          </div>
+
+          {% assign index = index | plus: 1 %}  
+          <div 
+            id="chapter-id-{{ index }}"
+            style="display: none;"
+          >
+          <!-- quiz content -->
+          <div class="" id="pills-profile-{{ forloop.index }}" >
+            {% for q in chap.quiz %}
+            <div class="quiz-item">
+              <p class="fw-bold">{{ q.question }}</p>
+              <ul>
+                {% for opt in q.options %}
+                <li>
+                  <input type="radio" class="quiz-option" 
+                    {% if forloop.index0 == q.right_answer %} data-correct="true" {% endif%} 
+                  >
+                  {{ opt }}
+                </li>
+                {% endfor %}
+              </ul>
+              <p class="feedback" style="display: none;"></p> 
+            </div>
+            {% endfor %}
+          </div>
+          
+          
           
 
         </div>
@@ -162,6 +155,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  function scrollToTop(){
+    // Scroll to the top smoothly
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+  }
   nextButton.addEventListener('click', function() {
     currentChapter++;
     if (currentChapter > 0) {
@@ -177,10 +177,11 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('chapter-id-end').style.display = 'block';
       nextButton.style.display = 'none'; // Hide the next button on the last page
     }
+    scrollToTop();
   });
   previousButton.addEventListener('click', function() {
     currentChapter--;
-
+    
     if (currentChapter < totalChapters) {
       showChapter(currentChapter);
       nextButton.style.display = 'block';
@@ -190,8 +191,9 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('chapter-id-end').style.display = 'block';
       nextButton.style.display = 'none'; // Hide the next button on the last page
     }
+    scrollToTop();
   });
-
+  
   // Initialize by showing only the first chapter
   showChapter(currentChapter);
   previousButton.style.display = 'none';

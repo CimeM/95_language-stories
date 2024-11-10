@@ -2,13 +2,15 @@
 main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "All stories"
+    url: /stories/
+    icon: "fas fa-fw fa-list-square"
+
   - title: "Get more stories"
     url: /newsletter/
     icon: "fas fa-fw fa-envelope-square"
-    class: btn btn-primary d-block d-md-none btn-sm
-  - title: "Stories"
-    url: /stories/
-    icon: "fas fa-fw fa-list-square"
+    # class: btn btn-primary d-block d-md-none btn-sm
+  
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"

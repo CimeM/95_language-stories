@@ -1,61 +1,33 @@
-
-
-
-<form id="newsletterForm" class="d-flex align-items-center gap-2" style="background-color: transparent;">
-  <div class="flex-grow-1">
-      <label for="emailInput" class="visually-hidden">Email</label>
-      <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" >
+<form 
+  action="https://rivieraapps.us19.list-manage.com/subscribe/post?u=2e5d7f821fc5c717785313596&amp;id=e48fc49e10&amp;f_id=00e637e7f0" 
+  method="post" 
+  id="newsletterForm" 
+  name="mc-embedded-subscribe-form" 
+  class="validate " 
+  target="_self" 
+  style="background-color: transparent;"
+  novalidate="">
+  <div id="mc_embed_signup_scroll" class="d-flex align-items-center gap-2 justify-content-center">
+    <div class="mc-field-group">
+      <label for="mce-EMAIL" class="visually-hidden">Email Address <span class="asterisk">*</span></label>
+      <input type="email"  placeholder="Enter your email" name="EMAIL" class="email form-control" id="mce-EMAIL" required="" value="">
+    </div>
+    <div id="mce-responses" class="clear foot">
+        <div class="response" id="mce-error-response" style="display: none;"></div>
+        <div class="response" id="mce-success-response" style="display: none;"></div>
+    </div>
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+      <input type="text" 
+        name="b_2e5d7f821fc5c717785313596_e48fc49e10" 
+        tabindex="-1" value="">
+    </div>
+    <div class="optionalParent">
+      <div class="clear foot">
+        <input 
+          type="submit" name="subscribe" id="mc-embedded-subscribe" 
+          class="btn btn-primary mb-0" value="Get more stories">
+      </div>
+    </div>
   </div>
-  <button type="submit" class="btn btn-primary mb-0">Get job alerts</button>
 </form>
-<small id="formMessage" class="form-text text-muted">New jobs, new companies and more ☝️ </small>
-
-<script>
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const email = document.getElementById('emailInput').value;
-      const messageElement = document.getElementById('formMessage');
-      
-      // Strict email validation
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (!emailRegex.test(email)) {
-        messageElement.textContent = 'Please enter a valid email address.';
-        messageElement.style.color = 'red';
-        return;
-      }
-      
-      // Construct the API endpoint URL with the email as a query parameter
-      const apiUrl = `https://lang.rivieraapps.com/api/email_list/`;
-      
-      fetch(apiUrl, {
-        method: 'POST',
-        body: JSON.stringify({ 
-          "email": encodeURIComponent(email), 
-          "avatar": "111", 
-          "name": "stories_app" 
-        }),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        // Assuming the API returns a success message
-        messageElement.textContent = 'Subscription successful!';
-        messageElement.style.color = 'green';
-        document.getElementById('emailInput').value = ''; // Clear the input field
-      })
-      .catch(error => {
-        messageElement.textContent = 'An error occurred. Please try again later.';
-        messageElement.style.color = 'red';
-        console.error('Error:', error);
-      });
-    });
-</script>

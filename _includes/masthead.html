@@ -7,7 +7,7 @@
         {% unless logo_path == empty %}
         
           <a class="site-logo" href="{{ '/' | relative_url }}">
-            <i class="bi bi-{{ site.logo }}"></i>
+            <i class="{{ site.logo }}"></i>
             <!-- <img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"> -->
           </a>
         {% endunless %}

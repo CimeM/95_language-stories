@@ -17,7 +17,13 @@ search: false
   max-width: 100%;
 }
 
+// miscelanious
 
+a:visited {
+  color: #c2c2c2
+}
+
+// masterhead
 .masterhead__inner-wrap {
  background-color: #005F99;
 }
@@ -81,3 +87,17 @@ search: false
       width: 100%;
     }
   }
+
+// menu button fog 
+.greedy-nav__toggle {
+  &:before {
+    @supports (pointer-events: none) {
+      background-color: rgba(0, 0, 0, 0.61)
+    }
+  }
+}
+
+// footer
+.page__footer {
+  margin-top: 0;
+}

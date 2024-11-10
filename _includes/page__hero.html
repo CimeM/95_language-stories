@@ -71,7 +71,7 @@
 >
   {% if page.header.overlay_color or page.header.overlay_image %}
     <div class="wrapper" style="text-align: center;">
-      <i class="bi bi-{{ site.logo }} fs-1"></i>
+      <i class="{{ site.logo }} fs-1"></i>
       <h1 id="page-title" class="page__title fw-bold mb-5 mt-3" itemprop="headline">
         {% if paginator and site.paginate_show_page_num %}
           {{ site.title }}{% unless paginator.page == 1 %} {{ site.data.ui-text[site.locale].page | default: "Page" }} {{ paginator.page }}{% endunless %}

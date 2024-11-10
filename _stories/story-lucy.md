@@ -3,13 +3,16 @@ layout: story
 title: Luci, le démon au grand cœur
 published: true
 
-logo: /assets/images/stories/1/4.png
+logo: /assets/images/story_1-4.png
 
 story_tags: 
-  main: R&D
-  other: Java, Cloud, Research, ML
+  main: 
+  - A2
+  - B1
+  - fiction
+  - cybersecurity
 
-description: Dans un monde où le numérique est roi, Sophie, une ingénieure en cybersécurité brillante mais solitaire, découvre une faille inquiétante dans le système de son entreprise. Mais ce n'est pas tout; un petit démon noir nommé Luci, envoyé par son cousin, apparaît pour l'influencer. D'abord réticente à accepter son aide, Sophie se rend vite compte que Luci pourrait être la clé pour résoudre un mystère bien plus grand. Ensemble, ils naviguent à travers des dangers invisibles, affrontent des hackers malveillants et découvrent que même les âmes les plus sombres peuvent avoir une lueur d'amitié. Plongez dans cette aventure palpitante où le bien et le mal s'entrelacent, et où la véritable force réside dans l'union inattendue d'une jeune femme et d'un démon. This description sets the stage for the story while highlighting the central conflict and the unique partnership between Sophie and Luci. It aims to intrigue readers and encourage them to explore the unfolding adventure!
+description: Dans un monde numérique, Sophie est une ingénieure en cybersécurité. Elle trouve un problème dangereux dans son entreprise. Un petit démon, Luci, vient l'aider. Au début, Sophie ne veut pas de son aide, mais elle comprend vite que Luci peut l'aider à résoudre un grand mystère. Ensemble, ils combattent des hackers et découvrent que même les personnes sombres peuvent être amies. Découvrez cette aventure où le bien et le mal se rencontrent. Sophie va-t-elle trouver sa force?
 
 chapters:
   - label: Chapitre 1 - L'arrivée de Luci
