@@ -38,14 +38,18 @@ layout: default
         
 
           <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Description</button>
+            <li class="nav-item mb-0" role="presentation">
+              <button class="nav-link active p-2 pt-1 pb-1" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                Description
+              </button>
             </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Learning overview</button>
+            <li class="nav-item mb-0 mutted" role="presentation">
+              <button class="nav-link p-2 pt-1 pb-1" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                Learning overview
+              </button>
             </li>
           </ul>
-          <div class="tab-content" id="myTabContent">
+          <div class="tab-content mt-1" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <p>
                 {{ page.description }}
@@ -111,15 +115,15 @@ layout: default
           </div>
           
           
-          
-
         </div>
         {% endfor %}
+        
         <div id="chapter-id-end">
           <h1 id="userpoints_indicator_text" >Felicitations!</h1>
           <p class="fw-bold fs-2"><span id="userpoints_indicator"></span> ponts!</p>
           <p> {{ page.title }} </p>
         </div>
+        
       </div>
       <!-- navigate between chapters -->
       <div id="chapter-actions" class="d-flex justify-content-between">
@@ -133,7 +137,7 @@ layout: default
         </button>
       </div>
     </div>
-    <div id="suggestions">
+    <div id="suggestions" style="display: none;">
       {% include stories__list.html %}
     </div>
   </article>
@@ -216,13 +220,15 @@ document.addEventListener('DOMContentLoaded', function() {
       nextButton.innerHTML="Open"
       previousButton.style.display = 'none';
       suggestions.style.display = 'block';
-    }else {
+    } else {
       nextButton.innerHTML="Next >"
       nextButton.classList.remove("btn-primary")
       nextButton.classList.remove("w-100")
       nextButton.classList.add("btn-secondary")
       suggestions.style.display = 'none';
-
+    }
+    if (currentChapter === totalChapters) {
+      suggestions.style.display = 'block'; // show sug. at the end of the story
     }
   }
   nextButton.addEventListener('click', function() {
@@ -254,6 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
       chapters.forEach(chapter => chapter.style.display = 'none');
       document.getElementById('chapter-id-end').style.display = 'block';
       nextButton.style.display = 'none'; // Hide the next button on the last page
+      
     }
     scrollToTop();
     nameTheButton()

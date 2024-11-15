@@ -13,7 +13,7 @@ story_tags:
     - "noël"
 description: "Une histoire de Noël au bureau, où Marie, une chef de projet, enseigne à Jean les traditions de Noël tout en préparant la fête de fin d'année."
 
-learning_overview: "N/A"
+learning_overview: "In this story, you will follow Marie and Jean as they prepare for a Christmas celebration at the office. You will learn about French cultural elements related to Christmas, expanding your vocabulary with words and phrases associated with holiday traditions and office life. The engaging dialogues between Marie and her colleagues provide practical examples of conversational French, helping you grasp language nuances in context. Additionally, comprehension questions after each chapter will reinforce your understanding and retention, promoting active engagement with the text."
 
 chapters:
   - label: "Chapitre 1 - La préparation de la fête"
