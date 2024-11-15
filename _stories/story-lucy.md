@@ -3,6 +3,8 @@ layout: story
 title: Luci, le démon au grand cœur
 published: true
 
+language: French
+
 author: Fluent French95
 
 price: Free

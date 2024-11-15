@@ -4,6 +4,7 @@ title: Une Évasion à La Réunion
 published: true
 logo: /assets/images/story-reunion-cover.png
 author: Fluent French95
+language: French
 price: Free
 story_tags:
   main:

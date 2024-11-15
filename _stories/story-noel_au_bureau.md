@@ -4,6 +4,7 @@ title: "Un Noël au Bureau"
 published: true
 logo: "/assets/images/story_noel_au_bureau-cover.png"
 author: "Fluent Franch95"
+language: French
 price: "Free"
 story_tags:
   main:

@@ -11,8 +11,8 @@ layout: default
       <p id="page-title" class="pt-2 page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</p>
     {% endunless %}
 
-    <h3 class="archive__title">Are You Looking for a Tech Job in PACA region?</h3>
-    <p>Get job alerts from companies that value you.</p>
+    <h3 class="archive__title">{{ page.bigtext }}</h3>
+    <p>{{ page.motivation }}</p>
 
     {% include newsletter-form.html %}
 

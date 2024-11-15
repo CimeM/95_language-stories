@@ -119,9 +119,30 @@ layout: default
         {% endfor %}
         
         <div id="chapter-id-end">
+
           <h1 class="text-center" id="userpoints_indicator_text" >Felicitations!</h1>
-          <p class="fw-bold fs-2"><span id="userpoints_indicator"></span> ponts!</p>
-          <p> {{ page.title }} </p>
+          
+          <div class="text-center" id="medal-gold" style="display:none;">
+            <p>Gold medal!</p>
+            <img src="/assets/images/medal-gold.png" alt="medal-gold">
+          </div>
+          <div class="text-center" id="medal-silver" style="display:none;">
+            <p>Silver medal!</p>
+            <img src="/assets/images/medal-silver.png" alt="medal-silver">
+          </div>
+          <div class="text-center" id="medal-bronze" style="display:none;">
+            <p>Bronze medal!</p>
+            <img src="/assets/images/medal-bronze.png" alt="medal-bronze">
+          </div>
+          
+          <p class="fw-bold fs-2 text-center">
+            <span id="userpoints_indicator"></span> points!
+          </p>
+          <p class="fw-bold fs-2 text-center" id="userpoints_ranking">
+            
+          </p>
+          <p class="text-center">  {{ page.title }} </p>
+
         </div>
         
       </div>
@@ -147,6 +168,7 @@ layout: default
 
 <script>
   var userPoints = 0
+
   const indicator = document.querySelector("#userpoints_indicator");
   indicator.textContent = String(userPoints)
   document.addEventListener('DOMContentLoaded', function() {
@@ -172,16 +194,41 @@ layout: default
         }
 
         indicator.textContent = String(userPoints);
-        if(userPoints < 1){
-          userpoints_indicator_text.textContent = "Try again!";
-        }else {
-          userpoints_indicator_text.textContent = "Felicitations!";
-        }
         feedback.style.display = "block";
       });
     });
   });
 });
+
+function presentPoints() {
+  var gold = document.getElementById("medal-gold")
+  var silver = document.getElementById("medal-silver")
+  var bronze = document.getElementById("medal-bronze")
+  var ranking = document.getElementById("userpoints_ranking")
+  gold.style.display="none";
+  silver.style.display="none";
+  bronze.style.display="none";
+  var gold_p = Math.ceil(max_points*0.85) 
+
+  const quizItems = document.querySelectorAll('.quiz-item');
+  var max_points = quizItems.length
+  if(userPoints > gold_p ){
+    gold.style.display="block";
+    console.log("gold")
+  }else if (userPoints > Math.ceil(max_points*0.75) ) {
+    silver.style.display="block";
+    console.log("silver")
+
+  }else if(userPoints > Math.ceil(max_points*0.3) ){
+    bronze.style.display="block";
+    console.log("bronze")
+  }else{
+    // nothing
+    console.log("no medal", userPoints,"/", max_points )
+  }
+
+  // ranking.innerText='Gold '+ String(gold_p) + ' points'
+}
 </script>
 
 <!-- navigate between chapters -->
@@ -230,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (currentChapter === totalChapters) {
       suggestions.style.display = 'block'; // show sug. at the end of the story
+      presentPoints()
     }
   }
   nextButton.addEventListener('click', function() {
