@@ -5,18 +5,59 @@ layout: default
 <div class="archive">
     <article class="story">
       <div id="story-content">
-        <div id="chapter-id-0">
-          <img 
-            style="max-height:30vh; width:100%; overflow: hidden; object-fit: cover;"
-            src="{{ page.logo }}" 
-            alt="{{ page.title }}" 
-            class="img-fluid rounded-4 mb-2">
-          <h1> {{ page.title }}</h1>
-          <p> 
-            {% for tag in page.story_tags.main %}
-            <inline class="badge">#{{ tag }}</inline>
-            {% endfor %}
-          <p> {{ page.description }} </p>
+        <div id="chapter-id-0" class=" mb-3">
+          <div class="d-flex bd-highlight">
+          
+          
+            <div class="p-2 bd-highlight"
+              style=" width:30vw">
+         
+                <img 
+                class="shadow mb-2 rounded-1 border-bottom border-left" 
+                src="{{ page.logo }}" 
+                alt="{{ page.title  }}" 
+                style="
+                  min-height: 15vh; width: 100%; object-fit: cover; 
+                  background: linear-gradient(to right, rgb(60, 13, 20) 3px, rgba(255, 255, 255, 0.5) 5px, rgba(255, 255, 255, 0.25) 7px, rgba(255, 255, 255, 0.25) 10px, transparent 12px, transparent 16px, rgba(255, 255, 255, 0.25) 17px, transparent 22px), url(https://images-na.ssl-images-amazon.com/images/I/51pnouuPO5L.jpg);
+                  box-shadow: 0 0 5px -1px black, inset -1px 1px 2px rgba(255, 255, 255, 0.5);
+                ">
+            </div>
+            <div class="p-2 flex-shrink-1  bd-highlight">
+                <p class="fw-bold"> {{ page.title }}</p>
+                <p class="mb-0" 
+                  style="white-space: nowrap;overflow: hidden; text-overflow: clip; font-size: x-small;">
+                  {{ page.author | truncate 5 }}</p>
+                <p> {{ page.price }}</p>
+                <p> 
+                  {% for tag in page.story_tags.main %}
+                  <inline class="badge">#{{ tag }}</inline>
+                  {% endfor %}
+                <p>
+            </div>
+          </div>
+        
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Description</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Learning overview</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <p>
+                {{ page.description }}
+              </p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <p >
+                {{ page.learning_overview }}
+              </p>
+            </div>
+          </div>
+          
         </div>
         
         
@@ -92,6 +133,9 @@ layout: default
         </button>
       </div>
     </div>
+    <div id="suggestions">
+      {% include stories__list.html %}
+    </div>
   </article>
 
 </div>
@@ -141,10 +185,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const chapters = document.querySelectorAll('[id^="chapter-id-"]');
   const nextButton = document.getElementById('next-chapter');
   const previousButton = document.getElementById('previous-chapter');
+  const suggestions = document.getElementById('suggestions');
   
   let currentChapter = 0;
   const totalChapters = chapters.length - 1; // Subtract 1 to exclude the end chapter
 
+  
   function showChapter(index) {
     chapters.forEach((chapter, i) => {
       if (i === index) {
@@ -162,6 +208,23 @@ document.addEventListener('DOMContentLoaded', function() {
         behavior: 'smooth'
     });
   }
+  function nameTheButton(){
+    if (nextButton && currentChapter==0 ) {
+      nextButton.classList.add("btn-primary")
+      nextButton.classList.add("w-100")
+      nextButton.classList.remove("btn-secondary")
+      nextButton.innerHTML="Open"
+      previousButton.style.display = 'none';
+      suggestions.style.display = 'block';
+    }else {
+      nextButton.innerHTML="Next >"
+      nextButton.classList.remove("btn-primary")
+      nextButton.classList.remove("w-100")
+      nextButton.classList.add("btn-secondary")
+      suggestions.style.display = 'none';
+
+    }
+  }
   nextButton.addEventListener('click', function() {
     currentChapter++;
     if (currentChapter > 0) {
@@ -178,6 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
       nextButton.style.display = 'none'; // Hide the next button on the last page
     }
     scrollToTop();
+    nameTheButton()
   });
   previousButton.addEventListener('click', function() {
     currentChapter--;
@@ -192,10 +256,13 @@ document.addEventListener('DOMContentLoaded', function() {
       nextButton.style.display = 'none'; // Hide the next button on the last page
     }
     scrollToTop();
+    nameTheButton()
   });
   
   // Initialize by showing only the first chapter
   showChapter(currentChapter);
-  previousButton.style.display = 'none';
+  
+  nameTheButton()
+  
 });
 </script>

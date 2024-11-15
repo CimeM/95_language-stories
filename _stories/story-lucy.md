@@ -3,6 +3,10 @@ layout: story
 title: Luci, le démon au grand cœur
 published: true
 
+author: Fluent French95
+
+price: Free
+
 logo: /assets/images/story_1-4.png
 
 story_tags: 
@@ -13,6 +17,8 @@ story_tags:
   - cybersecurity
 
 description: Dans un monde numérique, Sophie est une ingénieure en cybersécurité. Elle trouve un problème dangereux dans son entreprise. Un petit démon, Luci, vient l'aider. Au début, Sophie ne veut pas de son aide, mais elle comprend vite que Luci peut l'aider à résoudre un grand mystère. Ensemble, ils combattent des hackers et découvrent que même les personnes sombres peuvent être amies. Découvrez cette aventure où le bien et le mal se rencontrent. Sophie va-t-elle trouver sa force?
+
+learning_overview: "In this story, you will follow Sophie, a cybersecurity engineer, and Luci, a small demon, as they navigate challenges in the digital world. You will expand your French vocabulary related to cybersecurity and technology while learning key phrases and expressions in context. The dialogues and interactions between Sophie and Luci provide practical examples of conversational French, making it easier for you to grasp language nuances. Additionally, the comprehension questions after each chapter will reinforce your understanding and retention, promoting active engagement with the text."
 
 chapters:
   - label: Chapitre 1 - L'arrivée de Luci
