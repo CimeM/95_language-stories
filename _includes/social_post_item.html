@@ -1,0 +1,9 @@
+<p id="branding">@{{ data.author }}</p>
+<p id="question"> 
+{{ quiz_item.question }}
+</p>
+
+{% for answer_option in quiz_item.options %}
+
+<div id="answer_option" >{{ forloop.index }}. {{ answer_option }}</div>
+{% endfor %}

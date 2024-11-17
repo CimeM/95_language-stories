@@ -260,6 +260,9 @@ collections:
   stories:
     output: true
     permalink: /story/:name/
+  social_posts:
+    output: true
+    permalink: /social_posts/:name/
 
     
 # Plugins (previously gems:)
