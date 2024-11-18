@@ -15,7 +15,7 @@ layout: default
 }
 
 #answer_option {
-
+  white-space:nowrap;
 }
 
 [id^="post-c"]{
@@ -51,17 +51,27 @@ layout: default
 
 </style>
 
-<div class="accordion" id="accordionExample">
+<div class="accordion accordion-flush" id="accordionExample">
   {% assign alphabet = "0ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
 
   {% for data in site.social_posts | "story.published != false" %}
   <div class="accordion-item mb-1">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        {{ data.title }} - in {{ data.language }}
+    
+    <h2 class="accordion-header" id="heading{{ forloop.index }}">
+      <button 
+        class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#collapseOne-{{ data.title | replace: ' ', '' }}" 
+        aria-expanded="false" 
+        aria-controls="collapseOne-{{ data.title | replace: ' ', '' }}"
+      >
+        {{ data.title }} - in {{ data.language }} - {% for tag in data.tags %} <span class="badge rounded-pill bg-light text-dark ms-1">{{ tag }}</span> {% endfor %}
       </button>
     </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+    
+    <div id="collapseOne-{{ data.title | replace: ' ', '' }}" 
+      class="accordion-collapse collapse" 
+      aria-labelledby="heading{{ forloop.index }}" 
+      data-bs-parent="#accordionExample">
       <div class="accordion-body">
 
         <div class="container">
@@ -85,7 +95,7 @@ layout: default
                     
                     {% for answer_option in quiz_item.options %}
                       <div class="rounded-1 border mb-1" id="answer_option" >
-                        {{ alphabet[forloop.index] }}: {{ answer_option |  truncate: 32  }}
+                        {{ alphabet[forloop.index] }}: {{ answer_option |  truncate: 31  }}
                       </div>
                     {% endfor %}
                   </div>
@@ -94,8 +104,6 @@ layout: default
               </div>
             {% endfor %}
 
-            
-            
             
 
           </div>

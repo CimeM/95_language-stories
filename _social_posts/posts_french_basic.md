@@ -5,6 +5,9 @@ title: French Posts Basic
 author: fluent_french95 QUIZ TIME!
 tags: 
     - quiz
+    - B1
+    - A2
+    - basic
 language: french
 published: true
 
