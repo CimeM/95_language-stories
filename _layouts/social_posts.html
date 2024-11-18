@@ -13,7 +13,7 @@ layout: default
 #question {
   padding-top: 2rem;
   padding-bottom: 2rem;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 #answer_option {
@@ -22,7 +22,7 @@ layout: default
 
 [id^="post-c"]{
   font-family: Georgia; 
-  font-size: 1.3rem;
+  font-size: 0.6rem;
   text-align: center;
   
   aspect-ratio: 1 / 1; /* This makes the height equal to the width */
@@ -86,7 +86,7 @@ layout: default
             {% assign num = 4 %}
             {% for i in (1..num) %}
 
-              <div class="col-6 g-1"> 
+              <div class="col-4 g-1"> 
                 <div class="p-2" id="post-c{{ i }}-{{ forloop.index }}"  >
                   <p id="branding">@{{ data.author }}</p>
                   
