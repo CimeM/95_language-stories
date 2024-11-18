@@ -7,7 +7,7 @@ layout: default
 <style>
 
 #branding {
-  font-size: xx-small;
+  font-size: 2rem;
 }
 
 #question {
@@ -20,7 +20,7 @@ layout: default
 
 [id^="post-c"]{
   font-family: Georgia; 
-  font-size: small;
+  font-size: large;
   text-align: center;
   
   aspect-ratio: 1 / 1; /* This makes the height equal to the width */
@@ -84,7 +84,7 @@ layout: default
             {% assign num = 4 %}
             {% for i in (1..num) %}
 
-              <div class="col-12 g-1"> 
+              <div class="col-6 g-1"> 
                 <div class="p-2" id="post-c{{ i }}-{{ forloop.index }}"  >
                   <p id="branding">@{{ data.author }}</p>
                   
