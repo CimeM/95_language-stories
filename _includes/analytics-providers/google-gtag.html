@@ -1,21 +1,15 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.tracking_id }}"></script>
+<script async src="/assets/js/gtag.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', '{{ site.analytics.google.tracking_id }}', { 'anonymize_ip': {{ site.analytics.google.anonymize_ip | default: false }}});
-</script> -->
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q86J1SQWR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6Q86J1SQWR');
+  {% assign cleaned_url = site.url | replace: "https://", "" | replace: "http://", "" | remove: "index.html" | remove: ".html" | remove_first: "/" | remove: "/" %}
+  gtag('config', '{{ site.analytics.google.tracking_id }}', {
+    'cookie_domain': '{{ cleaned_url }}',
+    'cookie_flags': 'SameSite=None;Secure'
+});
 </script>
+
+
 
