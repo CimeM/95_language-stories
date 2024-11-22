@@ -26,122 +26,146 @@ chapters:
   - label: Chapitre 1 - L'arrivée de Luci
     image: /assets/images/story_1-1.png
     imageprompt: A young woman with short dark hair sitting at a computer desk late at night, looking surprised as a small black demon appears on her desk, office setting, soft lighting
-    content: "Sophie, une jeune ingénieure en cybersécurité, travaillait tard un soir dans son bureau. Elle aimait son travail, mais parfois, elle se sentait seule. Un jour, alors qu'elle écrivait du code sur son ordinateur, une petite créature noire apparut soudainement sur son bureau. 'Salut, je suis Luci!' dit-il avec un sourire malicieux. Sophie, surprise et un peu effrayée, demanda, 'Qui es-tu?' Luci répondit avec enthousiasme, 'Je suis un démon envoyé par ton cousin pour t'influencer.' Sophie ne pouvait pas croire ce qu'elle entendait. 'Un démon? Pourquoi moi?' demanda-t-elle. Luci expliqua qu'il avait été envoyé pour l'aider à prendre des décisions plus audacieuses. Sophie essaya de le chasser en disant, 'Je ne veux pas de toi ici!' Mais Luci était impossible à faire partir. Il s'assit sur son bureau et commença à jouer avec les objets autour de lui. Sophie décida alors de l'ignorer et continua son travail, mais elle ne pouvait pas s'empêcher de se demander si Luci était vraiment là pour l'aider ou pour la déranger."
+    content: "Aujourd'hui, Luci est apparu. Ou peut-être hier, je ne sais pas. Je suis Sophie, ingénieure en cybersécurité. Les jours se ressemblent tous ici, dans ce bureau sans âme. Ce soir-là, comme d'habitude, j'étais seule. Les lignes de code défilaient sur mon écran, monotones. Le silence pesait, lourd, presque tangible. Soudain, il est apparu. Petit, noir, avec des yeux brillants. 'Je suis Luci,' a-t-il dit. Je n'ai pas répondu. Pourquoi l'aurais-je fait ? Il a ajouté qu'il venait de la part de mon cousin. Ça m'était égal. Mon cousin, Luci, quelle différence ? J'ai continué à travailler. Il jouait avec mes stylos, faisait du bruit. Je l'ai ignoré. La nuit était longue, le silence brisé par ses bavardages incessants. Je ne l'écoutais pas. Les mots n'ont pas de sens quand on est seul. Finalement, j'ai éteint mon ordinateur. Je suis rentrée chez moi, Luci m'a suivie. Je me suis dit que demain, il ne serait plus là. Mais au fond, je savais que ça ne changerait rien à ma vie solitaire. Un démon ou pas, quelle importance ?"
     quiz:
-    - question: "Quel est le métier de Sophie?"
-      options: 
-      - "Ingénieure en cybersécurité"
-      - "Professeure"
-      - "Médecin"
-      right_answer: 0
-    - question: "Qui a envoyé Luci?"
-      options: 
-      - "Le frère de Sophie"
-      - "Le cousin de Sophie"
-      - "Un ami de Sophie"
-      right_answer: 1
-    - question: "Comment Sophie se sent-elle en voyant Luci?"
+    - question: "Quel est le métier de Sophie ?"
       options:
-      - "Heureuse"
-      - "Surprise"
-      - "Fâchée"
-      right_answer: 1
-    - question: "Que fait Sophie après avoir rencontré Luci?"
-      options:
-      - "Elle l'ignore"
-      - "Elle l'accepte"
-      - "Elle s'enfuit"
+        - "Ingénieure en cybersécurité"
+        - "Professeure"
+        - "Médecin"
       right_answer: 0
+    - question: "Qui a envoyé Luci ?"
+      options:
+        - "Le frère de Sophie"
+        - "Le cousin de Sophie"
+        - "Un ami de Sophie"
+      right_answer: 1
+    - question: "Comment Sophie réagit-elle à l'apparition de Luci ?"
+      options:
+        - "Avec enthousiasme"
+        - "Avec indifférence"
+        - "Avec peur"
+      right_answer: 1
+    - question: "Que fait Luci quand il arrive ?"
+      options:
+        - "Il disparaît"
+        - "Il joue avec les stylos"
+        - "Il dort"
+      right_answer: 1
+    - question: "Où Sophie travaille-t-elle ?"
+      options:
+        - "Dans un café"
+        - "Dans un bureau"
+        - "À la maison"
+      right_answer: 1
 
   - label: "Chapitre 2 - Une étrange découverte"
     image: /assets/images/story_1-2.png
     imageprompt: A woman and a small black demon looking at a computer screen together, showing lines of code and a warning sign, office setting, daytime
-    content: "Le lendemain matin, Sophie arriva au bureau avec une tasse de café chaud. Elle se sentait fatiguée mais déterminée à bien travailler. En se connectant à son ordinateur, elle commença à examiner les systèmes de sécurité de son entreprise. Soudain, elle remarqua une faille de sécurité dans le système qui pouvait permettre à des hackers d'entrer facilement. Luci, qui observait tout cela avec intérêt, demanda ce qui se passait. 'Regarde ça!' s'exclama Sophie en montrant l'écran. 'Il y a une énorme faille ici!' Luci s'approcha et dit avec un sourire malicieux, 'Je peux t'aider à résoudre ce problème.' À sa grande surprise, Sophie trouva l'idée intéressante et accepta son aide. 'Tu n'es peut-être pas si mauvais,' dit-elle en souriant. Ensemble, ils commencèrent à enquêter sur l'origine de la faille et découvrirent que quelqu'un avait essayé d'accéder aux données sensibles de l'entreprise."
+    content: "Le matin, Luci était toujours là. J'ai bu mon café, amer comme d'habitude. Au bureau, j'ai allumé mon ordinateur. Luci s'est assis sur mon épaule, silencieux pour une fois. J'ai vérifié les systèmes, par habitude. Soudain, une faille est apparue à l'écran. Je n'étais pas surprise. Les failles, c'est mon quotidien. Comme la solitude. Luci a proposé son aide. J'ai haussé les épaules, pourquoi pas ? On a travaillé ensemble, en silence. Les heures passaient, monotones. La faille était grave, mais ça ne me touchait pas. Rien ne me touchait vraiment. Luci semblait excité, moi, j'étais indifférente. Il parlait de hackers, de danger. Je tapais sur mon clavier, mécanique. Les mots défilaient, sans sens. Hackers, danger, quelle importance ? Tout finit par passer. La journée s'est terminée comme elle avait commencé, sans émotion. Luci était toujours là. Je me suis demandé si sa présence changerait quelque chose. Probablement pas. Rien ne change jamais vraiment."
     quiz:
-    - question: "Que découvre Sophie au travail?"
-      options: 
-      - "Une faille de sécurité"
-      - "Un nouveau collègue"
-      - "Un virus informatique"
-      right_answer: 0
-    - question: "Comment réagit Luci face au problème?"
-      options: 
-      - "Il s'en moque"
-      - "Il propose une idée"
-      - "Il disparaît"
-      right_answer: 1
-    - question: "Que fait Sophie après avoir découvert la faille?"
+    - question: "Que boit Sophie le matin ?"
       options:
-      - "Elle appelle la police"
-      - "Elle en parle à Luci"
-      - "Elle quitte son travail"
+        - "Du thé"
+        - "Du café"
+        - "Du jus"
       right_answer: 1
-    - question: "Comment se sent Sophie en travaillant avec Luci?"
+    - question: "Que découvre Sophie sur son ordinateur ?"
       options:
-      - "Confuse"
-      - "En colère"
-      - "Curieuse"
+        - "Un nouveau jeu"
+        - "Une faille de sécurité"
+        - "Un message de son cousin"
+      right_answer: 1
+    - question: "Comment Luci réagit-il face au problème ?"
+      options:
+        - "Il s'en moque"
+        - "Il propose son aide"
+        - "Il disparaît"
+      right_answer: 1
+    - question: "Comment Sophie se sent-elle face à la faille ?"
+      options:
+        - "Inquiète"
+        - "Excitée"
+        - "Indifférente"
       right_answer: 2
+    - question: "Que font Sophie et Luci ensemble ?"
+      options:
+        - "Ils jouent"
+        - "Ils travaillent"
+        - "Ils dorment"
+      right_answer: 1
 
   - label: "Chapitre 3 - L'enquête"
     image: /assets/images/story_1-3.png
     imageprompt: A woman and a small black demon working together at a desk covered in papers and multiple computer screens, looking focused, dim office lighting
-    content: "Sophie et Luci passèrent les jours suivants à chercher des indices sur la faille de sécurité. Chaque jour après le travail, ils se réunissaient pour analyser les données ensemble. Luci utilisait ses pouvoirs démoniaques pour accéder à des informations cachées dans le système informatique que personne d'autre ne pouvait voir. Pendant ce temps, Sophie analysait les données et prenait des notes sur tout ce qu'ils trouvaient. Un soir, alors qu'ils examinaient les journaux d'accès du système, ils découvrirent que la faille était l'œuvre d'un groupe de hackers très connus dans le monde entier. 'Nous devons les arrêter,' dit Sophie avec détermination. Luci acquiesça et répondit, 'Oui, mais comment? Ils sont très intelligents.' Ensemble, ils commencèrent à planifier leur prochaine étape pour contrer les hackers."
+    content: "Les jours se suivaient, tous pareils. Luci et moi, on cherchait l'origine de la faille. C'était devenu une routine. Une autre absurdité dans ce monde absurde. Il utilisait ses pouvoirs, je tapais sur mon clavier. On ne parlait presque pas. Les mots sont inutiles face à l'indifférence du monde. Parfois, je me demandais pourquoi il restait. Je ne lui posais pas la question. Les réponses n'ont pas d'importance. Un soir, on a découvert que c'était l'œuvre de hackers. Ça ne m'a fait ni chaud ni froid. Luci a dit qu'il fallait les arrêter. J'ai haussé les épaules. Pourquoi pas ? Arrêter des hackers ou regarder le plafond, quelle différence ? On a continué à travailler, jour après jour. Le temps passait, sans que rien ne change vraiment. Pourtant, quelque chose était différent. Je n'étais plus seule. Luci était là, toujours là. Je commençais à m'y habituer. Peut-être même à apprécier sa présence. Mais je ne lui ai pas dit. Les mots sont superflus. On a juste continué à travailler, en silence. Un silence à deux, moins lourd peut-être."
     quiz:
-    - question: "Que font Sophie et Luci ensemble?"
-      options: 
-      - "Ils jouent à des jeux vidéo"
-      - "Ils enquêtent sur la faille"
-      - "Ils partent en vacances"
-      right_answer: 1
-    - question: "Qui est responsable de la faille?"
-      options: 
-      - "Un groupe de hackers"
-      - "Le cousin de Sophie"
-      - "Un virus informatique"
-      right_answer: 0
-    - question: "Comment Luci aide-t-il Sophie?"
+    - question: "Que cherchent Sophie et Luci ?"
       options:
-      - "Il lui donne des conseils."
-      - "Il utilise ses pouvoirs."
-      - "Il s'en va."
+        - "Un trésor"
+        - "L'origine de la faille"
+        - "Un nouveau travail"
       right_answer: 1
-    - question: "'Pourquoi Sophie veut-elle arrêter les hackers?'"
+    - question: "Comment Luci aide-t-il Sophie ?"
       options:
-      - "'Parce qu'ils sont dangereux.'"
-      - "'Parce qu'ils sont ses amis.'"
-      - "'Parce qu'ils ne sont pas drôles.'"
+        - "Avec ses pouvoirs"
+        - "Avec de l'argent"
+        - "Avec des conseils"
       right_answer: 0
+    - question: "Qui est responsable de la faille ?"
+      options:
+        - "Le cousin de Sophie"
+        - "Des hackers"
+        - "Luci"
+      right_answer: 1
+    - question: "Comment Sophie se sent-elle avec Luci maintenant ?"
+      options:
+        - "Ennuyée"
+        - "Effrayée"
+        - "Habituée"
+      right_answer: 2
+    - question: "Que font Sophie et Luci après avoir découvert les hackers ?"
+      options:
+        - "Ils abandonnent"
+        - "Ils appellent la police"
+        - "Ils continuent à travailler"
+      right_answer: 2
 
   - label: "Chapitre 4 - La résolution"
     image: /assets/images/story_1-4.png
     imageprompt: A woman high-fiving a small black demon in front of a computer showing a 'System Secure' message, office setting, celebratory atmosphere
-    content: "'Sophie eut une idée brillante,' pensa-t-elle un matin. Elle savait qu'ils pouvaient piéger les hackers grâce à leurs propres méthodes. Avec l'aide de Luci, elle créa un piège virtuel pour attirer les hackers dans un faux système vulnérable. Quand les hackers attaquèrent à nouveau le réseau de l'entreprise, ils tombèrent directement dans le piège que Sophie avait préparé avec soin. Grâce aux informations collectées par Luci et aux preuves fournies par Sophie, la police put intervenir rapidement et arrêter les hackers avant qu'ils ne causent plus de dégâts. Après cette aventure incroyable, Sophie regarda Luci et dit avec un sourire : 'Nous formons une bonne équipe.' Luci sourit aussi et répondit : 'Oui, même si je suis censé être maléfique.' Ils rirent ensemble et réalisèrent que leur amitié était plus forte que leurs différences."
+    content: "Un matin, j'ai eu une idée. Pas brillante, juste une idée. On a créé un piège, Luci et moi. Les hackers sont tombés dedans. La police est venue. Ils ont été arrêtés. Tout ça ne m'a rien fait. Ou presque. Luci souriait, moi pas. Mais au fond, quelque chose avait changé. Il a dit qu'on formait une bonne équipe. J'ai hoché la tête, sans conviction. Pourtant, je savais qu'il avait raison. La vie a repris son cours, presque comme avant. Luci est resté. Cette fois, ça changeait quelque chose. Les jours continuaient de passer, mais ils n'étaient plus tout à fait indifférents. J'avais un ami, un étrange ami démoniaque. Je ne lui ai pas dit. Mais je crois qu'il le savait. On a continué à travailler ensemble, en silence. Mais c'était un silence différent, un silence à deux. Peut-être que c'est ça, le bonheur. Ou peut-être pas. Qui sait ? Dans ce monde absurde, avoir un démon pour ami n'est pas plus étrange que le reste. La vie continue, indifférente à nos petites histoires. Et nous, on continue de coder, face à l'absurdité du monde."
     quiz:
-    - question: "Comment Sophie et Luci arrêtent-ils les hackers?"
-      options: 
-      - "Avec un piège virtuel."
-      - "En les poursuivant."
-      - "En appelant la police."
-      right_answer: 0
-    - question: "'Quelle est la conclusion de Sophie sur Luci?'"
+    - question: "Quelle idée Sophie a-t-elle ?"
       options:
-      - "'Il est très maléfique.'"
-      - "'Il n'est pas si mauvais.'"
-      - "'Il doit partir.'"
+        - "Partir en vacances"
+        - "Créer un piège"
+        - "Changer de travail"
       right_answer: 1
-    - question: "'Que fait la police grâce à Sophie et Luci?'"
+    - question: "Qui arrête les hackers ?"
       options:
-      - "'Ils arrêtent les hackers.'"
-      - "'Ils protègent le bureau.'"
-      - "'Ils aident les clients.'"
-      right_answer: 0
-    - question: "'Comment se sentent-ils à la fin?' "
-      options:
-      - "'Tristes.' "
-      - "'Heureux.' "
-      - "'En colère.' "
+        - "Sophie et Luci"
+        - "La police"
+        - "Le cousin de Sophie"
       right_answer: 1
+    - question: "Que dit Luci à propos de leur travail ensemble ?"
+      options:
+        - "C'était ennuyeux"
+        - "Ils forment une bonne équipe"
+        - "Il veut partir"
+      right_answer: 1
+    - question: "Comment Sophie voit-elle Luci à la fin ?"
+      options:
+        - "Comme un ennemi"
+        - "Comme un ami"
+        - "Comme un collègue"
+      right_answer: 1
+    - question: "Que font Sophie et Luci après avoir résolu le problème ?"
+      options:
+        - "Ils se séparent"
+        - "Ils partent en vacances"
+        - "Ils continuent à travailler ensemble"
+      right_answer: 2
 
 storyprompt: Can you come up with a story of a little black deamon Luci. the story is about a girl that is a working as a cybersecurity engineer. THe deamon is sent by her cousin so to influence her in evil ways. The girl wants to get rid of him but the deamon seems to be imposable to dispose. So she befrends the deamon and together they solve a mystery. Please write the story so that it is appropriate for kids of 16y of age. Please let the story be compelling for the readers. The story has to be in simple french (of a2 or b1) level. Please make 4 chapters and also include comprehension questions for each of the chapters. please put the storyu in this yaml structure. Please make content in chapters long and a lso provide a list of prompts for each chapter so that image can be generated.
  
