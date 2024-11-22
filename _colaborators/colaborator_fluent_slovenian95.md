@@ -7,7 +7,7 @@ spoken_language:
   - english
 teaching_language:
   - slovenian
-image: /assets/images/colaborator_sample_slovenia.jpg
+image: /assets/images/colaborator_fluent_slovenian.jpg
 tags:
   - B1
   - quizes

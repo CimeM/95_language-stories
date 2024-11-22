@@ -7,7 +7,7 @@ spoken_language:
   - english
 teaching_language:
   - italian
-image: /assets/images/colaborator_sample_italy.jpg
+image: /assets/images/colaborator_fluent_italian95.svg
 tags:
   - B1
   - online
