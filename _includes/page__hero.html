@@ -18,53 +18,6 @@
 
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 
-<script>
-
-  function handle_submit(){
-
-  
-    
-    const email = document.getElementById('emailInput').value;
-    const messageElement = document.getElementById('formMessage');
-    
-    // Strict email validation
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailRegex.test(email)) {
-      messageElement.textContent = 'Please enter a valid email address.';
-      messageElement.style.color = 'red';
-      return;
-    }
-    
-    // Construct the API endpoint URL with the email as a query parameter
-    const apiUrl = `{{site.apiurl}}/subscribe?email=${encodeURIComponent(email)}`;
-    fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({ email: email, site: `{{site.url}}` })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.json();
-    })
-    .then(data => {
-      // Assuming the API returns a success message
-      messageElement.textContent = 'Subscription successful!';
-      messageElement.style.color = 'green';
-      document.getElementById('emailInput').value = ''; // Clear the input field
-    })
-    .catch(error => {
-      messageElement.textContent = 'An error occurred. Please try again later.';
-      messageElement.style.color = 'red';
-      console.error('Error:', error);
-    });
-  };
-
-  </script>
 
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}{{ overlay_filter }}, {% endif %}url('{{ overlay_img_path }}');{% endif %}"
@@ -88,16 +41,7 @@
       
       {% if page.header.newsletter %}
         <div class="mb-4 d-none d-sm-inline-block" style=" width: 100%;">
-          <form id="newsletterForm" class="row g-2" style="background-color: transparent;">
-            <div class="col-auto">
-              <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
-              <small id="formMessage" class="form-text text-muted"></small>
-            </div>
-            <div class="col-auto">
-              <button onclick="handle_submit()" class="btn btn-primary">Get job alerts</button>
-            </div>
-          </form>
-
+          {% include newsletter-form.html %}
         </div>
       {% endif %}
 

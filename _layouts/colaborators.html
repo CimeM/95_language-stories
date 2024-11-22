@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<!-- Square posts for posting on social media -->
+
+<style>
+
+#branding {
+  font-size: small;
+}
+
+#question {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: large;
+}
+
+#answer_option {
+  white-space:nowrap;
+}
+
+[id^="post-c"]{
+  font-family: Georgia; 
+  font-size: small;
+  text-align: center;
+  
+  aspect-ratio: 1 / 1; /* This makes the height equal to the width */
+}
+
+#post_content {
+  
+}
+
+[id^="post-c1-"]{
+  background-color: #816341; 
+  color: #FFFFFF;
+}
+[id^="post-c2-"]{
+  background-color:#c7925c;
+  color: #3B2A1E
+}
+[id^="post-c3-"]{
+  background-color:#76b797;
+  color: #FFFFFF
+}
+[id^="post-c4-"]{
+  background-color:#e9e0b7;
+  color: #5B4C2A;
+}
+
+
+
+</style>
+<div class="mt-3">
+  <h2>Colaborators</h2>
+  <div class="container mt-4">
+    <div class="row g-3">
+
+      {% assign nonexpired_collaborators = site.colaborators | where_exp: "collaborator", "collaborator.expiry_date > site.time" or collaborator.expiry_date == null"  %}
+      {% for colaborator in nonexpired_collaborators %}
+      
+        <div class="col-12 col-md-6">
+          <div class="d-flex ">
+
+            <div class="flex-shrink-0">
+              <img style="width: 15vw;" class="rounded" src="{{ colaborator.image }}">
+            </div>
+            
+            <div class="flex-grow-1 ms-3 ">
+              <p class="fw-bold mb-0">
+                <a href="https://www.instagram.com/{{ colaborator.title }}/">
+                  @{{ colaborator.title }} 
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </p>
+              <p class="fs-6 mb-1">{{ colaborator.description }}</p>
+              <p class="mb-0">
+                {% for lang in colaborator.spoken_language %}
+                  <span class="badge bg-success">{{ lang }}</span>
+                {% endfor %} ->
+                {% for lang in colaborator.teaching_language %}
+                  <span class="badge bg-primary">{{ lang }}</span>
+                {% endfor %}
+                {% for tag in colaborator.tags %}
+                  <span class="badge bg-secondary">#{{ tag }}</span>
+                {% endfor %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+  
+  

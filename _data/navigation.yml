@@ -9,6 +9,9 @@ main:
   - title: "Get more stories"
     url: /newsletter/
     icon: "fas fa-fw fa-envelope-square"
+  - title: "Colaborators"
+    url: /colaborators/
+
     # class: btn btn-primary d-block d-md-none btn-sm
   
   # - title: "Sample Collections"
