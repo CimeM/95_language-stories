@@ -1,0 +1,19 @@
+
+postgresql:
+  enabled: true
+  auth:
+    username: keycloak
+    password: your_password
+    database: keycloak
+
+keycloak:
+  enabled: true
+  database:
+    vendor: postgres
+    host: aaa-postgresql
+    port: 5432
+    username: keycloak
+    password: your_password
+    database: keycloak
+
+

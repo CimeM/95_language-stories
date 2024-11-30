@@ -1,0 +1,9 @@
+fastapi
+fastapi-keycloak
+uvicorn
+python-keycloak
+pydantic_settings
+python-multipart
+slowapi 
+email-validator
+psycopg2

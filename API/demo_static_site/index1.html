@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycloak Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/keycloak-js@latest/dist/keycloak.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        button { margin: 10px 0; padding: 10px; }
+        #status { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Keycloak Demo</h1>
+    <div id="actions">
+        <button id="loginBtn">Login</button>
+        <button id="logoutBtn">Logout</button>
+        <button id="registerBtn">Register</button>
+        <button id="deleteAccountBtn">Delete Account</button>
+    </div>
+    <div id="status"></div>
+
+    <script>
+        const keycloak = new Keycloak({
+            url: 'http://localhost:8080',
+            realm: 'master',
+            clientId: 'static_site'
+        });
+
+        const statusDiv = document.getElementById('status');
+
+        function updateStatus(message) {
+            statusDiv.innerHTML = message;
+        }
+
+        keycloak.init({ onLoad: 'check-sso' }).then(function(authenticated) {
+            updateStatus(authenticated ? 'Authenticated' : 'Not authenticated');
+            
+            document.getElementById('loginBtn').onclick = keycloak.login;
+            document.getElementById('logoutBtn').onclick = keycloak.logout;
+            document.getElementById('registerBtn').onclick = () => keycloak.register();
+            document.getElementById('deleteAccountBtn').onclick = deleteAccount;
+        }).catch(function() {
+            updateStatus('Failed to initialize Keycloak');
+        });
+
+        async function deleteAccount() {
+            if (keycloak.authenticated) {
+                try {
+                    // This assumes Keycloak is configured to allow account deletion
+                    // You may need to adjust the URL based on your Keycloak setup
+                    const response = await fetch(`${keycloak.authServerUrl}/realms/${keycloak.realm}/account`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': 'Bearer ' + keycloak.token
+                        }
+                    });
+
+                    if (response.ok) {
+                        updateStatus('Account deleted successfully');
+                        keycloak.logout();
+                    } else {
+                        updateStatus('Failed to delete account');
+                    }
+                } catch (error) {
+                    updateStatus('Error deleting account: ' + error);
+                }
+            } else {
+                updateStatus('Please log in first');
+            }
+        }
+    </script>
+</body>
+</html>
