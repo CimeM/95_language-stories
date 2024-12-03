@@ -9,10 +9,12 @@ UNIQUE_USERNAME="testuser_$(date +%s)"
 TEST_EMAIL="${UNIQUE_USERNAME}@example.com"
 TEST_PASSWORD="TestPassword123!"
 
+API_HOST="http://localhost"
+
 echo "Testing signup for user: $UNIQUE_USERNAME"
 
 # 1. Signup
-signup_response=$(curl -s -X POST "http://localhost:$APIPORT/signup" \
+signup_response=$(curl -s -X POST "$API_HOST:$APIPORT/api/users/signup" \
      -H "Content-Type: application/json" \
      -d "{\"username\":\"$TEST_EMAIL\",\"password\":\"$TEST_PASSWORD\"}")
 
@@ -28,7 +30,7 @@ else
 fi
 
 # 2. Login
-login_response=$(curl -s -X POST "http://localhost:$APIPORT/login" \
+login_response=$(curl -s -X POST "$API_HOST:$APIPORT/api/users/login" \
      -H "Content-Type: application/x-www-form-urlencoded" \
      -d "username=$UNIQUE_USERNAME" \
      -d "password=$TEST_PASSWORD")
@@ -45,7 +47,7 @@ else
 fi
 
 # 3. Verify user info
-userinfo_response=$(curl -s -X GET "http://localhost:$APIPORT/protected" \
+userinfo_response=$(curl -s -X GET "$API_HOST:$APIPORT/api/users/protected" \
      -H "Authorization: Bearer $login_token")
 
 echo "User Info Response: $userinfo_response"
