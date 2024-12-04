@@ -1,6 +1,6 @@
 import logging
 from fastapi import APIRouter, Depends, HTTPException
-from app.services.firebase import get_firebase_user, create_firebase_user
+from app.services.firebase import get_firebase_user, create_firebase_user, verify_firebase_token
 from pydantic import BaseModel
 
 # Set up logging
@@ -35,7 +35,9 @@ async def signup(user: UserSignup):
         raise HTTPException(status_code=400, detail="Signup failed")
 
 @simple_router.get("/protected")
-async def protected_route(user = Depends(get_firebase_user)):
+async def protected_route(user: dict = Depends(verify_firebase_token)):
     """Protected route that returns a greeting message."""
-    logger.info("Accessing protected route for user: %s", user['username'])
-    return {"message": f"Hello, {user['username']}!"}
+    uid = user['uid']
+    email = user.get('email', 'User')
+    logger.info("Accessing protected route for user: %s", email)
+    return {"message": f"Hello, {email}!"}

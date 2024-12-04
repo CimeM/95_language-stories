@@ -1,8 +1,12 @@
 import logging
-from fastapi import HTTPException
+from fastapi import HTTPException, Depends
 from starlette.requests import Request
 from firebase_admin import auth
 
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+
+security = HTTPBearer()
 
 def get_firebase_user(request: Request):
     id_token = request.headers.get('Authorization')
@@ -49,8 +53,9 @@ def sign_in_firebase_user(email: str, password: str):
         logging.exception(e)
         raise HTTPException(status_code=401, detail='Invalid credentials')
 
-def verify_firebase_token(id_token: str):
+async def verify_firebase_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
     try:
+        id_token = credentials.credentials
         # Verify the ID token
         decoded_token = auth.verify_id_token(id_token)
         return decoded_token  # This contains user info including uid

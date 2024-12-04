@@ -33,3 +33,5 @@ _site
 
 _companies/potential.yaml
 abandoned
+
+serviceAccountKey.json
