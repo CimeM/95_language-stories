@@ -1,0 +1,218 @@
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+<style>
+    #signup-form {
+        display: none;
+    }
+    #logout-form {
+        display: none;
+    }
+</style>
+
+
+<div id="auth-container">
+
+    <!-- Logout Form -->
+    <div id="logout-form" class="card p-4 mb-4">
+        <h3 class="text-center mb-4">Log out</h3>
+        <button type="button" onclick="logout()" class="btn btn-success w-100">Log out</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="card p-4 mb-4">
+        <h3 class="text-center mb-4">Login</h3>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="login-email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="login-password" placeholder="Password" required>
+            </div>
+            <button type="button" onclick="login()" class="btn btn-primary w-100">Login</button>
+        </form>
+        <!-- Signup Button -->
+        <div class="text-center mb-4">
+            <button id="show-signup" class="btn btn-link">Don't have an account? Sign Up</button>
+        </div>
+    </div>
+    
+    
+    <!-- Signup Form (Initially Hidden) -->
+    <div id="signup-form" class="card p-4">
+        <h3 class="text-center mb-4">Sign Up</h3>
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="signup-email" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="signup-password" placeholder="Password" required>
+            </div>
+            <button type="button" onclick="signUp()" class="btn btn-success w-100">Sign Up</button>
+        </form>
+        <!-- Login Button -->
+        <div class="text-center mb-4">
+            <button id="show-login" class="btn btn-link">Already have an account? Log in</button>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="result"></div>
+<script>
+
+
+    const showSignupButon = document.getElementById('show-signup')
+    const showLoginButon = document.getElementById('show-login')
+    showLoginButon.style.display = 'none';
+
+    const logoutForm = document.getElementById('logout-form')
+    const loginForm = document.getElementById('login-form')
+    const signupForm = document.getElementById('signup-form')
+
+
+    showSignupButon.addEventListener('click', function() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('signup-form').style.display = 'block';
+        this.style.display = 'none';
+        showLoginButon.style.display = 'block';
+    });
+    
+    showLoginButon.addEventListener('click', function() {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('signup-form').style.display = 'none';
+        this.style.display = 'none';
+        showSignupButon.style.display = 'block';
+    });
+
+</script>
+
+<script>
+
+    // Your Firebase configuration
+    const firebaseConfig = {
+        apiKey: "{{ site.authentication.firebase.api_key }}",
+        // Add other configuration options here
+    };
+    
+    const api_address="{{ site.authentication.firebase.api_hostname }}"
+    
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+    // Get elements
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const resultDiv = document.getElementById('result');
+    
+    // Check for existing session on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                resultDiv.innerHTML = `Logged in as ${user.email}`;
+                logoutForm.style.display = 'block';
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'none';
+            } else {
+                resultDiv.innerHTML = 'Not logged in';
+                logoutForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        });
+    });
+    
+    
+
+    // Sign up function
+    function signUp() {
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                setSessionCookie(userCredential.user);
+                resultDiv.innerHTML = `Signup successful for ${userCredential.user.email}`;
+                logoutForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            })
+            .catch((error) => {
+                resultDiv.innerHTML = `Signup error: ${error.message}`;
+            });
+    }
+    
+    // Login function
+    function login() {
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                setSessionCookie(userCredential.user);
+                resultDiv.innerHTML = `Login successful for ${userCredential.user.email}`;
+                logoutForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            })
+            .catch((error) => {
+                resultDiv.innerHTML = `Login error: ${error.message}`;
+            });
+    }
+    
+    // Logout function
+    function logout() {
+        firebase.auth().signOut()
+            .then(() => {
+                clearSessionCookie();
+                resultDiv.innerHTML = 'Logged out successfully';
+                logoutForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            })
+            .catch((error) => {
+                resultDiv.innerHTML = `Logout error: ${error.message}`;
+            });
+    }
+    
+    // Access protected content
+    async function accessProtectedContent() {
+        const user = firebase.auth().currentUser;
+        if (user) {
+            try {
+                const idToken = await user.getIdToken(true);
+                const response = await fetch(api_address + '/api/users/protected', {
+                    headers: {
+                        'Authorization': `Bearer ${idToken}`
+                    }
+                });
+                const data = await response.json();
+                resultDiv.innerHTML = `Protected content: ${JSON.stringify(data)}`;
+            } catch (error) {
+                resultDiv.innerHTML = `Error accessing protected content: ${error.message}`;
+            }
+        } else {
+            resultDiv.innerHTML = 'User not logged in';
+        }
+    }
+    
+    // Set session cookie
+    function setSessionCookie(user) {
+        user.getIdToken(true).then((idToken) => {
+            document.cookie = `session=${idToken}; path=/; max-age=3600; SameSite=Strict; Secure`;
+        });
+    }
+    
+    // Clear session cookie
+    function clearSessionCookie() {
+        document.cookie = 'session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict; Secure';
+    }
+    
+    // Token renewal
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            setSessionCookie(user);
+        } else {
+            clearSessionCookie();
+        }
+    });
+</script>

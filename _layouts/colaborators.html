@@ -53,11 +53,11 @@ layout: default
 
 </style>
 <div class="mt-3">
-  <h2>Colaborators</h2>
+  <h2>Collaborators</h2>
   <div class="container mt-4">
     <div class="row g-3">
 
-      {% assign nonexpired_collaborators = site.colaborators | where_exp: "collaborator", "collaborator.expiry_date > site.time" or collaborator.expiry_date == null"  %}
+      {% assign active_collaborators = site.colaborators | where_exp: 'collaborator', 'collaborator.expiry_date > site.time or collaborator.expiry_date == null' %}
       {% for colaborator in nonexpired_collaborators %}
       
         <div class="col-12 col-md-6">
