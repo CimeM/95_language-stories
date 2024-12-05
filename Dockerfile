@@ -5,11 +5,16 @@ WORKDIR /app
 COPY Gemfile /app/.
 RUN bundle install
 
-RUN gem install json -v '2.7.5'
-RUN gem install sass-embedded -v '1.80.5'
-RUN gem install faraday -v '2.12.0'
+
+RUN gem install json 
+RUN gem install sass-embedded 
+RUN gem install faraday 
+
 COPY . .
 
 EXPOSE 4000
+
+# RUN bundle exec jekyll clean
+# RUN bundle exec jekyll build
 
 CMD ["bundle", "exec", "jekyll", "serve", "--trace", "--host", "0.0.0.0", "--verbose"]

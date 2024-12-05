@@ -11,9 +11,13 @@ main:
     icon: "fas fa-fw fa-envelope-square"
   - title: "Collaborators"
     url: /colaborators/
+
+  - title: "Login"
+    url: "/login/"
+
   - title: "Blog"
     url: /blog/
-
+    
     # class: btn btn-primary d-block d-md-none btn-sm
   
   # - title: "Sample Collections"

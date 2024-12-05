@@ -111,6 +111,11 @@ analytics:
     tracking_id          : "G-6Q86J1SQWR"
     anonymize_ip         : true # true, false (default)
 
+authentication:
+  provider                : "firebase"
+  firebase:
+    api_key              : "AIzaSyAcr0JlLKucSQfzEJmVRK8_0ETURHnrSb8"
+    api_hostname         : "localhost:3000"
 
 # Site Author
 author:
