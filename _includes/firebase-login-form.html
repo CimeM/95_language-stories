@@ -246,8 +246,9 @@ async function getUser() {
     const user = firebase.auth().currentUser;
     if (!user) {
         resultDiv.innerHTML = 'User not logged in';
-        return;
+        return null;
     }
+    return user;
 }
 
 async function saveEvent( idToken, user, eventData ) {
@@ -278,11 +279,16 @@ async function saveEvent( idToken, user, eventData ) {
     }
 }
 
-const token = await getToken()
-const user = await getUser()
+async function main() {
 
-if (apICallEnabled) {
-    saveEvent(token, user, {"type": "winPoints", "amount":"1" })
+    const token = await getToken()
+    const user = await getUser()
+    if (token && user) {
+        if (apICallEnabled) {
+            saveEvent(token, user, {"type": "winPoints", "amount":"1" })
+        }
+    }
+
 }
 
 </script>
