@@ -26,7 +26,7 @@ layout: default
                 <p class="fw-bold h3"> {{ page.title }}</p>
                 <p class="mb-0" 
                   style="white-space: nowrap;overflow: hidden; text-overflow: clip; font-size: x-small;">
-                  {{ page.author | truncate 5 }}</p>
+                  {{ page.author | truncate: 5 }}</p>
                 <p> {{ page.price }}</p>
                 <p> 
                   {% for tag in page.story_tags.main %}

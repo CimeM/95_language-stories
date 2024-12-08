@@ -10,7 +10,7 @@ main:
     url: /newsletter/
     icon: "fas fa-fw fa-envelope-square"
   - title: "Collaborators"
-    url: /colaborators/
+    url: /collaborators/
 
   - title: "Login"
     url: "/login/"

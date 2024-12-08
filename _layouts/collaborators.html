@@ -57,8 +57,8 @@ layout: default
   <div class="container mt-4">
     <div class="row g-3">
 
-      {% assign active_collaborators = site.colaborators | where_exp: 'collaborator', 'collaborator.expiry_date > site.time or collaborator.expiry_date == null' %}
-      {% for colaborator in nonexpired_collaborators %}
+      {% assign active_collaborators = site.collaborators | where_exp: 'collaborator', 'collaborator.expiry_date > site.time or collaborator.expiry_date == null' %}
+      {% for collaborator in nonexpired_collaborators %}
       
         <div class="col-12 col-md-6">
           <div class="d-flex ">
@@ -66,25 +66,25 @@ layout: default
             <div class="flex-shrink-0">
               <img 
                 style="width: 15vw; aspect-ratio: 500 / 500; object-fit: cover;" 
-                class="rounded-4" src="{{ colaborator.image }}">
+                class="rounded-4" src="{{ collaborator.image }}">
             </div>
             
             <div class="flex-grow-1 ms-3 ">
               <p class="fw-bold mb-0">
-                <a href="https://www.instagram.com/{{ colaborator.title }}/">
-                  @{{ colaborator.title }} 
+                <a href="https://www.instagram.com/{{ collaborator.title }}/">
+                  @{{ collaborator.title }} 
                   <i class="bi bi-box-arrow-up-right"></i>
                 </a>
               </p>
-              <p class="fs-6 mb-1">{{ colaborator.description }}</p>
+              <p class="fs-6 mb-1">{{ collaborator.description }}</p>
               <p class="mb-0">
-                {% for lang in colaborator.spoken_language %}
+                {% for lang in collaborator.spoken_language %}
                   <span class="badge bg-success">{{ lang }}</span>
                 {% endfor %} ->
-                {% for lang in colaborator.teaching_language %}
+                {% for lang in collaborator.teaching_language %}
                   <span class="badge bg-primary">{{ lang }}</span>
                 {% endfor %}
-                {% for tag in colaborator.tags %}
+                {% for tag in collaborator.tags %}
                   <span class="badge bg-secondary">#{{ tag }}</span>
                 {% endfor %}
               </p>
@@ -101,10 +101,10 @@ layout: default
             </div>
             <div class="card-body">
               <h5 class="card-title">
-                Get promoted as a colaborator
+                Get promoted as a collaborator
               </h5>
               <p class="card-text">
-                Colaborators benefit from users visiting the page and colaborative campaigns.
+                Collaborators benefit from users visiting the page and collaborative campaigns.
               </p>
               <a href="https://www.instagram.com/fluent_french95/" class="btn btn-primary">Message me on Instagram</a>
             </div>

@@ -1,5 +1,5 @@
 ---
-layout: colaborators
-title: Colaborators
-permalink: /colaborators/
+layout: collaborators
+title: Collaborators
+permalink: /collaborators/
 ---

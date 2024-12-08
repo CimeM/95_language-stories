@@ -268,9 +268,9 @@ collections:
   social_posts:
     output: true
     permalink: /social_posts/:name/
-  colaborators:
+  collaborators:
     output: true
-    permalink: /colaborators/:name/
+    permalink: /collaborators/:name/
 
     
 # Plugins (previously gems:)
