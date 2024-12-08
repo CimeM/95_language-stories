@@ -120,7 +120,7 @@
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
                 signupForm.style.display = 'none';
-                loggedintitle.innerHTML = "Logged in as ${user.email}"
+                loggedintitle.innerHTML = `Logged in as ${user.email}`
                 apICallEnabled = true
             } else {
                 resultDiv.innerHTML = 'Not logged in';
@@ -278,8 +278,8 @@ async function saveEvent( idToken, user, eventData ) {
     }
 }
 
-const token = getToken()
-const user = getUser()
+const token = await getToken()
+const user = await getUser()
 
 if (apICallEnabled) {
     saveEvent(token, user, {"type": "winPoints", "amount":"1" })
