@@ -58,7 +58,7 @@ layout: default
     <div class="row g-3">
 
       {% assign active_collaborators = site.collaborators | where_exp: 'collaborator', 'collaborator.expiry_date > site.time or collaborator.expiry_date == null' %}
-      {% for collaborator in nonexpired_collaborators %}
+      {% for collaborator in active_collaborators %}
       
         <div class="col-12 col-md-6">
           <div class="d-flex ">

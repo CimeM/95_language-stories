@@ -29,3 +29,6 @@ footer:
   - title: "Newsletter"
     url: /newsletter/
     icon: "fas fa-fw fa-list-square"
+  - title: "SocialPosts"
+    url: /social_posts/
+    icon: "fas fa-fw fa-list-square"
