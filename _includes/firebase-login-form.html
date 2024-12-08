@@ -253,8 +253,8 @@ async function getUser() {
 
 async function saveEvent( idToken, user, eventData ) {
     const payload = { 
-        data: eventData, 
-        date: new Date().toISOString(), 
+        data: JSON.stringify(eventData), // Stringify the eventData
+        date: new Date().toISOString(),
         user: user.uid
     };
 
