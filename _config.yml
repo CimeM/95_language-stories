@@ -326,6 +326,11 @@ compress_html:
   ignore:
     envs: development
 
+# cookie consent
+after_footer_scripts:
+  - https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js
+  # - /assets/js/cookie-consent.js
+
 
 # Defaults
 defaults:
