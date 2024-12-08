@@ -16,7 +16,7 @@
 
     <!-- Logout Form -->
     <div id="logout-form" class="card p-4 mb-4">
-        <h3 class="text-center mb-4">Log out</h3>
+        <h3 class="text-center mb-4">You are logged in</h3>
         <button type="button" onclick="logout()" class="btn btn-success w-100">Log out</button>
     </div>
 
@@ -62,7 +62,7 @@
 
 <div id="result"></div>
 <script>
-
+    
 
     const showSignupButon = document.getElementById('show-signup')
     const showLoginButon = document.getElementById('show-login')
@@ -89,6 +89,7 @@
 
 </script>
 
+
 <script>
 
     // Your Firebase configuration
@@ -97,7 +98,8 @@
         // Add other configuration options here
     };
     
-    const api_address="{{ site.authentication.firebase.api_hostname }}"
+    const api_address="{{ site.apiurl }}"
+    // const api_address="{{ site.authentication.firebase.api_hostname }}"
     
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -107,6 +109,9 @@
     const passwordInput = document.getElementById('password');
     const resultDiv = document.getElementById('result');
     
+    const loggedintitle= document.querySelector("#logout-form > h3")
+
+    var apICallEnabled = false;
     // Check for existing session on page load
     document.addEventListener('DOMContentLoaded', () => {
         firebase.auth().onAuthStateChanged((user) => {
@@ -115,10 +120,13 @@
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
                 signupForm.style.display = 'none';
+                loggedintitle.innerHTML = "Logged in as ${user.email}"
+                apICallEnabled = true
             } else {
                 resultDiv.innerHTML = 'Not logged in';
                 logoutForm.style.display = 'none';
                 loginForm.style.display = 'block';
+                apICallEnabled = false
             }
         });
     });
@@ -215,4 +223,66 @@
             clearSessionCookie();
         }
     });
+</script>
+
+<script>
+
+async function getToken() {
+    const user = firebase.auth().currentUser;
+    if (user) {
+        try {
+            const idToken = await user.getIdToken(true);
+            return idToken;
+        } catch (error) {
+            console.log(error)
+            // resultDiv.innerHTML = `Error accessing protected content: ${error.message}`;
+        }
+    } else {
+        resultDiv.innerHTML = 'User not logged in';
+    }
+    return null;
+}
+async function getUser() {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+        resultDiv.innerHTML = 'User not logged in';
+        return;
+    }
+}
+
+async function saveEvent( idToken, user, eventData ) {
+    const payload = { 
+        data: eventData, 
+        date: new Date().toISOString(), 
+        user: user.uid
+    };
+
+    try {
+        const response = await fetch(api_address + '/api/users/events', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${idToken}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        resultDiv.innerHTML = `Event saved successfully: ${JSON.stringify(data)}`;
+    } catch (error) {
+        resultDiv.innerHTML = `Error saving event: ${error.message}`;
+    }
+}
+
+const token = getToken()
+const user = getUser()
+
+if (apICallEnabled) {
+    saveEvent(token, user, {"type": "winPoints", "amount":"1" })
+}
+
 </script>
