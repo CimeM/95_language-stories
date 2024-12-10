@@ -115,7 +115,7 @@ analytics:
 authentication:
   provider                : "firebase"
   firebase:
-    api_key              : "AIzaSyAcr0JlLKucSQfzEJmVRK8_0ETURHnrSb8"
+    api_key              : "AIzaSyBQeqVs_P3lCkxTb-nIYbRdtAPdMIhsrp8"
     api_hostname         : "localhost:3000"
 
 # Site Author
