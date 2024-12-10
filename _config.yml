@@ -117,6 +117,7 @@ authentication:
   firebase:
     api_key              : "AIzaSyBQeqVs_P3lCkxTb-nIYbRdtAPdMIhsrp8"
     api_hostname         : "localhost:3000"
+    google_client_id     : "923622118260-9ok60oae6oeia39vcdvurm06hio93i3l.apps.googleusercontent.com"
 
 # Site Author
 author:

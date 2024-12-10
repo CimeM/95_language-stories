@@ -2,6 +2,8 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
 
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <style>
     #signup-form {
         display: none;
@@ -31,6 +33,11 @@
                 <input type="password" class="form-control" id="login-password" placeholder="Password" required>
             </div>
             <button type="button" onclick="login()" class="btn btn-primary w-100">Login</button>
+            
+            {% if site.authentication.firebase.google_client_id  %}
+            <p style="text-align: center;" >--- OR ---</p>
+            <div id="googleSignInButton" style="display: flex; justify-content: center; align-items: center; height: 100%;"></div>
+            {% endif %}
         </form>
         <!-- Signup Button -->
         <div class="text-center mb-4">
@@ -140,6 +147,7 @@
 
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
+
                 setSessionCookie(userCredential.user);
                 resultDiv.innerHTML = `Signup successful for ${userCredential.user.email}`;
                 logoutForm.style.display = 'none';
@@ -158,6 +166,7 @@
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
+
                 setSessionCookie(userCredential.user);
                 resultDiv.innerHTML = `Login successful for ${userCredential.user.email}`;
                 logoutForm.style.display = 'block';
@@ -167,6 +176,40 @@
                 resultDiv.innerHTML = `Login error: ${error.message}`;
             });
     }
+
+    // Google login method
+    function handleCredentialResponse(response) {
+    const credential = firebase.auth.GoogleAuthProvider.credential(response.credential);
+    firebase.auth().signInWithCredential(credential)
+        .then((result) => {
+        // User signed in successfully
+        console.log("Signed in as:", result.user.displayName);
+        })
+        .catch((error) => {
+        // Handle errors
+        console.error("Error:", error);
+        });
+    }
+
+    window.onload = function() {
+        google.accounts.id.initialize({
+            client_id: "{{ site.authentication.firebase.google_client_id }}",
+            callback: handleCredentialResponse
+        }); 
+        google.accounts.id.renderButton(
+            document.getElementById("googleSignInButton"),
+            { theme: "outline", size: "large" }
+        );
+    };
+    firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in
+            console.log("User is signed in:", user.displayName);
+        } else {
+            // User is signed out
+            console.log("User is signed out");
+        }
+    });
     
     // Logout function
     function logout() {
