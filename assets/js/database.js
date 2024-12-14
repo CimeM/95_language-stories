@@ -23,7 +23,7 @@ class Syncable {
         this._data = data;
         this.userId = userId;
         this.storageKey = userId ? `${storageKey}_${userId}` : storageKey;
-        this.apiEndpoint = '{{ site.apiurl }}/data';
+        this.apiEndpoint = "{{ site.apiurl }}/data";
         this.syncQueue = [];
         this.isSyncing = true;
         this.version = 0;
@@ -176,7 +176,7 @@ class Syncable {
                 this.processQueue();
                 this.fetchLatestData();
             }
-        }, 600000); // 10 minutes
+        }, 30000); // 10 min = 600000
     }
 }
 
