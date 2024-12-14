@@ -105,8 +105,7 @@ class Syncable {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${this.getAuthToken()}`
                 },
-                body: JSON.stringify({ 
-	                userId: this.userId,
+                body: JSON.stringify({
 	                className: this.className,
 	                batch: batch 
                 }),
@@ -131,7 +130,7 @@ class Syncable {
         if (!this.isOnline) return;
 
         try {
-            const response = await fetch(`${this.apiEndpoint}?userId=${this.userId}&version=${this.version}`, {
+            const response = await fetch(`${this.apiEndpoint}?version=${this.version}&className=${this.className}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${this.getAuthToken()}`
