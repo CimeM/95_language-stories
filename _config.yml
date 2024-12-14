@@ -109,15 +109,15 @@ social:
 analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "G-6Q86J1SQWR"
+    tracking_id          : "G-BQ02FCHPWL"
     anonymize_ip         : true # true, false (default)
 
 authentication:
   provider                : "firebase"
   firebase:
-    api_key              : "AIzaSyBQeqVs_P3lCkxTb-nIYbRdtAPdMIhsrp8"
+    api_key              : "AIzaSyBrrDkXi70FizXW3U-fus-mAWyZTlKfSzE"
     api_hostname         : "localhost:3000"
-    google_client_id     : "923622118260-9ok60oae6oeia39vcdvurm06hio93i3l.apps.googleusercontent.com"
+    google_client_id     : "826420633708-0ttj0oboq46huq2j3gosgubea68go2pd.apps.googleusercontent.com"
 
 # Site Author
 author:
