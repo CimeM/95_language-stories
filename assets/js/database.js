@@ -30,7 +30,7 @@ class Syncable {
         this.isOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
 
-        this.logging = false;
+        this.logging = true;
 
         this.loadData();
         this.startPeriodicSync();
@@ -184,4 +184,3 @@ const mySyncableData = new Syncable({ name: 'Alice', age: 30 });
 
 // Update properties which will trigger sync and save to localForage
 mySyncableData.data = { name: 'Bob' }; // This will trigger sync and save locally
-mySyncableData.data = { age: 31 }; // This will also trigger sync and save locally
