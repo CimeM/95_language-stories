@@ -128,7 +128,7 @@ class Syncable {
 
     async fetchLatestData() {
         if (!this.isOnline) return;
-
+    
         try {
             const response = await fetch(`${this.apiEndpoint}?version=${this.version}&className=${this.className}`, {
                 method: 'GET',
@@ -136,7 +136,7 @@ class Syncable {
                     'Authorization': `Bearer ${this.getAuthToken()}`
                 }
             });
-
+    
             if (!response.ok) throw new Error('Network response was not ok');
             const serverData = await response.json();
             this.mergeServerData(serverData);
@@ -144,6 +144,7 @@ class Syncable {
             console.error('Error fetching latest data:', error);
         }
     }
+    
 
     mergeServerData(serverData) {
         if (serverData.version > this.version) {
