@@ -23,7 +23,7 @@ class Syncable {
         this._data = data;
         this.userId = userId;
         this.storageKey = userId ? `${storageKey}_${userId}` : storageKey;
-        this.apiEndpoint = "{{ site.apiurl }}/data";
+        this.apiEndpoint = "https://langapi.rivieraapps.com/data";
         this.syncQueue = [];
         this.isSyncing = true;
         this.version = 0;
