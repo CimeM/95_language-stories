@@ -103,7 +103,7 @@ class Syncable {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${this.getAuthToken()}`
+                    'Authorization': `Bearer ${await this.getAuthToken()}`
                 },
                 body: JSON.stringify({
 	                className: this.className,
@@ -133,7 +133,7 @@ class Syncable {
             const response = await fetch(`${this.apiEndpoint}?version=${this.version}&className=${this.className}`, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${this.getAuthToken()}`
+                    'Authorization': `Bearer ${await this.getAuthToken()}`
                 }
             });
     
@@ -154,9 +154,21 @@ class Syncable {
         }
     }
 
-    getAuthToken() {
+    async getAuthToken() {
         // Implement your authentication token retrieval logic here
-        return 'your-auth-token';
+        const user = firebase.auth().currentUser;
+        if (user) {
+            try {
+                const idToken = await user.getIdToken(true);
+                return idToken;
+            } catch (error) {
+                console.log(error)
+            }
+        } else {
+            console.log('User not logged in');
+            return null;
+        }
+        return null;
     }
 
     setupNetworkListeners() {
