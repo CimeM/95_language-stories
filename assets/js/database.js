@@ -203,7 +203,7 @@ class Syncable {
                 this.processQueue();
                 this.fetchLatestData();
             }
-        }, 30000); // 10 min = 600000
+        }, 600000); // 10 min = 600000
     }
 }
 
