@@ -35,6 +35,9 @@ class Syncable {
         this.loadData();
         this.startPeriodicSync();
         this.setupNetworkListeners();
+
+        this.token = null;
+        this.tokenExpiration = null;
     }
 
     log(...args) {
@@ -128,9 +131,9 @@ class Syncable {
 
     async fetchLatestData() {
         if (!this.isOnline) return;
-    
+        
         try {
-            const response = await fetch(`${this.apiEndpoint}?version=${this.version}&className=${this.className}`, {
+            const response = await fetch(`${this.apiEndpoint}?className=${this.className}&version=${this.version}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${await this.getAuthToken()}`
@@ -155,20 +158,32 @@ class Syncable {
     }
 
     async getAuthToken() {
-        // Implement your authentication token retrieval logic here
+        // Check if we have a valid token
+        if (this.token && this.tokenExpiration && Date.now() < this.tokenExpiration) {
+            return this.token;
+        }
+
+        // If not, get a new token
         const user = firebase.auth().currentUser;
         if (user) {
             try {
                 const idToken = await user.getIdToken(true);
+                
+                // Store the token
+                this.token = idToken;
+                
+                // Set expiration time (Firebase tokens typically expire in 1 hour)
+                this.tokenExpiration = Date.now() + 55 * 60 * 1000; // 55 minutes
+
                 return idToken;
             } catch (error) {
-                console.log(error)
+                console.error('Error getting auth token:', error);
+                return null;
             }
         } else {
             console.log('User not logged in');
             return null;
         }
-        return null;
     }
 
     setupNetworkListeners() {
