@@ -7,6 +7,7 @@ gem "jekyll-sitemap"
 gem "jekyll-gist"
 gem "jekyll-feed"
 gem "jekyll-include-cache"
+gem "jekyll-redirect-from"
 
 # gem "rouge", "~> 4.4.0"
 gem "webrick", "~> 1.8.2"
