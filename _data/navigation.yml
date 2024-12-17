@@ -32,3 +32,6 @@ footer:
   - title: "SocialPosts"
     url: /social_posts/
     icon: "fas fa-fw fa-list-square"
+  - title: "Time Trials"
+    url: /time_trials/
+    icon: "fas fa-fw fa-list-square"

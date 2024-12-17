@@ -1,0 +1,308 @@
+---
+layout: default
+---
+
+<div id="" role="main">
+    <div class="mt-5">
+
+        {% unless page.header.overlay_color or page.header.overlay_image %}
+            <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
+        {% endunless %}
+        
+        <div id="languageLevelSelector">
+        {% for tt in site.time_trials  %}
+            <h2>{{ tt.language }}</h2>
+            <div class=" ">
+            {% for level in tt.levels  %}
+            <button type="button" class="btn btn-primary btn-lg btn-block" 
+                    onclick="
+                        setData(  {{ level.phrases | jsonify | escape }})
+                        gameStart();
+                    ">
+                    {{ level.name }}
+                </button>
+            {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+
+    
+        
+        <div id="timetrialGameboard" class="row mt-4" style="display: none;">
+            <div class="timer mb-2" role="progressbar" aria-label="Default striped example" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success rounded" role="progressbar" style="width: 100%" 
+                    aria-valuenow="25" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100">
+                    30s
+                </div>
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 text-center">
+                        <h3>Lives: <p id="lives">N/A</p></h3>
+                    </div>
+                    <div class="col-6 text-center">
+                        <h3>Score: <p id="score">0p</p></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="columns">
+                <div class="col-6" id="frenchColumn"></div>
+                <div class="col-6" id="englishColumn"></div>
+            </div>
+        </div>
+
+        <div id="rewardScreen" class="text-center mt-5" style="display: none;">
+            <div id="animation" ><img src="/assets/images/medal-silver.png"></div>
+            
+            <div id="finalscore" class="fs-2 mt-5"></div>
+            
+            <div id="actionitems" style="display: none;">
+                <p>Save your points, log in</p>
+                <a href="/login" class="btn btn-success">Log in/Sign Up</a>
+            </div>
+
+            <div id="navigation" class="mt-3" style="display: block;">
+                
+                <a class="btn btn-secondary" onclick="restartGame()">Restart the game</a>
+            </div>
+
+        </div>
+
+        <script>
+            const timeTrials = new Syncable({ 
+                dailyGameCounter: 3 
+            });
+
+            var phrases = [
+                { french: "Bonjour", english: "Hello" },
+                { french: "Au revoir", english: "Goodbye" },
+                { french: "Merci", english: "Thank you" },
+                { french: "S'il vous plaît", english: "Please" },
+                { french: "Comment allez-vous?", english: "How are you?" },
+                { french: "Je m'appelle", english: "My name is" },
+                { french: "Enchanté", english: "Nice to meet you" },
+                { french: "Oui", english: "Yes" },
+                { french: "Non", english: "No" },
+                { french: "Excusez-moi", english: "Excuse me" },
+                { french: "Pardon", english: "Sorry" },
+                { french: "Bonne nuit", english: "Good night" },
+                { french: "À bientôt", english: "See you soon" },
+                { french: "Je ne comprends pas", english: "I don't understand" },
+                { french: "Parlez-vous anglais?", english: "Do you speak English?" },
+                { french: "Bon appétit", english: "Enjoy your meal" },
+                { french: "Santé!", english: "Cheers!" },
+                { french: "Je t'aime", english: "I love you" },
+                { french: "Bonne chance", english: "Good luck" },
+                { french: "Félicitations", english: "Congratulations" }
+            ];
+            
+            let currentPhrases = [];
+            let selectedPhrase = null;
+            let score = 0;
+            let lives = 3;
+            let timerInitialValue = 30
+            let timeLeft = timerInitialValue;
+            let timerInterval;
+            
+            function setData(input_phrases){
+                phrases = input_phrases;
+            }
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            function createColumns(){
+                var languages = Object.keys(phrases[0]);
+                var columnsDIV = document.getElementById("columns")
+                // empty the columns
+                columnsDIV.innerHTML = '';
+                languages.forEach(lang => {
+                    columnsDIV.innerHTML += `<div class="col-6" id="${lang}Column"></div>`
+                })
+                
+            }
+            
+            function selectPhrase(language, phrase) {
+                if (selectedPhrase === null) {
+                    console.log("select phrase", language, phrase)
+                    selectedPhrase = { language, phrase };
+                    phrase = phrase.replace(/[^A-Za-z0-9]/g, '');
+                    var btn = document.querySelector(`#${language}Column .phrase-btn[data-phrase="${phrase}"]`);
+                    btn.classList.add('selected')
+                } else {
+                    console.log("match phrase", language, phrase)
+                    // if the phrase is selected from the opposite column
+                    if (selectedPhrase.language !== language) {
+                        console.log("compare", selectedPhrase, { language, phrase } )
+                        checkMatch(selectedPhrase, { language, phrase });
+                    }
+                    clearSelection();
+                }
+            }
+            
+            function checkMatch(first, second) {
+                var languages = Object.keys(currentPhrases[0]);
+                
+                const matchIndex = currentPhrases.findIndex(p => 
+                    (p[languages[0]].replace(/[^A-Za-z0-9]/g, '') === first.phrase && p[languages[1]].replace(/[^A-Za-z0-9]/g, '') === second.phrase) ||
+                    (p[languages[1]].replace(/[^A-Za-z0-9]/g, '') === first.phrase && p[languages[0]].replace(/[^A-Za-z0-9]/g, '') === second.phrase)
+                );
+
+                console.log("checking match:", second.phrase, first.phrase , matchIndex)
+            
+                if (matchIndex !== -1) {
+                    score++;
+                    document.getElementById('score').textContent = String(score)+"p";
+                    currentPhrases.splice(matchIndex, 1);
+                    console.log("{currentPhrases[matchIndex", currentPhrases[matchIndex] )
+
+                    var btn1 = document.querySelector(`#${first.language}Column .phrase-btn[data-phrase="${first.phrase}"]`)
+                    // btn1.remove();
+                    btn1.classList.add("disabled")
+                    btn1.classList.remove("btn-primary")
+                    btn1.classList.remove("btn-secondary")
+                    var btn2 = document.querySelector(`#${second.language}Column .phrase-btn[data-phrase="${second.phrase}"]`)
+                    btn2.classList.add("disabled")
+                    btn2.classList.remove("btn-primary")
+                    btn2.classList.remove("btn-secondary")
+
+                    // btn2.remove();
+
+                    if (currentPhrases.length === 0) {
+                        loadNewPhrases();
+                    }
+                } else {
+                    lives--;
+                    setLivesinUI(lives);
+                    if (lives === 0) {
+                        endGame();
+                    }
+                }
+            }
+            
+            function setLivesinUI( lives ){
+                document.getElementById('lives').textContent = "";
+                for (let index = 0; index < lives; index++) {
+                    document.getElementById('lives').textContent += "❤️";
+                    
+                }
+            }
+            
+            function clearSelection() {
+                selectedPhrase = null;
+                document.querySelectorAll('.phrase-btn').forEach(btn => btn.classList.remove('selected'));
+            }
+            
+            function selectRandomPhrases(max){
+                const shuffled = [...phrases].sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, max);
+            }
+            function loadNewPhrases() {
+                currentPhrases = selectRandomPhrases(5);
+                
+                var languages = Object.keys(currentPhrases[0]);
+                
+                // empty the columns
+                languages.forEach(lang => {
+                    var column = document.getElementById(`${lang}Column`);
+                    column.innerHTML = ''
+                })
+                
+                currentPhrases.forEach(phrase => {
+                    languages.forEach(lang => {
+                        column = document.getElementById(`${lang}Column`);
+                        column.innerHTML += createBTN(lang, phrase[lang]);
+                    })
+                });
+                
+                shuffleChildren(englishColumn)
+            }
+
+            function createBTN(language, phrase){
+                var alphaNumericalPhrase =  phrase.replace(/[^A-Za-z0-9]/g, '')
+                return `<button class="phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}')" style="width: 100%;">${phrase}</button>`
+            }
+            
+            function shuffleChildren(parent) {
+                const children = Array.from(parent.children).filter(child => child.tagName !== 'BR');
+                let currentIndex = children.length;
+
+                while (currentIndex > 0) {
+                    const randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+                    [children[currentIndex], children[randomIndex]] = [children[randomIndex], children[currentIndex]];
+                }
+
+                parent.innerHTML = '';
+                children.forEach(child => parent.appendChild(child));
+            }
+
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    var bar = document.querySelector('.timer > .progress-bar')
+                    bar.textContent = String(timeLeft)+"s";
+                    var percent = ((timeLeft/timerInitialValue))*100
+                    bar.style.width = String(percent)+"%";
+
+                    if (timeLeft === 10) {
+                        bar.classList.remove("bg-success");
+                        bar.classList.add("bg-warning");
+                    }
+
+                    if (timeLeft === 5) {
+                        bar.classList.remove("bg-warning");
+                        bar.classList.add("bg-danger");
+                    }
+
+                    if (timeLeft === 0) {
+                        endGame();
+                    }
+                }, 1000);
+            }
+            
+            function endGame() {
+                console.log("endGame")
+                clearInterval(timerInterval);
+                document.getElementById("rewardScreen").style.display="block"
+                document.getElementById("timetrialGameboard").style.display="none"
+                
+                document.querySelector("#rewardScreen > #finalscore").innerHTML=`Game Over! Your score: ${score}`
+
+                // if not logged in show the login button
+                document.querySelector("#rewardScreen > #actionitems").style.display="block"
+
+                
+            }
+            function restartGame(){
+                score = 0
+                lives = 3;
+                timeLeft = timerInitialValue;
+                document.getElementById("rewardScreen").style.display="none"
+                document.getElementById("timetrialGameboard").style.display="none"
+                document.getElementById("languageLevelSelector").style.display="block"
+
+            }
+
+            function gameStart(){
+                document.getElementById("rewardScreen").style.display="none"
+                document.getElementById("timetrialGameboard").style.display="block"
+                document.getElementById("languageLevelSelector").style.display="none"
+                // Initialize the game
+                createColumns();
+                setLivesinUI(lives);
+                loadNewPhrases();
+                startTimer();
+            }
+
+            // gameStart()
+        </script>
+    </div>
+</div>

@@ -270,6 +270,9 @@ collections:
   social_posts:
     output: true
     permalink: /social_posts/:name/
+  time_trials:
+    output: true
+    permalink: /time_trial/:name/
   collaborators:
     output: true
     permalink: /collaborators/:name/
