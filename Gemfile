@@ -10,7 +10,7 @@ gem "jekyll-include-cache"
 gem "jekyll-redirect-from"
 
 # gem "rouge", "~> 4.4.0"
-gem "webrick", "~> 1.8.2"
+gem "webrick", "~> 1.9.1"
 gem "json", "~> 2.7.5"
 gem "net-http", "~> 0.4.1"
 gem "uri", "~> 0.13.1"
