@@ -13,7 +13,7 @@ gem "jekyll-redirect-from"
 gem "webrick", "~> 1.8.2"
 gem "json", "~> 2.7.5"
 gem "net-http", "~> 0.4.1"
-gem "uri", "~> 0.13.1"
+gem "uri", "~> 1.0.2"
 
 gem "faraday", "2.12.0"
 gem "logger", "1.6.1"
