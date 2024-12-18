@@ -17,3 +17,5 @@ gem "uri", "~> 0.13.1"
 
 gem "faraday", "2.12.0"
 gem "logger", "1.6.1"
+
+gem  "rexml", "3.3.9"

@@ -102,7 +102,7 @@ class Syncable {
         const batch = this.syncQueue.splice(0, batchSize);
 
         try {
-            const response = await fetch(this.apiEndpoint, {
+            const response = await fetch(this.apiEndpoint + "/data", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ class Syncable {
         if (!this.isOnline) return;
         
         try {
-            const response = await fetch(`${this.apiEndpoint}?className=${this.className}&version=${this.version}`, {
+            const response = await fetch(`${this.apiEndpoint}/data?className=${this.className}&version=${this.version}`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${await this.getAuthToken()}`
