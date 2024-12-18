@@ -25,12 +25,12 @@ class Syncable {
         this.storageKey = userId ? `${storageKey}_${userId}` : storageKey;
         this.apiEndpoint = document.querySelector("#apiadress").innerHTML;
         this.syncQueue = [];
-        this.isSyncing = true;
+        this.isSyncing = false;
         this.version = 0;
         this.isOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
 
-        this.logging = false;
+        this.logging = true;
 
         this.loadData();
         this.startPeriodicSync();
