@@ -21,6 +21,14 @@
   
 </script>
 
+
+{% if site.authentication.firebase.api_key %}
+<script src="/assets/js/Auth.js"></script>
+<script>
+  const authManager = new FirebaseAuthManager("{{ site.authentication.firebase.api_key }}");
+</script>
+{% endif %}
+
 <!-- this is designed to be consumed by database.js -->
 <div id="apiadress" style="display: none;">{{ site.apiurl }}</div>
 <script src="https://cdn.jsdelivr.net/npm/localforage@1.9.0/dist/localforage.min.js"></script>

@@ -65,8 +65,6 @@
 
 <div id="result"></div>
 <script>
-    
-
     const showSignupButon = document.getElementById('show-signup')
     const showLoginButon = document.getElementById('show-login')
     showLoginButon.style.display = 'none';
@@ -74,7 +72,6 @@
     const logoutForm = document.getElementById('logout-form')
     const loginForm = document.getElementById('login-form')
     const signupForm = document.getElementById('signup-form')
-
 
     showSignupButon.addEventListener('click', function() {
         document.getElementById('login-form').style.display = 'none';
@@ -93,239 +90,99 @@
 </script>
 
 
-<script>
+{% if site.authentication.firebase.api_key %}
+    <script>
 
-    // Your Firebase configuration
-    const firebaseConfig = {
-        apiKey: "{{ site.authentication.firebase.api_key }}",
-        // Add other configuration options here
-    };
-    
-    const api_address="{{ site.apiurl }}"
-    // const api_address="{{ site.authentication.firebase.api_hostname }}"
-    
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    
-    // Get elements
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const resultDiv = document.getElementById('result');
-    
-    const loggedintitle= document.querySelector("#logout-form > h3")
+        // Get HTML objects
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const resultDiv = document.getElementById('result');
+        const loggedintitle= document.querySelector("#logout-form > h3")
 
-    var apICallEnabled = false;
-    // Check for existing session on page load
-    document.addEventListener('DOMContentLoaded', () => {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                resultDiv.innerHTML = `Logged in as ${user.email}`;
-                logoutForm.style.display = 'block';
-                loginForm.style.display = 'none';
-                signupForm.style.display = 'none';
-                loggedintitle.innerHTML = `Logged in as ${user.email}`
-                apICallEnabled = true
-            } else {
-                resultDiv.innerHTML = 'Not logged in';
-                logoutForm.style.display = 'none';
-                loginForm.style.display = 'block';
-                apICallEnabled = false
-            }
+
+        // Check for existing session on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            if (authManager.checkSessionToken()){
+                    // resultDiv.innerHTML = `Logged in as ${user.email}`;
+                    logoutForm.style.display = 'block';
+                    loginForm.style.display = 'none';
+                    signupForm.style.display = 'none';
+                    // loggedintitle.innerHTML = `Logged in as ${user.email}`
+                    apICallEnabled = true
+                } else {
+                    resultDiv.innerHTML = 'Not logged in';
+                    logoutForm.style.display = 'none';
+                    loginForm.style.display = 'block';
+                    apICallEnabled = false
+                }
+            // });
         });
-    });
-    
-    // Sign up function
-    function signUp() {
-        const email = document.getElementById('signup-email').value;
-        const password = document.getElementById('signup-password').value;
+        
+        // Sign up function
+        async function signUp() {
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-
-                setSessionCookie(userCredential.user);
-                resultDiv.innerHTML = `Signup successful for ${userCredential.user.email}`;
-                logoutForm.style.display = 'none';
-                loginForm.style.display = 'block';
-                signupForm.style.display = 'none';
-            })
-            .catch((error) => {
-                resultDiv.innerHTML = `Signup error: ${error.message}`;
-            });
-    }
-    
-    // Login function
-    function login() {
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
-
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-
-                setSessionCookie(userCredential.user);
-                resultDiv.innerHTML = `Login successful for ${userCredential.user.email}`;
-                logoutForm.style.display = 'block';
-                loginForm.style.display = 'none';
-            })
-            .catch((error) => {
-                resultDiv.innerHTML = `Login error: ${error.message}`;
-            });
-    }
-
-    // Google login method
-    function handleCredentialResponse(response) {
-    const credential = firebase.auth.GoogleAuthProvider.credential(response.credential);
-    firebase.auth().signInWithCredential(credential)
-        .then((result) => {
-        // User signed in successfully
-        console.log("Signed in as:", result.user.displayName);
-        })
-        .catch((error) => {
-        // Handle errors
-        console.error("Error:", error);
-        });
-    }
-
-    window.onload = function() {
-        google.accounts.id.initialize({
-            client_id: "{{ site.authentication.firebase.google_client_id }}",
-            callback: handleCredentialResponse
-        }); 
-        google.accounts.id.renderButton(
-            document.getElementById("googleSignInButton"),
-            { theme: "outline", size: "large" }
-        );
-    };
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            // User is signed in
-            console.log("User is signed in:", user.displayName);
-        } else {
-            // User is signed out
-            console.log("User is signed out");
-        }
-    });
-    
-    // Logout function
-    function logout() {
-        firebase.auth().signOut()
-            .then(() => {
-                clearSessionCookie();
-                resultDiv.innerHTML = 'Logged out successfully';
-                logoutForm.style.display = 'none';
-                loginForm.style.display = 'block';
-            })
-            .catch((error) => {
-                resultDiv.innerHTML = `Logout error: ${error.message}`;
-            });
-    }
-    
-    // Access protected content
-    async function accessProtectedContent() {
-        const user = firebase.auth().currentUser;
-        if (user) {
             try {
-                const idToken = await user.getIdToken(true);
-                const response = await fetch(api_address + '/api/users/protected', {
-                    headers: {
-                        'Authorization': `Bearer ${idToken}`
-                    }
-                });
-                const data = await response.json();
-                resultDiv.innerHTML = `Protected content: ${JSON.stringify(data)}`;
+                authManager.signup(email, password)
+                await authManager.signup(email, password);
+                logoutForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
             } catch (error) {
-                resultDiv.innerHTML = `Error accessing protected content: ${error.message}`;
+                console.error('Signup failed:', error.message);
+                resultDiv.innerHTML = `Signup failed: ${error.message}`;
             }
-        } else {
-            resultDiv.innerHTML = 'User not logged in';
         }
-    }
+        
+        // Login function
+        async function login() {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const user = await authManager.login(email, password);
+                resultDiv.innerHTML = `Login successful for ${user.email}`;
+                logoutForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } catch (error) {
+                console.error('Login failed:', error.message);
+                resultDiv.innerHTML = `Login error: ${error.message}`;
+            }
+        }
+        // Logout function
+        function logout() {
+            authManager.logout();
+        }
+
+        // Google login method
+        function handleCredentialResponse(response) {
+            const credential = firebase.auth.GoogleAuthProvider.credential(response.credential);
+            try{
+                authManager.signInWithCredential(credential)
+            }catch( error) {
+                console.error('Login failed:', error.message);
+            }
+        }
+
+        window.onload = function() {
+            google.accounts.id.initialize({
+                client_id: "{{ site.authentication.firebase.google_client_id }}",
+                callback: handleCredentialResponse
+            }); 
+            google.accounts.id.renderButton(
+                document.getElementById("googleSignInButton"),
+                { theme: "outline", size: "large" }
+            );
+        };
+        
+        
     
-    // Set session cookie
-    function setSessionCookie(user) {
-        user.getIdToken(true).then((idToken) => {
-            document.cookie = `session=${idToken}; path=/; max-age=3600; SameSite=Strict; Secure`;
-        });
-    }
-    
-    // Clear session cookie
-    function clearSessionCookie() {
-        document.cookie = 'session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Strict; Secure';
-    }
-    
-    // Token renewal
-    firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-            setSessionCookie(user);
-        } else {
-            clearSessionCookie();
-        }
-    });
-</script>
+    </script>
+{% else %}
+<div>
+    You must provide site.authentication.firebase.api_key to enable login functions
+</div> 
+{% endif %}
 
-<script>
 
-async function getToken() {
-    const user = firebase.auth().currentUser;
-    if (user) {
-        try {
-            const idToken = await user.getIdToken(true);
-            return idToken;
-        } catch (error) {
-            console.log(error)
-            // resultDiv.innerHTML = `Error accessing protected content: ${error.message}`;
-        }
-    } else {
-        resultDiv.innerHTML = 'User not logged in';
-    }
-    return null;
-}
-async function getUser() {
-    const user = firebase.auth().currentUser;
-    if (!user) {
-        resultDiv.innerHTML = 'User not logged in';
-        return null;
-    }
-    return user;
-}
-
-async function saveEvent( idToken, user, eventData ) {
-    const payload = { 
-        data: JSON.stringify(eventData), // Stringify the eventData
-        date: new Date().toISOString(),
-        user: user.uid
-    };
-
-    try {
-        const response = await fetch(api_address + '/api/users/events', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${idToken}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        resultDiv.innerHTML = `Event saved successfully: ${JSON.stringify(data)}`;
-    } catch (error) {
-        resultDiv.innerHTML = `Error saving event: ${error.message}`;
-    }
-}
-
-async function main() {
-
-    const token = await getToken()
-    const user = await getUser()
-    if (token && user) {
-        if (apICallEnabled) {
-            saveEvent(token, user, {"type": "winPoints", "amount":"1" })
-        }
-    }
-
-}
-
-</script>
