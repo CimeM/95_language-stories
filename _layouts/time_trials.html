@@ -264,6 +264,8 @@ layout: default
 
                     if (timeLeft === 0) {
                         endGame();
+                        bar.classList.remove("bg-danger");
+                        bar.classList.add("bg-success");
                     }
                 }, 1000);
             }
@@ -278,7 +280,7 @@ layout: default
 
                 // if not logged in show the login button
                 document.querySelector("#rewardScreen > #actionitems").style.display="block"
-
+                saveUserPoints(score)
                 
             }
             function restartGame(){
@@ -300,6 +302,14 @@ layout: default
                 setLivesinUI(lives);
                 loadNewPhrases();
                 startTimer();
+            }
+            function saveUserPoints(pointsToSave){
+                if( user != undefined ){
+                    user.addPoints(pointsToSave);
+                }else{
+                    console.log("user not defined", user)
+                    // user not defined
+                }
             }
 
             // gameStart()

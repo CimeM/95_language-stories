@@ -1,20 +1,3 @@
-// get token from authetication entity (firebase)
-async function autoLoginn() {
-    const user = firebase.auth().currentUser;
-    if (user) {
-        try {
-            const idToken = await user.getIdToken(true);
-            return idToken;
-        } catch (error) {
-            console.log(error)
-        }
-    } else {
-        console.log('User not logged in');
-        return null;
-    }
-    return null;
-}
-
 document.cookie = "SIDCC=value; SameSite=Lax; Secure";
 document.cookie = "__Secure-1PSIDCC=value; SameSite=None; Secure";
 
@@ -101,6 +84,7 @@ class Syncable {
         const batchSize = 10;
         const batch = this.syncQueue.splice(0, batchSize);
 
+        this.log("syncing with API using token:", this.token)
         try {
             const response = await fetch(this.apiEndpoint + "/data", {
                 method: 'POST',
@@ -117,9 +101,9 @@ class Syncable {
             if (!response.ok) throw new Error('Network response was not ok');
             const serverData = await response.json();
             this.mergeServerData(serverData);
-            this.log('Batch synced successfully:', serverData);
+            this.log('Batch synced successfully with API:', serverData);
         } catch (error) {
-            this.error('Error syncing batch:', error);
+            console.error('Error syncing batch:', error);
             this.syncQueue.unshift(...batch);
         } finally {
             this.isSyncing = false;
