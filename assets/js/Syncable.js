@@ -2,7 +2,7 @@ document.cookie = "SIDCC=value; SameSite=Lax; Secure";
 document.cookie = "__Secure-1PSIDCC=value; SameSite=None; Secure";
 
 class Syncable {
-    constructor(data = {}, storageKey = 'syncableData', userId = null) {
+    constructor(data = {}, storageKey = 'syncableData', userId = null, token='', tokenExpiration='') {
         this._data = data;
         this.userId = userId;
         this.storageKey = userId ? `${storageKey}_${userId}` : storageKey;
@@ -13,14 +13,18 @@ class Syncable {
         this.isOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
 
-        this.logging = true;
+        
+        this.logging = false;
+        
+        this.initialized = false;
 
-        this.loadData();
+        // create promisse to collect data at least from local storage
+        this.dataInitializePromise = this.loadData();
         this.startPeriodicSync();
         this.setupNetworkListeners();
-
-        this.token = null;
-        this.tokenExpiration = null;
+        
+        this.token = token;
+        this.tokenExpiration = tokenExpiration;
     }
 
     log(...args) {
@@ -30,6 +34,8 @@ class Syncable {
     }
 
     async loadData() {
+        
+        
         try {
             const storedData = await localforage.getItem(this.storageKey);
             if (storedData) {
@@ -40,6 +46,7 @@ class Syncable {
         } catch (error) {
             console.error('Error loading data from localForage:', error);
         }
+        this.initialized = true;
     }
 
     get data() {

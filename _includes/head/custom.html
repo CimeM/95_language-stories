@@ -36,12 +36,12 @@
 
 <script src="/assets/js/User.js"></script>
 <script>
-  // create user
-  var user = new UserAccount(authManager.token);
+  // create user here to be initialized early in the loading process
+  var user = new UserAccount(authManager.sessionToken, new Date() );
 </script>
 
 <script src="/assets/js/calendar-contributions-map/moment.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/assets/js/calendar-contributions-map/d3.v3.min.js"></script>
 <script src="/assets/js/calendar-contributions-map/calendar-contributions-map.js"></script>
 <link  href="/assets/js/calendar-contributions-map/calendar-contributions-map.css" rel="stylesheet" >
 

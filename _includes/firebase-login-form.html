@@ -131,7 +131,7 @@
                 signupForm.style.display = 'none';
             } catch (error) {
                 console.error('Signup failed:', error.message);
-                resultDiv.innerHTML = `Signup failed: ${error.message}`;
+                resultDiv.innerHTML = `Signup failed 🤔: ${error.message}`;
             }
         }
         
@@ -142,17 +142,25 @@
 
             try {
                 const user = await authManager.login(email, password);
-                resultDiv.innerHTML = `Login successful for ${user.email}`;
+                resultDiv.innerHTML = `Login successful for ${user.email} 🫡`;
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
             } catch (error) {
                 console.error('Login failed:', error.message);
-                resultDiv.innerHTML = `Login error: ${error.message}`;
+                resultDiv.innerHTML = `Login error: ${error.message} 🫨`;
             }
         }
         // Logout function
         function logout() {
-            authManager.logout();
+            if (authManager.logout()){
+                logoutForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+                resultDiv.innerHTML = `You have logged out 🥲`;
+            }else{
+                resultDiv.innerHTML = `Something went wrong when logging you out 🫨`;
+                // logoff didn't work correcctly -> show error
+            }
         }
 
         // Google login method

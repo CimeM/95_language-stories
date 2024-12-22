@@ -2,15 +2,16 @@
 
 class FirebaseAuthManager {
     constructor(apikey = '') {
-        this.firebaseConfig={ apiKey: "AIzaSyBrrDkXi70FizXW3U-fus-mAWyZTlKfSzE" };
+        this.firebaseConfig={ apiKey: apikey };
         // this.firebaseapi_key="{{ site.authentication.firebase.api_key }}";
         this.app = firebase.initializeApp(this.firebaseConfig);
         this.auth = firebase.auth();
         this.user = null;
         this.sessionToken = null;
+        this.sessionTokenExpiration = null;
 
         this.logging = false;
-        
+        this.checkSessionToken()        
         // this.initAuthStateListener();
     }
 
@@ -27,6 +28,7 @@ class FirebaseAuthManager {
           this.user = user;
           this.sessionToken = user.accessToken;
           this.setCookie('sessionToken', this.sessionToken);
+          this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
           this.log('User is signed in');
         } else {
           this.user = null;
@@ -70,14 +72,17 @@ class FirebaseAuthManager {
       }
     }
   
-    async logoff() {
+    async logout() {
       try {
         await this.auth.signOut(this.auth);
+        this.clearCookie('sessionToken');
         this.log('User logged out successfully');
+        return true;
       } catch (error) {
-        console.error('Logoff error:', error.message);
+        console.error('Logout error:', error.message);
         throw error;
       }
+      return false;
     }
   
     async renewToken() {
@@ -87,6 +92,7 @@ class FirebaseAuthManager {
           const newToken = await currentUser.getIdToken(true);
           this.sessionToken = newToken;
           this.setCookie('sessionToken', newToken);
+          this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
           this.log('Token renewed successfully');
           return newToken;
         } else {
@@ -100,17 +106,20 @@ class FirebaseAuthManager {
   
     checkSessionToken() {
       const cookieToken = this.getCookie('sessionToken');
-      this.log("cookieToken", cookieToken)
-      if (cookieToken) {
+      const cookieTokenExpiration = this.getCookie('cookieTokenExpiration');
+      this.log("token found in cookies at initialization", cookieToken, 'cookieTokenExpiration', cookieTokenExpiration )
+
+      if ( cookieToken && cookieTokenExpiration ) {
         this.sessionToken = cookieToken;
-        this.log('Session token found in cookies');
+        this.sessionTokenExpiration = cookieTokenExpiration;
+        this.log('Session token and token expiration date found in cookies');
         return true;
       }
       this.log('No session token found in cookies');
       return false;
     }
   
-    setCookie(name, value, days = 7) {
+    setCookie(name, value, days = 1) {
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
       document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; Secure; SameSite=Strict`;
     }
