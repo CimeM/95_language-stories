@@ -34,13 +34,18 @@ class Syncable {
     }
 
     async loadData() {
-        
-        
         try {
+            const dataUpToNow = this.data;
             const storedData = await localforage.getItem(this.storageKey);
             if (storedData) {
                 this._data = storedData.data;
                 this.version = storedData.version;
+                // insert data that is not there in the memory
+                Object.keys(dataUpToNow).forEach(key =>{
+                    if ( !Object.keys(this._data).includes(key) ){
+                        this._data[key] = dataUpToNow[key];
+                    }
+                })
                 this.log('Loaded data from localForage:', this._data);
             }
         } catch (error) {

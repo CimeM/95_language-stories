@@ -2,6 +2,15 @@
 main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  
+  - title: "Profile"
+    url: /userprofile/
+    icon: "fas fa-fw fa-list-square"
+  
+  - title: "Time Trial"
+    url: /time_trials/
+    icon: "fas fa-fw fa-list-square"
+
   - title: "All stories"
     url: /stories/
     icon: "fas fa-fw fa-list-square"
@@ -9,6 +18,7 @@ main:
   - title: "Get more stories"
     url: /newsletter/
     icon: "fas fa-fw fa-envelope-square"
+
   - title: "Collaborators"
     url: /collaborators/
 

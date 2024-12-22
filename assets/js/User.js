@@ -3,7 +3,12 @@ class UserAccount extends Syncable {
 	
     constructor(token, tokenExpiration){
        super(
-            { 'pointGettingActivity':[], points: 0 }, 
+            { 'pointGettingActivity':[], 
+                'points': 0, 
+                'numberOfRemainingLivesToday':3, 
+                'lastTimeLiveWasSpent': null,
+                'numberOfRemainingStories':3 
+            }, 
             'syncableData',
             null, 
             token, 
@@ -11,8 +16,20 @@ class UserAccount extends Syncable {
         )
         
         this.name=""
+        
+        this.resetUsersHearts()
+        
     }
-    
+    async resetUsersHearts(){
+        await this.dataInitializePromise;
+       
+        const today = new Date().toISOString().slice(0,10);
+        const lastDay = new Date(this.data.lastTimeLiveWasSpent).toISOString().slice(0,10);
+        if( lastDay != today ){
+            this.data = { 'numberOfRemainingLivesToday': 3, 'lastTimeLiveWasSpent': today }; 
+        }
+    }
+
     addPoints( numberOfPointsToAdd ){
         this.addContributionTimestamp()
         console.log(this.data)
@@ -66,5 +83,19 @@ class UserAccount extends Syncable {
         // Wait for initialization to complete
         await this.dataInitializePromise;
         return this.data.points;
+    }
+    // decreases lives and returns remaining lives
+    spendALife(){
+        var lives = this.data.numberOfRemainingLivesToday;
+        if(lives > 0){
+            this.data = { numberOfRemainingLivesToday: (lives-1), lastTimeLiveWasSpent: new Date().toISOString() };
+            return lives-1
+        }else{
+            return 0
+        }
+    }
+    async getLives(){
+        await this.dataInitializePromise;
+        return this.data.numberOfRemainingLivesToday
     }
   }

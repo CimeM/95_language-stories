@@ -225,9 +225,22 @@ function presentPoints() {
     // nothing
     console.log("no medal", userPoints,"/", max_points )
   }
-
+  if(userPoints > 0){
+    savePoints(userPoints);
+  }
   // ranking.innerText='Gold '+ String(gold_p) + ' points'
 }
+
+function savePoints(pointsToSave){
+
+  if( user != undefined ){
+      user.addPoints(pointsToSave);
+  }else{
+      console.log("user not defined", user)
+      // user not defined
+  }
+}
+
 </script>
 
 <!-- navigate between chapters -->
