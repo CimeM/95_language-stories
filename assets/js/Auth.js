@@ -52,7 +52,7 @@ class FirebaseAuthManager {
 
     async signInWithCredential(credential) {
         try {
-            this.auth().signInWithCredential(credential)
+            this.auth.signInWithCredential(credential)
         } catch (error) {
             console.error('Login error:', error.message);
             throw error;
