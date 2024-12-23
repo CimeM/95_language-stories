@@ -14,7 +14,7 @@ class Syncable {
         this.className = this.getDerivedClassName();
         this.syncinterval = null;
         
-        this.logging = false;
+        this.logging = true;
         
         this.initialized = false;
 
