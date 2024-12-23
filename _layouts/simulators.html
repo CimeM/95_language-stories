@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div id="" role="main">
+    <div class="mt-5">
+
+        {% unless page.header.overlay_color or page.header.overlay_image %}
+            <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
+        {% endunless %}
+        
+        <div id="languageLevelSelector">
+        {% for tt in site.time_trials  %}
+            <h2>{{ tt.language }}</h2>
+            <div class=" ">
+            {% for level in tt.levels  %}
+            <button type="button" class="btn btn-primary btn-lg btn-block" 
+                    onclick="
+                        setData(  {{ level.phrases | jsonify | escape }})
+                        gameStart();
+                    ">
+                    {{ level.name }}
+                </button>
+            {% endfor %}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
