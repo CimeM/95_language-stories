@@ -85,7 +85,8 @@ layout: default
         chart1();  // render the chart
     }).then(_=>{
         var chartdiv = document.querySelector(divID)
-        chartdiv.scroll(chartdiv.scrollLeftMax,0)
+        chartdiv.scrollTo(chartdiv.scrollWidth, 0);
+
         document.querySelector('svg:not(:root)').style.overflow="clip"
     })
     

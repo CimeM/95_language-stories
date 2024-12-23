@@ -142,15 +142,15 @@ class UserAccount extends Syncable {
             button.innerHTML = "Profile";
             button.style.width="50px";
            return }
-        button.style.width="130px";
+        button.style.width="110px";
         var hearts = await this.getLives()
         var points = await this.getUserPoints();
         this.getAvatar().then(avatar => {
             button.innerHTML=`
                 <div style="height:2rem; width:2rem;">
                     <img id='avatar' class="pb-1" alt="User avatar" src="https://api.dicebear.com/9.x/${avatar.style}/svg?seed=${avatar.seed}&radius=50">
-                    <i class="bi bi-suit-diamond-fill" style="color: green;"></i> <span>${points}</span> 
-                        <span class="ms-1 me-1">|</span>
+                    <i class="bi bi-suit-diamond-fill me-1" style="color: green;"></i> <span>${points}</span> 
+                        
                     <i class="bi bi-heart-fill" style="color: red;"></i> <span >${hearts}</span>
                 </div>
                 <div id='mainHeartsandPoints'>
