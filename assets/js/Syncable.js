@@ -144,6 +144,26 @@ class Syncable {
         }
     }
 
+    // placeholder function - trirgers when user is logged in
+    _userLoginEvent(){}
+    // placeholder function - trirgers when user is logged in
+    _userLogoutEvent(){}
+
+    setToken(inputToken){
+        this.log("calling setToken()")
+        // this defines if user is logged in or not
+        try {
+            this.token = inputToken
+            if(inputToken != null ){ this._userLoginEvent() }else{ this._userLogoutEvent() }
+            // if( inputToken != undefined ){
+            // }else{
+            //     throw new Error(`User token is malformed: ${inputToken}`)
+            // }
+        } catch(error){
+            this.log("error setToken(): ", error)
+        }
+    }
+
     mergeServerData(serverData) {
         if (serverData.version > this.version) {
             this._data = { ...this._data, ...serverData.data };

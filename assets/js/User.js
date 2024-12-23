@@ -18,7 +18,6 @@ class UserAccount extends Syncable {
         this.name = ""
         
         document.addEventListener('DOMContentLoaded', () => {
-        
             this.transformUserProfileButtonIntoIcon();
         })
 
@@ -104,6 +103,18 @@ class UserAccount extends Syncable {
         }
         return "Language learner" //this.data.username;
     }
+    
+    _userLoginEvent(){
+        super._userLoginEvent(); 
+        this.log("_userLoginEvent")
+        this.transformUserProfileButtonIntoIcon();
+    }
+    _userLogoutEvent(){
+        super._userLogoutEvent(); 
+        this.log("_userLogoutEvent")
+
+        this.transformUserProfileButtonIntoIcon();
+    }
     // getter of user contribution graph data
     async getUserPoints(){
         // Wait for initialization to complete
@@ -127,6 +138,10 @@ class UserAccount extends Syncable {
     async transformUserProfileButtonIntoIcon(){
         // this transform user profile button into an icon - feature for logged in users
         var button = document.querySelector('#userprofile');
+        if ( this.token == null ){
+            button.innerHTML = "Profile";
+            button.style.width="50px";
+           return }
         button.style.width="130px";
         var hearts = await this.getLives()
         var points = await this.getUserPoints();

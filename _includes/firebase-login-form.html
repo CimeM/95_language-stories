@@ -127,6 +127,7 @@
                 // authManager.signup(email, password)
                 const usercreds = await authManager.signup(email, password);
                 await user.saveEmail(usercreds.email);
+                user.setToken(usercreds._delegate.accessToken )
                 logoutForm.style.display = 'none';
                 loginForm.style.display = 'block';
                 signupForm.style.display = 'none';
@@ -145,6 +146,7 @@
                 const usercreds = await authManager.login(email, password);
                 resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
                 await user.saveEmail(usercreds.email);
+                user.setToken(usercreds._delegate.accessToken );
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
             } catch (error) {
@@ -158,6 +160,7 @@
                 logoutForm.style.display = 'none';
                 loginForm.style.display = 'block';
                 signupForm.style.display = 'none';
+                user.setToken(null);
                 resultDiv.innerHTML = `You have logged out 🥲`;
             }else{
                 resultDiv.innerHTML = `Something went wrong when logging you out 🫨`;
