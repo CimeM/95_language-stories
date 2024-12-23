@@ -52,14 +52,8 @@ class FirebaseAuthManager {
 
     async signInWithCredential(credential) {
         try {
-          const firebaseauth = this.auth.signInWithCredential(credential)
-          console.log("firebaseauth", firebaseauth)
+          const firebaseauth = await this.auth.signInWithCredential(credential)
           return firebaseauth
-          // this.sessionToken = credential.idToken;
-          // this.setCookie('sessionToken', credential.idToken);
-          // this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
-          // this.log('Token renewed successfully');
-          // return credential.idToken;
         } catch (error) {
             console.error('Login error:', error.message);
             throw error;

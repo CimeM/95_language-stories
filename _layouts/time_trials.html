@@ -204,7 +204,7 @@ layout: default
             function setLivesinUI( lives ){
                 document.getElementById('lives').textContent = "";
                 for (let index = 0; index < lives; index++) {
-                    document.getElementById('lives').textContent += `<i class="bi bi-heart-fill" style="color: red;"></i>`;
+                    document.getElementById('lives').innerHTML += `<i class="bi bi-heart-fill" style="color: red;"></i>`;
                     
                 }
             }
