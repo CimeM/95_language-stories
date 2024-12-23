@@ -173,7 +173,8 @@
             const credential = firebase.auth.GoogleAuthProvider.credential(response.credential);
             console.log("credential", credential)
             try{
-                const usercreds = authManager.signInWithCredential(credential)
+                const firebasecreds = await authManager.signInWithCredential(credential)
+                const usercreds = firebasecreds.user.multiFactor.user
                 console.log("usercreds", usercreds)
                 resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
                 await user.saveEmail(usercreds.email);
