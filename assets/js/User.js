@@ -107,12 +107,12 @@ class UserAccount extends Syncable {
     _userLoginEvent(){
         super._userLoginEvent(); 
         this.log("_userLoginEvent")
+        this.fetchLatestData(); // fetch data from API for the first time
         this.transformUserProfileButtonIntoIcon();
     }
     _userLogoutEvent(){
         super._userLogoutEvent(); 
         this.log("_userLogoutEvent")
-
         this.transformUserProfileButtonIntoIcon();
     }
     // getter of user contribution graph data

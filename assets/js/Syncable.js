@@ -12,7 +12,7 @@ class Syncable {
         this.version = 0;
         this.isOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
-
+        this.syncinterval = null;
         
         this.logging = false;
         
@@ -147,7 +147,9 @@ class Syncable {
     // placeholder function - trirgers when user is logged in
     _userLoginEvent(){}
     // placeholder function - trirgers when user is logged in
-    _userLogoutEvent(){}
+    _userLogoutEvent(){
+        clearInterval(this.syncinterval); // stop syncing data with the database
+    }
 
     setToken(inputToken){
         this.log("calling setToken()")
@@ -184,7 +186,7 @@ class Syncable {
     }
 
     startPeriodicSync() {
-        setInterval(() => {
+        this.syncinterval = setInterval(() => {
             if (this.isOnline) {
                 this.processQueue();
                 this.fetchLatestData();
