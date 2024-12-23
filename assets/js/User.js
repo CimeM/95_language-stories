@@ -149,9 +149,9 @@ class UserAccount extends Syncable {
             button.innerHTML=`
                 <div style="height:2rem; width:2rem;">
                     <img id='avatar' class="pb-1" alt="User avatar" src="https://api.dicebear.com/9.x/${avatar.style}/svg?seed=${avatar.seed}&radius=50">
-                    <i class="bi bi-suit-diamond-fill me-1" style="color: green;"></i> <span>${points}</span> 
+                    <i class="bi bi-suit-diamond-fill me-1" style="color: green;"></i><span>${points}</span> 
                         
-                    <i class="bi bi-heart-fill" style="color: red;"></i> <span >${hearts}</span>
+                    <i class="bi bi-heart-fill" style="color: red;"></i><span>${hearts}</span>
                 </div>
                 <div id='mainHeartsandPoints'>
                 </div>
