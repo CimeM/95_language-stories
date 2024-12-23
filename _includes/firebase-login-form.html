@@ -178,7 +178,7 @@
                 console.log("usercreds", usercreds)
                 resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
                 await user.saveEmail(usercreds.email);
-                user.setToken(usercreds._delegate.accessToken );
+                user.setToken(usercreds.accessToken );
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
             }catch( error) {
