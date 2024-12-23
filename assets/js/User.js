@@ -143,7 +143,7 @@ class UserAccount extends Syncable {
             button.innerHTML = "Profile";
             button.style.width="50px";
            return }
-        button.style.width="100px";
+        button.style.width="110px";
         var hearts = await this.getLives()
         var points = await this.getUserPoints();
         this.getAvatar().then(avatar => {
