@@ -53,6 +53,13 @@ class FirebaseAuthManager {
     async signInWithCredential(credential) {
         try {
           const firebaseauth = await this.auth.signInWithCredential(credential)
+          // save token
+          var netoken = firebaseauth.user.multiFactor.user.accessToken
+          this.sessionToken = netoken; 
+          this.setCookie('sessionToken', netoken);
+          this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
+          this.log('Token set successfully');
+
           return firebaseauth
         } catch (error) {
             console.error('Login error:', error.message);
