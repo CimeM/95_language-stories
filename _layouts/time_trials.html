@@ -75,7 +75,7 @@ layout: default
 
         <div id="cannotPlayGame" class="text-center mt-5" style="display: none;">
             <p>You cannot play the game without hearts</p>
-            <p> ❤️ = 0 </p>
+            <p> <i class="bi bi-heart-fill" style="color: red;"></i> = 0 </p>
             <p>You will get more in <span id="timerToMidniht"></span></p>
         </div>
         <script>
@@ -204,7 +204,7 @@ layout: default
             function setLivesinUI( lives ){
                 document.getElementById('lives').textContent = "";
                 for (let index = 0; index < lives; index++) {
-                    document.getElementById('lives').textContent += "❤️";
+                    document.getElementById('lives').textContent += `<i class="bi bi-heart-fill" style="color: red;"></i>`;
                     
                 }
             }

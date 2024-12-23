@@ -17,10 +17,12 @@ class UserAccount extends Syncable {
         
         this.name = ""
         
-        // console.log("user", user)
-        this.resetUsersHearts();
-        // this.mapUserObject()
+        document.addEventListener('DOMContentLoaded', () => {
         
+            this.transformUserProfileButtonIntoIcon();
+        })
+
+        this.resetUsersHearts();
     }
     async saveEmail(email){
         await this.dataInitializePromise;
@@ -121,5 +123,24 @@ class UserAccount extends Syncable {
     async getLives(){
         await this.dataInitializePromise;
         return this.data.numberOfRemainingLivesToday
+    }
+    async transformUserProfileButtonIntoIcon(){
+        // this transform user profile button into an icon - feature for logged in users
+        var button = document.querySelector('#userprofile');
+        button.style.width="130px";
+        var hearts = await this.getLives()
+        var points = await this.getUserPoints();
+        this.getAvatar().then(avatar => {
+            button.innerHTML=`
+                <div style="height:2rem; width:2rem;">
+                    <img id='avatar' class="pb-1" alt="User avatar" src="https://api.dicebear.com/9.x/${avatar.style}/svg?seed=${avatar.seed}&radius=50">
+                    <i class="bi bi-suit-diamond-fill" style="color: green;"></i> <span>${points}</span> 
+                        <span class="ms-1 me-1">|</span>
+                    <i class="bi bi-heart-fill" style="color: red;"></i> <span >${hearts}</span>
+                </div>
+                <div id='mainHeartsandPoints'>
+                </div>
+            `
+        })
     }
   }

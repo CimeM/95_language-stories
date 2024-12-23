@@ -6,6 +6,7 @@ main:
   - title: "Profile"
     url: /userprofile/
     icon: "fas fa-fw fa-list-square"
+    id: userprofile
   
   - title: "Time Trial"
     url: /time_trials/

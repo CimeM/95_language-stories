@@ -124,8 +124,9 @@
             const password = document.getElementById('signup-password').value;
 
             try {
-                authManager.signup(email, password)
-                await authManager.signup(email, password);
+                // authManager.signup(email, password)
+                const usercreds = await authManager.signup(email, password);
+                await user.saveEmail(usercreds.email);
                 logoutForm.style.display = 'none';
                 loginForm.style.display = 'block';
                 signupForm.style.display = 'none';
@@ -141,8 +142,9 @@
             const password = document.getElementById('login-password').value;
 
             try {
-                const user = await authManager.login(email, password);
-                resultDiv.innerHTML = `Login successful for ${user.email} 🫡`;
+                const usercreds = await authManager.login(email, password);
+                resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
+                await user.saveEmail(usercreds.email);
                 logoutForm.style.display = 'block';
                 loginForm.style.display = 'none';
             } catch (error) {
