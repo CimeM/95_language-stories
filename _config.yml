@@ -267,6 +267,9 @@ collections:
   stories:
     output: true
     permalink: /story/:name/
+  simulators:
+    output: true
+    permalink: /simulator/:name/
   social_posts:
     output: true
     permalink: /social_posts/:name/
