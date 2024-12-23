@@ -25,6 +25,7 @@ class Syncable {
         
         this.token = token;
         this.tokenExpiration = tokenExpiration;
+        
     }
 
     log(...args) {
@@ -96,13 +97,12 @@ class Syncable {
         const batchSize = 10;
         const batch = this.syncQueue.splice(0, batchSize);
 
-        this.log("syncing with API using token:", this.token)
         try {
             const response = await fetch(this.apiEndpoint + "/data", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${await this.getAuthToken()}`
+                    'Authorization': `Bearer ${await this.token}`
                 },
                 body: JSON.stringify({
 	                className: this.className,
@@ -132,7 +132,7 @@ class Syncable {
             const response = await fetch(`${this.apiEndpoint}/data?className=${this.className}&version=${this.version}`, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${await this.getAuthToken()}`
+                    'Authorization': `Bearer ${await this.token}`
                 }
             });
     
@@ -143,42 +143,12 @@ class Syncable {
             console.error('Error fetching latest data:', error);
         }
     }
-    
 
     mergeServerData(serverData) {
         if (serverData.version > this.version) {
             this._data = { ...this._data, ...serverData.data };
             this.version = serverData.version;
             this.saveToLocal();
-        }
-    }
-
-    async getAuthToken() {
-        // Check if we have a valid token
-        if (this.token && this.tokenExpiration && Date.now() < this.tokenExpiration) {
-            return this.token;
-        }
-
-        // If not, get a new token
-        const user = firebase.auth().currentUser;
-        if (user) {
-            try {
-                const idToken = await user.getIdToken(true);
-                
-                // Store the token
-                this.token = idToken;
-                
-                // Set expiration time (Firebase tokens typically expire in 1 hour)
-                this.tokenExpiration = Date.now() + 55 * 60 * 1000; // 55 minutes
-
-                return idToken;
-            } catch (error) {
-                console.error('Error getting auth token:', error);
-                return null;
-            }
-        } else {
-            console.log('User not logged in');
-            return null;
         }
     }
 

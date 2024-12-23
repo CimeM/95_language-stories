@@ -4,10 +4,26 @@ layout: default
 
 <div id="" role="main">
     <div class="mt-5">
-        <h1 id="username"></h1>
-        <p>User points <span id="userPoints"></span></p>
-        <p> ❤️ <span id="userLives"></span><p>
-        <h3>Activity</h3>
+        <div class="row d-flex justify-content-center">
+            <div style="height:7rem; width:7rem;">
+                <img id='avatar' class="" alt="User avatar" src="https://api.dicebear.com/9.x/micah/svg">
+            </div>
+        </div>
+        <h2 id="username"class='text-center'></h2>
+
+        <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="col text-center">
+                p <span id="userPoints"></span>
+              </div>
+             
+              <div class="col text-center">
+                ❤️ <span id="userLives"></span>
+              </div>
+            </div>
+        </div>
+
+        <h3 class="mt-4">Activity</h3>
         <div id="contributionchart-one" style="max-width: 100vw; overflow: scroll;"></div>
     </div>
 </div>
@@ -15,6 +31,7 @@ layout: default
 
 <script>
     // display the user infroation
+
 
     user.getUserName().then(name => {
         document.querySelector("#username").innerHTML = String(name)
@@ -25,7 +42,18 @@ layout: default
     user.getLives().then(lives => {
         document.querySelector("#userLives").innerHTML = String(lives)
     })
-    
+    user.getAvatar(false).then(avatar => {
+        displayAvatar(avatar.seed, avatar.style)
+    })
+
+    function setDifferentAvatar(){
+        user.getAvatar(true).then(avatar => {
+            displayAvatar(avatar.seed, avatar.style)
+        })
+    }
+    function displayAvatar(seed, style){
+        document.querySelector('#avatar').src=`https://api.dicebear.com/9.x/${style}/svg?seed=${seed}&radius=50`
+    }
 </script>
 <script> 
     // display the contribution chart
@@ -51,6 +79,7 @@ layout: default
     }).then(_=>{
         var chartdiv = document.querySelector(divID)
         chartdiv.scroll(chartdiv.scrollLeftMax,0)
+        document.querySelector('svg:not(:root)').style.overflow="clip"
     })
     
 </script>

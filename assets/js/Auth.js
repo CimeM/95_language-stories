@@ -6,7 +6,6 @@ class FirebaseAuthManager {
         // this.firebaseapi_key="{{ site.authentication.firebase.api_key }}";
         this.app = firebase.initializeApp(this.firebaseConfig);
         this.auth = firebase.auth();
-        this.user = null;
         this.sessionToken = null;
         this.sessionTokenExpiration = null;
 
@@ -38,7 +37,7 @@ class FirebaseAuthManager {
         }
       });
     }
-  
+
     async login(email, password) {
       try {
         const userCredential = await this.auth.signInWithEmailAndPassword(email, password);
@@ -86,6 +85,7 @@ class FirebaseAuthManager {
     }
   
     async renewToken() {
+      this.auth = await firebase.auth()
       try {
         const currentUser = this.auth.currentUser;
         if (currentUser) {
@@ -107,12 +107,15 @@ class FirebaseAuthManager {
     checkSessionToken() {
       const cookieToken = this.getCookie('sessionToken');
       const cookieTokenExpiration = this.getCookie('cookieTokenExpiration');
-      this.log("token found in cookies at initialization", cookieToken, 'cookieTokenExpiration', cookieTokenExpiration )
-
+      
       if ( cookieToken && cookieTokenExpiration ) {
         this.sessionToken = cookieToken;
         this.sessionTokenExpiration = cookieTokenExpiration;
-        this.log('Session token and token expiration date found in cookies');
+        this.log("token found in cookies at initialization", cookieToken, 'cookieTokenExpiration', cookieTokenExpiration )
+        if(new Date(cookieTokenExpiration) < new Date() ){
+          this.log('Token has expired, fetching new one...')
+          this.renewToken()
+        }
         return true;
       }
       this.log('No session token found in cookies');

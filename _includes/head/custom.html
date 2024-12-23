@@ -36,8 +36,17 @@
 
 <script src="/assets/js/User.js"></script>
 <script>
-  // create user here to be initialized early in the loading process
-  var user = new UserAccount(authManager.sessionToken, new Date() );
+  // create user here to be initialized for all components
+  user = new UserAccount(
+    authManager.sessionToken, 
+    authManager.tokenExpiration
+  );
+  
+  // trigger the first sync with the database once the user is signed in
+  if (authManager.checkSessionToken()){
+    user.fetchLatestData()
+  }
+  
 </script>
 
 <script src="/assets/js/calendar-contributions-map/moment.js"></script>

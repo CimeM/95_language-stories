@@ -1,7 +1,7 @@
 
 class UserAccount extends Syncable {
 	
-    constructor(token, tokenExpiration){
+    constructor(token, tokenExpiration, user){
        super(
             { 'pointGettingActivity':[], 
                 'points': 0, 
@@ -15,11 +15,32 @@ class UserAccount extends Syncable {
             tokenExpiration
         )
         
-        this.name=""
+        this.name = ""
         
-        this.resetUsersHearts()
+        // console.log("user", user)
+        this.resetUsersHearts();
+        // this.mapUserObject()
         
     }
+    async saveEmail(email){
+        await this.dataInitializePromise;
+        this.data = {email: email}
+    }
+
+    async getAvatar(){
+
+    }
+    async getAvatar(randomize){
+        await this.dataInitializePromise;
+        if ( !Object.keys(this.data).includes('avatar') || randomize == true){
+            // create avatar on the spot
+            var randomNum = Math.random(0,123);
+            this.data = {avatar: { seed: randomNum, style: 'micah' } }
+        }
+        return this.data.avatar
+        
+    }
+
     async resetUsersHearts(){
         await this.dataInitializePromise;
        
@@ -76,7 +97,10 @@ class UserAccount extends Syncable {
     async getUserName(){
         // Wait for initialization to complete
         await this.dataInitializePromise;
-        return "User 123" //this.data.username;
+        if(Object.keys(this.data).includes('email')){
+            return user.data.email
+        }
+        return "Language learner" //this.data.username;
     }
     // getter of user contribution graph data
     async getUserPoints(){
