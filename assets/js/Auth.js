@@ -52,7 +52,14 @@ class FirebaseAuthManager {
 
     async signInWithCredential(credential) {
         try {
-            this.auth.signInWithCredential(credential)
+          const firebaseauth = this.auth.signInWithCredential(credential)
+          console.log("firebaseauth", firebaseauth)
+          return firebaseauth
+          // this.sessionToken = credential.idToken;
+          // this.setCookie('sessionToken', credential.idToken);
+          // this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
+          // this.log('Token renewed successfully');
+          // return credential.idToken;
         } catch (error) {
             console.error('Login error:', error.message);
             throw error;

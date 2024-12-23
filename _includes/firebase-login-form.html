@@ -169,11 +169,16 @@
         }
 
         // Google login method
-        function handleCredentialResponse(response) {
+        async function handleCredentialResponse(response) {
             const credential = firebase.auth.GoogleAuthProvider.credential(response.credential);
             console.log("credential", credential)
             try{
-                authManager.signInWithCredential(credential)
+                const usercreds = authManager.signInWithCredential(credential)
+                resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
+                await user.saveEmail(usercreds.email);
+                user.setToken(usercreds._delegate.accessToken );
+                logoutForm.style.display = 'block';
+                loginForm.style.display = 'none';
             }catch( error) {
                 console.error('Login failed:', error.message);
             }
