@@ -29,8 +29,6 @@
 </script>
 {% endif %}
 
-<!-- this is designed to be consumed by database.js -->
-<div id="apiadress" style="display: none;">{{ site.apiurl }}</div>
 <script src="https://cdn.jsdelivr.net/npm/localforage@1.9.0/dist/localforage.min.js"></script>
 <script src="/assets/js/Syncable.js"></script>
 
@@ -39,7 +37,8 @@
   // create user here to be initialized for all components
   user = new UserAccount(
     authManager.sessionToken, 
-    authManager.tokenExpiration
+    authManager.tokenExpiration,
+    "{{ site.apiurl }}"
   );
   
   // trigger the first sync with the database once the user is signed in

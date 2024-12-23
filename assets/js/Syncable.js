@@ -2,11 +2,11 @@ document.cookie = "SIDCC=value; SameSite=Lax; Secure";
 document.cookie = "__Secure-1PSIDCC=value; SameSite=None; Secure";
 
 class Syncable {
-    constructor(data = {}, storageKey = 'syncableData', userId = null, token='', tokenExpiration='') {
+    constructor(data = {}, storageKey = 'syncableData', userId = null, apiEndpoint='', token='', tokenExpiration='') {
         this._data = data;
         this.userId = userId;
         this.storageKey = userId ? `${storageKey}_${userId}` : storageKey;
-        this.apiEndpoint = document.querySelector("#apiadress").innerHTML;
+        this.apiEndpoint = apiEndpoint;
         this.syncQueue = [];
         this.isSyncing = false;
         this.version = 0;

@@ -1,7 +1,7 @@
 
 class UserAccount extends Syncable {
 	
-    constructor(token, tokenExpiration, user){
+    constructor(token, tokenExpiration, apiEndpoint=''){
        super(
             { 'pointGettingActivity':[], 
                 'points': 0, 
@@ -11,6 +11,7 @@ class UserAccount extends Syncable {
             }, 
             'syncableData',
             null, 
+            apiEndpoint,
             token, 
             tokenExpiration
         )
