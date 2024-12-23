@@ -60,6 +60,18 @@ class FirebaseAuthManager {
           this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
           this.log('Token set successfully');
 
+          // Set up an observer on the Auth object to listen for changes in the user's sign-in state
+          this.auth.onIdTokenChanged(async (user) => {
+            if (user) {
+                // User is signed in, get fresh ID token
+                this.sessionToken = await user.getIdToken(true); // true forces refresh
+                console.log("New ID Token retrived:", idToken);
+            } else {
+                console.log("Tokn wasn't retrived - user is signed out.");
+            }
+          });
+
+
           return firebaseauth
         } catch (error) {
             console.error('Login error:', error.message);
