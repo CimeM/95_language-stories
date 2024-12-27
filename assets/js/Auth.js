@@ -87,7 +87,7 @@ class FirebaseAuthManager {
     
     async signup(email, password) {
       try {
-        const userCredential = await createUserWithEmailAndPassword(email, password);
+        const userCredential = await this.auth.createUserWithEmailAndPassword(email, password);
         this.log('User signed up successfully');
         this.renewToken()
         return userCredential.user;
