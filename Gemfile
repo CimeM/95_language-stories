@@ -12,7 +12,7 @@ gem "jekyll-redirect-from"
 # gem "rouge", "~> 4.4.0"
 gem "webrick", "~> 1.9.1"
 gem "json", "~> 2.9.1"
-gem "net-http", "~> 0.4.1"
+gem "net-http", "~> 0.6.0"
 gem "uri", "~> 1.0.2"
 
 gem "faraday", "2.12.2"
