@@ -127,6 +127,8 @@ class UserAccount extends Syncable {
         var lives = this.data.numberOfRemainingLivesToday;
         if(lives > 0){
             this.data = { numberOfRemainingLivesToday: (lives-1), lastTimeLiveWasSpent: new Date().toISOString() };
+            // update info in the user information
+            this.transformUserProfileButtonIntoIcon()
             return lives-1
         }else{
             return 0

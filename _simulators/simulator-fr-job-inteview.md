@@ -1,7 +1,7 @@
 ---
 id: '5'
-title: 'Entretien d\'Embauche'
-context: 'Vous participez à un entretien d\'embauche pour un poste de gestion de projet dans une entreprise de technologie.'
+title: Entretien d'Embauche
+context: Vous participez à un entretien d'embauche pour un poste de gestion de projet dans une entreprise de technologie.
 difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
@@ -25,16 +25,16 @@ dialogues:
     text: "Quelles sont les compétences clés que vous recherchez pour ce poste?"
     translation: "What are the key skills you are looking for in this position?"
     options:
-      - id: 'o1'
-        text: "Nous recherchons quelqu'un avec de solides compétences en communication et en leadership, ainsi qu'une expérience en gestion de projet."
-        translation: "We are looking for someone with strong communication and leadership skills, as well as experience in project management."
-        isCorrect: true
-        feedback: "Bonne question pour clarifier les attentes du poste."
       - id: 'o2'
         text: "Je ne sais pas, peut-être des compétences techniques?"
         translation: "I don't know, maybe technical skills?"
         isCorrect: false
         feedback: "Trop imprécis. Montrez votre intérêt pour le poste."
+      - id: 'o1'
+        text: "Nous recherchons quelqu'un avec de solides compétences en communication et en leadership, ainsi qu'une expérience en gestion de projet."
+        translation: "We are looking for someone with strong communication and leadership skills, as well as experience in project management."
+        isCorrect: true
+        feedback: "Bonne question pour clarifier les attentes du poste."
 
   - id: 'd3'
     speaker: 'Recruteur'
@@ -57,16 +57,16 @@ dialogues:
     text: "Comment décririez-vous la culture d'entreprise ici?"
     translation: "How would you describe the company culture here?"
     options:
-      - id: 'o1'
-        text: "Nous valorisons la collaboration, l'innovation et le développement personnel au sein de notre équipe."
-        translation: "We value collaboration, innovation, and personal development within our team."
-        isCorrect: true
-        feedback: "Bonne question qui montre votre intérêt pour l'environnement de travail."
       - id: 'o2'
         text: "Je ne sais pas, je n'ai jamais travaillé ici auparavant."
         translation: "I don't know, I've never worked here before."
         isCorrect: false
         feedback: "Essayez d'en apprendre plus sur l'entreprise."
+      - id: 'o1'
+        text: "Nous valorisons la collaboration, l'innovation et le développement personnel au sein de notre équipe."
+        translation: "We value collaboration, innovation, and personal development within our team."
+        isCorrect: true
+        feedback: "Bonne question qui montre votre intérêt pour l'environnement de travail."
 
   - id: 'd5'
     speaker: 'Recruteur'

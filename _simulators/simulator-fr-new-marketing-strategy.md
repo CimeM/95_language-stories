@@ -1,7 +1,7 @@
 ---
 id: '4'
 title: 'Réunion de Stratégie Marketing'
-context: 'Vous assistez à une réunion d\'équipe pour discuter d\'une nouvelle stratégie marketing pour le produit à venir.'
+context: Vous assistez à une réunion d'équipe pour discuter d\'une nouvelle stratégie marketing pour le produit à venir.
 difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
@@ -37,7 +37,7 @@ dialogues:
         feedback: "Trop traditionnel. Considérez des options plus ciblées."
 
   - id: 'd3'
-    speaker: 'Membre de l\'équipe'
+    speaker: Membre de l'équipe
     text: "Quels types de contenu devrions-nous créer pour engager notre public?"
     translation: "What types of content should we create to engage our audience?"
     options:

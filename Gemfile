@@ -19,3 +19,5 @@ gem "faraday", "2.12.2"
 gem "logger", "1.6.1"
 
 gem  "rexml", "3.3.9"
+
+gem "bigdecimal","3.1.8"

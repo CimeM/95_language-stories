@@ -1,5 +1,5 @@
 ---
 layout: simulators
-title: "Simulators"
-permalink: /simulators/
+title: "Conversation scenarios"
+permalink: /simulator/
 ---

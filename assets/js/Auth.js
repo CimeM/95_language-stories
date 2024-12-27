@@ -51,32 +51,38 @@ class FirebaseAuthManager {
     }
 
     async signInWithCredential(credential) {
-        try {
-          const firebaseauth = await this.auth.signInWithCredential(credential)
-          // save token
-          var netoken = firebaseauth.user.multiFactor.user.accessToken
-          this.sessionToken = netoken; 
-          this.setCookie('sessionToken', netoken);
-          this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
-          this.log('Token set successfully');
+      this.log("signInWithCredential", credential);
+      // Save Google access token in cookies
+      const googleAccessToken = credential;
+      document.cookie = `googleAccessToken=${encodeURIComponent(googleAccessToken)}; path=/; Secure; SameSite=Strict`;
+      
 
-          // Set up an observer on the Auth object to listen for changes in the user's sign-in state
-          this.auth.onIdTokenChanged(async (user) => {
-            if (user) {
-                // User is signed in, get fresh ID token
-                this.sessionToken = await user.getIdToken(true); // true forces refresh
-                console.log("New ID Token retrived:", idToken);
-            } else {
-                console.log("Tokn wasn't retrived - user is signed out.");
-            }
-          });
+      try {
+        const firebaseauth = await this.auth.signInWithCredential(credential)
+        // save token
+        var netoken = firebaseauth.user.multiFactor.user.accessToken
+        this.sessionToken = netoken; 
+        this.setCookie('sessionToken', netoken);
+        this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
+        this.log('Token set successfully');
+
+        // Set up an observer on the Auth object to listen for changes in the user's sign-in state
+        this.auth.onIdTokenChanged(async (user) => {
+          if (user) {
+              // User is signed in, get fresh ID token
+              this.sessionToken = await user.getIdToken(true); // true forces refresh
+              console.log("New ID Token retrived:", idToken);
+          } else {
+              console.log("Tokn wasn't retrived - user is signed out.");
+          }
+        });
 
 
-          return firebaseauth
-        } catch (error) {
-            console.error('Login error:', error.message);
-            throw error;
-        }
+        return firebaseauth
+      } catch (error) {
+          console.error('Login error:', error.message);
+          throw error;
+      }
     }
     
     async signup(email, password) {

@@ -1,7 +1,7 @@
 ---
 id: '2'
 title: 'Réunion Client'
-context: 'Vous avez une réunion importante avec un client français pour discuter d\'un nouveau projet.'
+context: Vous avez une réunion importante avec un client français pour discuter d'un nouveau projet.
 difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
@@ -25,32 +25,32 @@ dialogues:
     text: "Avez-vous des attentes spécifiques concernant les délais du projet?"
     translation: "Do you have any specific expectations regarding the project timelines?"
     options:
-      - id: 'o1'
-        text: "Oui, nous aimerions que le projet soit terminé d'ici six mois."
-        translation: "Yes, we would like the project to be completed within six months."
-        isCorrect: true
-        feedback: "Bonne question pour clarifier les attentes."
       - id: 'o2'
         text: "Nous allons essayer de respecter les délais."
         translation: "We will try to meet the deadlines."
         isCorrect: false
         feedback: "Trop vague. Soyez plus précis sur les délais."
+      - id: 'o1'
+        text: "Oui, nous aimerions que le projet soit terminé d'ici six mois."
+        translation: "Yes, we would like the project to be completed within six months."
+        isCorrect: true
+        feedback: "Bonne question pour clarifier les attentes."
 
   - id: 'd3'
     speaker: 'Client'
     text: "Comment allez-vous gérer les imprévus qui pourraient survenir pendant le projet?"
     translation: "How will you handle unforeseen issues that may arise during the project?"
     options:
-      - id: 'o1'
-        text: "Nous avons un plan de gestion des risques en place et nous communiquerons rapidement tout problème à votre équipe."
-        translation: "We have a risk management plan in place and will promptly communicate any issues to your team."
-        isCorrect: true
-        feedback: "Réponse très professionnelle et rassurante."
       - id: 'o2'
         text: "On verra bien quand ça arrivera."
         translation: "We'll see when it happens."
         isCorrect: false
         feedback: "Manque de préparation. Montrez que vous êtes proactif."
+      - id: 'o1'
+        text: "Nous avons un plan de gestion des risques en place et nous communiquerons rapidement tout problème à votre équipe."
+        translation: "We have a risk management plan in place and will promptly communicate any issues to your team."
+        isCorrect: true
+        feedback: "Réponse très professionnelle et rassurante."
 
   - id: 'd4'
     speaker: 'Vous'

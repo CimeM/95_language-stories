@@ -1,7 +1,7 @@
 ---
 id: '3'
-title: 'Entretien d\'Évaluation de Performance'
-context: 'Vous avez un entretien d\'évaluation de performance avec un employé pour discuter de ses réalisations et des objectifs futurs.'
+title: Entretien d'Évaluation de Performance
+context: Vous avez un entretien d'évaluation de performance avec un employé pour discuter de ses réalisations et des objectifs futurs.
 difficulty: 'intermediate'
 dialogues:
   - id: 'd1'

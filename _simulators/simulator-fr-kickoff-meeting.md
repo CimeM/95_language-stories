@@ -37,7 +37,7 @@ dialogues:
         feedback: "Trop limité. Impliquer d'autres parties prenantes est crucial."
 
   - id: 'd3'
-    speaker: 'Membre de l\'équipe'
+    speaker: Membre de l'équipe
     text: "Comment allons-nous gérer les risques potentiels tout au long du projet?"
     translation: "How will we manage potential risks throughout the project?"
     options:

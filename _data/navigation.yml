@@ -11,6 +11,10 @@ main:
   - title: "Time Trial"
     url: /time_trials/
     icon: "fas fa-fw fa-list-square"
+  
+  - title: "Conversation scenarios"
+    url: /simulator/
+    icon: "fas fa-fw fa-list-square"
 
   - title: "All stories"
     url: /stories/

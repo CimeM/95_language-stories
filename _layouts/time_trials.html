@@ -241,7 +241,7 @@ layout: default
 
             function createBTN(language, phrase){
                 var alphaNumericalPhrase =  phrase.replace(/[^A-Za-z0-9]/g, '')
-                return `<button class="phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}')" style="width: 100%;">${phrase}</button>`
+                return `<button class="mb-3 phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}')" style="width: 100%;">${phrase}</button>`
             }
             
             function shuffleChildren(parent) {

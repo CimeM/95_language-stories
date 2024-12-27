@@ -3,27 +3,216 @@ layout: default
 ---
 
 <div id="" role="main">
-    <div class="mt-5">
+    <div class="mt-3">
 
         {% unless page.header.overlay_color or page.header.overlay_image %}
             <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
         {% endunless %}
         
-        <div id="languageLevelSelector">
-        {% for tt in site.time_trials  %}
-            <h2>{{ tt.language }}</h2>
-            <div class=" ">
-            {% for level in tt.levels  %}
-            <button type="button" class="btn btn-primary btn-lg btn-block" 
-                    onclick="
-                        setData(  {{ level.phrases | jsonify | escape }})
-                        gameStart();
-                    ">
-                    {{ level.name }}
-                </button>
-            {% endfor %}
+        <div id="scenarioSelector">
+            {% for scenario in site.simulators  limit:3 %}
+
+            <div onclick="onSelect( {{  scenario | jsonify | escape }} )"
+                class=" p-3 rounded-4 m-2 mb-3 bg-light shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
+            >
+                <div class="d-flex items-center gap-3 mb-2">
+                    <i class="bi bi-building"></i>
+                    <h3 class="text-xl font-semibold">{{ scenario.title }}</h3>
+                </div>
+
+                <p class="text-gray-600 mb-2">{{scenario.context}}</p>
+                <div class="d-flex ps-2 items-center gap-2">
+
+                    {% if scenario.difficulty == 'beginner' %} 
+                    <span class="badge rounded-pill bg-success">{{scenario.difficulty}}</span>
+                    {% else if  scenario.difficulty == 'intermediate' %}
+                    <span class="badge rounded-pill bg-warning">{{scenario.difficulty}}</span>
+                    
+                    {% else %}
+                    <span class="badge rounded-pill bg-danger">{{scenario.difficulty}}</span>
+
+                    {% endif %}
+
+                    
+                    <!-- ${
+                        scenario.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :
+                        scenario.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
+                        'bg-red-100 text-red-800'
+                    }` -->
+                </div>
+            
             </div>
-        {% endfor %}
+            {% endfor %}
+
+            
+            <div class=" p-3 rounded-4 m-2 bg-light shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
+            >
+                <div class="d-flex items-center gap-3 mb-1">
+                    
+                    <h3 class="text-xl font-semibold">Want to get more scenarios?</h3>
+                </div>
+
+                <p class="text-gray-600 mb-4">Create an account and we will show more scenarios</p>
+                <a href="/login" class="btn btn-secondary">Log in / Create Account</a>
+
+            </div>
+
+
+        </div>
+
+        <!-- <button class="btn btn-light" onclick="backToScenarioSelector()" >< Back</button> -->
+        <div id="dialogueSequence" class="rounded-4" style="display:none;">
+        
+            <!-- <h2 id="title" class="text-center"></h2>
+            <p id="context" class="text-center"></p> -->
+
+            <div class="dialogue bg-light p-3 rounded" id="dialogue">
+                <p id="speaker" class="text-muted "></p>
+                <p id="text"></p>
+                <p id="translation" class="hidden fst-italic"></p>
+                <button id="toggleTranslation" onclick="toggleTranslation()" class="btn btn-link">Show Translation</button>
+            </div>
+
+            <div id="options" class="mt-3"></div>
+
+            <div id="feedback" class="feedback hidden p-3 rounded-2"></div>
+
+            <div class="d-grid gap-2 mt-3">
+                <button id="nextButton" onclick="showNextDailogue()" class="btn btn-primary hidden">Next</button>
+                
+            </div>
+
+            <p class="text-center" id="progressIndicator"></p>
+        </div>
+
+        <div id="simulationResults" class="rounded-4 hidden" >
+            <h2 id="title">You've reached the end of this simulation</h2>
+            <p id="text"></p>
+            <div class="d-grid gap-2 mt-3">
+                <button id="nextButton" onclick="backToScenarioSelector()" class="btn btn-secondary">Back</button>
+                
+            </div>
         </div>
     </div>
 </div>
+
+<script>
+
+    function toggleTranslation(){
+        var translateButton= document.querySelector("#toggleTranslation")
+        var translationBlock = document.querySelector("#dialogue #translation")
+        translationBlock.classList.toggle("hidden")
+        translationBlock.classList.contains("hidden")?
+            translateButton.innerHTML = "Show Translation":
+            translateButton.innerHTML = "Hide Translatoion";
+
+    }
+    var selectedSimulation = null;
+    var dailogueIndex = 0
+    var pointCounter = 0;
+    function onSelect(inputJson){
+        console.log("user selected", inputJson.title )
+        selectedSimulation = inputJson;
+        document.querySelector("#scenarioSelector").style.display='none';
+        document.querySelector("#dialogueSequence").style.display='block';
+        document.querySelector("#simulationResults").classList.add("hidden");
+        showDailogue()
+        
+    }
+    function showNextDailogue(){
+        // console.log("next dailogue clicked showNextDailogue")
+        dailogueIndex = dailogueIndex +1;
+        showDailogue()
+    }
+    function showDailogue(){
+        resetFeedback();
+        if(dailogueIndex <= selectedSimulation.dialogues.length-1 ){
+            // show next dialogue
+            // console.log("next dalogue ", dailogueIndex, selectedSimulation.dialogues.length)
+            insertDialogue( selectedSimulation.dialogues[dailogueIndex] );
+        }else{
+            // go back to main menu of all dialogues
+            presentResults()
+        }
+        document.querySelector("#progressIndicator").innerHTML= "Dailog "+ String(dailogueIndex+1) + " out of " + String(selectedSimulation.dialogues.length)
+    }
+
+    function addPoint(){
+        pointCounter = pointCounter + 1;
+    }
+    
+    function presentResults(){
+        document.querySelector("#dialogueSequence").style.display='none'
+        document.querySelector("#simulationResults").classList.remove("hidden")
+        document.querySelector("#simulationResults > #text").innerHTML = "You got " + String(pointCounter) + " points"
+        user.addPoint(pointCounter);
+    }
+    
+    function backToScenarioSelector(){
+        selectedSimulation = null;
+        dailogueIndex = 0
+        pointCounter = 0;
+        document.querySelector("#simulationResults").classList.add("hidden")
+        document.querySelector("#scenarioSelector").style.display='block';
+        document.querySelector("#dialogueSequence").style.display='none';
+    }
+
+    function resetFeedback(){
+        document.getElementById('feedback').classList.add('hidden');
+        document.getElementById('nextButton').classList.add('hidden');
+    }
+
+    function insertDialogue(dialogue){
+        // var title           = document.querySelector('#dialogueSequence #title')
+        // var context         = document.querySelector('#dialogueSequence #context')
+        var dialoguespeaker = document.querySelector('#dialogueSequence #dialogue #speaker')
+        var dailoguetext    = document.querySelector('#dialogueSequence #dialogue #text')
+        var dailoguetranslation = document.querySelector('#dialogueSequence #dialogue #translation')
+        var feedback        = document.querySelector('#dialogueSequence  #feedback')
+        var nextButton      = document.querySelector('#dialogueSequence  #nextButton')
+        
+        dialoguespeaker.innerHTML = dialogue.speaker;
+        dailoguetext.innerHTML = dialogue.text;
+        dailoguetranslation.innerHTML = "\"" +dialogue.translation + "\"";
+
+        const optionsContainer = document.querySelector('#dialogueSequence #options');
+        
+        optionsContainer.innerHTML = '';
+        
+        dialogue.options.forEach(option => {
+            const optionButton = document.createElement('button');
+            optionButton.className = 'btn btn-outline-secondary w-100 mb-2';
+            
+            optionButton.innerText = option.text;
+
+            optionButton.onclick = function() {
+                selectedOption = option;
+
+                const feedbackDiv = document.getElementById('feedback');
+                feedbackDiv.innerText = selectedOption.feedback;
+                
+                if (selectedOption.isCorrect) {
+                    feedbackDiv.classList.add('bg-success', 'text-white');
+                    feedbackDiv.classList.remove('bg-danger');
+                    addPoint(); // add point to user
+                } else {
+                    feedbackDiv.classList.add('bg-danger', 'text-white');
+                    feedbackDiv.classList.remove('bg-success');
+                }
+                
+                feedbackDiv.classList.remove('hidden');
+
+                // Disable options after selection
+                Array.from(optionsContainer.children).forEach(child => child.style.pointerEvents = 'none');
+
+                // Show next button
+                document.getElementById('nextButton').classList.remove('hidden');
+                
+            };
+
+            optionsContainer.appendChild(optionButton);
+        });
+
+    }
+    
+</script>
