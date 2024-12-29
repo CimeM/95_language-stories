@@ -5,6 +5,11 @@ layout: default
 <div id="" role="main">
     <div class="mt-5">
 
+        <audio id="audioPlayer" class="hidden" controls>
+            <source id="audioSource" src="https://langapi.rivieraapps.com/audio?lang=it&text=Piaccere" type="audio/mp3">
+        </audio>
+
+
         {% unless page.header.overlay_color or page.header.overlay_image %}
             <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
         {% endunless %}
@@ -119,7 +124,18 @@ layout: default
             let timerInitialValue = 30
             let timeLeft = timerInitialValue;
             let timerInterval;
-            
+
+            function playAudio(text, language){
+                // const audioSource = document.querySelector('#audioPlayer > source')
+                // audioSource.setAttribute("src",`https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`)
+                const audioPlayer = document.getElementById('audioPlayer');
+                var source = document.getElementById('audioSource');
+                source.src = `https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`;
+
+                audioPlayer.load();
+                audioPlayer.play();
+                
+            }
             function setData(input_phrases){
                 phrases = input_phrases;
             }
@@ -141,7 +157,13 @@ layout: default
                 
             }
             
-            function selectPhrase(language, phrase) {
+            function selectPhrase(language, phrase, originalPhrase) {
+                if(language=='french'){
+                    playAudio( originalPhrase,'fr')
+                }else if(language=='italian'){
+                    playAudio( originalPhrase,'it')
+                }else{}
+
                 if (selectedPhrase === null) {
                     console.log("select phrase", language, phrase)
                     selectedPhrase = { language, phrase };
@@ -241,7 +263,7 @@ layout: default
 
             function createBTN(language, phrase){
                 var alphaNumericalPhrase =  phrase.replace(/[^A-Za-z0-9]/g, '')
-                return `<button class="mb-3 phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}')" style="width: 100%;">${phrase}</button>`
+                return `<button class="mb-3 phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}', '${phrase}')" style="width: 100%;">${phrase}</button>`
             }
             
             function shuffleChildren(parent) {
