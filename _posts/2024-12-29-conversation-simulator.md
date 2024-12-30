@@ -61,7 +61,7 @@ The digital age has revolutionized language learning, and professional French is
 
 ## Your Next Step
 
-Ready to transform your business French skills? Our [new conversation simulation feature](/time_trials) provides you with authentic scenarios designed specifically for professional settings. Practice handling real-world business situations in a safe, supportive environment where mistakes are learning opportunities, not career setbacks.
+Ready to transform your business French skills? Our [new conversation simulation feature](/simulator) provides you with authentic scenarios designed specifically for professional settings. Practice handling real-world business situations in a safe, supportive environment where mistakes are learning opportunities, not career setbacks.
 
 ---
 
