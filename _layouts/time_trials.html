@@ -157,12 +157,18 @@ layout: default
                 
             }
             
-            function selectPhrase(language, phrase, originalPhrase) {
-                if(language=='french'){
-                    playAudio( originalPhrase,'fr')
-                }else if(language=='italian'){
-                    playAudio( originalPhrase,'it')
-                }else{}
+            function selectPhrase(language, phrase) {
+                
+                if (language!='english') {
+                    var match = currentPhrases.findIndex(p => p[language].replace(/[^A-Za-z0-9]/g, '') == phrase )
+                    if(language.includes("fre")){
+                        playAudio( currentPhrases[match][language] ,'fr')
+                    }else if(language.includes("ita")){
+                        playAudio( match[language],'it')
+                    }else if(language.includes("slo")){
+                        playAudio( match[language],'si')
+                    }else{}
+                }
 
                 if (selectedPhrase === null) {
                     console.log("select phrase", language, phrase)
@@ -263,7 +269,7 @@ layout: default
 
             function createBTN(language, phrase){
                 var alphaNumericalPhrase =  phrase.replace(/[^A-Za-z0-9]/g, '')
-                return `<button class="mb-3 phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}', '${phrase}')" style="width: 100%;">${phrase}</button>`
+                return `<button class="mb-3 phrase-btn btn btn-primary" data-phrase="${alphaNumericalPhrase}" onclick="selectPhrase('${ language }', '${alphaNumericalPhrase}')" style="width: 100%;">${phrase}</button>`
             }
             
             function shuffleChildren(parent) {
