@@ -67,10 +67,15 @@ layout: default
             <p id="context" class="text-center"></p> -->
 
             <div class="dialogue bg-light p-3 rounded" id="dialogue">
+                <p id="language" class="hidden"></p>
                 <p id="speaker" class="text-muted "></p>
                 <p id="text"></p>
                 <p id="translation" class="hidden fst-italic"></p>
                 <button id="toggleTranslation" onclick="toggleTranslation()" class="btn btn-link">Show Translation</button>
+                <button id="toggleTranslation" onclick="playDialogueAudio()" class="btn btn-link">
+                    <i class="bi bi-play-fill"></i>
+                    Play
+                </button>
             </div>
 
             <div id="options" class="mt-3"></div>
@@ -105,8 +110,14 @@ layout: default
         translationBlock.classList.contains("hidden")?
             translateButton.innerHTML = "Show Translation":
             translateButton.innerHTML = "Hide Translatoion";
-
     }
+    
+    function playDialogueAudio(){
+        var dailoguetext = document.querySelector('#dialogueSequence #dialogue #text')
+        var language = document.querySelector('#dialogueSequence #dialogue #language').innerHTML
+        audioPlayer.playAudio(dailoguetext.innerHTML, language)
+    }
+
     var selectedSimulation = null;
     var dailogueIndex = 0
     var pointCounter = 0;
@@ -166,12 +177,14 @@ layout: default
         // var title           = document.querySelector('#dialogueSequence #title')
         // var context         = document.querySelector('#dialogueSequence #context')
         var dialoguespeaker = document.querySelector('#dialogueSequence #dialogue #speaker')
+        var dialoguelanguage = document.querySelector('#dialogueSequence #dialogue #language')
         var dailoguetext    = document.querySelector('#dialogueSequence #dialogue #text')
         var dailoguetranslation = document.querySelector('#dialogueSequence #dialogue #translation')
         var feedback        = document.querySelector('#dialogueSequence  #feedback')
         var nextButton      = document.querySelector('#dialogueSequence  #nextButton')
         
         dialoguespeaker.innerHTML = dialogue.speaker;
+        dialoguelanguage.innerHTML = dialogue.language;
         dailoguetext.innerHTML = dialogue.text;
         dailoguetranslation.innerHTML = "\"" +dialogue.translation + "\"";
 
@@ -191,6 +204,8 @@ layout: default
                 const feedbackDiv = document.getElementById('feedback');
                 feedbackDiv.innerText = selectedOption.feedback;
                 
+                audioPlayer.playAudio(selectedOption.feedback, dialogue.language)
+
                 if (selectedOption.isCorrect) {
                     feedbackDiv.classList.add('bg-success', 'text-white');
                     feedbackDiv.classList.remove('bg-danger');

@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Recruteur'
+    language: french
     text: "Merci d'être venu aujourd'hui. Pouvez-vous commencer par vous présenter et nous parler de votre parcours professionnel?"
     translation: "Thank you for coming today. Could you start by introducing yourself and telling us about your professional background?"
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Quelles sont les compétences clés que vous recherchez pour ce poste?"
     translation: "What are the key skills you are looking for in this position?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: 'Recruteur'
+    language: french
     text: "Pouvez-vous nous donner un exemple d'un défi que vous avez rencontré dans un projet précédent et comment vous l'avez surmonté?"
     translation: "Can you give us an example of a challenge you faced in a previous project and how you overcame it?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Comment décririez-vous la culture d'entreprise ici?"
     translation: "How would you describe the company culture here?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Recruteur'
+    language: french
     text: "Avez-vous des questions pour nous avant de conclure l'entretien?"
     translation: "Do you have any questions for us before we conclude the interview?"
     options:

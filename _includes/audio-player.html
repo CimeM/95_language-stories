@@ -1,0 +1,39 @@
+<audio id="audioPlayer" class="hidden" controls>
+    <source id="audioSource" src="https://langapi.rivieraapps.com/audio?lang=it&text=Piaccere" type="audio/mp3">
+</audio>
+
+<script>
+
+    class AudioPlayer {
+        
+        constructor(){
+            
+            this.audioPlayer = document.getElementById('audioPlayer');
+            this.source = document.getElementById('audioSource');
+        }
+
+        playAudio(text, language){
+            // const audioSource = document.querySelector('#audioPlayer > source')
+            // audioSource.setAttribute("src",`https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`)
+            var lang = '';
+            if(language.includes("fr")){
+                lang = "fr";
+            }else if(language.includes("it")){
+                lang = "it";
+            }else if(language.includes("slo")){
+                lang = "si";
+            }else{}
+            
+            this.source.src = `https://langapi.rivieraapps.com/audio?lang=${lang}&text=${text}`;
+    
+            this.audioPlayer.load();
+            this.audioPlayer.play();
+        }
+    }
+
+   
+    var audioPlayer= new AudioPlayer;
+    
+
+    
+</script>

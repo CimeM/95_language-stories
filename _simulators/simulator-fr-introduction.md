@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Client'
+    language: french
     text: "Pouvez-vous nous parler de votre approche pour ce projet?"
     translation: "Can you tell us about your approach for this project?"
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Avez-vous des attentes spécifiques concernant les délais du projet?"
     translation: "Do you have any specific expectations regarding the project timelines?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: 'Client'
+    language: french
     text: "Comment allez-vous gérer les imprévus qui pourraient survenir pendant le projet?"
     translation: "How will you handle unforeseen issues that may arise during the project?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Quels sont les principaux défis que vous avez rencontrés dans vos projets précédents?"
     translation: "What are the main challenges you have faced in your previous projects?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Client'
+    language: french
     text: "Comment comptez-vous assurer la qualité tout au long du projet?"
     translation: "How do you plan to ensure quality throughout the project?"
     options:

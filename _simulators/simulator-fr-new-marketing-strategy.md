@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Chef de Projet'
+    language: french
     text: "Merci à tous d'être présents. Commençons par discuter des objectifs de notre nouvelle campagne marketing."
     translation: "Thank you all for being here. Let's start by discussing the objectives of our new marketing campaign."
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Quels canaux de communication devrions-nous privilégier pour cette campagne?"
     translation: "Which communication channels should we prioritize for this campaign?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: Membre de l'équipe
+    language: french
     text: "Quels types de contenu devrions-nous créer pour engager notre public?"
     translation: "What types of content should we create to engage our audience?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Comment allons-nous mesurer le succès de cette campagne?"
     translation: "How will we measure the success of this campaign?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Chef de Projet'
+    language: french
     text: "Y a-t-il d'autres idées ou suggestions que vous aimeriez partager avant de conclure la réunion?"
     translation: "Are there any other ideas or suggestions you would like to share before we conclude the meeting?"
     options:

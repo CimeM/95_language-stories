@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Chef de Projet'
+    language: french
     text: "Merci à tous d'être ici. Nous aimerions recueillir vos impressions sur le projet que nous venons de terminer."
     translation: "Thank you all for being here. We would like to gather your feedback on the project we just completed."
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Client'
+    language: french
     text: "Globalement, nous sommes satisfaits du résultat, mais il y a quelques points que nous aimerions aborder."
     translation: "Overall, we are satisfied with the outcome, but there are a few points we would like to address."
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: 'Client'
+    language: french
     text: "Nous avons rencontré quelques difficultés avec la phase de mise en œuvre. La communication aurait pu être meilleure."
     translation: "We encountered some difficulties during the implementation phase. Communication could have been better."
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Quelles suggestions avez-vous pour améliorer notre collaboration à l'avenir?"
     translation: "What suggestions do you have for improving our collaboration in the future?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Chef de Projet'
+    language: french
     text: "Merci pour vos retours constructifs. Nous allons travailler sur ces points pour améliorer nos futurs projets ensemble. Avez-vous d'autres questions ou préoccupations?"
     translation: "Thank you for your constructive feedback. We will work on these points to improve our future projects together. Do you have any other questions or concerns?"
     options:

@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Chef de Projet'
+    language: french
     text: "Merci à tous d'être ici. Nous sommes réunis pour lancer notre nouveau projet de développement de produit. Commençons par définir les objectifs clés."
     translation: "Thank you all for being here. We are gathered to kick off our new product development project. Let's start by defining the key objectives."
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Quelles sont les principales parties prenantes que nous devons impliquer dans ce projet?"
     translation: "Who are the main stakeholders we need to involve in this project?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: Membre de l'équipe
+    language: french
     text: "Comment allons-nous gérer les risques potentiels tout au long du projet?"
     translation: "How will we manage potential risks throughout the project?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Quels outils ou méthodologies devrions-nous utiliser pour suivre l'avancement du projet?"
     translation: "What tools or methodologies should we use to track the project's progress?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Chef de Projet'
+    language: french
     text: "Avant de conclure, avez-vous des questions ou des préoccupations concernant le projet?"
     translation: "Before we conclude, do you have any questions or concerns regarding the project?"
     options:

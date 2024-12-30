@@ -179,8 +179,6 @@
                 const usercreds = firebasecreds.user.multiFactor.user;
                 console.log("usercreds", usercreds.accessToken)
 
-                
-
                 resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
                 await user.saveEmail(usercreds.email);
                 user.setToken(usercreds.accessToken );

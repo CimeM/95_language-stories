@@ -5,10 +5,6 @@ layout: default
 <div id="" role="main">
     <div class="mt-5">
 
-        <audio id="audioPlayer" class="hidden" controls>
-            <source id="audioSource" src="https://langapi.rivieraapps.com/audio?lang=it&text=Piaccere" type="audio/mp3">
-        </audio>
-
 
         {% unless page.header.overlay_color or page.header.overlay_image %}
             <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
@@ -125,17 +121,6 @@ layout: default
             let timeLeft = timerInitialValue;
             let timerInterval;
 
-            function playAudio(text, language){
-                // const audioSource = document.querySelector('#audioPlayer > source')
-                // audioSource.setAttribute("src",`https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`)
-                const audioPlayer = document.getElementById('audioPlayer');
-                var source = document.getElementById('audioSource');
-                source.src = `https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`;
-
-                audioPlayer.load();
-                audioPlayer.play();
-                
-            }
             function setData(input_phrases){
                 phrases = input_phrases;
             }
@@ -159,15 +144,10 @@ layout: default
             
             function selectPhrase(language, phrase) {
                 
+                // if not english play the sound
                 if (language!='english') {
                     var match = currentPhrases.findIndex(p => p[language].replace(/[^A-Za-z0-9]/g, '') == phrase )
-                    if(language.includes("fre")){
-                        playAudio( currentPhrases[match][language] ,'fr')
-                    }else if(language.includes("ita")){
-                        playAudio( match[language],'it')
-                    }else if(language.includes("slo")){
-                        playAudio( match[language],'si')
-                    }else{}
+                    audioPlayer.playAudio( currentPhrases[match][language] ,language )
                 }
 
                 if (selectedPhrase === null) {

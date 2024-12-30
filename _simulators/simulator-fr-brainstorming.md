@@ -5,6 +5,7 @@ context: 'Vous participez à une séance de brainstorming avec votre équipe pou
 difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
+    language: french
     speaker: 'Responsable Marketing'
     text: "Merci à tous d'être ici. Nous sommes réunis pour brainstormer des idées pour notre prochaine campagne marketing. Commençons par partager nos premières impressions."
     translation: "Thank you all for being here. We are gathered to brainstorm ideas for our upcoming marketing campaign. Let's start by sharing our initial thoughts."
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Quelles plateformes de médias sociaux devrions-nous cibler en priorité?"
     translation: "Which social media platforms should we prioritize?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: Membre de l'équipe
+    language: french
     text: "Que diriez-vous d'utiliser des influenceurs pour promouvoir notre produit?"
     translation: "What do you think about using influencers to promote our product?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Comment allons-nous mesurer le succès de cette campagne?"
     translation: "How will we measure the success of this campaign?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Responsable Marketing'
+    language: french
     text: "Avant de conclure, avez-vous d'autres idées ou suggestions à partager?"
     translation: "Before we conclude, do you have any other ideas or suggestions to share?"
     options:

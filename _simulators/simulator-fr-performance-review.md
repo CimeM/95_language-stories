@@ -6,6 +6,7 @@ difficulty: 'intermediate'
 dialogues:
   - id: 'd1'
     speaker: 'Manager'
+    language: french
     text: "Merci d'être venu. Comment vous sentez-vous par rapport à votre performance cette année?"
     translation: "Thank you for coming. How do you feel about your performance this year?"
     options:
@@ -22,6 +23,7 @@ dialogues:
 
   - id: 'd2'
     speaker: 'Vous'
+    language: french
     text: "Quels sont les principaux points que vous aimeriez aborder aujourd'hui?"
     translation: "What are the main points you would like to discuss today?"
     options:
@@ -38,6 +40,7 @@ dialogues:
 
   - id: 'd3'
     speaker: 'Manager'
+    language: french
     text: "Vous avez réalisé un excellent travail sur le projet X. Quelles compétences pensez-vous avoir développées grâce à ce projet?"
     translation: "You did an excellent job on project X. What skills do you think you developed through this project?"
     options:
@@ -54,6 +57,7 @@ dialogues:
 
   - id: 'd4'
     speaker: 'Vous'
+    language: french
     text: "Y a-t-il des domaines spécifiques où vous pensez que je devrais m'améliorer?"
     translation: "Are there specific areas where you think I should improve?"
     options:
@@ -70,6 +74,7 @@ dialogues:
 
   - id: 'd5'
     speaker: 'Manager'
+    language: french
     text: "Quels sont vos objectifs pour l'année prochaine? Comment puis-je vous aider à les atteindre?"
     translation: "What are your goals for next year? How can I help you achieve them?"
     options:
