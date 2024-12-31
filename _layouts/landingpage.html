@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<div class="min-vh-100 bg-gradient-to-b from-blue-50 to-white">
+  <!-- Hero Section -->
+  <div class="container py-5 text-center">
+    <h1 class="display-4 fw-bold text-dark mb-4">Master French for Tech <span class="text-primary">Naturally</span></h1>
+    <p class="lead text-muted mb-4">From casual learners to tech professionals – learn French through interactive stories, real-world engineering scenarios, and engaging games.</p>
+    <a href="/login" class="btn btn-primary  mx-2">Start Learning Free</a>
+    <a href="/gamemenu" class="btn btn-outline-primary  mx-2">Try Demo</a>
+  </div>
+
+  <!-- Features Grid -->
+  <div class="container py-5 rounded-4">
+    <div class="row">
+      {% assign features = site.data.landing-features %}
+      {% for feature in features %}
+      <div class="col-md-4 mb-4 ">
+        <div class="card shadow-sm border-light">
+          <div class="card-body bg-white rounded-3">
+            <div class="p-2 ps-3 pe-3 rounded-2 bg-light {{ feature.icon_class }} mb-3" style="font-size: 24px; color:{{ feature.icon_color }}; width:max-content;"></div>
+            <h5 class="card-title">{{ feature.title }}</h5>
+            <p class="card-text text-muted">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Learning Path Section -->
+  <div class="bg-white py-5 rounded-4">
+    <div class="container text-center">
+      <h2 class="display-4 mb-4 fw-bold fs-2">For Every Learning Stage</h2>
+      <div class="row">
+        {% assign paths = site.data.landing-learning_paths %}
+        {% for path in paths %}
+        <div class="col-md-4 mb-4 " style="align-content: center; ">
+          <div class=" bg-light p-4" style="border-radius:50rem; width:fit-content; background-color: light{{ path.icon_background }}; margin-left: auto; margin-right: auto;">
+              <i class=" bi bi-{{ path.icon_class }}" style="color: {{ path.icon_background }};"></i>
+          </div>
+          <h3>{{ path.level }}</h3>
+          <p>{{ path.description }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Premium Features -->
+  <div class="bg-light py-5 rounded-4">
+    <div class="container text-center">
+      <h2 class="display-4 mb-4 fw-bold fs-2">Unlock Premium Features</h2>
+      <!-- Add premium features here -->
+      {% assign features = site.data.landing-premiumfeatures %}
+      {% for feature in features %}
+      <div class="col-md-4 mb-4  ">
+        <div class="card shadow-sm ">
+          <div class="card-body  bg-white rounded-3 ">
+            <div class="p-2 rounded-2  {{ feature.icon_class }} mb-3" style="font-size: 24px; color:{{ feature.icon_color }};"></div>
+            <h5 class="card-title">{{ feature.title }}</h5>
+            <p class="card-text text-muted">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="bg-white py-5 ps-2 pe-2 text-center rounded-4">
+    <h2 >Ready to Start Your Journey?</h2>
+    <p>Join thousands of tech professionals who are advancing their careers through language learning.</p>
+    <a href="/login" class="btn btn-primary btn-lg">Create Free Account</a>
+  </div>
+</div>
+

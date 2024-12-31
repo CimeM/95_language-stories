@@ -1,0 +1,12 @@
+- level: Beginners
+  icon_class: lightning-charge-fill
+  icon_background: green
+  description: Start with basic tech vocabulary and simple conversations.
+- level: Tech Professionals
+  icon_class: code
+  icon_background: blue
+  description: Practice industry-specific scenarios and terminology.
+- level: Advanced Learners
+  icon_class: globe
+  icon_background: purple
+  description: Master complex discussions and technical documentation.

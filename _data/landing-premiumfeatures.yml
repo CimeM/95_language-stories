@@ -1,0 +1,12 @@
+- title: Advanced Scenarios
+  description: Access complex engineering discussions and specialized vocabulary.
+  icon_class: "bi bi-star" # Adjust this according to your icon library
+  icon_color: "cornflowerblue" # Adjust this according to your icon library
+- title: Extended Stories
+  description: Unlock additional chapters and advanced comprehension exercises
+  icon_class: "bi bi-book"
+  icon_color: "green" # Adjust this according to your icon library
+- title: Convert points to hearts
+  description: Convert your points into hearts and make your daily goal!
+  icon_class: "bi bi-hourglass-split"
+  icon_color: "purple" # Adjust this according to your icon library

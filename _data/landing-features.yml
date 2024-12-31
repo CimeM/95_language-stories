@@ -1,0 +1,12 @@
+- title: Simulate Conversations
+  description: Practice conversation scenarios in French.
+  icon_class: "bi bi-chat-dots" # Adjust this according to your icon library
+  icon_color: "cornflowerblue" # Adjust this according to your icon library
+- title: Interactive Stories
+  description: Immerse yourself in engaging stories with comprehension quizzes.
+  icon_class: "bi bi-book"
+  icon_color: "green" # Adjust this according to your icon library
+- title: Time Trials
+  description: Challenge yourself with fast-paced vocabulary matching games.
+  icon_class: "bi bi-hourglass-split"
+  icon_color: "purple" # Adjust this according to your icon library
