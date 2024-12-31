@@ -84,7 +84,13 @@ layout: default
           <div class="tab-pane show active" 
             id="pills-home-{{ forloop.index }}"  >
             <h2> {{ chap.label }}</h2>
-            <p> {{ chap.content }}</p>
+            <div id="actions-under-title">
+              <button id="playButtonChapterText" onclick="playCurentChapterAudio()" class="btn btn-link">
+                <i class="bi bi-play-fill"></i>
+                Play
+              </button>
+            </div>
+            <p id="chaptertext"> {{ chap.content }}</p>
           </div>
 
           </div>
@@ -168,6 +174,7 @@ layout: default
 <script>
   var userPoints = 0
 
+  
   const indicator = document.querySelector("#userpoints_indicator");
   indicator.textContent = String(userPoints)
   document.addEventListener('DOMContentLoaded', function() {
@@ -245,6 +252,39 @@ function savePoints(pointsToSave){
 
 <!-- navigate between chapters -->
 <script>
+
+
+async function playCurentChapterAudio(){
+  const playButton = document.querySelector("#playButtonChapterText");
+  playButton.classList.toggle("disabled");
+  const chapters = document.querySelectorAll('[id^="chapter-id-"]');
+  // find curent chapter text (it has a 'block' for visibility)
+  var curentChapterText = ''
+  chapters.forEach( c => { 
+    if(c.style.display == "block"){
+      curentChapterText = c.querySelector('#chaptertext').innerHTML;
+      return; // breaks the for loop.
+    } 
+  })
+  
+  if (!audioPlayer.isPaused()){
+    audioPlayer.pauseAudio()
+  }else{
+    // play the audio of displayed chapter
+    audioPlayer.playAudio(curentChapterText, 'french')
+  }
+  
+  if (!audioPlayer.isPaused()){
+    playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+  }else{
+    // turn the button into play
+    playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+  }
+
+  // enable the button
+  playButton.classList.toggle("disabled");
+  
+}
 document.addEventListener('DOMContentLoaded', function() {
   const chapters = document.querySelectorAll('[id^="chapter-id-"]');
   const nextButton = document.getElementById('next-chapter');

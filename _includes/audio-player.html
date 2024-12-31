@@ -24,13 +24,30 @@
                 lang = "si";
             }else{}
             
-            this.source.src = `https://langapi.rivieraapps.com/audio?lang=${lang}&text=${text}`;
-    
-            this.audioPlayer.load();
+            // url has to be onverted
+            const ttsRequestURL = `https://langapi.rivieraapps.com/audio?lang=${lang}&text=${text.replaceAll(" ", "%20")}`
+            var urlfilterobject = document.createElement('img')
+            urlfilterobject.src = ttsRequestURL
+            
+            // if request is for the same audio, skip loading
+            if( urlfilterobject.src != this.source.src ){
+                console.log("loading new audio ...")
+                this.audioPlayer.load();
+                this.source.src = ttsRequestURL;
+            }
             this.audioPlayer.play();
+            // set source
+    
+        }
+        
+        isPaused(){
+            return this.audioPlayer.paused;
+        }
+        pauseAudio(){
+            this.audioPlayer.pause()
         }
     }
-
+    
    
     var audioPlayer= new AudioPlayer;
     
