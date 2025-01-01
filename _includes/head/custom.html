@@ -10,16 +10,23 @@
     const htmlElement = document.documentElement;
   
     if (isDark) {
-      console.log("Dark mode is enabled");
+      // console.log("Dark mode is enabled");
       // Apply dark mode styles or functionality
       htmlElement.setAttribute('data-bs-theme', 'dark' );
+      document.querySelectorAll(".bg-light").forEach(c=>{
+        c.classList.toggle('bg-light')
+        c.classList.toggle('bg-dark-subtle')
+      })
+      
     } else {
-      console.log("Light mode is enabled");
+      // console.log("Light mode is enabled");
       // Apply light mode styles or functionality
       htmlElement.setAttribute('data-bs-theme', 'light');
     }
   
 </script>
+
+
 
 
 {% if site.authentication.firebase.api_key %}
