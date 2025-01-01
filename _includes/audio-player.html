@@ -12,7 +12,7 @@
             this.source = document.getElementById('audioSource');
         }
 
-        playAudio(text, language){
+        async playAudio(text, language){
             // const audioSource = document.querySelector('#audioPlayer > source')
             // audioSource.setAttribute("src",`https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`)
             var lang = '';
@@ -24,16 +24,15 @@
                 lang = "si";
             }else{}
             
-            // url has to be onverted
+            // convert url for comparison
             const ttsRequestURL = `https://langapi.rivieraapps.com/audio?lang=${lang}&text=${text.replaceAll(" ", "%20")}`
             var urlfilterobject = document.createElement('img')
             urlfilterobject.src = ttsRequestURL
             
             // if request is for the same audio, skip loading
             if( urlfilterobject.src != this.source.src ){
-                console.log("loading new audio ...")
-                this.audioPlayer.load();
                 this.source.src = ttsRequestURL;
+                await this.audioPlayer.load();
             }
             this.audioPlayer.play();
             // set source

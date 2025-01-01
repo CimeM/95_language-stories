@@ -174,7 +174,6 @@ layout: default
 <script>
   var userPoints = 0
 
-  
   const indicator = document.querySelector("#userpoints_indicator");
   indicator.textContent = String(userPoints)
   document.addEventListener('DOMContentLoaded', function() {
@@ -255,24 +254,59 @@ function savePoints(pointsToSave){
 
 
 async function playCurentChapterAudio(){
-  const playButton = document.querySelector("#playButtonChapterText");
-  playButton.classList.toggle("disabled");
+  // get all chapters html objects
   const chapters = document.querySelectorAll('[id^="chapter-id-"]');
-  // find curent chapter text (it has a 'block' for visibility)
+  // find curent chapter text (it has a 'block' for visibility) and also play button
   var curentChapterText = ''
+  var playButton = null
   chapters.forEach( c => { 
     if(c.style.display == "block"){
+      playButton = c.querySelector('#playButtonChapterText')
       curentChapterText = c.querySelector('#chaptertext').innerHTML;
       return; // breaks the for loop.
-    } 
+    }
   })
+
+  // Show loading animation when loading starts
+  audioPlayer.audioPlayer.addEventListener('loadstart', () => {
+        playButton.innerHTML = `<div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>`
+    });
+
+  // Hide loading animation when enough data is available to play
+  audioPlayer.audioPlayer.addEventListener('canplay', () => {
+      if (!audioPlayer.isPaused()){
+        playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+      }else{
+        // turn the button into play
+        playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+      }
+  });
+
+  // Hide loading animation when it can play through
+  // audioPlayer.audioPlayer.addEventListener('canplaythrough', () => {
+  //     // loadingIndicator.style.display = 'none';
+  //     console.log("canplaythrough")
+
+  // });
+
+  // Handle errors
+  audioPlayer.audioPlayer.addEventListener('error', () => {
+      // loadingIndicator.style.display = 'none';
+      alert('Error loading audio');
+  });
+
+  playButton.classList.toggle("disabled");
+  
   
   if (!audioPlayer.isPaused()){
     audioPlayer.pauseAudio()
   }else{
     // play the audio of displayed chapter
-    audioPlayer.playAudio(curentChapterText, 'french')
+    await audioPlayer.playAudio(curentChapterText, 'french')
   }
+  
   
   if (!audioPlayer.isPaused()){
     playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
@@ -285,6 +319,8 @@ async function playCurentChapterAudio(){
   playButton.classList.toggle("disabled");
   
 }
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const chapters = document.querySelectorAll('[id^="chapter-id-"]');
   const nextButton = document.getElementById('next-chapter');
