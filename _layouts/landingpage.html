@@ -5,7 +5,7 @@ layout: default
 <div class="min-vh-100 bg-gradient-to-b from-blue-50 to-white">
   <!-- Hero Section -->
   <div class="container py-5 text-center">
-    <h1 class="display-4 fw-bold text-dark mb-4">Master French for Tech <span class="text-primary">Naturally</span></h1>
+    <h1 class="display-4 fw-bold mb-4">Master French <span class="text-primary">Naturally</span></h1>
     <p class="lead text-muted mb-4">From casual learners to tech professionals – learn French through interactive stories, real-world engineering scenarios, and engaging games.</p>
     <a href="/login" class="btn btn-primary  mx-2">Start Learning Free</a>
     <a href="/gamemenu" class="btn btn-outline-primary  mx-2">Try Demo</a>
@@ -18,7 +18,7 @@ layout: default
       {% for feature in features %}
       <div class="col-md-4 mb-4 ">
         <div class="card shadow-sm border-light">
-          <div class="card-body bg-white rounded-3">
+          <div class="bg-light dark:bg-dark card-body rounded-3">
             <div class="p-2 ps-3 pe-3 rounded-2 bg-light {{ feature.icon_class }} mb-3" style="font-size: 24px; color:{{ feature.icon_color }}; width:max-content;"></div>
             <h5 class="card-title">{{ feature.title }}</h5>
             <p class="card-text text-muted">{{ feature.description }}</p>
