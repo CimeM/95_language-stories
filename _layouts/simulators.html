@@ -72,7 +72,7 @@ layout: default
                 <p id="text"></p>
                 <p id="translation" class="hidden fst-italic"></p>
                 <button id="toggleTranslation" onclick="toggleTranslation()" class="btn btn-link">Show Translation</button>
-                <button id="toggleTranslation" onclick="playDialogueAudio()" class="btn btn-link">
+                <button id="playButtonDialogueText" onclick="playDialogueAudio()" class="btn btn-link">
                     <i class="bi bi-play-fill"></i>
                     Play
                 </button>
@@ -115,7 +115,12 @@ layout: default
     function playDialogueAudio(){
         var dailoguetext = document.querySelector('#dialogueSequence #dialogue #text')
         var language = document.querySelector('#dialogueSequence #dialogue #language').innerHTML
-        audioPlayer.playAudio(dailoguetext.innerHTML, language)
+        if ( !audioPlayer.isPaused() ){
+            audioPlayer.pauseAudio()
+        }else{
+            audioPlayer.playAudio(dailoguetext.innerHTML, language)
+        }
+        changeButtonTextBasedOnPlayerStatus()
     }
 
     var selectedSimulation = null;
@@ -204,7 +209,8 @@ layout: default
                 const feedbackDiv = document.getElementById('feedback');
                 feedbackDiv.innerText = selectedOption.feedback;
                 
-                audioPlayer.playAudio(selectedOption.feedback, dialogue.language)
+                audioPlayer.playAudio(selectedOption.feedback, dialogue.language);
+                
 
                 if (selectedOption.isCorrect) {
                     feedbackDiv.classList.add('bg-success', 'text-white');
@@ -229,5 +235,38 @@ layout: default
         });
 
     }
-    
+
+
+
+    function changeButtonTextBasedOnPlayerStatus(){
+        var playButton = document.querySelector("#playButtonDialogueText")
+        
+        playButton.innerHTML = `<div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>`
+
+        // Hide loading animation when enough data is available to play
+        audioPlayer.audioPlayer.addEventListener('canplay', () => {
+            playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+        });
+
+        // trigger when audio ends
+        audioPlayer.audioPlayer.addEventListener('ended', () => {
+            playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+        })
+        
+        if (!audioPlayer.isPaused()){
+            playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+            
+            // trigger when audio ends
+            audioPlayer.audioPlayer.addEventListener('ended', () => {
+                playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+            })
+
+        }else{
+            // turn the button into play
+            playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+        }
+    }
+
 </script>

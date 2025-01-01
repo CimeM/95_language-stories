@@ -266,30 +266,24 @@ async function playCurentChapterAudio(){
       return; // breaks the for loop.
     }
   })
+  playButton.classList.toggle("disabled");
 
   // Show loading animation when loading starts
   audioPlayer.audioPlayer.addEventListener('loadstart', () => {
         playButton.innerHTML = `<div class="spinner-grow" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>`
-    });
+  });
 
   // Hide loading animation when enough data is available to play
   audioPlayer.audioPlayer.addEventListener('canplay', () => {
-      if (!audioPlayer.isPaused()){
-        playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
-      }else{
-        // turn the button into play
-        playButton.innerHTML = `<i class="bi bi-play"></i> Play`
-      }
+    changeButtonTextBasedOnPlayerStatus();
   });
 
-  // Hide loading animation when it can play through
-  // audioPlayer.audioPlayer.addEventListener('canplaythrough', () => {
-  //     // loadingIndicator.style.display = 'none';
-  //     console.log("canplaythrough")
-
-  // });
+  // trigger when audio ends
+  audioPlayer.audioPlayer.addEventListener('ended', () => {
+    changeButtonTextBasedOnPlayerStatus();
+  })
 
   // Handle errors
   audioPlayer.audioPlayer.addEventListener('error', () => {
@@ -297,7 +291,6 @@ async function playCurentChapterAudio(){
       alert('Error loading audio');
   });
 
-  playButton.classList.toggle("disabled");
   
   
   if (!audioPlayer.isPaused()){
@@ -308,16 +301,20 @@ async function playCurentChapterAudio(){
   }
   
   
+  changeButtonTextBasedOnPlayerStatus(playbutton);
+
+  // enable the button
+  playButton.classList.toggle("disabled");
+  
+}
+
+function changeButtonTextBasedOnPlayerStatus(playbutton){
   if (!audioPlayer.isPaused()){
     playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
   }else{
     // turn the button into play
     playButton.innerHTML = `<i class="bi bi-play"></i> Play`
   }
-
-  // enable the button
-  playButton.classList.toggle("disabled");
-  
 }
 
 
