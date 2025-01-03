@@ -1,7 +1,7 @@
 ---
 layout: story
 title: L'Innovation Culinaire
-published: false
+published: true
 language: French
 author: fluent_french95
 price: Free
@@ -23,9 +23,9 @@ chapters:
       - question: Quel est le métier de Thomas ?
         options:
           - Ingénieur
-          - Chef
           - Critique gastronomique
-        right_answer: 1
+          - Chef
+        right_answer: 2
       - question: Quel âge a Thomas ?
         options:
           - 25 ans
@@ -41,15 +41,15 @@ chapters:
       - question: Où se trouve le restaurant ?
         options:
           - Dans le 1er arrondissement
-          - Dans le 11ème arrondissement
           - Dans le 15ème arrondissement
-        right_answer: 1
+          - Dans le 11ème arrondissement
+        right_answer: 2
       - question: Pourquoi Thomas a-t-il besoin d'un prêt bancaire ?
         options:
-          - Pour acheter des ingrédients
           - Pour rénover son local
+          - Pour acheter des ingrédients
           - Pour payer ses employés
-        right_answer: 1
+        right_answer: 0
   - label: Chapitre 2 - Les Obstacles
     image: /assets/images/stories/innovation-culinaire/ch2-b.jpeg
     imageprompt: A stressed chef in a modern kitchen with digital screens and traditional cooking equipment, surrounded by staff with concerned expressions
@@ -64,9 +64,9 @@ chapters:
       - question: Qui menace de démissionner ?
         options:
           - Thomas
-          - Marie
           - Le critique gastronomique
-        right_answer: 1
+          - Marie
+        right_answer: 2
       - question: Comment la presse réagit-elle au concept ?
         options:
           - Avec enthousiasme
@@ -82,9 +82,9 @@ chapters:
       - question: Quelle est la réaction des fournisseurs ?
         options:
           - Ils sont enthousiastes.
-          - Ils sont réticents.
           - Ils acceptent immédiatement.
-        right_answer: 1
+          - Ils sont réticents.
+        right_answer: 2
 
   - label: Chapitre 3 - La Révolution
     image: /assets/images/stories/innovation-culinaire/ch3-b.jpeg
@@ -117,10 +117,10 @@ chapters:
         right_answer: 0
       - question: Quel type d’expérience propose le restaurant ?
         options:
-         – Une expérience traditionnelle.
-         – Une expérience personnalisée.
-         – Une expérience rapide.
-        right_answer: 1
+         - Une expérience personnalisée.
+         - Une expérience rapide.
+         - Une expérience traditionnelle.
+        right_answer: 2
 vocabulaire_b2:
   - défraîchi: worn out
   - reconverti: retrained

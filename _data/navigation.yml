@@ -8,21 +8,13 @@ main:
     icon: "fas fa-fw fa-list-square"
     id: userprofile
   
-  - title: "Time Trial"
-    url: /time_trials/
-    icon: "fas fa-fw fa-list-square"
-  
-  - title: "Conversation scenarios"
-    url: /simulator/
+  - title: "Play now"
+    url: /gamemenu/
     icon: "fas fa-fw fa-list-square"
 
-  - title: "All stories"
-    url: /stories/
-    icon: "fas fa-fw fa-list-square"
-
-  - title: "Get more stories"
-    url: /newsletter/
-    icon: "fas fa-fw fa-envelope-square"
+  # - title: "Get more stories"
+  #   url: /newsletter/
+  #   icon: "fas fa-fw fa-envelope-square"
 
   - title: "Collaborators"
     url: /collaborators/
@@ -45,7 +37,7 @@ footer:
     url: /newsletter/
     icon: "fas fa-fw fa-list-square"
   - title: "SocialPosts"
-    url: /social_posts/
+    url: /gamemenu/
     icon: "fas fa-fw fa-list-square"
   - title: "Time Trials"
     url: /time_trials/

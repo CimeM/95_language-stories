@@ -2,7 +2,7 @@
 
 layout: story
 title: L'Ascension Professionnelle
-published: false
+published: true
 language: French
 author: Sarah Martinez
 price: Free
@@ -83,9 +83,9 @@ chapters:
       - question: Que fait l'équipe après que Sarah propose des ateliers ?
         options:
           - Ils refusent.
-          - Ils commencent à participer activement.
           - Ils quittent la réunion.
-        right_answer: 1
+          - Ils commencent à participer activement.
+        right_answer: 2
   - label: Chapitre 3 - Le Triomphe
     image: /assets/images/stories/lascension-prof/ch3-a.jpeg
     image_prompt: A confident businesswoman presenting to a board room full of executives, with digital presentation screens showing successful marketing metrics and strategies
@@ -99,29 +99,28 @@ chapters:
         right_answer: 1
       - question: Qui félicite Sarah après la présentation ?
         options:
-          - Un client.
           - Philippe.
+          - Un client.
           - Son patron.
-        right_answer: 1
+        right_answer: 0
       - question: “Quelle est la réaction du conseil d'administration ?”
         options:
-         – “Ils sont déçus.”
-         – “Ils sont impressionnés.”
-         – “Ils sont indifférents.”
+         - “Ils sont déçus.”
+         - “Ils sont impressionnés.”
+         - “Ils sont indifférents.”
         right_answer: 1
       - question: “Quel contrat le client signe-t-il ?”
         options:
-         – “Un contrat initial.”
-         – “Un contrat pour leurs filiales internationales.”
-         – “Un contrat pour un nouveau produit.”
+         - “Un contrat initial.”
+         - “Un contrat pour leurs filiales internationales.”
+         - “Un contrat pour un nouveau produit.”
         right_answer: 1
       - question: “Comment Sarah se sent-elle après cette présentation ?”
         options:
-         – “Stressée.”
-         – “Déçue.”
-         – “Satisfaite et évoluée.”
+         - “Stressée.”
+         - “Déçue.”
+         - “Satisfaite et évoluée.”
         right_answer: 2
-
 vocabulaire_b2:
   - palpable: tangible
   - chevronné: experienced
@@ -129,5 +128,4 @@ vocabulaire_b2:
   - impulsif: impetuous
   - acharnés: relentless
   - détracteur: critic
-
 ---

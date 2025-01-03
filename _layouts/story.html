@@ -13,7 +13,7 @@ layout: default
               style=" width:38vw">
          
                 <img 
-                class="shadow mb-2 rounded-1 border-bottom border-left" 
+                class="shadow mb-2 rounded-3 border-bottom border-left" 
                 src="{{ page.logo }}" 
                 alt="{{ page.title  }}" 
                 style="
@@ -25,12 +25,12 @@ layout: default
             <div class="p-2 flex-shrink-1  bd-highlight">
                 <p class="fw-bold h3"> {{ page.title }}</p>
                 <p class="mb-0" 
-                  style="white-space: nowrap;overflow: hidden; text-overflow: clip; font-size: x-small;">
-                  {{ page.author | truncate: 5 }}</p>
+                  style="white-space: nowrap;overflow: hidden; text-overflow: clip; font-size: small;">
+                  {{ page.author | truncate: 20 }}</p>
                 <p> {{ page.price }}</p>
                 <p> 
                   {% for tag in page.story_tags.main %}
-                  <inline class="badge bg-light text-dark ">#{{ tag }}</inline>
+                  <inline class="badge bg-light text-dark ">{{ tag }}</inline>
                   {% endfor %}
                 <p>
             </div>
@@ -91,6 +91,7 @@ layout: default
               </button>
             </div>
             <p id="chaptertext"> {{ chap.content }}</p>
+            <p class="w-100 text-center">Chapter {{ forloop.index }} of {{ page.chapters.size }}</p>
           </div>
 
           </div>
@@ -105,13 +106,15 @@ layout: default
             {% for q in chap.quiz %}
             <div class="quiz-item">
               <p class="fw-bold">{{ q.question }}</p>
-              <ul>
+              <ul style="list-style-type: none;">
                 {% for opt in q.options %}
                 <li>
-                  <input type="radio" class="quiz-option" 
-                    {% if forloop.index0 == q.right_answer %} data-correct="true" {% endif%} 
-                  >
-                  {{ opt }}
+                  <label class="d-flex text-dark">
+                    <input type="radio" class="quiz-option me-3" 
+                      {% if forloop.index0 == q.right_answer %} data-correct="true" {% endif%} 
+                    >
+                    {{ opt }}
+                  </label>
                 </li>
                 {% endfor %}
               </ul>
@@ -153,11 +156,11 @@ layout: default
       </div>
       <!-- navigate between chapters -->
       <div id="chapter-actions" class="d-flex justify-content-between">
-        <button id="previous-chapter" type="button" class="btn btn-secondary">
+        <button id="previous-chapter" type="button" class="btn btn-secondary ">
           <i class="bi bi-chevron-left"></i>
           Back 
         </button>
-        <button id="next-chapter" type="button" class="btn btn-secondary">
+        <button id="next-chapter" type="button" class="btn btn-secondary ml-auto">
           Next <i class="bi bi-chevron-right"></i>
           
         </button>
@@ -277,12 +280,16 @@ async function playCurentChapterAudio(){
 
   // Hide loading animation when enough data is available to play
   audioPlayer.audioPlayer.addEventListener('canplay', () => {
-    changeButtonTextBasedOnPlayerStatus();
+    playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+    playButton.classList.remove("disabled");
+
   });
 
   // trigger when audio ends
   audioPlayer.audioPlayer.addEventListener('ended', () => {
-    changeButtonTextBasedOnPlayerStatus();
+    playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+    playButton.classList.remove("disabled");
+
   })
 
   // Handle errors
@@ -301,14 +308,14 @@ async function playCurentChapterAudio(){
   }
   
   
-  changeButtonTextBasedOnPlayerStatus(playbutton);
+  changeButtonTextBasedOnPlayerStatus(playButton);
 
   // enable the button
-  playButton.classList.toggle("disabled");
+  playButton.classList.remove("disabled");
   
 }
 
-function changeButtonTextBasedOnPlayerStatus(playbutton){
+function changeButtonTextBasedOnPlayerStatus(playButton){
   if (!audioPlayer.isPaused()){
     playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
   }else{
@@ -326,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   let currentChapter = 0;
   const totalChapters = chapters.length - 1; // Subtract 1 to exclude the end chapter
-
+  
   
   function showChapter(index) {
     chapters.forEach((chapter, i) => {
@@ -359,6 +366,11 @@ document.addEventListener('DOMContentLoaded', function() {
       nextButton.classList.remove("w-100")
       nextButton.classList.add("btn-secondary")
       suggestions.style.display = 'none';
+    }
+    if(currentChapter==1) {
+      previousButton.style.display = 'none';
+      nextButton.classList.add("btn-primary")
+      nextButton.classList.add("w-100")
     }
     if (currentChapter === totalChapters) {
       suggestions.style.display = 'block'; // show sug. at the end of the story

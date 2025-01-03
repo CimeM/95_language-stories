@@ -6,8 +6,17 @@
 if (isDark) {
     document.querySelectorAll(".bg-light").forEach(c=>{
         c.classList.toggle('bg-light')
-        c.classList.toggle('bg-dark-subtle')
+        c.classList.toggle('bg-dark-subtle') 
     })  
+    document.querySelectorAll(".text-dark").forEach(c=>{
+        c.classList.toggle('text-dark')
+        c.classList.toggle('text-light')
+    })
+    document.querySelectorAll(".bg-dark-subtle").forEach(c=>{
+        c.classList.toggle('bg-dark-subtle')
+        c.classList.toggle('bg-light-subtle')
+    })
+
 } 
   
 </script>
