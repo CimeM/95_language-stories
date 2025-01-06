@@ -9,7 +9,7 @@ main:
     id: userprofile
   
   - title: "Play now"
-    url: /gamemenu/
+    url: /gamemenu
     icon: "fas fa-fw fa-list-square"
 
   # - title: "Get more stories"
