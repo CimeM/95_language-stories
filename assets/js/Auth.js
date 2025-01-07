@@ -169,6 +169,8 @@ class FirebaseAuthManager {
     }
   }
 
+  // const authManager = new FirebaseAuthManager("{{ site.authentication.firebase.api_key }}");
+
 // const authManager = new FirebaseAuthManager(firebaseapikeyID);
 // // Check for existing session
 // if (authManager.checkSessionToken()) {
