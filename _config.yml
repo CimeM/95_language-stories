@@ -270,9 +270,9 @@ collections:
   simulators:
     output: true
     permalink: /simulator/:name/
-  social_posts:
+  igposts:
     output: true
-    permalink: /social_posts/:name/
+    permalink: /igposts/:name/
   time_trials:
     output: true
     permalink: /time_trial/:name/

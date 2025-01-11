@@ -1,5 +1,5 @@
 ---
-layout: social_posts
-title: "Posts"
-permalink: /social_posts/
+layout: igposts
+title: "IGPosts"
+permalink: /igposts/
 ---

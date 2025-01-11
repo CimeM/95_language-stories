@@ -1,0 +1,371 @@
+---
+layout: default
+---
+
+<!-- Square posts for posting on social media -->
+
+<style>
+
+#branding {
+  font-size: small;
+}
+
+#postnumber {
+  font-size: small;
+}
+
+#answer_option {
+  white-space:nowrap;
+  background-color: #00000021;
+}
+
+#post_content {
+  
+}
+
+#igPostFinalRender {
+
+  margin-left: auto;
+  margin-right: auto;
+  
+  text-align: center;
+  background-color: #816341; 
+  color: #FFFFFF;
+  
+}
+
+.square {
+  max-height: 390px;
+  aspect-ratio: 1 / 1; /* This makes the height equal to the width */
+}
+.longersquare {
+  max-height: 590px;
+  aspect-ratio: 1 / 2; /* This makes the height equal to the width */
+}
+
+[id^="post-c1-"]{
+}
+[id^="post-c2-"]{
+  background-color:#c7925c;
+  color: #3B2A1E
+}
+[id^="post-c3-"]{
+  background-color:#76b797;
+  color: #FFFFFF
+}
+[id^="post-c4-"]{
+  background-color:#e9e0b7;
+  color: #5B4C2A;
+}
+
+
+</style>
+
+  <!-- set up the data structure -->
+  <script>
+    var mainContent = {};
+    var selectedcontentChallenges = [];
+    var selectedColorStyle=0;
+    var postType = 'quiz'; // audioreel
+    var colorStyles = [
+      {
+        background: "#c7925c",
+        text: "#FFFFFF",
+      },
+      {
+        background: "#76b797",
+        text: "#FFFFFF",
+      },
+      {
+        background: "#e9e0b7",
+        text: "#5B4C2A",
+      }
+    ];
+  </script>
+
+  <div id="postsFileSelector">
+
+    {% assign igposts = site.igposts %}
+    {% assign ig_posts = igposts | where_exp: "igpost", "igpost.type == 'quiz'" %}
+
+    <p class="fs-3">Quiz</p>
+    <div class="d-grid gap-2">
+      {% for ig_post in ig_posts %}
+
+        <button class="btn btn-primary" onclick="selectPostsFile('{{ ig_post.name  }}', '{{ ig_post.type  }}')" type="button">
+          {{ ig_post.name  }}
+        </button>
+        <script>
+          // add data to main object
+          mainContent["{{ ig_post.name  }}"] = {
+            'author': '{{ ig_post.author }}',
+            'challenges': {{ ig_post.challenges | jsonify }}
+          } 
+        </script>
+        
+      {% endfor %}
+    </div>
+    
+
+    {% assign ig_posts = site.igposts | where_exp: "post", "post.type == 'audioreel'" %}
+
+    <p class="fs-3">Audioreel</p>
+    <div class="d-grid gap-2">
+      {% for ig_post in ig_posts %}
+        <button class="btn btn-primary" onclick="selectPostsFile('{{ ig_post.name }}', '{{ ig_post.type  }}')" type="button">{{ ig_post.name }}</button>
+        <script>
+          // add data to main object
+          mainContent["{{ ig_post.name  }}"] = {
+            'author': '{{ ig_post.author }}',
+            'language': '{{ ig_post.language }}',
+            'challenges': {{ ig_post.challenges | jsonify }}
+          } 
+        </script>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script defer>
+    function selectPostsFile(dataFileName, type){
+      var igPostFinalRender = document.querySelector('#igPostFinalRender')
+      selectedcontentChallenges = mainContent[dataFileName]
+      postType = type;
+      targetDiv = document.querySelector("#postNumberButtons")
+      targetDiv.innerHTML = '';
+
+      var igPost = document.querySelector("#igPostFinalRender");
+      var question = igPost.querySelector("#question");
+      var options = igPost.querySelector("#answer_options");
+
+      // add buttons for all challenges
+      if (type == 'quiz' ){
+        igPostFinalRender.classList.add("square")
+        igPostFinalRender.classList.remove("longersquare")
+        question.classList.remove("mt-5")
+        options.classList.remove("mt-5")
+
+        for (let index = 0; index < selectedcontentChallenges.challenges.length; index++) {
+          const element = selectedcontentChallenges.challenges[index];
+          targetDiv.innerHTML += '<button class="btn btn-outline-secondary" onclick="showThisPost('+index+')" type="button">'+index+'</button>'
+        }
+     
+      }
+      if ( type == 'audioreel' ){
+        igPostFinalRender.classList.remove("square")
+        igPostFinalRender.classList.add("longersquare")
+        question.classList.add("mt-5")
+        options.classList.add("mt-5")
+        // show buttons to sellect # of challenge
+        for (let index = 0; index < selectedcontentChallenges.challenges.length; index++) {
+          const element = selectedcontentChallenges.challenges[index];
+          targetDiv.innerHTML += '<button class="btn btn-outline-secondary" onclick="showThisPost('+index+')" type="button">'+index+'</button>'
+        }
+      }
+      // show a random one
+      showRandomPost()
+    }
+
+  </script>
+
+  <div id="postNumberSelector" >
+    <p class="fs-3">Post Selector</p>
+    <div class="p-4 mb-3" id="igPostFinalRender" class="square">
+      <div class="d-flex justify-content-between">
+        <span class="" style="visibility: hidden;"></span>
+        <span id="branding" class="fw-medium " ></span>
+        <span id="postnumber" class="fw-light fs-6"></span>
+      </div>
+        
+      <div id="post_content" class="mt-4 fw-medium">
+        <p class="pt-3 pb-2 fs-4 fw-bold" id="question"> 
+          {{ content_item.question }}
+        </p>
+        
+        <div class="fs-6" id="answer_options" ></div>
+      </div>
+    </div>
+
+    <div class="d-grid gap-2">
+      <button class="btn btn-secondary" id="playButton" onclick="playAudio()" type="button">
+        <i class="bi bi-play"></i>Play
+      </button>
+      <button class="btn btn-primary" onclick="showRandomPost()" type="button">
+        Random
+      </button>
+      <button class="btn btn-secondary" onclick="shiftColors()" type="button">
+        Color Shifter
+      </button>
+    </div>
+    <div class="d-grid gap-2 d-md-block" id="postNumberButtons" >
+    </div>
+  </div>
+
+  <script defer >
+    function showRandomPost(){
+      const randomNumber = Math.floor(Math.random() * selectedcontentChallenges.challenges.length);
+      showThisPost( randomNumber )
+    }
+    function shiftColors(){
+      var igPost = document.querySelector("#igPostFinalRender");
+
+      selectedColorStyle+=1;
+      if(selectedColorStyle >= colorStyles.length){selectedColorStyle=0}
+      igPost.style.background = colorStyles[selectedColorStyle].background;
+      igPost.style.color = colorStyles[selectedColorStyle].text;
+
+    }
+    function playAudio(){
+      var igPost = document.querySelector("#igPostFinalRender");
+      var text = igPost.querySelector("#question").innerText;
+      if ( !audioPlayer.isPaused() ){
+        audioPlayer.pauseAudio()
+      }else{
+        audioPlayer.playAudio(text ,selectedcontentChallenges.language)
+      }
+      changeButtonTextBasedOnPlayerStatus()
+    }
+
+    function showThisPost( number ){
+      var challengeData = selectedcontentChallenges.challenges[number]
+      var igPost = document.querySelector("#igPostFinalRender");
+      var question = igPost.querySelector("#question");
+      var branding = igPost.querySelector("#branding");
+      var postnumber = igPost.querySelector("#postnumber");
+      var options = igPost.querySelector("#answer_options");
+
+
+      options.innerHTML = '';
+      branding.innerHTML = '@' + selectedcontentChallenges.author;
+      if(postType=='quiz'){
+        question.innerHTML = challengeData.question
+        postnumber.innerHTML = "#"+ number;
+        for (let index = 0; index < challengeData.options.length; index++) {
+          const element = challengeData.options[index];
+          const alphabet = 'ABCDEFGHIJ';
+          if (index == challengeData.right_answer ){
+            options.innerHTML += 
+              `<div class="rounded-2 border mb-2 pt-1 pb-1 rightAnswer" id="answer_option" >
+                `+alphabet[index]+`: `+ element +`
+              </div>`
+          }else{
+            options.innerHTML += 
+              `<div class="rounded-2 border mb-2 pt-1 pb-1"  id="answer_option" >
+                `+alphabet[index]+`: `+ element +`
+              </div>`
+          }
+        }
+      }else if(postType=='audioreel'){
+        question.innerHTML = challengeData.foreginlanguage
+        options.innerHTML = 'EN: ' + challengeData.english
+      }
+         
+    }
+  
+    function changeButtonTextBasedOnPlayerStatus(){
+        var playButton = document.querySelector("#playButton")
+        
+        playButton.innerHTML = `<div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>`
+
+        // Hide loading animation when enough data is available to play
+        audioPlayer.audioPlayer.addEventListener('canplay', () => {
+            playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+        });
+
+        // trigger when audio ends
+        audioPlayer.audioPlayer.addEventListener('ended', () => {
+            playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+        })
+        
+        if (!audioPlayer.isPaused()){
+            playButton.innerHTML = `<i class="bi bi-pause"></i> Pause`
+            
+            // trigger when audio ends
+            audioPlayer.audioPlayer.addEventListener('ended', () => {
+                playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+            })
+
+        }else{
+            // turn the button into play
+            playButton.innerHTML = `<i class="bi bi-play"></i> Play`
+        }
+    }
+  </script>
+  
+
+
+<div class="accordion accordion-flush" id="accordionExample">
+  {% assign alphabet = "0ABCDEFGHIJKLMNOPQRSTUVWXYZ" | split: "" %}
+
+
+
+  <div class="accordion-item mb-1">
+    
+    <h2 class="accordion-header" id="heading{{ forloop.index }}">
+      <button 
+        class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#collapseOne-{{ social_post_structure.title | replace: ' ', '' }}" 
+        aria-expanded="false" 
+        aria-controls="collapseOne-{{ social_post_structure.title | replace: ' ', '' }}"
+      >
+        {{ social_post_structure.title }} - in {{ social_post_structure.language }} - {% for tag in social_post_structure.tags %} <span class="badge rounded-pill bg-light text-dark ms-1">{{ tag }}</span> {% endfor %}
+      </button>
+      <!-- {{ social_post_structure[0] | jsonify }} -->
+    </h2>
+    
+    <div id="collapseOne-{{ data.title | replace: ' ', '' }}" 
+      class="accordion-collapse collapse" 
+      aria-labelledby="heading{{ forloop.index }}" 
+      data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+
+        <div class="container">
+
+          {% for content_item in social_post_structure.content %}
+          <!-- {{content_item}} -->
+          <div class="row" >
+       
+            
+            <div class="col-4 g-1"> 
+              <div class="p-2" id="post-c1-{{ forloop.index }}"  >
+                <p id="branding">@{{ social_post_structure.author }}</p>
+                
+                <div id="post_content" class="mt-4">
+                  <p id="question"> 
+                    {{ content_item.question }}
+                  </p>
+                  
+                  {% for answer_option in content_item.options %}
+                    <div class="rounded-1 border mb-1" id="answer_option" >
+                      {{ alphabet[forloop.index] }}: {{ answer_option |  truncate: 31  }}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+       
+            
+
+          </div>
+          {% endfor %}
+        </div>
+      
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+<script>
+
+function showRandomAudioReel(data){
+  
+
+}
+
+
+
+</script>

@@ -1,8 +1,9 @@
 ---
 layout: posts
 current: post
-title: Slovenian Posts Basic
-author: fluent_slovenian95 QUIZ TIME!
+title: Slovenian Posts Basica
+author: "fluent_slovenian95 QUIZ TIME!"
+type: quiz
 tags: 
     - quiz
     - B1
@@ -10,8 +11,7 @@ tags:
     - basic
 language: slovenian
 published: true
-
-quiz:
+challenges:
   # Everyday conversation questions
   - question: "Kako rečemo 'Can I have the bill, please?' v slovenščini?"
     options:
