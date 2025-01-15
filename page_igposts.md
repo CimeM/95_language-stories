@@ -1,5 +1,5 @@
 ---
 layout: igposts
-title: "IGPosts"
+title: Instagram Posts
 permalink: /igposts/
 ---

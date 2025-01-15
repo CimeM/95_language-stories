@@ -1,4 +1,4 @@
-<audio id="audioPlayer" class="hidden" controls>
+<audio crossOrigin="anonymous" id="audioPlayer" class="hidden" controls>
     <source id="audioSource" src="https://langapi.rivieraapps.com/audio?lang=it&text=Piaccere" type="audio/mp3">
 </audio>
 
@@ -15,6 +15,14 @@
         async playAudio(text, language){
             // const audioSource = document.querySelector('#audioPlayer > source')
             // audioSource.setAttribute("src",`https://langapi.rivieraapps.com/audio?lang=${language}&text=${text}`)
+            
+            await this.loadAudio(text, language)
+            this.audioPlayer.play();
+            // set source
+    
+        }
+
+        async loadAudio(text, language){
             var lang = '';
             if(language.includes("fr")){
                 lang = "fr";
@@ -24,19 +32,16 @@
                 lang = "si";
             }else{}
             
-            // convert url for comparison
+            console.log("Loading audio")
             const ttsRequestURL = `https://langapi.rivieraapps.com/audio?lang=${lang}&text=${text.replaceAll(" ", "%20")}`
             var urlfilterobject = document.createElement('img')
             urlfilterobject.src = ttsRequestURL
-            
-            // if request is for the same audio, skip loading
+
             if( urlfilterobject.src != this.source.src ){
                 this.source.src = ttsRequestURL;
                 await this.audioPlayer.load();
+                console.log("Audio loaded")
             }
-            this.audioPlayer.play();
-            // set source
-    
         }
         
         isPaused(){

@@ -35,12 +35,12 @@ layout: default
 }
 
 .square {
-  max-height: 390px;
+  max-height: 685px;
   aspect-ratio: 1 / 1; /* This makes the height equal to the width */
 }
 .longersquare {
-  max-height: 590px;
-  aspect-ratio: 1 / 2; /* This makes the height equal to the width */
+  max-height: 685px;
+  aspect-ratio: 1 / 1.6;
 }
 
 [id^="post-c1-"]{
@@ -195,6 +195,8 @@ layout: default
       <button class="btn btn-secondary" onclick="shiftColors()" type="button">
         Color Shifter
       </button>
+      <button class="btn btn-light" id="startRecordingButton">Record Video</button>
+      <a id="recordingDownloadLink" class="hidden">DW</a>
     </div>
     <div class="d-grid gap-2 d-md-block" id="postNumberButtons" >
     </div>
@@ -367,5 +369,171 @@ function showRandomAudioReel(data){
 }
 
 
+class DivRecorder {
+  constructor(options) {
+    this.divSelector = options.divSelector;
+    this.startButtonSelector = options.startButtonSelector;
+    this.downloadLinkSelector = options.downloadLinkSelector;
+    this.audioApiRootUrl = options.audioApiRootUrl;
+    this.audioApiUrl = ''; // to be set later
+
+    this.recordingDiv = document.querySelector(this.divSelector);
+    this.startButton = document.querySelector(this.startButtonSelector);
+    this.downloadLink = document.querySelector(this.downloadLinkSelector);
+
+    this.mediaRecorder = null;
+    this.recordedChunks = [];
+    this.audioContext = null;
+    this.audioBuffer = null;
+
+    this.silenceInSecondsAtStart = 2;
+    this.silenceInSecondsAtEnd = 3;
+    this.audioDuration = 5
+
+    this.text= '';
+    this.language='';
+
+    this.init();
+  }
+
+  init() {
+    this.startButton.addEventListener('click', () => {
+
+      console.log("click start button")
+      this.setText(document.querySelector('#question').innerText,'fr');
+      this.startRecording()
+    });
+    // this.loadAudio();
+  }
+
+  async setText(text, language){
+    console.log("set Text to url.. triggered")
+
+    //'https://langapi.rivieraapps.com/audio?lang=it&text=Piaccere'
+    this.audioApiUrl = this.audioApiRootUrl + '/audio?lang=' + language + '&text=' + text
+    console.log('set url to : ', this.audioApiUrl);
+    await audioPlayer.loadAudio(text, "french");
+  }
+
+
+  async startRecording() {
+    console.log("Starting recording process...");
+    try {
+      var canvas = await html2canvas(this.recordingDiv);
+      console.log("Canvas created successfully");
+      var ctx = canvas.getContext('2d');
+
+      // Create AudioContext if it doesn't exist
+      if (!this.audioContext) {
+        this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        console.log("AudioContext created");
+      }
+
+      // Ensure audio is loaded and has a valid duration
+      if (!audioPlayer || isNaN(this.audioDuration)) {
+        console.error("Audio not loaded or duration is invalid.");
+        return;
+      }
+
+      console.log("Creating media element source...");
+      const source = this.audioContext.createMediaElementSource(audioPlayer.audioPlayer);
+      const audioDestination = this.audioContext.createMediaStreamDestination();
+      source.connect(audioDestination);
+      source.connect(this.audioContext.destination);
+      console.log("Audio source and destination set up");
+
+      console.log("Setting up video stream...");
+      const stream = canvas.captureStream(30);
+      stream.addTrack(audioDestination.stream.getAudioTracks()[0]);
+
+      console.log("Creating MediaRecorder...");
+      this.mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+
+      this.mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          this.recordedChunks.push(event.data);
+        }
+      };
+
+      this.mediaRecorder.onstop = () => {
+        console.log("Recording stopped, creating download link...");
+        const blob = new Blob(this.recordedChunks, { type: 'video/webm' });
+        this.downloadLink.href = URL.createObjectURL(blob);
+        this.downloadLink.download = 'recorded-video.webm';
+        this.downloadLink.click(); // Automatically trigger download
+      };
+
+      console.log("Starting MediaRecorder and playing audio...");
+      this.mediaRecorder.start();
+      
+      // Play audio and check for errors
+      try {
+        audioPlayer.audioPlayer.play()
+        // await this.audio.play();
+        console.log("Audio playing...");
+        
+        const drawFrame = () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(canvas, 0, 0);
+          requestAnimationFrame(drawFrame);
+        };
+        drawFrame();
+
+        this.startButton.disabled = true;
+
+        // Stop recording after audio finishes + silenceInSecondsAtEnd
+        const totalDuration = this.audioDuration + this.silenceInSecondsAtEnd;
+
+        // Check for NaN in total duration
+        if (isNaN(totalDuration) || totalDuration <= 0) {
+          throw new Error("Total duration for stopping recording is invalid.");
+        }
+
+        console.log(`Setting timeout to stop recording after ${totalDuration} seconds`);
+        
+        setTimeout(() => {
+          console.log("Stopping recording...");
+          this.mediaRecorder.stop();
+          audioPlayer.pauseAudio();
+          audioPlayer.currentTime = 0;
+          this.startButton.disabled = false;
+        }, totalDuration * 1000);
+
+      } catch (playError) {
+        console.error("Error playing audio:", playError);
+        this.startButton.disabled = false;
+      }
+
+    } catch (error) {
+      console.error("Error in startRecording:", error);
+      this.startButton.disabled = false;
+    }
+  }
+
+
+
+
+}
+
+
+const recorder = new DivRecorder({
+  divSelector: '#igPostFinalRender',
+  startButtonSelector: '#startRecordingButton',
+  downloadLinkSelector: '#recordingDownloadLink',
+  audioApiRootUrl: 'https://langapi.rivieraapps.com'
+});
+
+
+function getMediaStream(audioElement) {
+  if (audioElement.captureStream) {
+    return audioElement.captureStream();
+  } else if (audioElement.mozCaptureStream) {
+    return audioElement.mozCaptureStream();
+  } else {
+    throw new Error('captureStream() is not supported in this browser');
+  }
+}
 
 </script>
+
+<script defer src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
