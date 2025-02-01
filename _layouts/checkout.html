@@ -1,0 +1,314 @@
+---
+layout: default
+---
+
+<script src="https://www.paypal.com/sdk/js?client-id=AaqHQ1f9YpMiuzBzWGudEy9jxBtc_FzbGZb_KgjjzM336IDwR4kz6Ga9ldZIUuzUICkx2M3hsWOM7I2-&vault=true&intent=subscription" 
+    data-sdk-integration-source="button-factory"></script>
+
+<script>
+    const plans = [
+        {
+            title: "Basic",
+            price: "EUR 4.99/month",
+            description: "Access to basic features",
+            benefits: "Daily Time trial,Comprehension stories,Conversation simulator",
+            limitations: "Upcomming features, Daily quiz",
+            buttonid: "paypal-button-container-P-36L46165XJ871524DM6OTYKY"
+        },
+        {
+            title: "Premium",
+            price: "EUR 9.99/month",
+            description: "Access to all new features",
+            benefits: "Daily Time trial,Comprehension stories,Conversation simulator,Upcomming features, Daily quiz",
+            limitations: "",
+            buttonid: "paypal-button-container-P-1TD63106RF4542120M6OTLZA"
+        }
+    ]
+</script>
+
+<div class="container mt-2 ps-0 pe-0">
+
+    <div  class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="dropdown w-100" >
+                <button 
+                    class="btn btn-secondary dropdown-toggle w-100 text-start border border-gray-200 rounded-lg p-4 d-flex justify-content-between shadow-sm hover:border-blue-500 transition-colors" 
+                    type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"
+                    style="background-color:white; color: black"
+                    >
+                Select an item
+                </button>
+                <ul 
+                    id="dropdownOptions" class="dropdown-menu w-100  border border-gray-200 shadow-sm" 
+                    aria-labelledby="dropdownMenuButton"
+                    style="background-color:white; color: black;"
+                ></ul>
+            </div>
+            
+            
+            <div id="planDetails" class="card mt-4 shadow-sm" style="background-color:white;">
+                <div class="card-body">
+                    <h5 id="title" class="card-title" style="color:black" >Plan Details:</h5>
+                    <p id="details"></p>
+                    <div class="row" id="planDetails">
+                        <ul 
+                            class="col-6" id="planBenefits" 
+                            style="list-style-type: none; color:black;"></ul>
+                        <ul 
+                            class="col-6" id="planLimitations" 
+                            style="list-style-type: none; color:black;"></ul>
+                    </div>
+                </div>
+            </div>
+                            
+            <div id="completeThePurchase" class="mt-4 card shadow-sm"  style="background-color:white;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:black" >Complete Your Purchase</h5>
+                    <ul class="list-group mb-3">
+                        <li class="d-flex justify-content-between"
+                            style="background-color:white; color:black"
+                        >
+                            <span id="productName">Product Name</span>
+                            <strong id="productPrice">$4,99</strong>
+                        </li>
+        
+                        <hr class="mt-2 mb-3"/>
+        
+                        <li class="d-flex justify-content-between"
+                            style="background-color:white; color:black"
+                        >
+                            <span class="fw-bold" id="">Total</span>
+                            <strong id="productPriceTotal">$4,99</strong>
+                        </li>
+        
+                        <div id="couponCode">
+                            <p class=""><i class="bi bi-tag "></i> Have a coupon code?</p>
+                            <p id="resultmessage"></p>
+                            <div class="d-flex mb-3">
+                                <input type="text" 
+                                    class="form-control w-100 " 
+                                    placeholder="Enter code" 
+                                    aria-label="Enter code" 
+                                    aria-describedby="button-addon2"
+                                    style="background-color: white; color:black;"
+                                >
+                                <button 
+                                    class="btn  btn-outline-secondary ms-3 mb-0" 
+                                    type="button" id="button-addon2"
+                                    onClick="validateCouponCode()"
+                                >Apply</button>
+                            </div>
+        
+                        </div>
+        
+                        <hr class="mt-2 mb-3"/>
+        
+                        <div class="paypalbutton" id="paypal-button-container-P-36L46165XJ871524DM6OTYKY"></div>
+                        <div class="paypalbutton" id="paypal-button-container-P-1TD63106RF4542120M6OTLZA"></div>
+                        <div class="paypalbutton" id="fallback">
+                            <button class="btn btn-lg disabled w-100 bg-light" style="color:black">
+                                <i class="bi bi-x-circle"></i>
+                                This option is not available at this time
+                            </button>
+                        </div>
+                        <div class="paypalbutton" id="couponSuccessmessageOnSuccess">
+                            <p>
+                                <i class="bi bi-i-circle"></i>
+                                You coupon was successfully applied!
+                            </p>
+                            <buton>
+                        </div>
+                        
+                    </ul>
+                    <p class="text-body-secondary">By completing your purchase you agree to our Terms of Service and Privacy Policy</p>
+                </div>
+            </div>
+
+            <p class="mt-4 fw-bold"><i class="bi bi-info-circle"></i> How to cancle the subscription?</p>
+            <p >You can cancle using your <a href="https://www.paypal.com">PayPal website</a> in Automatic payment section</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Localhost development PayPal -->
+<!-- <input type='hidden' name='rm' value='2'>  -->
+<!-- payment button 1 -->
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-36L46165XJ871524DM6OTYKY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-36L46165XJ871524DM6OTYKY'); // Renders the PayPal button
+</script>
+
+<!-- payment button 2 -->
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'pill',
+          color: 'silver',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-1TD63106RF4542120M6OTLZA'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-1TD63106RF4542120M6OTLZA'); // Renders the PayPal button
+</script>
+
+<!-- actions on plan selection -->
+<script>
+    insertPricingPlans();
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        const dropdownButton = document.getElementById('dropdownMenuButton');
+        // const selectedItemDiv = document.getElementById('selectedItem');
+        
+        const planDetails = document.getElementById('planDetails');
+        const planDetailstitle = planDetails.querySelector("#title")
+        const planDetailsDetalis = planDetails.querySelector("#details")
+        const planBenefits = planDetails.querySelector("#planBenefits")
+        const planLimitations = planDetails.querySelector("#planLimitations")
+        
+        const ctpProductName = document.querySelector('#completeThePurchase  #productName');
+        const ctpProductPrice = document.querySelector('#completeThePurchase  #productPrice'); 
+        const ctpProductPriceTotal = document.querySelector('#completeThePurchase  #productPriceTotal'); 
+
+        const paypalButtons = document.querySelectorAll(".paypalbutton");
+        paypalButtons.forEach(button =>{ button.classList.add("hidden") })
+
+        dropdownItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const title = this.dataset.title;
+                const content = this.dataset.content;
+                const price = this.dataset.price;
+                const limitations = this.dataset.limitations.split(",");
+                const benefits = this.dataset.benefits.split(",");
+                const buttonid = this.dataset.buttonid
+                
+                // Update button text with title and price
+                dropdownButton.innerHTML = `<div class="fw-bold">${title} </br> <span class="fw-bold text-primary" >${price}</span></div>`;
+                // Update selected item display
+                // selectedItemDiv.innerHTML = `<strong>${title}</strong><br>${content}<br><span class="text-muted">${price}</span>`;
+                planDetailstitle.innerHTML = `Plan details: ${title}`
+                planDetailsDetalis.innerHTML = `${content}`
+                planBenefits.innerHTML = `<div class="fw-bold text-success fs-6 pb-2"> <i class="bi bi-check-lg text-success"></i> Benefits</div>`
+                planLimitations.innerHTML = `<div class="fw-bold text-danger fs-6 pb-2"><i class="bi bi-x-lg text-danger"></i> Limitations</div>`
+                
+                ctpProductName.innerHTML = `${title} subscription`
+                ctpProductPrice.innerHTML = `${price}`
+                ctpProductPriceTotal.innerHTML = `${price}`
+                
+                benefits.forEach( benefit => {
+                    if(benefit != ""){
+                        planBenefits.innerHTML += `<li class="p-1"><i class="bi bi-check-lg text-success pe-2"></i>${benefit}</li>`
+                    }
+                })
+                limitations.forEach( limitation => {
+                    if( limitation != ""){
+                        planLimitations.innerHTML += `<li class="p-1"><i class="bi bi-x-lg text-danger pe-2"></i>${limitation}</li>`
+                    }
+                })
+
+                // show the right button
+                paypalButtons.forEach(button =>{ button.classList.add("hidden") })
+                try{
+                    document.querySelector(`#${buttonid}`).classList.remove("hidden");
+                }catch{
+                    document.querySelector(".paypalbutton#fallback").classList.remove("hidden");
+                }
+            });
+        });
+        // select first item
+        dropdownItems[0].click();
+    });
+
+    function insertPricingPlans(){
+        const dropdownButtonOptions = document.querySelector('#dropdownOptions');
+        dropdownButtonOptions.innerHTML = '';
+        plans.forEach(plan => {
+            dropdownButtonOptions.innerHTML += `
+                <li>
+                    <a class="dropdown-item pt-3 pb-3" href="#" 
+                        data-title="${plan.title}" 
+                        data-content="${plan.description}" 
+                        data-benefits="${plan.benefits}" 
+                        data-buttonid="${plan.buttonid}" 
+                        data-limitations="${plan.limitations}" 
+                        data-price="${plan.price}">
+                        
+                        <strong class="fw-5">${plan.title}</strong>
+                        <br>
+                        <span class="text-primary fw-bold">${plan.price}</span>
+                        <br>
+                        ${plan.description}
+                    </a>
+                </li>
+            `
+        })
+    }
+</script>
+
+<!-- API operations -->
+<script>
+    // API operations
+    function validateCouponCode(){
+        const couponCode = document.querySelector("#couponCode input").value;
+        console.log("Coupon code", couponCode)
+        var couponHandler = new CouponHandler()
+        const result = couponHandler.validateCouponCode(couponCode);
+        const messageToUser = document.querySelector("#couponCode #resultmessage");
+        
+        try {
+            // try with a request to API here
+        } catch{ 
+            messageToUser.innerHTML = `Something went wrong`
+        }
+        // process result 
+        if ( result == true) {
+            // hide payment buttons
+            const paypalButtons = document.querySelectorAll(".paypalbutton");
+            paypalButtons.forEach(button =>{ button.classList.add("hidden") })
+            // show the success mesage
+            document.querySelector("#couponSuccessmessageOnSuccess").classList.remove("hidden");
+        } else{
+            //show message failure
+            messageToUser.classList.add("text-danger")
+            messageToUser.innerHTML = `Coupon '${couponCode}' invalid`
+        }
+    }
+
+    function registerPurchaseRequest(){
+        const userid = user.id;
+        const requestid = String(new Date().getTime());
+        try {   
+            // api request save the payment intent
+        }
+        catch{
+            console.log("Something went wrong with api request")
+        }
+    }
+
+</script>
