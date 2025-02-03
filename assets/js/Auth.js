@@ -1,5 +1,3 @@
-
-
 class FirebaseAuthManager {
     constructor(apikey = '') {
         this.firebaseConfig={ apiKey: apikey };
