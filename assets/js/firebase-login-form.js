@@ -1,28 +1,9 @@
 
 // Get HTML objects
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+// const emailInput = document.getElementById('email');
+// const passwordInput = document.getElementById('password');
 const resultDiv = document.getElementById('result');
 const loggedintitle= document.querySelector("#logout-form > h3")
-
-
-// Check for existing session on page load
-document.addEventListener('load', () => {
-    if (authManager.checkSessionToken()){
-        // resultDiv.innerHTML = `Logged in as ${user.email}`;
-        logoutForm.style.display = 'block';
-        loginForm.style.display = 'none';
-        signupForm.style.display = 'none';
-        // loggedintitle.innerHTML = `Logged in as ${user.email}`
-        apICallEnabled = true
-    } else {
-        resultDiv.innerHTML = 'Not logged in';
-        logoutForm.style.display = 'none';
-        loginForm.style.display = 'block';
-        apICallEnabled = false
-    }
-    // });
-});
 
 // Sign up function
 async function signUp() {
@@ -50,6 +31,8 @@ async function login() {
 
     try {
         const usercreds = await authManager.login(email, password);
+        console.log("login-form: login :", usercreds)
+
         resultDiv.innerHTML = `Login successful for ${usercreds.email} 🫡`;
         await user.saveEmail(usercreds.email);
         user.setToken(usercreds._delegate.accessToken );
@@ -95,15 +78,5 @@ async function handleCredentialResponse(response) {
     }
 }
 
-window.onload = function() {
-    google.accounts.id.initialize({
-        client_id: "{{ site.authentication.firebase.google_client_id }}",
-        callback: handleCredentialResponse
-    }); 
-    google.accounts.id.renderButton(
-        document.getElementById("googleSignInButton"),
-        { theme: "outline", size: "large" }
-    );
-};
-        
+  
         
