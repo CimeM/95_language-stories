@@ -30,16 +30,18 @@
 
 
 {% if site.authentication.firebase.api_key %}
-<script defer src="/assets/js/Auth.js">
-  const authManager = new FirebaseAuthManager("{{ site.authentication.firebase.api_key }}");
-</script>
+  <script  src="/assets/js/Auth.js"></script>
+  <script >
+    const authManager = new FirebaseAuthManager("{{ site.authentication.firebase.api_key }}");
+  </script>
 
 {% endif %}
 
-<script defer src="https://cdn.jsdelivr.net/npm/localforage@1.9.0/dist/localforage.min.js"></script>
-<script defer src="/assets/js/Syncable.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/localforage@1.9.0/dist/localforage.min.js"></script>
+<script src="/assets/js/Syncable.js"></script>
 
-<script defer src="/assets/js/User.js">
+<script  src="/assets/js/User.js"></script>
+<script >
   // create user here to be initialized for all components
   user = new UserAccount(
     authManager.sessionToken, 
