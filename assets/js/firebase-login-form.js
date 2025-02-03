@@ -7,7 +7,7 @@ const loggedintitle= document.querySelector("#logout-form > h3")
 
 
 // Check for existing session on page load
-document.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     if (authManager.checkSessionToken()){
         // resultDiv.innerHTML = `Logged in as ${user.email}`;
         logoutForm.style.display = 'block';
