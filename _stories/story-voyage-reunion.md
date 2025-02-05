@@ -20,8 +20,11 @@ chapters:
   - label: "Chapitre 1 - Le départ"
     imageprompt: "A vibrant beach scene in La Réunion with palm trees, waves, and a girl looking at the ocean."
     image: /assets/images/story-reunion_depart.png
-    content: "Clara se tenait sur la plage de La Réunion, regardant les vagues s'écraser contre le rivage. Les palmiers dansaient au rythme du vent chaud, et l'odeur des fleurs tropicales embaumait l'air. Elle avait toujours rêvé d'explorer Paris, la ville des lumières. Un jour, elle prit son courage à deux mains et embarqua dans un avion. À son arrivée à Paris, elle fut émerveillée par les bâtiments historiques et l'énergie de la ville. Mais alors qu'elle se promenait, elle se rendit compte qu'elle avait oublié un mot essentiel : comment dire 'baguette' en français ! Elle se mit à chercher une boulangerie pour goûter à cette fameuse spécialité française."
-    
+    content: 
+      french: "Clara se tenait sur la plage de La Réunion, regardant les vagues s'écraser contre le rivage. Les palmiers dansaient au rythme du vent chaud, et l'odeur des fleurs tropicales embaumait l'air. Elle avait toujours rêvé d'explorer Paris, la ville des lumières. Un jour, elle prit son courage à deux mains et embarqua dans un avion. À son arrivée à Paris, elle fut émerveillée par les bâtiments historiques et l'énergie de la ville. Mais alors qu'elle se promenait, elle se rendit compte qu'elle avait oublié un mot essentiel : comment dire 'baguette' en français ! Elle se mit à chercher une boulangerie pour goûter à cette fameuse spécialité française."
+      italian: ""
+      spanish: ""
+      slovene: ""
     quiz:
       - question: "D'où vient Clara?"
         options:
@@ -54,8 +57,11 @@ chapters:
   - label: "Chapitre 2 - À la recherche de la baguette"
     imageprompt: "A cozy Parisian bakery with fresh baguettes and pastries displayed."
     image: /assets/images/story-reunion_boulangerie.png
-    content: "Clara errait dans les rues pavées de Paris, admirant les vitrines des boutiques. Elle s'arrêta devant une boulangerie où l'odeur du pain frais flottait dans l'air. 'Bonjour! Je voudrais une... euh... baguette?' demanda-t-elle timidement. La boulangère lui sourit et lui répondit : 'Bien sûr! Voici votre baguette.' En sortant de la boulangerie, Clara se souvint des matins à La Réunion avec sa baguette croustillante et du beurre frais. Les passants lui disaient souvent : 'Tu viens d'un paradis!' Mais Clara commençait à apprécier ce nouveau paradis urbain. Les lumières scintillantes de Paris lui faisaient oublier un peu son chez-soi."
-
+    content: 
+      french: "Clara errait dans les rues pavées de Paris, admirant les vitrines des boutiques. Elle s'arrêta devant une boulangerie où l'odeur du pain frais flottait dans l'air. 'Bonjour! Je voudrais une... euh... baguette?' demanda-t-elle timidement. La boulangère lui sourit et lui répondit : 'Bien sûr! Voici votre baguette.' En sortant de la boulangerie, Clara se souvint des matins à La Réunion avec sa baguette croustillante et du beurre frais. Les passants lui disaient souvent : 'Tu viens d'un paradis!' Mais Clara commençait à apprécier ce nouveau paradis urbain. Les lumières scintillantes de Paris lui faisaient oublier un peu son chez-soi."
+      italian: ""
+      spanish: ""
+      slovene: ""
     quiz:
       - question: "Quel type de pain Clara veut-elle?"
         options:
@@ -88,8 +94,11 @@ chapters:
   - label: "Chapitre 3 - Découvertes parisiennes"
     imageprompt: "A lively café in Paris with people chatting and enjoying their drinks."
     image: /assets/images/story-reunion_paris.png
-    content: "Les jours passèrent et Clara continua d'explorer Paris. Elle visita des musées, flâna le long de la Seine et goûta à des plats délicieux comme le coq au vin et les crêpes sucrées. Chaque nouvelle expérience était une occasion d'apprendre plus de vocabulaire français. Un après-midi, alors qu'elle s'assoyait dans un café avec un livre, elle entendit des gens parler autour d'elle. 'Regarde cette vue! C'est magnifique!' dit un homme. Clara réalisa qu'elle pouvait comprendre presque tout ce qu'ils disaient. Elle était devenue plus confiante dans son utilisation du français."
-
+    content: 
+      french: "Les jours passèrent et Clara continua d'explorer Paris. Elle visita des musées, flâna le long de la Seine et goûta à des plats délicieux comme le coq au vin et les crêpes sucrées. Chaque nouvelle expérience était une occasion d'apprendre plus de vocabulaire français. Un après-midi, alors qu'elle s'assoyait dans un café avec un livre, elle entendit des gens parler autour d'elle. 'Regarde cette vue! C'est magnifique!' dit un homme. Clara réalisa qu'elle pouvait comprendre presque tout ce qu'ils disaient. Elle était devenue plus confiante dans son utilisation du français."
+      italian: ""
+      spanish: ""
+      slovene: ""
     quiz:
       - question: "Où Clara s'assoit-elle pour lire?"
         options:
@@ -122,8 +131,11 @@ chapters:
   - label: "Chapitre 4 - Le retour aux racines"
     imageprompt: "A beautiful sunset over the beach in La Réunion with palm trees."
     image: /assets/images/story-reunion_retour.png
-    content: "'Après quelques semaines passées à Paris, Clara décida qu'il était temps de rentrer chez elle pour partager ses nouvelles expériences avec sa famille et ses amis. Lorsqu'elle atterrit à La Réunion, elle fut accueillie par le doux parfum des fleurs et le bruit apaisant des vagues. Elle retrouva ses amis sur la plage et leur raconta ses aventures en France. 'J'ai appris tant de choses! Et vous savez quoi? J'ai même demandé une baguette!' s'exclama-t-elle avec fierté. Ses amis l'écoutaient avec admiration alors qu'elle racontait ses aventures."
-
+    content: 
+      french: "'Après quelques semaines passées à Paris, Clara décida qu'il était temps de rentrer chez elle pour partager ses nouvelles expériences avec sa famille et ses amis. Lorsqu'elle atterrit à La Réunion, elle fut accueillie par le doux parfum des fleurs et le bruit apaisant des vagues. Elle retrouva ses amis sur la plage et leur raconta ses aventures en France. 'J'ai appris tant de choses! Et vous savez quoi? J'ai même demandé une baguette!' s'exclama-t-elle avec fierté. Ses amis l'écoutaient avec admiration alors qu'elle racontait ses aventures."
+      italian: ""
+      spanish: ""
+      slovene: ""
     quiz:
       - question: "'Pourquoi Clara retourne-t-elle à La Réunion?' "
         options:
