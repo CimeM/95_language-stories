@@ -1,4 +1,4 @@
-<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script src="https://accounts.google.com/gsi/client" async ></script>
 
 <style>
     #signup-form {
@@ -64,6 +64,7 @@
 </div>
 
 <div id="result"></div>
+
 <script>
     const showSignupButon = document.getElementById('show-signup')
     const showLoginButon = document.getElementById('show-login')
@@ -89,13 +90,42 @@
 
 </script>
 
-
 {% if site.authentication.firebase.api_key %}
-<script defer src="/assets/js/firebase-login-form.js"></script>
+    <script src="/assets/js/firebase-login-form.js"></script>
+    
 {% else %}
-<div>
-    You must provide site.authentication.firebase.api_key to enable login functions
-</div> 
+    <div>
+        You must provide site.authentication.firebase.api_key to enable login functions
+    </div> 
 {% endif %}
 
 
+<script>
+    // Check for existing session on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        if (authManager.checkSessionToken()){
+            // resultDiv.innerHTML = `Logged in as ${user.email}`;
+            logoutForm.style.display = 'block';
+            loginForm.style.display = 'none';
+            signupForm.style.display = 'none';
+            // loggedintitle.innerHTML = `Logged in as ${user.email}`
+            apICallEnabled = true
+        } else {
+            resultDiv.innerHTML = 'Not logged in';
+            logoutForm.style.display = 'none';
+            loginForm.style.display = 'block';
+            apICallEnabled = false
+        }
+    });
+    window.onload = function() {
+        google.accounts.id.initialize({
+            client_id: "{{ site.authentication.firebase.google_client_id }}",
+            callback: handleCredentialResponse
+        }); 
+        google.accounts.id.renderButton(
+            document.getElementById("googleSignInButton"),
+            { theme: "outline", size: "large" }
+        );
+    };
+  
+</script>

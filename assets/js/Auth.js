@@ -18,29 +18,30 @@ class FirebaseAuthManager {
         }
     }
   
-    initAuthStateListener() {
-      this.auth.onAuthStateChanged(this.auth, (user) => {
-        this.log("user", user)
-        if (user) {
-          this.user = user;
-          this.sessionToken = user.accessToken;
-          this.setCookie('sessionToken', this.sessionToken);
-          this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
-          this.log('User is signed in');
-        } else {
-          this.user = null;
-          this.sessionToken = null;
-          this.clearCookie('sessionToken');
-          this.log('User is signed out');
-        }
-      });
-    }
+    // initAuthStateListener() {
+    //   this.auth.onAuthStateChanged(this.auth, (user) => {
+    //     this.log("user", user)
+    //     if (user) {
+    //       this.user = user;
+    //       this.sessionToken = user.accessToken;
+    //       this.setCookie('sessionToken', this.sessionToken);
+    //       this.setCookie('cookieTokenExpiration', new Date(Date.now() + 1 * 864e5/24).toUTCString());
+    //       this.log('User is signed in');
+    //     } else {
+    //       this.user = null;
+    //       this.sessionToken = null;
+    //       this.clearCookie('sessionToken');
+    //       this.log('User is signed out');
+    //     }
+    //   });
+    // }
 
     async login(email, password) {
+      this.log("login:", email);
       try {
         const userCredential = await this.auth.signInWithEmailAndPassword(email, password);
         this.renewToken();
-        this.log('User logged in successfully');
+        // this.log('User logged in successfully', userCredential.user._delegate.accessToken);
         return userCredential.user;
       } catch (error) {
         console.error('Login error:', error.message);
@@ -109,6 +110,7 @@ class FirebaseAuthManager {
     }
   
     async renewToken() {
+      this.log('renewToken:', this.auth.currentUser);
       this.auth = await firebase.auth()
       try {
         const currentUser = this.auth.currentUser;
@@ -147,8 +149,10 @@ class FirebaseAuthManager {
     }
   
     setCookie(name, value, days = 1) {
+      this.log('setCookie:', name, value);
       const expires = new Date(Date.now() + days * 864e5).toUTCString();
       document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; Secure; SameSite=Strict`;
+      this.log("document.cookie", document.cookie)
     }
   
     getCookie(name) {
