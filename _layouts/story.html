@@ -303,6 +303,8 @@ async function playCurentChapterAudio(){
   if (!audioPlayer.isPaused()){
     audioPlayer.pauseAudio()
   }else{
+    // filter the text from markdown decorations
+    var text = currentChapter.replace("*","");
     // play the audio of displayed chapter
     await audioPlayer.playAudio(curentChapterText, 'french')
   }

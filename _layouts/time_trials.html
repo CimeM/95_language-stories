@@ -305,6 +305,17 @@ layout: default
 
                 // if not logged in show the login button
                 document.querySelector("#rewardScreen > #actionitems").style.display="block"
+                try{
+                    if (authManager.checkSessionToken()) {
+                        // user is logged in
+                        document.querySelector("#rewardScreen > #actionitems").innerHTML = `<p>Your points are saved!</p>`;
+                    }else{
+                        // user is ot logged in
+                    }
+
+                }catch{
+
+                }
                 saveUserPoints(score)
 
                 if(user.getLives < 1){
