@@ -92,8 +92,8 @@
         var selectedlanguage = await user.getLearningLanguage();
         // find dataset that matches language name
         // todo add better selector - perhaps for every month
-        var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase()) )
-        if( key== undefined ){ key = Object.keys(mainContent)[0]}
+        var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase().substring(0,3)) )
+        if( key== undefined ){ key = [ Object.keys(mainContent)[0] ] }
         console.log("key", key[0])
         return await mainContent[key[0]]['challenges']
     }
