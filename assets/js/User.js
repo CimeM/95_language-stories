@@ -16,14 +16,32 @@ class UserAccount extends Syncable {
             tokenExpiration
         )
         
-        this.name = ""
-        
+        // this.name = ""
+
         document.addEventListener('DOMContentLoaded', () => {
             this.transformUserProfileButtonIntoIcon();
         })
 
         this.resetUsersHearts();
     }
+
+    // learningLanguage - language that user decided to learn
+    // setter for learningLanguage datapoint
+    async saveLearningLanguage(languageObj){
+        await this.dataInitializePromise;
+        this.data = { learningLanguage: languageObj }
+    }
+    // getter for learningLanguage datapoint
+    async getLearningLanguage(languageObj){
+        await this.dataInitializePromise;
+        if(Object.keys(this.data).includes('learningLanguage')){
+            return user.data.learningLanguage
+        }
+        // fallback value;
+        return {lang: "French", description:"The language of culture and diplomacy", icon:"🇫🇷"} 
+    }
+
+    // setter for Email datapoint
     async saveEmail(email){
         await this.dataInitializePromise;
         this.data = {email: email}
@@ -145,7 +163,7 @@ class UserAccount extends Syncable {
             button.innerHTML = "Profile";
             button.style.width="50px";
            return }
-        button.style.width="100px";
+        button.style.width="120px";
         var hearts = await this.getLives()
         var points = await this.getUserPoints();
         this.getAvatar().then(avatar => {

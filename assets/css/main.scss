@@ -8,6 +8,10 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+body {
+  background: rgb(12,7,96);
+  background: linear-gradient(148deg, rgba(12,7,96,1) 0%, rgba(28,28,150,1) 29%, rgba(196,0,255,1) 60%);
+}
 
 // hero component modifications
 .page__title{

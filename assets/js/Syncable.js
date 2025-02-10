@@ -9,6 +9,7 @@ class Syncable {
         this.apiEndpoint = apiEndpoint;
         this.syncQueue = [];
         this.isSyncing = false;
+        this.syncBackoffCounter = 0;
         this.version = 0;
         this.isOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
@@ -34,6 +35,7 @@ class Syncable {
         }
     }
 
+    // load data from storage
     async loadData() {
         try {
             const dataUpToNow = this.data;
@@ -115,12 +117,26 @@ class Syncable {
             this.mergeServerData(serverData);
             this.log('Batch synced successfully with API:', serverData);
         } catch (error) {
-            console.error('Error syncing batch:', error);
+            // error if there is a problem syscing the data
+            // type1: Offline: Network response was not ok
+            //      reson 1: network is offline or cross domain.. 
+            //      response: do nothing.
+            // console.error('Error syncing batch:', error);
+            this.log("Error:", error);
             this.syncQueue.unshift(...batch);
         } finally {
+            // backoff to sync later
             this.isSyncing = false;
+            this.syncBackoffCounter += 1;
+            var backofSeconds = Math.pow(this.syncBackoffCounter, 2);
+            this.log("retrying in: ", String(backofSeconds), "s" )
+            // backoff after 10 attempts
+            if(this.syncBackoffCounter > 7 ){
+                console.error("Error: Requests failed after "+ this.syncBackoffCounter + " attempts. Backing off");
+                return null
+            }
             if (this.syncQueue.length > 0) {
-                setTimeout(() => this.processQueue(), 1000);
+                setTimeout(() => this.processQueue(), ( 1000 * backofSeconds ));
             }
         }
     }

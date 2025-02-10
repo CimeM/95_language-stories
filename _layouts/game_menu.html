@@ -2,58 +2,232 @@
 layout: default
 ---
 
-<div class="min-vh-100 bg-gray-50 pt-5 pb-5">
+<div class="min-vh-100 bg-gray-50 pt-5 pb-5 ">
   <div class="container max-w-screen-xl mx-auto px-4 ps-0 pe-0">
-    <h1 class="text-3xl font-bold text-mutted mb-3">Bonjour! 👋</h1>
     
-    <div class="row g-4">
-      <div class="col-md-12">
-        <a href="/simulator" class="bg-light p-3 rounded-3 shadow-sm border border-gray-200 hover:border-blue-500 transition-colors d-block">
-          <div class="d-flex align-items-start">
-            <div class="bg-blue-100 p-3 rounded-lg text-blue-600" style="color:blue">
-              <i class="fs-3  bi bi-chat-right-quote-fill"></i>
-            </div>
-            <div class="ms-4">
-              <h2 class="text-xl font-semibold text-gray-900">Professional Conversations</h2>
-              <p class="text-gray-600 mt-1">Practice real-world engineering scenarios in French</p>
-            </div>
-          </div>
-        </a>
-      </div>
+  
+    <div id="languageSelectorMenu" class="hidden" style="height: 100vh;">
+      <div class="row g4">
+        <div class="col-md-12">
 
-      <div class="col-md-12">
-        <a href="/stories" class="bg-light p-3 rounded-3 shadow-sm border border-gray-200 hover:border-blue-500 transition-colors d-block">
-          <div class="d-flex align-items-start">
-            <div class="bg-green-100 p-3 text-green-600 rounded-lg" style="color:green">
-              <i class=" fs-3  bi bi-book"></i>
-            </div>
-            <div class="ms-4">
-              <h2 class="text-xl font-semibold text-gray-900">Interactive Stories</h2>
-              <p class="text-gray-600 mt-1">Read engaging stories and test your comprehension</p>
-            </div>
-          </div>
-        </a>
-      </div>
+          <button class="btn btn-bg-light bg-opacity-25 text-light" onclick="togglelanguageSelectorMenu()"> 
+            <i class="bi bi-chevron-left"></i>
+            Back 
+          </button>
+          <div class="container ps-0 pe-0 mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+              
+              <div class="text-center mb-12">  
+                <div class="flex items-center justify-center gap-3 mb-4">
+                  <i class="bi bi-globe-americas me-3 fs-3"></i>
+                  <h1 class="text-4xl font-bold text-white">
+                    Choose Your Language
+                  </h1>
+                </div>
+                <p class="text-lg text-white/80">
+                  Select the language you want to learn and start your journey!
+                </p>
+              </div>
 
-      <div class="col-md-12">
-        <a href="/time_trials" class="bg-light p-3 rounded-3 shadow-sm border border-gray-200 hover:border-blue-500 transition-colors d-block">
-          <div class="d-flex align-items-start">
-            <div class="bg-purple-100 p-3 rounded-lg text-purple-600" style="color:purple">
-                <i class=" fs-3 bi bi-stopwatch"></i>
-            </div>
-            <div class="ms-4">
-              <h2 class="text-xl font-semibold text-gray-900">Time Trial</h2>
-              <p class="text-gray-600 mt-1">Match words against the clock</p>
-            </div>
+              <div id="buttonList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              </div>
+
+            </div>  
           </div>
-        </a>
+        
+        </div>
       </div>
     </div>
 
-    <div class="mt-5 bg-light p-4 rounded-3 border border-blue-200">
-      <h3 class="text-lg font-semibold text-blue-900">Unlock Premium Content</h3>
-      <p class="text-blue-700 mt-2">Get access to advanced scenarios, more stories, and exclusive practice sessions.</p>
-      <a href="/upgrade" class="mt-4 btn btn-primary">Upgrade Now</a>
+    <script>
+
+      // TODO: move this to global settngs of the app
+      var languages= [
+        {lang: "French", description:"The language of culture and diplomacy", icon:"🇫🇷"},
+        {lang: "Spanish", description:"One of the world's most spoken languages.", icon:"🇪🇸"},
+        {lang: "Italian", description:"The language of art and cuisine", icon:"🇮🇹"},
+        {lang: "Slovene", description:"Slavic language rich in culture.", icon:"🇸🇮"},
+      ]
+
+      var selectedLanguage = { lang: "French", description:"test", icon:"🇫🇷" }
+
+      document.querySelector("#buttonList").innerHTML = '';
+      languages.forEach(languageObj => {
+
+        document.querySelector("#buttonList").innerHTML += `
+          <button class="btn group btn btn-outline-secondary btn-outline-light bg-light bg-opacity-25 rounded-3 d-flex justify-content-center backdrop-blur-lg p-3 w-100"
+            onclick="setThisLanguage('${languageObj.lang}')"
+          >
+            <div class="flex-shrink-0 items-center gap-4 mb-3">
+              <span class="fs-1 pe-3">${languageObj.icon}</span>
+            </div>
+            <div class="flex-shrink-2">
+              <h3 class="text-xl font-bold">${languageObj.lang}</h3>
+              <p class="text-sm opacity-75">${languageObj.description}</p>
+            </div>
+          </button>
+        `;
+      })
+
+      function setThisLanguage(lang) { 
+        selectedLanguage = languages.filter(x => x.lang == lang)[0];
+        console.log("you selected:", selectedLanguage);
+        updateLanguage(selectedLanguage);
+        // close the menu
+        togglelanguageSelectorMenu();
+      }
+      function updateLanguage(lang){
+        // TODO add save language to user object
+        user.saveLearningLanguage(lang);
+        document.querySelector("#languageselectheader h1").innerHTML = lang.lang;
+        document.querySelector("#languageselectheader #languageflag").innerHTML = lang.icon;
+      }
+
+      function togglelanguageSelectorMenu(){
+        document.querySelector("#languageSelectorMenu").classList.toggle("hidden")
+        document.querySelector("#mainGameMenu").classList.toggle("hidden")
+        
+      }
+    </script>
+    
+    <div id="mainGameMenu">
+      <div class="row g-4">
+        <div class="col-md-12">
+          <div id="languageselectheader" class="d-flex justify-content-between" >
+            <div class="text-3xl font-bold text-light mb-3 d-flex justify-content-start">
+              <div id="languageflag" class="fs-1 me-3 pt-2">
+                🇫🇷
+              </div>
+              <div>
+                <h1 class="fs-2 mb-1 ">French</h1>
+                <p class="text-mutted">Learning journey</p>
+              </div>
+            </div>
+            <button onClick="togglelanguageSelectorMenu()" 
+              id="learningLanguageSelectbutton" 
+              class="btn bg-light text-light bg-opacity-25 flex items-center gap-2 mt-2 rounded-3" 
+              style="height: fit-content;" >
+                <i class="bi bi-globe-americas me-3"></i>Change language
+            </button>
+      
+          </div>
+  
+        </div>
+      </div>
+      
+      <div class="row g-4 pb-4">
+        <div class="col-md-12">
+          <div class="card rounded-4 bg-light text-light bg-gradient bg-opacity-25">
+            <div class="card-body">
+              <div class="d-flex justify-content-between pb-5 pt-2">
+                <h5 id="daychallengetitle" class="card-title fw-bold mb-0">
+                  <i class="bi bi-calendar"></i>
+                  Day 6 challenge!
+                </h5>
+                <!-- <span class="badge rounded-pill bg-warning text-light" >New challenge available!</span> -->
+              </div>
+              <h6 class="card-subtitle text-muted"></h6>
+              <a type="button" href="/quiz" class="btn btn-primary rounded-3 mb-0 pt-2 btn-lg btn-block w-100 text-center">
+                <p class="fs-1"><i style = "color: white;" class="bi bi-trophy-fill"></i></p>
+                
+                <p class="fw-bold">Start today's challenge!</p>
+                <p class="text-mutted">Earn bonus points and keep your streak!</p>
+              </a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script>
+        document.getElementById("daychallengetitle").innerHTML = `
+          <i class="bi bi-calendar"></i> Day ${new Date().getDate()} challenge!
+        `
+      </script>
+    
+      
+      <div class="row g-4">
+        <div class="col-md-12">
+          <a href="/simulator" class="btn bg-light rounded-4 text-light bg-gradient bg-opacity-25 p-3 rounded-3 shadow-sm transition-colors d-block">
+            <div class="d-flex align-items-start">
+              <div class="rounded-2 bg-gradient bg-opacity-25 p-3 rounded-lg">
+                <i style = "color: whitesmoke;" class="fs-3  bi bi-chat-right-quote-fill"></i>
+              </div>
+              <div class="ms-4 text-left">
+                <h2 class="text-xl fw-bold text-gray-900">Conversation Simulator</h2>
+                <p class="text-gray-600 mt-1">Practice real-world conversation scenarios.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <div class="col-md-12">
+          <a href="/time_trials" class="btn bg-light rounded-4 text-light bg-gradient bg-opacity-25 p-3 rounded-3 shadow-sm transition-colors d-block">
+            <div class="d-flex align-items-start">
+              <div class="rounded-2 bg-gradient bg-opacity-25 p-3 rounded-lg">
+                  <i style = "color: whitesmoke;" class=" fs-3 bi bi-stopwatch"></i>
+              </div>
+              <div class="ms-4 text-left">
+                <h2 class="text-xl fw-bold text-gray-900">Time Trial</h2>
+                <p class="text-gray-600 mt-1">Race against the clock in exciting challenges!</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-12">
+          
+          <a type="button" id="disabledIfNotLoggedIn" provisionedlink="/stories" class="btn bg-light rounded-4 text-light bg-gradient bg-opacity-25 p-3 rounded-3 shadow-sm transition-colors d-block disabled" role="button" aria-disabled="true">
+            <div class="d-flex align-items-start">
+              <div class="rounded-2 bg-gradient bg-opacity-25 p-3 rounded-lg">
+                <i  style = "color: whitesmoke;" class=" fs-3  bi bi-book"></i>
+              </div>
+              <div class="ms-4 text-left">
+                <h2 class="text-xl fw-bold text-gray-900">Interactive Stories</h2>
+                <p class="text-gray-600 mt-1">Test your comprehension with engaging stories.</p>
+                <!-- Disabled text -->
+                <p id="createaccountMessage" class="text-gray-600 mt-1">
+                  <i style = "color:yellow;" class="bi bi-stars yellow" ></i>
+                  Create an account to unlock
+                </p>
+
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div> <!-- row g-4 -->
+      
+      <div id="createAccountMessage" class="mt-5 bg-light text-light bg-gradient bg-opacity-25 p-4 rounded-3 border border-blue-200">
+        <h3 class="text-lg font-semibold text-blue-900">
+          <i style = "color:yellow;" class="bi bi-star-fill"></i> 
+          Want to save your progress?</h3>
+        <p class="text-blue-700 mt-2">Create an account to track your acchivements and maintain your streak!</p>
+        <a href="/login" class="mt-4 btn btn-primary">Sign Up Now</a>
+      </div>
+
+      <div id="premiumaccountSignup" class="hidden mt-5 bg-light text-light bg-gradient bg-opacity-25 p-4 rounded-3 border border-blue-200">
+        <h3 class="text-lg font-semibold text-blue-900"><i style = "color: whitesmoke;" class="bi bi-bookmark-star-fill"></i> Unlock Premium Content</h3>
+        <p class="text-blue-700 mt-2">Get access to advanced scenarios, more stories, and exclusive practice sessions.</p>
+        <a href="/upgrade" class="mt-4 btn btn-primary">Upgrade Now</a>
+      </div>
+      
+      <script>
+        // unlock UI buttons when user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+          if (authManager.checkSessionToken() == true){
+            document.querySelectorAll("#createAccountMessage").forEach(obj =>{ obj.classList.add("hidden"); })
+            document.querySelector("#premiumaccountSignup").classList.remove("hidden");
+            // enable locked button
+            button = document.querySelector("#disabledIfNotLoggedIn")
+            button.classList.remove("disabled")
+            button.href = button.getAttribute("provisionedlink")
+          }
+        })
+      </script>
+
     </div>
+
+
   </div>
 </div>

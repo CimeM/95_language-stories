@@ -1,0 +1,208 @@
+
+
+<div id="quizGame-container">
+    <div class="card bg-light bg-opacity-10 text-light">
+        <div class="card-body">
+            <div class="d-flex justify-content-between mb-3">
+                <h5 class="card-title fw-bold">
+                    <i style="color:rgb(199, 96, 199)" class="bi bi-activity"></i>
+                    Daily challenge
+                </h5>
+                <span class="d-flex justify-content-start">
+                    <div id="timeleft" class="me-2">
+                        <i style="color:green" class="bi bi-stopwatch-fill"></i>
+                        30s
+                    </div>
+                    <div id="livesLeft">
+                        <i style="color:lightcoral" class="bi bi-heart-fill"></i>
+                        <i style="color:lightcoral" class="bi bi-heart-fill"></i>
+                        <i style="color:lightcoral" class="bi bi-heart-fill"></i>
+                    </div>
+                </span>
+            </div>
+            <div class="d-flex justify-content-between mb-4">
+                <p id="challengeIndicator" class="text-mutted">
+                    Question 1 of 5
+                </p>
+                <span id="challengeScoreIndicator" class="badge badge-pill">Score: 0p</span>
+            </div>
+            <h4 id="challengeQuestion" class="card-subtitle mb-2 text-light">
+                What is the capital of france?
+            </h4>
+            <div id="answerList" class="d-grid gap-2 text-start mt-3">
+                <button class="btn btn-lg text-start text-light bg-light bg-opacity-10" type="button">
+                    A: Partis
+                </button>
+                <button class="btn btn-lg text-start text-light bg-light bg-opacity-10" type="button">
+                    B: Partis
+                </button>
+                <button class="btn btn-lg text-start text-light bg-light bg-opacity-10" type="button">
+                    C: Partis
+                </button>
+                <button class="btn btn-lg text-start text-light bg-light bg-opacity-10" type="button">
+                    D: Partis
+                </button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div id="gamescore" class="hidden text-center ">
+    <div class="card bg-light bg-opacity-10 text-light pt-3 pb-3">
+        <div id="gameovericon" class="">
+            <i sytle="color:yellow;" class="fs-1 bi bi-trophy"></i>
+        </div>
+        <div class="fs-2 mt-3 mb-3" id="title">
+            Game over!
+        </div>
+        <div id="score">
+            Your score:222
+        </div>
+        <div id="actionItems">
+            <a href="/gamemenu" class="mt-4 btn btn-primary">
+                Confirm
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    
+    
+    var mainContent = {};
+</script>
+
+{% assign igposts = site.igposts %}
+{% assign ig_posts = igposts | where_exp: "igpost", "igpost.type == 'quiz'" %}
+{% for ig_post in ig_posts %}
+<script>
+    // add data to main object
+    mainContent["{{ ig_post.name  }}"] = 
+    {
+        'author': '{{ ig_post.author }}',
+        'challenges': {{ ig_post.challenges | jsonify }}
+    }
+</script>
+{% endfor %}
+
+<script>
+    async function loadChalengesInPreferedLanguage(){
+        var selectedlanguage = await user.getLearningLanguage();
+        // find dataset that matches language name
+        // todo add better selector - perhaps for every month
+        var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase()) )
+        console.log("key", key[0])
+        return await mainContent[key[0]]['challenges']
+    }
+    function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    var maxChallenges = 6
+    var counter = 0;
+    var quizPoints = 0;
+    var livesLeft = 3;
+    var countdownTimer = 60;
+
+    async function loadChallenge(){
+        
+        drawLivesLeft();
+        drawPointsScore();
+        // interupt the execution -> show result
+        if(counter >= maxChallenges || livesLeft <= 0){ 
+            gameOver();
+            return 
+        }
+        counter +=1
+        var quizchallenges = await loadChalengesInPreferedLanguage();
+        var randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1))
+        console.log("randomNumber",randomNumber)
+        displayChallenge(quizchallenges[randomNumber], counter, maxChallenges)
+    }
+    async function displayChallenge(challenge, challengeIndex, maxChallengeNumber){
+        console.log("challenge", challenge)
+        var challengeIndicator = document.querySelector("#challengeIndicator");
+        challengeIndicator.innerHTML = `Challenge ${challengeIndex } of ${maxChallengeNumber}`
+        
+        var challengeQuestion = document.querySelector("#challengeQuestion");
+        challengeQuestion.innerHTML = challenge.question;
+
+        var answerList = document.querySelector("#answerList");
+        answerList.innerHTML = '';
+        var counter = 0;
+        challenge.options.forEach( option => {
+            answerList.innerHTML += 
+                `<button id="quizAnswer" onclick="handleSelectQuizAnswer(this,${counter})" 
+                    isCorect="${challenge.right_answer==counter}" 
+                    corectIndex="${challenge.right_answer}" 
+                    class="btn btn-lg text-start text-light bg-light bg-opacity-10" 
+                    type="button">
+                    ${"ABCDEFGHIJ"[counter]}: ${option.replace("“","")}
+                </button>`
+                counter+=1;
+        })
+        
+    }
+    function handleSelectQuizAnswer(button, answerIndex){
+        var greenCheck = `<i style="color:green;" class="ps-1 bi bi-check-circle-fill"></i>`
+        var redX = `<i style="color:red;" class="ps-1 bi bi-x-circle-fill"></i>`
+        var allButtons = document.querySelectorAll("#quizAnswer");
+        if( button.getAttribute("isCorect") != "false" ){
+            quizPoints += 1;
+            button.innerHTML += greenCheck;
+            drawPointsScore();
+        }else{
+            livesLeft-=1;
+            // mark the wrong answer buton
+            button.innerHTML += redX;
+            // mark the correct answer button
+            var correctNumberButtn = Number(button.getAttribute("corectIndex"));
+            allButtons[correctNumberButtn].innerHTML += greenCheck;
+            drawLivesLeft();
+        }
+        // disable buttons
+        allButtons.forEach(button => { button.setAttribute("onClick", "") });
+        setTimeout(() => loadChallenge(), ( 1600 ));
+    }
+
+    function drawLivesLeft(){
+        console.log("livesLeft", livesLeft)
+        var livesLeftDiv = document.querySelector("#livesLeft");
+        livesLeftDiv.innerHTML = '';
+        for(let i = 0; i < livesLeft; i++){
+            livesLeftDiv.innerHTML += `<i style="color:lightcoral" class="bi bi-heart-fill"></i>`;
+        }
+    }
+    function drawPointsScore(){
+        var challengeScoreIndicator = document.querySelector("#challengeScoreIndicator");
+        challengeScoreIndicator.innerHTML = "Score: " + quizPoints + "p";
+    }
+    function reduceTimer(){
+        countdownTimer-=1;
+        var color = "green";
+        if(countdownTimer < 25){color = "orange"}
+        if(countdownTimer < 15){color = "red"}
+        var challengeScoreIndicator = document.querySelector("#timeleft");
+        challengeScoreIndicator.innerHTML = `
+            <i style="color:${color}" class="bi bi-stopwatch-fill"></i>
+            ${countdownTimer}s
+        `;
+        if(countdownTimer <= 0){
+            gameOver();
+        }else{
+            setTimeout(reduceTimer, 1000);
+        }
+    }
+    function gameOver(){
+        document.querySelector("#quizGame-container").classList.add("hidden");
+        document.querySelector("#gamescore").classList.remove("hidden");
+        var gamescore = document.querySelector("#gamescore");
+        gamescore.querySelector("#score").innerHTML = "Your score " + quizPoints + "p"
+    }
+    loadChallenge();
+    reduceTimer();
+    
+    
+</script>
