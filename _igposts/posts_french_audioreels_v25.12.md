@@ -4,12 +4,12 @@ current: post
 title: French Audioreel Basic
 author: fluent_french95 PRONOUNCIATION TIME!
 type: audioreel
+language: french
 tags:
   - audioreel
   - B1
   - A2
   - basic
-language: french
 published: true
 challenges:
   - text:

@@ -3,13 +3,13 @@ layout: posts
 current: post
 title: Italian Posts Basic
 author: "fluent_italian95 QUIZ TIME!"
+language: italian
 type: quiz
 tags: 
     - quiz
     - B1
     - A2
     - basic
-language: italian
 published: true
 
 challenges:

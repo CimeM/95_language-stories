@@ -3,13 +3,13 @@ layout: posts
 current: post
 title: Slovenian Posts Basica
 author: "fluent_slovenian95 QUIZ TIME!"
+language: slovenian
 type: quiz
 tags: 
     - quiz
     - B1
     - A2
     - basic
-language: slovenian
 published: true
 challenges:
   # Everyday conversation questions

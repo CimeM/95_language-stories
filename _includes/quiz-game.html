@@ -56,13 +56,17 @@
             Game over!
         </div>
         <div id="score">
-            Your score:222
+            Your score:2p
+        </div>
+        <div id="notLoggedinActionItem" class="hidden">
+            Save your points! <a href="/login" class="btn btn-primary">Sign Up!</a>
         </div>
         <div id="actionItems">
             <a href="/gamemenu" class="mt-4 btn btn-primary">
                 Confirm
             </a>
         </div>
+
     </div>
 </div>
 
@@ -82,6 +86,8 @@
     mainContent["{{ ig_post.name  }}"] = 
     {
         'author': '{{ ig_post.author }}',
+        'language': '{{ ig_post.language }}',
+        'type': '{{ ig_post.type }}',
         'challenges': {{ ig_post.challenges | jsonify }}
     }
 </script>
@@ -91,11 +97,19 @@
     async function loadChalengesInPreferedLanguage(){
         var selectedlanguage = await user.getLearningLanguage();
         // find dataset that matches language name
-        // todo add better selector - perhaps for every month
-        var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase().substring(0,3)) )
-        if( key[0] == undefined ){ key = [ Object.keys(mainContent)[0] ] }
-        console.log("key", key[0])
-        return await mainContent[key[0]]['challenges']
+        var quizfilekeys = Object.keys( mainContent );
+        // var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase()) )
+        var lng = selectedlanguage.lang.toLocaleLowerCase().slice(0,3)
+        for (const key of quizfilekeys) {
+            if(mainContent[key].type == "quiz") {
+                if (mainContent[key].language.toLocaleLowerCase().includes( lng ) ) {
+                    // found matching language
+                    return mainContent[key]['challenges']
+                }
+            }
+        }
+        // fallback to default language
+        return mainContent[quizfilekeys[0]]['challenges']
     }
     function randomIntFromInterval(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -106,6 +120,7 @@
     var quizPoints = 0;
     var livesLeft = 3;
     var countdownTimer = 60;
+    var challengeIndexes = [];
 
     async function loadChallenge(){
         
@@ -118,7 +133,11 @@
         }
         counter +=1
         var quizchallenges = await loadChalengesInPreferedLanguage();
-        var randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1))
+        var randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1));
+        // while( challengeIndexes.includes(randomNumber) != true ){
+        //     randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1));
+        // }
+        challengeIndexes.push(randomNumber)
         console.log("randomNumber",randomNumber)
         displayChallenge(quizchallenges[randomNumber], counter, maxChallenges)
     }
@@ -140,7 +159,7 @@
                     corectIndex="${challenge.right_answer}" 
                     class="btn btn-lg text-start text-light bg-light bg-opacity-10" 
                     type="button">
-                    ${"ABCDEFGHIJ"[counter]}: ${option.replace("“","")}
+                    ${"ABCDEFGHIJ"[counter]}: ${option.replace("“",'').replace("”",'').replace("\"",'')}
                 </button>`
                 counter+=1;
         })
@@ -200,10 +219,39 @@
         document.querySelector("#quizGame-container").classList.add("hidden");
         document.querySelector("#gamescore").classList.remove("hidden");
         var gamescore = document.querySelector("#gamescore");
-        gamescore.querySelector("#score").innerHTML = "Your score " + quizPoints + "p"
+        gamescore.querySelector("#score").innerHTML = "Your score " + quizPoints + "p";
+        user.addPoints(quizPoints)
+        // include explanation of results
     }
-    loadChallenge();
-    reduceTimer();
+    function timeUntilMidnight() {
+        const now = new Date(); // Current date and time
+        const midnight = new Date(); // Create a new Date object for midnight
+        midnight.setHours(24, 0, 0, 0); // Set hours to 24:00:00.000 (midnight of the next day)
+        
+        const millisecondsUntilMidnight = midnight - now; // Difference in milliseconds
+        const seconds = Math.floor(millisecondsUntilMidnight / 1000) % 60;
+        const minutes = Math.floor(millisecondsUntilMidnight / (1000 * 60)) % 60;
+        const hours = Math.floor(millisecondsUntilMidnight / (1000 * 60 * 60));
+        
+        return `${hours} hours, ${minutes} minutes, and ${seconds} seconds!`;
+    }
     
     
+    async function  handleGameStart(){
+        // decision maker - decides if game can be started ( 1x per day )
+        if(await user.checkIfTheDailyChallengeHasbeenSpent() != true){
+            loadChallenge();
+            reduceTimer();
+            user.markTheDailyChallengeAsStarted()
+        }else{
+            // user already spent the daily challenge
+            gameOver();
+            gamescore.querySelector("#score").innerHTML = "You already played today. Next challenge in:" + timeUntilMidnight();
+        }
+    }
+    if(authMana) {
+        document.querySelector("#notLoggedinActionItem")
+    }    
+    handleGameStart()
+
 </script>

@@ -7,6 +7,7 @@ class UserAccount extends Syncable {
                 'points': 0, 
                 'numberOfRemainingLivesToday':3, 
                 'lastTimeLiveWasSpent': null,
+                'lastTimeDailyChalengeCompleted': null,
                 'numberOfRemainingStories':3 
             }, 
             'syncableData',
@@ -139,6 +140,28 @@ class UserAccount extends Syncable {
         // Wait for initialization to complete
         await this.dataInitializePromise;
         return this.data.points;
+    }
+    // is used to start the daily challenge
+    async markTheDailyChallengeAsStarted(){
+        const today = new Date().toISOString().slice(0,10);
+        if(await this.checkIfTheDailyChallengeHasbeenSpent() == false ){
+            this.data.lastTimeDailyChalengeCompleted = today; 
+            return true
+        }else{
+            return false
+        }
+    }
+    async checkIfTheDailyChallengeHasbeenSpent(){
+        await this.dataInitializePromise;
+        const today = new Date().toISOString().slice(0,10);
+        if(this.data.lastTimeDailyChalengeCompleted == null){return false}
+        
+        const lastTime = new Date(this.data.lastTimeDailyChalengeCompleted).toISOString().slice(0,10);
+        if( lastTime == today ){
+            return true
+        }else{
+            return false
+        }
     }
     // decreases lives and returns remaining lives
     spendALife(){

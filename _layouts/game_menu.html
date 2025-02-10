@@ -88,6 +88,11 @@ layout: default
         document.querySelector("#mainGameMenu").classList.toggle("hidden")
         
       }
+      async function setLanguageOnLoad(){
+        var selectedlanguage = await user.getLearningLanguage();
+        setThisLanguage(selectedlanguage)
+      }
+      try{setLanguageOnLoad}catch{}
     </script>
     
     <div id="mainGameMenu">
@@ -124,14 +129,14 @@ layout: default
                   <i class="bi bi-calendar"></i>
                   Day 6 challenge!
                 </h5>
-                <!-- <span class="badge rounded-pill bg-warning text-light" >New challenge available!</span> -->
+                <span id="newChallengeBadge" class="badge rounded-pill bg-warning text-light hidden" >New challenge available!</span>
+                <span id="challengeCompletedBadge" class=" hidden badge rounded-pill bg-success text-light hidden" >done!</span>
               </div>
               <h6 class="card-subtitle text-muted"></h6>
-              <a type="button" href="/quiz" class="btn btn-primary rounded-3 mb-0 pt-2 btn-lg btn-block w-100 text-center">
+              <a id="dailyChallengeButton" type="button" href="/quiz" class="btn btn-primary rounded-3 mb-0 pt-2 btn-lg btn-block w-100 text-center">
                 <p class="fs-1"><i style = "color: white;" class="bi bi-trophy-fill"></i></p>
-                
-                <p class="fw-bold">Start today's challenge!</p>
-                <p class="text-mutted">Earn bonus points and keep your streak!</p>
+                <p id="challengeButontext" class="fw-bold">Start today's challenge!</p>
+                <p id="challengeButontextSupplementary" class="text-mutted">Earn bonus points and keep your streak!</p>
               </a>
               
             </div>
@@ -143,6 +148,22 @@ layout: default
         document.getElementById("daychallengetitle").innerHTML = `
           <i class="bi bi-calendar"></i> Day ${new Date().getDate()} challenge!
         `
+
+        async function checkIfGameAvailable(){
+          if(await user.checkIfTheDailyChallengeHasbeenSpent() != true){
+            // user has not played the game
+            document.querySelector("#newChallengeBadge").classList.remove("hidden")
+          }else{
+            document.querySelector("#challengeButontext").innerHTML = 'Challenge completed!';
+            document.querySelector("#challengeButontextSupplementary").innerHTML = 'Next challenge at midnight!';
+            document.querySelector("#dailyChallengeButton").classList.add("disabled");
+            document.querySelector("#dailyChallengeButton").classList.remove("btn-primary");
+            document.querySelector("#challengeCompletedBadge").classList.remove("hidden");
+          }
+        }
+
+        try{ checkIfGameAvailable() }catch{}
+
       </script>
     
       

@@ -6,7 +6,7 @@ layout: default
   <!-- Hero Section -->
   <div class="container py-5 text-center">
     <h1 class="display-4 fw-bold mb-4">Master French <span class="text-success">Naturally</span></h1>
-    <p class="lead text-muted mb-4">From casual learners to tech professionals – learn a new language through interactive stories, real-world engineering scenarios, and engaging games.</p>
+    <p class="lead text-light mb-4">From casual learners to tech professionals – learn a new language through interactive stories, real-world engineering scenarios, and engaging games.</p>
     <a rel="prefetch" href="/login" class="btn btn-success btn-lg btn-outline-light mx-3 ps-4 pe-4 rounded-5">START LEARNING NOW</a>
     </br>
     <a rel="prefetch" href="/gamemenu" class="btn btn-light  mt-3">I HAVE AN ACCOUNT</a>
@@ -33,14 +33,14 @@ layout: default
   </div>
 
   <!-- Learning Path Section -->
-  <div class="bg-light py-5 rounded-4">
+  <div class="bg-light bg-opacity-25 py-5 rounded-4">
     <div class="container text-center">
       <h2 class="display-4 mb-4 fw-bold fs-2">For Every Learning Stage</h2>
       <div class="row">
         {% assign paths = site.data.landing-learning_paths %}
         {% for path in paths %}
         <div class="col-md-4 mb-4 " style="align-content: center; ">
-          <div class=" bg-light p-4" style="border-radius:50rem; width:fit-content; background-color: light{{ path.icon_background }}; margin-left: auto; margin-right: auto;">
+          <div class=" bg-light bg-light bg-opacity-25 p-4" style="border-radius:50rem; width:fit-content; background-color: light{{ path.icon_background }}; margin-left: auto; margin-right: auto;">
               <i class=" bi bi-{{ path.icon_class }} fs-3" style="color: {{ path.icon_background }};"></i>
           </div>
           <h3>{{ path.level }}</h3>
@@ -61,7 +61,7 @@ layout: default
         {% for feature in features %}
         <div class="col-md-4 mb-4  ">
           <div class="card shadow-sm ">
-            <div class="card-body  bg-light rounded-3 ">
+            <div class="card-body  bg-light bg-light bg-opacity-25 rounded-3 ">
               <div class="fs-3 p-2 rounded-2  {{ feature.icon_class }} mb-3" style="color:{{ feature.icon_color }};"></div>
               <h5 class="card-title">{{ feature.title }}</h5>
               <p class="card-text text-muted">{{ feature.description }}</p>
@@ -74,7 +74,7 @@ layout: default
   </div>
 
   <!-- CTA Section -->
-  <div class="bg-light py-5 ps-2 pe-2 text-center rounded-4">
+  <div class="bg-light bg-light bg-opacity-25 py-5 ps-2 pe-2 text-center rounded-4">
     <h2 >Ready to Start Your Journey?</h2>
     <p>Join thousands of tech professionals who are advancing their careers through language learning.</p>
     <a href="/login" class="btn btn-primary btn-lg">Create Free Account</a>

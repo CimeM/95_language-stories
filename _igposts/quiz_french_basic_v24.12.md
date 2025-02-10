@@ -4,12 +4,12 @@ current: post
 title: French Posts Basic
 author: fluent_french95 QUIZ TIME!
 type: quiz
+language: french
 tags:
   - quiz
   - B1
   - A2
   - basic
-language: french
 published: true
 challenges:
   - question: What is the French word for 'friend'?
