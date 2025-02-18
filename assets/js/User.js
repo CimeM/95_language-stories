@@ -134,6 +134,7 @@ class UserAccount extends Syncable {
         super._userLogoutEvent(); 
         this.log("_userLogoutEvent")
         this.transformUserProfileButtonIntoIcon();
+        
     }
     // getter of user contribution graph data
     async getUserPoints(){

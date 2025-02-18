@@ -11,7 +11,7 @@ class Syncable {
         this.isSyncing = false;
         this.syncBackoffCounter = 0;
         this.version = 0;
-        this.isOnline = navigator.onLine;
+        this.isBrowserOnline = navigator.onLine;
         this.className = this.getDerivedClassName();
         this.syncinterval = null;
         
@@ -87,13 +87,13 @@ class Syncable {
 
     queueSync() {
         this.syncQueue.push({ data: { ...this._data }, version: this.version });
-        if (this.isOnline && !this.isSyncing) {
+        if (this.isBrowserOnline && !this.isSyncing) {
             this.processQueue();
         }
     }
 
     async processQueue() {
-        if (this.syncQueue.length === 0 || this.isSyncing || !this.isOnline) return;
+        if (this.syncQueue.length === 0 || this.isSyncing || !this.isBrowserOnline) return;
 
         this.isSyncing = true;
         const batchSize = 10;
@@ -142,7 +142,7 @@ class Syncable {
     }
 
     async fetchLatestData() {
-        if (!this.isOnline) return;
+        if (!this.isBrowserOnline) return;
         
         try {
             const response = await fetch(`${this.apiEndpoint}/data?className=${this.className}&version=${this.version}`, {
@@ -161,10 +161,15 @@ class Syncable {
     }
 
     // placeholder function - trirgers when user is logged in
-    _userLoginEvent(){}
+    _userLoginEvent(){
+        this.startPeriodicSync();
+        // fetch from server 
+        // override data from local
+    }
     // placeholder function - trirgers when user is logged in
     _userLogoutEvent(){
         clearInterval(this.syncinterval); // stop syncing data with the database
+        this._data = {} // remove data in the emmory
     }
 
     setToken(inputToken){
@@ -192,18 +197,20 @@ class Syncable {
 
     setupNetworkListeners() {
         window.addEventListener('online', () => {
-            this.isOnline = true;
+            this.isBrowserOnline = true;
             this.processQueue();
             this.fetchLatestData();
         });
         window.addEventListener('offline', () => {
-            this.isOnline = false;
+            this.isBrowserOnline = false;
         });
     }
 
     startPeriodicSync() {
         this.syncinterval = setInterval(() => {
-            if (this.isOnline) {
+            // if browser is online 
+            // and if user is logged in ...
+            if (this.isBrowserOnline && authManager.checkSessionToken() ) {
                 this.processQueue();
                 this.fetchLatestData();
             }
