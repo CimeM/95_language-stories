@@ -1,0 +1,620 @@
+curriculum:
+  - Introduction to French Verbs
+  - Regular -er Verbs
+  - Regular -ir Verbs
+  - Regular -re Verbs
+  - Irregular Verbs
+  - Present Tense
+  - Passé Composé
+  - Imparfait
+  - Future Simple
+  - Conditional
+  - Subjunctive
+  - Imperative
+  - Reflexive Verbs
+  - Passive Voice
+  - Gerund and Present Participle
+
+focus_chapter: Present Tense
+verb_list:
+  - verb: parler
+    meaning: to speak
+    conjugation:
+      je: parle
+      tu: parles
+      il/elle/on: parle
+      nous: parlons
+      vous: parlez
+      ils/elles: parlent
+    supporting_info: >
+      The present tense in French is used to express actions happening now, 
+      habitual actions, and general truths. For regular -er verbs like "parler", 
+      remove the -er ending and add the appropriate ending for each subject.
+    samples:
+      - Je parle français.
+      - Tu parles trop vite.
+      - Elle parle à ses amis.
+      - Nous parlons de nos vacances.
+      - Vous parlez anglais?
+      - Ils parlent de politique.
+      - On parle souvent de ce sujet.
+      - Je ne parle pas italien.
+      - Tu parles au téléphone.
+      - Nous parlons de nos rêves.
+      - Vous parlez de quoi?
+      - Elles parlent de mode.
+      - Je parle à voix basse.
+      - Tu parles couramment?
+      - Elle parle avec passion.
+      - Nous parlons de tout et de rien.
+    action_text: >
+      Now it's your turn! Use the verb "parler" in a sentence of your own. 
+      For example: "Je parle avec ma mère tous les jours." 
+      Can you create a sentence using "parler" in the present tense?
+    support_text: >
+      If you're finding it difficult, remember that "parler" means "to speak" or "to talk". 
+      Think about how you might use this verb in everyday situations, like talking to friends, 
+      speaking a language, or discussing a topic.
+  - verb: être
+    meaning: to be
+    conjugation:
+      je: suis
+      tu: es
+      il/elle/on: est
+      nous: sommes
+      vous: êtes
+      ils/elles: sont
+    supporting_info: >
+      "Être" is one of the most important irregular verbs in French. It's used to describe 
+      states of being, characteristics, and as an auxiliary verb in compound tenses.
+    samples:
+      - Je suis étudiant.
+      - Tu es en retard.
+      - Il est médecin.
+      - Nous sommes fatigués.
+      - Vous êtes gentils.
+      - Elles sont heureuses.
+      - On est d'accord.
+      - Je suis à la maison.
+      - Tu es prêt?
+      - Elle est intelligente.
+      - Nous sommes en vacances.
+      - Vous êtes patients.
+      - Ils sont occupés.
+      - Je suis content de te voir.
+      - Tu es sûr de ta décision?
+      - Il est temps de partir.
+      - Nous sommes fiers de notre travail.
+      - Vous êtes les bienvenus.
+      - Elles sont absentes aujourd'hui.
+      - On est en train de travailler.
+      - Je suis désolé du retard.
+      - Tu es en forme!
+      - Elle est ravie de la nouvelle.
+      - Nous sommes d'accord avec vous.
+      - Vous êtes très aimables.
+      - Ils sont sur le point d'arriver.
+      - Je suis intéressé par ce projet.
+      - Tu es capable de le faire.
+      - Elle est responsable de l'équipe.
+      - Nous sommes reconnaissants de votre aide.
+    action_text: >
+      Now it's your turn! Use the verb "être" in a sentence of your own. 
+      For example: "Je suis heureux d'apprendre le français." 
+      Can you create a sentence using "être" in the present tense?
+    support_text: >
+      Remember, "être" means "to be". Use it to describe states, characteristics, 
+      or locations. For example, you can say how you're feeling, what you are, 
+      or where you are.
+  - verb: finir
+    meaning: to finish
+    conjugation:
+      je: finis
+      tu: finis
+      il/elle/on: finit
+      nous: finissons
+      vous: finissez
+      ils/elles: finissent
+    supporting_info: >
+      "Finir" is a regular -ir verb. In the present tense, most -ir verbs follow this pattern. 
+      Note that for "nous" and "vous", we add -iss before the endings.
+    samples:
+      - Je finis mon travail.
+      - Tu finis tes devoirs?
+      - Elle finit son repas.
+      - Nous finissons le projet demain.
+      - Vous finissez à quelle heure?
+      - Ils finissent leurs études cette année.
+      - On finit toujours par trouver une solution.
+      - Je finis de lire ce livre.
+      - Tu finis par comprendre.
+      - Il finit toujours en retard.
+      - Nous finissons par nous entendre.
+      - Vous finissez de peindre la chambre.
+      - Elles finissent leurs examens aujourd'hui.
+      - Je finis de travailler à 18h.
+      - Tu finis ton café?
+      - Elle finit sa phrase.
+      - Nous finissons de ranger la maison.
+      - Vous finissez votre présentation.
+      - Ils finissent de construire la route.
+      - On finit par s'habituer au bruit.
+      - Je finis toujours ce que je commence.
+      - Tu finis ton assiette, s'il te plaît.
+      - Il finit son contrat ce mois-ci.
+      - Nous finissons nos vacances demain.
+      - Vous finissez par accepter l'offre?
+      - Elles finissent leurs devoirs ensemble.
+      - Je finis par comprendre la leçon.
+      - Tu finis de te préparer?
+      - Elle finit son travail à temps.
+      - Nous finissons l'année en beauté.
+    action_text: >
+      Now it's your turn! Use the verb "finir" in a sentence of your own. 
+      For example: "Je finis mon dîner à 20h." 
+      Can you create a sentence using "finir" in the present tense?
+    support_text: >
+      Remember, "finir" means "to finish" or "to end". Think about tasks or activities 
+      that you complete in your daily life, and try to express them using this verb.
+
+  - verb: prendre
+    meaning: to take
+    conjugation:
+      je: prends
+      tu: prends
+      il/elle/on: prend
+      nous: prenons
+      vous: prenez
+      ils/elles: prennent
+    supporting_info: >
+      "Prendre" is an irregular verb, but it's very common in French. Pay attention to 
+      the change in the stem for "ils/elles" form.
+    samples:
+      - Je prends le bus tous les matins.
+      - Tu prends un café?
+      - Elle prend des photos.
+      - Nous prenons notre temps.
+      - Vous prenez la bonne direction.
+      - Ils prennent des vacances en été.
+      - On prend un risque parfois.
+      - Je prends rendez-vous chez le médecin.
+      - Tu prends ta douche le matin?
+      - Il prend soin de sa santé.
+      - Nous prenons l'avion demain.
+      - Vous prenez des notes pendant le cours?
+      - Elles prennent leur retraite cette année.
+      - Je prends mon petit-déjeuner à 8h.
+      - Tu prends tes médicaments régulièrement?
+      - Elle prend la parole lors de la réunion.
+      - Nous prenons une décision importante.
+      - Vous prenez le train ou la voiture?
+      - Ils prennent des cours de français.
+      - On prend conscience du problème.
+      - Je prends mon temps pour répondre.
+      - Tu prends la route tôt demain?
+      - Il prend du poids ces derniers temps.
+      - Nous prenons des précautions.
+      - Vous prenez votre retraite bientôt?
+      - Elles prennent le relais pour la nuit.
+      - Je prends un jour de congé.
+      - Tu prends tes responsabilités au sérieux.
+      - Elle prend le contrôle de la situation.
+      - Nous prenons en compte vos remarques.
+    action_text: >
+      Now it's your turn! Use the verb "prendre" in a sentence of your own. 
+      For example: "Je prends le métro pour aller au travail." 
+      Can you create a sentence using "prendre" in the present tense?
+    support_text: >
+      "Prendre" means "to take" but it's used in many expressions. Think about 
+      taking transportation, taking a break, or even taking a decision. Try to use 
+      it in a context that's relevant to your daily life.
+
+  - verb: aller
+    meaning: to go
+    conjugation:
+      je: vais
+      tu: vas
+      il/elle/on: va
+      nous: allons
+      vous: allez
+      ils/elles: vont
+    supporting_info: >
+      "Aller" is an irregular verb and one of the most common in French. It's used to 
+      express movement or future actions when combined with another verb.
+    samples:
+      - Je vais au cinéma ce soir.
+      - Tu vas bien?
+      - Elle va à l'école à pied.
+      - Nous allons en vacances la semaine prochaine.
+      - Vous allez au restaurant?
+      - Ils vont travailler en vélo.
+      - On va voir ce qui se passe.
+      - Je vais acheter du pain.
+      - Tu vas réussir, j'en suis sûr.
+      - Il va pleuvoir aujourd'hui.
+      - Nous allons fêter son anniversaire.
+      - Vous allez comprendre avec le temps.
+      - Elles vont danser toute la nuit.
+      - Je vais prendre un café.
+      - Tu vas à la plage cet été?
+      - Elle va apprendre le japonais.
+      - Nous allons déménager bientôt.
+      - Vous allez voir, c'est facile!
+      - Ils vont se marier l'année prochaine.
+      - On va essayer de résoudre le problème.
+      - Je vais te dire la vérité.
+      - Tu vas dormir chez des amis?
+      - Il va neiger ce weekend.
+      - Nous allons visiter Paris.
+      - Vous allez prendre l'avion ou le train?
+      - Elles vont participer à la compétition.
+      - Je vais faire les courses.
+      - Tu vas changer d'avis, tu verras.
+      - Elle va devenir médecin.
+      - Nous allons construire une maison.
+    action_text: >
+      Now it's your turn! Use the verb "aller" in a sentence of your own. 
+      For example: "Je vais au parc avec mes amis." 
+      Can you create a sentence using "aller" in the present tense?
+    support_text: >
+      Remember, "aller" means "to go". You can use it to talk about where you're going, 
+      or to express future actions. For example, "Je vais étudier" means "I'm going to study".
+
+  - verb: faire
+    meaning: to do, to make
+    conjugation:
+      je: fais
+      tu: fais
+      il/elle/on: fait
+      nous: faisons
+      vous: faites
+      ils/elles: font
+    supporting_info: >
+      "Faire" is an irregular verb with many uses in French. It can mean "to do" or "to make", 
+      and it's used in many idiomatic expressions.
+    samples:
+      - Je fais mes devoirs.
+      - Tu fais du sport?
+      - Elle fait la cuisine tous les jours.
+      - Nous faisons attention à notre santé.
+      - Vous faites quoi dans la vie?
+      - Ils font des progrès en français.
+      - On fait de notre mieux.
+      - Je fais la vaisselle après le dîner.
+      - Tu fais tes courses le samedi?
+      - Il fait beau aujourd'hui.
+      - Nous faisons un gâteau pour son anniversaire.
+      - Vous faites du yoga?
+      - Elles font leurs valises pour le voyage.
+      - Je fais confiance à mes amis.
+      - Tu fais partie de l'équipe maintenant.
+      - Elle fait semblant de dormir.
+      - Nous faisons du vélo le dimanche.
+      - Vous faites la fête ce weekend?
+      - Ils font du bruit toute la nuit.
+      - On fait face à de nombreux défis.
+      - Je fais de mon mieux pour réussir.
+      - Tu fais la grasse matinée le dimanche?
+      - Il fait froid ce matin.
+      - Nous faisons des économies pour acheter une maison.
+      - Vous faites la queue depuis longtemps?
+      - Elles font du bénévolat à l'hôpital.
+      - Je fais un régime en ce moment.
+      - Tu fais attention en traversant la rue?
+      - Elle fait la différence dans son travail.
+      - Nous faisons un tour dans le parc.
+    action_text: >
+      Now it's your turn! Use the verb "faire" in a sentence of your own. 
+      For example: "Je fais du jogging tous les matins." 
+      Can you create a sentence using "faire" in the present tense?
+    support_text: >
+      "Faire" is a versatile verb meaning "to do" or "to make". It's used in many contexts, 
+      from describing activities to talking about the weather. Think about your daily 
+      activities or things you create, and try to express them using "faire".
+
+  - verb: voir
+    meaning: to see
+    conjugation:
+      je: vois
+      tu: vois
+      il/elle/on: voit
+      nous: voyons
+      vous: voyez
+      ils/elles: voient
+    supporting_info: >
+      "Voir" is an irregular verb meaning "to see". It's often used to express physical sight, 
+      but can also mean "to understand" or "to meet" in certain contexts.
+    samples:
+      - Je vois un oiseau dans le ciel.
+      - Tu vois ce que je veux dire?
+      - Elle voit son médecin aujourd'hui.
+      - Nous voyons nos amis ce weekend.
+      - Vous voyez la tour Eiffel d'ici?
+      - Ils voient la situation différemment.
+      - On voit bien que tu es fatigué.
+      - Je vois la vie en rose.
+      - Tu vois souvent tes parents?
+      - Il voit double après l'accident.
+      - Nous voyons la fin du tunnel.
+      - Vous voyez un changement?
+      - Elles voient leur avenir ici.
+      - Je vois ce film pour la première fois.
+      - Tu vois quelque chose de suspect?
+      - Elle voit clair dans son jeu.
+      - Nous voyons les choses autrement maintenant.
+      - Vous voyez l'heure sur cette horloge?
+      - Ils voient leurs efforts récompensés.
+      - On voit que tu as fait des progrès.
+      - Je vois que tu as coupé tes cheveux.
+      - Tu vois le problème maintenant?
+      - Il voit son avocat demain.
+      - Nous voyons la mer de notre chambre.
+      - Vous voyez où je veux en venir?
+      - Elles voient leur famille tous les jours.
+      - Je vois ce que tu veux dire.
+      - Tu vois des étoiles ce soir?
+      - Elle voit la vie du bon côté.
+      - Nous voyons l'avenir avec optimisme.
+    action_text: >
+      Now it's your turn! Use the verb "voir" in a sentence of your own. 
+      For example: "Je vois mes amis ce soir au restaurant." 
+      Can you create a sentence using "voir" in the present tense?
+    support_text: >
+      Remember, "voir" primarily means "to see", but it can also mean "to understand" 
+      or "to meet" in some contexts. Think about things you see, people you meet, 
+      or concepts you understand, and try to express them using "voir".
+
+  - verb: manger
+    meaning: to eat
+    conjugation:
+      je: mange
+      tu: manges
+      il/elle/on: mange
+      nous: mangeons
+      vous: mangez
+      ils/elles: mangent
+    supporting_info: >
+      "Manger" is a regular -er verb, but note the spelling change in the "nous" form: 
+      we keep the "e" before "ons" to maintain the soft "g" sound.
+    samples:
+      - Je mange des fruits tous les jours.
+      - Tu manges trop vite!
+      - Elle mange végétarien.
+      - Nous mangeons au restaurant ce soir.
+      - Vous mangez souvent ici?
+      - Ils mangent leurs légumes.
+      - On mange bien en France.
+      - Je mange un sandwich pour le déjeuner.
+      - Tu manges quoi comme dessert?
+      - Il mange peu le matin.
+      - Nous mangeons ensemble en famille.
+      - Vous mangez de la viande?
+      - Elles mangent des sushis.
+      - Je mange équilibré.
+      - Tu manges à quelle heure habituellement?
+      - Elle mange sur le pouce aujourd'hui.
+      - Nous mangeons des spécialités locales.
+      - Vous mangez assez de protéines?
+      - Ils mangent dehors le weekend.
+      - On mange à 20h d'habitude.
+      - Je mange bio quand c'est possible.
+      - Tu manges avec des baguettes?
+      - Il mange comme quatre!
+      - Nous mangeons léger le soir.
+      - Vous mangez avant ou après le film?
+      - Elles mangent des fruits de saison.
+      - Je mange rarement des fast-foods.
+      - Tu manges ton plat préféré ce soir?
+      - Elle mange entre les repas.
+      - Nous mangeons pour vivre, pas l'inverse.
+    action_text: >
+      Now it's your turn! Use the verb "manger" in a sentence of your own. 
+      For example: "Je mange une pomme chaque matin." 
+      Can you create a sentence using "manger" in the present tense?
+    support_text: >
+      Remember, "manger" means "to eat". Think about your eating habits, favorite foods, 
+      or meal times to create your sentence.
+
+  - verb: venir
+    meaning: to come
+    conjugation:
+      je: viens
+      tu: viens
+      il/elle/on: vient
+      nous: venons
+      vous: venez
+      ils/elles: viennent
+    supporting_info: >
+      "Venir" is an irregular verb. Note the stem change in je/tu/il/elle/on and ils/elles forms. 
+      It's often used with "de" to indicate where someone is coming from.
+    samples:
+      - Je viens de Paris.
+      - Tu viens avec nous au cinéma?
+      - Elle vient d'arriver.
+      - Nous venons vous aider.
+      - Vous venez souvent ici?
+      - Ils viennent de terminer leur travail.
+      - On vient de commencer.
+      - Je viens te voir demain.
+      - Tu viens d'où exactement?
+      - Il vient en voiture ou en train?
+      - Nous venons de la campagne.
+      - Vous venez pour les vacances?
+      - Elles viennent de gagner la compétition.
+      - Je viens de comprendre le problème.
+      - Tu viens de manger?
+      - Elle vient nous rendre visite ce weekend.
+      - Nous venons d'emménager dans le quartier.
+      - Vous venez à quelle heure?
+      - Ils viennent de différents pays.
+      - On vient juste de se rencontrer.
+      - Je viens d'apprendre la nouvelle.
+      - Tu viens de finir ton livre?
+      - Il vient de recevoir un colis.
+      - Nous venons en paix.
+      - Vous venez de loin?
+      - Elles viennent de commencer leurs études.
+      - Je viens de me réveiller.
+      - Tu viens de quelle école?
+      - Elle vient d'avoir une idée brillante.
+      - Nous venons vous souhaiter bon anniversaire.
+    action_text: >
+      Now it's your turn! Use the verb "venir" in a sentence of your own. 
+      For example: "Je viens de terminer mes devoirs." 
+      Can you create a sentence using "venir" in the present tense?
+    support_text: >
+      Remember, "venir" means "to come". It's often used with "de" to say where you're coming from 
+      or what you've just done. Try to think of a recent action or your origin to form your sentence.
+
+  - verb: pouvoir
+    meaning: to be able to, can
+    conjugation:
+      je: peux
+      tu: peux
+      il/elle/on: peut
+      nous: pouvons
+      vous: pouvez
+      ils/elles: peuvent
+    supporting_info: >
+      "Pouvoir" is an irregular verb expressing ability or possibility. It's equivalent 
+      to "can" or "to be able to" in English.
+    samples:
+      - Je peux vous aider?
+      - Tu peux répéter, s'il te plaît?
+      - Elle peut parler cinq langues.
+      - Nous pouvons partir maintenant.
+      - Vous pouvez entrer.
+      - Ils peuvent venir ce soir.
+      - On peut faire mieux.
+      - Je peux essayer?
+      - Tu peux m'expliquer comment ça marche?
+      - Il peut courir un marathon.
+      - Nous pouvons résoudre ce problème.
+      - Vous pouvez compter sur moi.
+      - Elles peuvent chanter en harmonie.
+      - Je peux vous rappeler plus tard?
+      - Tu peux me passer le sel?
+      - Elle peut conduire une moto.
+      - Nous pouvons vous recevoir demain.
+      - Vous pouvez payer par carte?
+      - Ils peuvent arriver à n'importe quel moment.
+      - On peut y aller à pied.
+      - Je peux vous poser une question?
+      - Tu peux garder un secret?
+      - Il peut soulever 100 kilos.
+      - Nous pouvons vous offrir un bon prix.
+      - Vous pouvez choisir la couleur.
+      - Elles peuvent danser toute la nuit.
+      - Je peux prendre un jour de congé?
+      - Tu peux me prêter ton stylo?
+      - Elle peut résoudre ce puzzle en 5 minutes.
+      - Nous pouvons commencer quand vous voulez.
+    action_text: >
+      Now it's your turn! Use the verb "pouvoir" in a sentence of your own. 
+      For example: "Je peux parler français et anglais." 
+      Can you create a sentence using "pouvoir" in the present tense?
+    support_text: >
+      Remember, "pouvoir" expresses ability or possibility, like "can" in English. 
+      Think about things you're able to do, or possibilities in different situations.
+
+  - verb: savoir
+    meaning: to know (a fact or how to do something)
+    conjugation:
+      je: sais
+      tu: sais
+      il/elle/on: sait
+      nous: savons
+      vous: savez
+      ils/elles: savent
+    supporting_info: >
+      "Savoir" is an irregular verb meaning "to know" in the sense of knowing a fact 
+      or how to do something. It's different from "connaître" which is used for knowing a person or place.
+    samples:
+      - Je sais nager.
+      - Tu sais où est la gare?
+      - Elle sait parler japonais.
+      - Nous savons la vérité.
+      - Vous savez conduire?
+      - Ils savent ce qui s'est passé.
+      - On sait jamais!
+      - Je sais faire du vélo.
+      - Tu sais cuisiner?
+      - Il sait jouer du piano.
+      - Nous savons comment résoudre ce problème.
+      - Vous savez l'heure qu'il est?
+      - Elles savent danser le tango.
+      - Je sais que c'est difficile.
+      - Tu sais pourquoi il est parti?
+      - Elle sait lire depuis l'âge de 4 ans.
+      - Nous savons que vous faites de votre mieux.
+      - Vous savez utiliser cet appareil?
+      - Ils savent garder un secret.
+      - On sait tous que c'est compliqué.
+      - Je sais compter jusqu'à 100 en français.
+      - Tu sais ce qui va se passer?
+      - Il sait réparer les ordinateurs.
+      - Nous savons que vous êtes inquiets.
+      - Vous savez quand le train arrive?
+      - Elles savent organiser des fêtes incroyables.
+      - Je sais que tu as raison.
+      - Tu sais faire du ski?
+      - Elle sait gérer une équipe.
+      - Nous savons que c'est pour bientôt.
+    action_text: >
+      Now it's your turn! Use the verb "savoir" in a sentence of your own. 
+      For example: "Je sais jouer de la guitare." 
+      Can you create a sentence using "savoir" in the present tense?
+    support_text: >
+      Remember, "savoir" is used for knowing facts or how to do something. 
+      Think about skills you have or information you're certain about to form your sentence.
+
+  - verb: devoir
+    meaning: to have to, must
+    conjugation:
+      je: dois
+      tu: dois
+      il/elle/on: doit
+      nous: devons
+      vous: devez
+      ils/elles: doivent
+    supporting_info: >
+      "Devoir" is an irregular verb expressing obligation or necessity. It's equivalent 
+      to "must" or "to have to" in English.
+    samples:
+      - Je dois partir maintenant.
+      - Tu dois faire tes devoirs.
+      - Elle doit aller chez le médecin.
+      - Nous devons respecter les règles.
+      - Vous devez signer ici.
+      - Ils doivent arriver avant midi.
+      - On doit faire attention.
+      - Je dois travailler ce weekend.
+      - Tu dois me rendre mon livre.
+      - Il doit prendre une décision.
+      - Nous devons économiser de l'argent.
+      - Vous devez être patients.
+      - Elles doivent étudier pour l'examen.
+      - Je dois appeler mes parents.
+      - Tu dois manger plus de légumes.
+      - Elle doit finir son rapport aujourd'hui.
+      - Nous devons partir tôt demain matin.
+      - Vous devez fermer la porte à clé.
+      - Ils doivent payer leurs impôts.
+      - On doit respecter l'environnement.
+      - Je dois aller à la banque.
+      - Tu dois te reposer un peu.
+      - Il doit repeindre la maison.
+      - Nous devons prendre une décision rapidement.
+      - Vous devez vous excuser.
+      - Elles doivent rendre leurs livres à la bibliothèque.
+      - Je dois acheter un nouveau téléphone.
+      - Tu dois faire plus d'exercice.
+      - Elle doit présenter son projet demain.
+      - Nous devons nous adapter aux changements.
+    action_text: >
+      Now it's your turn! Use the verb "devoir" in a sentence of your own. 
+      For example: "Je dois finir mon travail avant 17h." 
+      Can you create a sentence using "devoir" in the present tense?
+    support_text: >
+      Remember, "devoir" expresses obligation or necessity, like "must" or "have to" in English. 
+      Think about things you need to do or obligations you have to form your sentence.

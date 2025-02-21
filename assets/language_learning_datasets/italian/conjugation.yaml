@@ -1,0 +1,938 @@
+verb_list:
+  - verb: mangiare
+    meaning: to eat
+    tenses:
+      - name: Present Tense (Presente)
+        level: A1
+        conjugation:
+          io: mangio
+          tu: mangi
+          lui/lei/Lei: mangia
+          noi: mangiamo
+          voi: mangiate
+          loro: mangiano
+        samples:
+          - Io mangio una mela ogni giorno.
+          - Tu mangi troppo velocemente.
+          - Lei mangia solo cibi biologici.
+          - Noi mangiamo spesso al ristorante.
+          - Voi mangiate la pizza con le mani?
+          - Loro mangiano sempre alle otto di sera.
+          - Il gatto mangia il pesce.
+          - I bambini mangiano il gelato.
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Past Perfect (Passato Prossimo)
+        level: A2
+        conjugation:
+          io: ho mangiato
+          tu: hai mangiato
+          lui/lei/Lei: ha mangiato
+          noi: abbiamo mangiato
+          voi: avete mangiato
+          loro: hanno mangiato
+        samples:
+          - Io ho mangiato troppo ieri sera.
+          - Tu hai mangiato al nuovo ristorante?
+          - Lei ha mangiato tutta la torta.
+          - Noi abbiamo mangiato insieme la settimana scorsa.
+          - Voi avete mangiato bene in vacanza?
+          - Loro hanno mangiato tutti i biscotti.
+          - Il cane ha mangiato le scarpe.
+          - I turisti hanno mangiato la vera pizza napoletana.
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past.
+
+      - name: Imperfect (Imperfetto)
+        level: A2
+        conjugation:
+          io: mangiavo
+          tu: mangiavi
+          lui/lei/Lei: mangiava
+          noi: mangiavamo
+          voi: mangiavate
+          loro: mangiavano
+        samples:
+          - Da bambino, mangiavo sempre la pasta.
+          - Tu mangiavi mentre guardavi la TV.
+          - Lei mangiava molto lentamente.
+          - Noi mangiavamo spesso al parco.
+          - Voi mangiavate carne tutti i giorni?
+          - Loro mangiavano sempre insieme la domenica.
+          - Il gatto mangiava il cibo degli altri animali.
+          - I nonni mangiavano la pizza fatta in casa.
+        supporting_info: >
+          The imperfect is used for describing ongoing or habitual actions in the past.
+
+      - name: Simple Future (Futuro Semplice)
+        level: A2
+        conjugation:
+          io: mangerò
+          tu: mangerai
+          lui/lei/Lei: mangerà
+          noi: mangeremo
+          voi: mangerete
+          loro: mangeranno
+        samples:
+          - Domani mangerò al nuovo ristorante giapponese.
+          - Tu mangerai con noi stasera?
+          - Lei mangerà solo insalata per una settimana.
+          - Noi mangeremo fuori questo fine settimana.
+          - Voi mangerete la torta dopo cena?
+          - Loro mangeranno prima di andare al cinema.
+          - Il bambino mangerà tutta la verdura.
+          - Gli atleti mangeranno un pasto leggero prima della gara.
+        supporting_info: >
+          The simple future is used to express actions that will happen in the future.
+
+      - name: Conditional Present (Condizionale Presente)
+        level: B1
+        conjugation:
+          io: mangerei
+          tu: mangeresti
+          lui/lei/Lei: mangerebbe
+          noi: mangeremmo
+          voi: mangereste
+          loro: mangerebbero
+        samples:
+          - Mangerei volentieri un gelato adesso.
+          - Tu mangeresti carne di cavallo?
+          - Lei mangerebbe più verdure se le piacessero.
+          - Noi mangeremmo fuori ogni sera se potessimo.
+          - Voi mangereste questo piatto piccante?
+          - Loro mangerebbero più sano se avessero più tempo.
+          - Il cane mangerebbe tutto il giorno se potesse.
+          - I bambini mangerebbero solo dolci se li lasciassimo fare.
+        supporting_info: >
+          The conditional is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "mangiare" in frasi diverse.
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "mangiare" means "to eat". Think about your eating habits, past meals, 
+      future dining plans, or hypothetical eating situations. For example, you could say 
+      "Mangio pasta ogni giorno" (I eat pasta every day) for the present tense, or 
+      "Ho mangiato troppo ieri sera" (I ate too much last night) for the past perfect.
+
+  - verb: parlare
+    meaning: to speak
+    tenses:
+      - name: Present Tense (Presente)
+        level: A1
+        conjugation:
+          io: parlo
+          tu: parli
+          lui/lei/Lei: parla
+          noi: parliamo
+          voi: parlate
+          loro: parlano
+        samples:
+          - Io parlo italiano ogni giorno.
+          - Tu parli troppo velocemente.
+          - Lui parla con i suoi amici.
+          - Noi parliamo spesso di viaggi.
+          - Voi parlate inglese?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, or general truths.
+
+      - name: Past Perfect (Passato Prossimo)
+        level: A2
+        conjugation:
+          io: ho parlato
+          tu: hai parlato
+          lui/lei/Lei: ha parlato
+          noi: abbiamo parlato
+          voi: avete parlato
+          loro: hanno parlato
+        samples:
+          - Io ho parlato con il mio insegnante ieri.
+          - Tu hai parlato con tua madre?
+          - Lei ha parlato al telefono tutto il pomeriggio.
+          - Noi abbiamo parlato del nostro progetto.
+          - Loro hanno parlato di politica durante la cena.
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the past.
+
+      - name: Imperfect (Imperfetto)
+        level: A2
+        conjugation:
+          io: parlavo
+          tu: parlavi
+          lui/lei/Lei: parlava
+          noi: parlavamo
+          voi: parlavate
+          loro: parlavano
+        samples:
+          - Io parlavo spesso con i miei nonni da bambino.
+          - Tu parlavi mentre ascoltavi la musica.
+          - Lei parlava di viaggi ogni volta che ci incontravamo.
+          - Noi parlavamo sempre dopo scuola.
+          - Loro parlavano del passato con nostalgia.
+        supporting_info: >
+          The imperfect is used for describing ongoing or habitual actions in the past.
+
+      - name: Simple Future (Futuro Semplice)
+        level: A2
+        conjugation:
+          io: parlerò
+          tu: parlerai
+          lui/lei/Lei: parlerà
+          noi: parleremo
+          voi: parlerete
+          loro: parleranno
+        samples:
+          - Io parlerò con il capo domani.
+          - Tu parlerai meglio italiano dopo il corso.
+          - Lei parlerà con i suoi genitori più tardi.
+          - Noi parleremo di questo problema domani.
+          - Loro parleranno alla conferenza la prossima settimana.
+        supporting_info: >
+          The future tense is used to express actions that will happen in the future.
+
+      - name: Conditional Present (Condizionale Presente)
+        level: B1
+        conjugation:
+          io: parlerei
+          tu: parleresti
+          lui/lei/Lei: parlerebbe
+          noi: parleremmo
+          voi: parlereste
+          loro: parlerebbero
+        samples:
+          - Io parlerei italiano se avessi più tempo per studiare.
+          - Tu parleresti più lentamente, per favore?
+          - Lei parlerebbe volentieri di questo argomento.
+          - Noi parleremmo con piacere del nostro viaggio in Italia.
+          - Loro parlerebbero meglio se praticassero di più.
+        supporting_info: >
+          The conditional is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "parlare" in una frase. 
+      Ad esempio, puoi dire "Io parlo italiano ogni giorno" per il presente. 
+      Ora crea una frase tua usando uno dei tempi verbali che abbiamo visto!
+
+    support_text: >
+      Ricorda, "parlare" significa "to speak" o "to talk". Pensa a situazioni in cui usi questo verbo, 
+      come conversazioni passate, piani futuri o richieste ipotetiche. Se hai bisogno di aiuto, 
+      prova a iniziare la frase con "Io..." per semplificare!
+
+  - verb: scrivere
+    meaning: to write
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: scrivo
+          tu: scrivi
+          lui/lei/Lei: scrive
+          noi: scriviamo
+          voi: scrivete
+          loro: scrivono
+        samples:
+          - Io scrivo una lettera.
+          - Tu scrivi nel tuo diario ogni giorno.
+          - Lei scrive articoli per un giornale.
+          - Noi scriviamo insieme un libro.
+          - Voi scrivete messaggi ai vostri amici?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: ho scritto
+          tu: hai scritto
+          lui/lei/Lei: ha scritto
+          noi: abbiamo scritto
+          voi: avete scritto
+          loro: hanno scritto
+        samples:
+          - Io ho scritto un'email importante ieri.
+          - Tu hai scritto la tua tesina?
+          - Noi abbiamo scritto molte lettere durante le vacanze.
+          - Loro hanno scritto un libro insieme.
+          - Voi avete scritto a Maria?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: scrivevo
+          tu: scrivevi
+          lui/lei/Lei: scriveva
+          noi: scrivevamo
+          voi: scrivevate
+          loro: scrivevano
+        samples:
+          - Io scrivevo poesie quando ero giovane.
+          - Tu scrivevi sempre lettere a tua nonna.
+          - Noi scrivevamo racconti per divertirci.
+          - Loro scrivevano nel loro diario ogni sera.
+          - Voi scrivevate messaggi lunghi ai vostri amici.
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: scriverò
+          tu: scriverai
+          lui/lei/Lei: scriverà
+          noi: scriveremo
+          voi: scriverete
+          loro: scriveranno
+        samples:
+          - Io scriverò un articolo per il blog domani.
+          - Tu scriverai alla tua amica la prossima settimana.
+          - Noi scriveremo un progetto insieme.
+          - Loro scriveranno una lettera al presidente.
+          - Voi scriverete i vostri nomi sulla lista?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: scriverei
+          tu: scriveresti
+          lui/lei/Lei: scriverebbe
+          noi: scriveremmo
+          voi: scrivereste
+          loro: scriverebbero
+        samples:
+          - Io scriverei di più se avessi tempo.
+          - Tu scriveresti una lettera al tuo amico, giusto?
+          - Noi scriveremmo volentieri un racconto insieme.
+          - Loro scriverebbero meglio con più pratica.
+          - Voi scrivereste le vostre idee se foste qui?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "scrivere" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "scrivere" means "to write". Think about how you might use this verb 
+      in various situations, such as writing letters, notes, or stories. 
+      For past tenses, consider what you've written before. For future tenses, think about what you plan to write next!
+
+  - verb: dormire
+    meaning: to sleep
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: dormo
+          tu: dormi
+          lui/lei/Lei: dorme
+          noi: dormiamo
+          voi: dormite
+          loro: dormono
+        samples:
+          - Io dormo otto ore ogni notte.
+          - Tu dormi troppo poco.
+          - Lei dorme sempre con la finestra aperta.
+          - Noi dormiamo meglio in montagna.
+          - Voi dormite bene in questo hotel?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: ho dormito
+          tu: hai dormito
+          lui/lei/Lei: ha dormito
+          noi: abbiamo dormito
+          voi: avete dormito
+          loro: hanno dormito
+        samples:
+          - Io ho dormito male ieri notte.
+          - Tu hai dormito fino a tardi questa mattina?
+          - Noi abbiamo dormito in tenda durante il campeggio.
+          - Loro hanno dormito per dodici ore dopo il lungo viaggio.
+          - Voi avete dormito bene nel nuovo letto?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: dormivo
+          tu: dormivi
+          lui/lei/Lei: dormiva
+          noi: dormivamo
+          voi: dormivate
+          loro: dormivano
+        samples:
+          - Io dormivo sempre con la luce accesa da bambino.
+          - Tu dormivi spesso sul divano.
+          - Noi dormivamo fino a tardi durante le vacanze.
+          - Loro dormivano mentre noi preparavamo la colazione.
+          - Voi dormivate tranquillamente nonostante il rumore.
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: dormirò
+          tu: dormirai
+          lui/lei/Lei: dormirà
+          noi: dormiremo
+          voi: dormirete
+          loro: dormiranno
+        samples:
+          - Io dormirò in albergo stanotte.
+          - Tu dormirai meglio dopo aver fatto esercizio.
+          - Noi dormiremo sotto le stelle durante il campeggio.
+          - Loro dormiranno fino a tardi domani mattina.
+          - Voi dormirete nella stanza degli ospiti?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: dormirei
+          tu: dormiresti
+          lui/lei/Lei: dormirebbe
+          noi: dormiremmo
+          voi: dormireste
+          loro: dormirebbero
+        samples:
+          - Io dormirei di più se non avessi tanto lavoro.
+          - Tu dormiresti meglio con un materasso nuovo.
+          - Noi dormiremmo volentieri in questa casa per le vacanze.
+          - Loro dormirebbero meglio se andassero a letto prima.
+          - Voi dormireste qui se fosse necessario?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "dormire" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "dormire" means "to sleep". Think about your sleep habits, past experiences with sleep, 
+      and future plans involving sleep. The conditional can be used for hypothetical situations 
+      related to sleeping or for making polite suggestions about sleep.
+
+  - verb: leggere
+    meaning: to read
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: leggo
+          tu: leggi
+          lui/lei/Lei: legge
+          noi: leggiamo
+          voi: leggete
+          loro: leggono
+        samples:
+          - Io leggo un libro ogni mese.
+          - Tu leggi sempre prima di andare a letto.
+          - Lei legge il giornale ogni mattina.
+          - Noi leggiamo insieme per migliorare il nostro italiano.
+          - Voi leggete i fumetti?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: ho letto
+          tu: hai letto
+          lui/lei/Lei: ha letto
+          noi: abbiamo letto
+          voi: avete letto
+          loro: hanno letto
+        samples:
+          - Io ho letto quel libro la settimana scorsa.
+          - Tu hai letto l'email che ti ho inviato?
+          - Noi abbiamo letto molti articoli interessanti.
+          - Loro hanno letto il contratto prima di firmarlo.
+          - Voi avete letto le istruzioni?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: leggevo
+          tu: leggevi
+          lui/lei/Lei: leggeva
+          noi: leggevamo
+          voi: leggevate
+          loro: leggevano
+        samples:
+          - Io leggevo sempre prima di dormire da bambino.
+          - Tu leggevi i libri di avventura quando eri giovane.
+          - Noi leggevamo insieme durante le vacanze estive.
+          - Loro leggevano ad alta voce per i bambini.
+          - Voi leggevate spesso in biblioteca?
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: leggerò
+          tu: leggerai
+          lui/lei/Lei: leggerà
+          noi: leggeremo
+          voi: leggerete
+          loro: leggeranno
+        samples:
+          - Io leggerò il nuovo romanzo domani.
+          - Tu leggerai il rapporto più tardi.
+          - Noi leggeremo insieme il libro di storia.
+          - Loro leggeranno le notizie della settimana prossima.
+          - Voi leggerete i vostri messaggi questa sera?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: leggerei
+          tu: leggeresti
+          lui/lei/Lei: leggerebbe
+          noi: leggeremmo
+          voi: leggereste
+          loro: leggerebbero
+        samples:
+          - Io leggerei più libri se avessi più tempo.
+          - Tu leggeresti quel libro se fosse disponibile in biblioteca?
+          - Noi leggeremmo volentieri le tue raccomandazioni.
+          - Loro leggerebbero le istruzioni prima di iniziare.
+          - Voi leggereste le notizie se aveste internet?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "leggere" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "leggere" means "to read". Think about what you enjoy reading, 
+      past experiences with books or articles, and future reading plans. 
+      The conditional can be used for hypothetical situations related to reading or for making polite suggestions about what to read next.
+
+  - verb: venire
+    meaning: to come
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: vengo
+          tu: vieni
+          lui/lei/Lei: viene
+          noi: veniamo
+          voi: venite
+          loro: vengono
+        samples:
+          - Io vengo a casa tua stasera.
+          - Tu vieni spesso in questo ristorante?
+          - Lei viene da Roma.
+          - Noi veniamo alla festa domani.
+          - Voi venite in vacanza con noi?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: sono venuto/a
+          tu: sei venuto/a
+          lui/lei/Lei: è venuto/a
+          noi: siamo venuti/e
+          voi: siete venuti/e
+          loro: sono venuti/e
+        samples:
+          - Io sono venuto/a a trovarti ieri.
+          - Tu sei venuto/a alla riunione?
+          - Noi siamo venuti/e in Italia l'anno scorso.
+          - Loro sono venuti/e a cena da noi sabato.
+          - Voi siete venuti/e in macchina o in treno?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past. Note that "venire" uses "essere" as its auxiliary verb.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: venivo
+          tu: venivi
+          lui/lei/Lei: veniva
+          noi: venivamo
+          voi: venivate
+          loro: venivano
+        samples:
+          - Io venivo spesso qui da bambino.
+          - Tu venivi sempre a trovarci la domenica.
+          - Noi venivamo in vacanza in questo posto ogni estate.
+          - Loro venivano a scuola in bicicletta.
+          - Voi venivate alle riunioni regolarmente?
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: verrò
+          tu: verrai
+          lui/lei/Lei: verrà
+          noi: verremo
+          voi: verrete
+          loro: verranno
+        samples:
+          - Io verrò alla tua festa di compleanno.
+          - Tu verrai con noi al cinema domani?
+          - Noi verremo a prenderti all'aeroporto.
+          - Loro verranno in Italia il prossimo mese.
+          - Voi verrete alla riunione la settimana prossima?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future. Note the irregular stem "verr-" for this verb.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: verrei
+          tu: verresti
+          lui/lei/Lei: verrebbe
+          noi: verremmo
+          voi: verreste
+          loro: verrebbero
+        samples:
+          - Io verrei volentieri se avessi tempo.
+          - Tu verresti con me se te lo chiedessi?
+          - Noi verremmo alla festa se fossimo invitati.
+          - Loro verrebbero in vacanza con noi se potessero.
+          - Voi verreste a cena da noi stasera?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests. Note the irregular stem "verr-" for this verb.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "venire" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "venire" means "to come". Think about times when you come to places, 
+      past experiences of coming somewhere, and future plans to come to events or locations. 
+      The conditional can be used for hypothetical situations or polite invitations. 
+      Note that "venire" is an irregular verb and uses "essere" in compound tenses.
+
+  - verb: fare
+    meaning: to do/make
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: faccio
+          tu: fai
+          lui/lei/Lei: fa
+          noi: facciamo
+          voi: fate
+          loro: fanno
+        samples:
+          - Io faccio i compiti ogni giorno.
+          - Tu fai sempre domande interessanti.
+          - Lei fa colazione alle 8.
+          - Noi facciamo sport il sabato.
+          - Voi fate una bella torta!
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths. "Fare" is an irregular verb.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: ho fatto
+          tu: hai fatto
+          lui/lei/Lei: ha fatto
+          noi: abbiamo fatto
+          voi: avete fatto
+          loro: hanno fatto
+        samples:
+          - Io ho fatto una lunga passeggiata ieri.
+          - Tu hai fatto bene a chiamare.
+          - Noi abbiamo fatto un viaggio in Italia l'estate scorsa.
+          - Loro hanno fatto progressi notevoli.
+          - Voi avete fatto la spesa?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past. "Fare" uses "avere" as its auxiliary verb.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: facevo
+          tu: facevi
+          lui/lei/Lei: faceva
+          noi: facevamo
+          voi: facevate
+          loro: facevano
+        samples:
+          - Io facevo sempre i compiti dopo scuola.
+          - Tu facevi spesso sport da giovane.
+          - Noi facevamo lunghe passeggiate la domenica.
+          - Loro facevano rumore tutta la notte.
+          - Voi facevate spesso feste a casa vostra?
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: farò
+          tu: farai
+          lui/lei/Lei: farà
+          noi: faremo
+          voi: farete
+          loro: faranno
+        samples:
+          - Io farò del mio meglio per aiutarti.
+          - Tu farai un ottimo lavoro, ne sono sicuro.
+          - Noi faremo una festa il mese prossimo.
+          - Loro faranno un viaggio in Europa quest'estate.
+          - Voi farete gli esercizi per domani?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future. Note the irregular stem "far-" for this verb.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: farei
+          tu: faresti
+          lui/lei/Lei: farebbe
+          noi: faremmo
+          voi: fareste
+          loro: farebbero
+        samples:
+          - Io farei qualsiasi cosa per te.
+          - Tu faresti meglio a studiare di più.
+          - Noi faremmo volentieri una gita in montagna.
+          - Loro farebbero bene a ascoltare i tuoi consigli.
+          - Voi fareste una donazione se ve lo chiedessi?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests. Note the irregular stem "far-" for this verb.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "fare" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "fare" means "to do" or "to make". It's a very versatile verb in Italian, used in many expressions. 
+      Think about things you do or make, activities you've done in the past, and things you will do in the future. 
+      The conditional can be used for hypothetical situations or polite suggestions. 
+      Note that "fare" is an irregular verb, so pay attention to its unique conjugations.
+
+  - verb: andare
+    meaning: to go
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: vado
+          tu: vai
+          lui/lei/Lei: va
+          noi: andiamo
+          voi: andate
+          loro: vanno
+        samples:
+          - Io vado al lavoro in bicicletta.
+          - Tu vai spesso al cinema?
+          - Lei va in palestra ogni giorno.
+          - Noi andiamo in vacanza a luglio.
+          - Voi andate alla festa stasera?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths. "Andare" is an irregular verb.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: sono andato/a
+          tu: sei andato/a
+          lui/lei/Lei: è andato/a
+          noi: siamo andati/e
+          voi: siete andati/e
+          loro: sono andati/e
+        samples:
+          - Io sono andato/a al supermercato ieri.
+          - Tu sei andato/a in Francia l'anno scorso?
+          - Noi siamo andati/e al concerto sabato sera.
+          - Loro sono andati/e in montagna per il weekend.
+          - Voi siete andati/e a piedi o in macchina?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past. "Andare" uses "essere" as its auxiliary verb.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: andavo
+          tu: andavi
+          lui/lei/Lei: andava
+          noi: andavamo
+          voi: andavate
+          loro: andavano
+        samples:
+          - Io andavo spesso al parco da bambino.
+          - Tu andavi a scuola a piedi?
+          - Noi andavamo al mare ogni estate.
+          - Loro andavano sempre allo stesso ristorante.
+          - Voi andavate in biblioteca per studiare?
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: andrò
+          tu: andrai
+          lui/lei/Lei: andrà
+          noi: andremo
+          voi: andrete
+          loro: andranno
+        samples:
+          - Io andrò in Italia il prossimo mese.
+          - Tu andrai alla festa di compleanno di Marco?
+          - Noi andremo al museo domenica prossima.
+          - Loro andranno in vacanza a agosto.
+          - Voi andrete al concerto la settimana prossima?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future. Note the irregular stem "andr-" for this verb.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: andrei
+          tu: andresti
+          lui/lei/Lei: andrebbe
+          noi: andremmo
+          voi: andreste
+          loro: andrebbero
+        samples:
+          - Io andrei volentieri in vacanza se avessi tempo.
+          - Tu andresti al cinema con me stasera?
+          - Noi andremmo a piedi se non piovesse.
+          - Loro andrebbero in montagna se avessero una macchina.
+          - Voi andreste in Giappone se vinceste la lotteria?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests. Note the irregular stem "andr-" for this verb.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "andare" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "andare" means "to go". It's a very common verb in Italian, used to describe movement to a place. 
+      Think about places you go to regularly, trips you've taken in the past, and places you will go in the future. 
+      The conditional can be used for hypothetical situations or polite invitations. 
+      Note that "andare" is an irregular verb and uses "essere" in compound tenses.
+
+  - verb: vedere
+    meaning: to see
+    tenses:
+      - name: Presente (Present Tense)
+        level: A1
+        conjugation:
+          io: vedo
+          tu: vedi
+          lui/lei/Lei: vede
+          noi: vediamo
+          voi: vedete
+          loro: vedono
+        samples:
+          - Io vedo un bellissimo tramonto.
+          - Tu vedi quella montagna in lontananza?
+          - Lei vede i suoi amici ogni weekend.
+          - Noi vediamo un film ogni venerdì sera.
+          - Voi vedete spesso i vostri nonni?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Passato Prossimo (Present Perfect)
+        level: A2
+        conjugation:
+          io: ho visto
+          tu: hai visto
+          lui/lei/Lei: ha visto
+          noi: abbiamo visto
+          voi: avete visto
+          loro: hanno visto
+        samples:
+          - Io ho visto un film interessante ieri sera.
+          - Tu hai visto le chiavi da qualche parte?
+          - Noi abbiamo visto la Torre Eiffel durante il nostro viaggio a Parigi.
+          - Loro hanno visto una mostra d'arte moderna la settimana scorsa.
+          - Voi avete visto l'ultimo episodio della serie?
+        supporting_info: >
+          The passato prossimo is used to express completed actions in the recent past.
+
+      - name: Imperfetto (Imperfect)
+        level: A2
+        conjugation:
+          io: vedevo
+          tu: vedevi
+          lui/lei/Lei: vedeva
+          noi: vedevamo
+          voi: vedevate
+          loro: vedevano
+        samples:
+          - Io vedevo sempre lo stesso vicino di casa ogni mattina.
+          - Tu vedevi spesso quel film da bambino?
+          - Noi vedevamo i nostri amici ogni giorno a scuola.
+          - Loro vedevano la nonna tutti i fine settimana.
+          - Voi vedevate spesso quell'attore in TV?
+        supporting_info: >
+          The imperfetto is used for describing ongoing or habitual actions in the past.
+
+      - name: Futuro Semplice (Simple Future)
+        level: A2
+        conjugation:
+          io: vedrò
+          tu: vedrai
+          lui/lei/Lei: vedrà
+          noi: vedremo
+          voi: vedrete
+          loro: vedranno
+        samples:
+          - Io vedrò il mio medico la prossima settimana.
+          - Tu vedrai i risultati dell'esame domani.
+          - Noi vedremo cosa possiamo fare per aiutarti.
+          - Loro vedranno il nuovo spettacolo a teatro.
+          - Voi vedrete i vostri amici alla festa?
+        supporting_info: >
+          The futuro semplice is used to express actions that will happen in the future.
+
+      - name: Condizionale Presente (Present Conditional)
+        level: B1
+        conjugation:
+          io: vedrei
+          tu: vedresti
+          lui/lei/Lei: vedrebbe
+          noi: vedremmo
+          voi: vedreste
+          loro: vedrebbero
+        samples:
+          - Io vedrei volentieri quel film se avessi tempo.
+          - Tu vedresti la differenza se provassi questo nuovo prodotto.
+          - Noi vedremmo più spesso i nostri amici se vivessimo più vicini.
+          - Loro vedrebbero meglio se indossassero gli occhiali.
+          - Voi vedreste le cose diversamente se foste al mio posto?
+        supporting_info: >
+          The condizionale presente is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Ora tocca a te! Prova a usare il verbo "vedere" in diverse forme. 
+      Puoi creare una frase per ogni tempo verbale che abbiamo visto?
+
+    support_text: >
+      Remember, "vedere" means "to see". It's used not only for physical sight but also for understanding or meeting people. 
+      Think about things you see regularly, things you've seen in the past, and things you will see in the future. 
+      The conditional can be used for hypothetical situations or polite suggestions about seeing something or someone.

@@ -1,0 +1,1549 @@
+
+verb_list:
+  - verb: govoriti
+    meaning: to speak
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: govorim
+          ti: govoriš
+          on/ona: govori
+          midva/midve: govoriva
+          vidva/vidve: govorita
+          mi/me: govorimo
+          vi/ve: govorite
+          oni/one: govorijo
+        samples:
+          - Jaz govorim slovensko.
+          - Ti govoriš prehitro.
+          - Ona govori s prijatelji.
+          - Midva govoriva o počitnicah.
+          - Vi govorite angleško?
+        supporting_info: >
+          The present tense in Slovene is used for current actions, habitual states, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem govoril/a
+          ti: si govoril/a
+          on/ona: je govoril/a
+          midva/midve: sva govorila/i
+          vidva/vidve: sta govorila/i
+          mi/me: smo govorili/e
+          vi/ve: ste govorili/e
+          oni/one: so govorili/e
+        samples:
+          - Včeraj sem govoril s profesorjem.
+          - Si govorila z Marijo?
+          - Govorili smo celo noč.
+          - Oni so govorili o svojem projektu.
+          - Ste govorili preglasno.
+        supporting_info: >
+          The past tense in Slovene is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom govoril/a
+          ti: boš govoril/a
+          on/ona: bo govoril/a
+          midva/midve: bova govorila/i
+          vidva/vidve: bosta govorila/i
+          mi/me: bomo govorili/e
+          vi/ve: boste govorili/e
+          oni/one: bodo govorili/e
+        samples:
+          - Jutri bom govoril s šefom.
+          - Boš govoril bolje slovensko po tečaju.
+          - Bomo govorili o tem problemu kasneje.
+          - Oni bodo govorili o svojih izkušnjah na konferenci.
+          - Boste govorili z direktorjem naslednji teden.
+        supporting_info: >
+          The future tense in Slovene is formed using the future form of "biti" (to be) and the infinitive of the main verb.
+
+      - name: Conditional Mood (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi govoril/a
+          ti: bi govoril/a
+          on/ona: bi govoril/a
+          midva/midve: bi govorila/i
+          vidva/vidve: bi govorila/i
+          mi/me: bi govorili/e
+          vi/ve: bi govorili/e
+          oni/one: bi govorili/e
+        samples:
+          - Govoril bi italijansko, če bi imel čas za učenje.
+          - Bi govoril malo tišje, prosim?
+          - Z veseljem bi govorili o tej temi z vami.
+          - Oni bi govorili bolje, če bi več vadili.
+          - O čem bi govorili, če bi bili na mojem mestu?
+        supporting_info: >
+          The conditional mood in Slovene is used to express hypothetical situations or polite requests.
+
+      - name: Imperative Mood (Velelnik)
+        level: A2
+        conjugation:
+          (ti): govori
+          (vidva/vidve): govorita
+          (vi/ve): govorite
+        samples:
+          - Govori glasneje!
+          - Govorita počasi, prosim.
+          - Govorite z mano v slovenščini.
+          - Ne govori tako hitro.
+          - Govorite resnico.
+        supporting_info: >
+          The imperative mood in Slovene is used for commands or requests.
+
+    action_text: >
+      Zdaj si ti na vrsti! Poskusi uporabiti glagol "govoriti" v različnih časih. 
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "govoriti" means "to speak" or "to talk". Think about how you might use this verb 
+      in various situations and time frames. For the past tense, consider conversations you've had. 
+      For the future, think about upcoming discussions. The conditional can be used for hypothetical 
+      situations or polite requests, while the imperative is used for commands or strong suggestions.
+
+  - verb: delati
+    meaning: to work, to do
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: delam
+          ti: delaš
+          on/ona: dela
+          midva/midve: delava
+          vidva/vidve: delata
+          mi/me: delamo
+          vi/ve: delate
+          oni/one: delajo
+        samples:
+          - Jaz delam v pisarni.
+          - Ti delaš domačo nalogo.
+          - Ona dela kot učiteljica.
+          - Midva delava na projektu.
+          - Vi delate preveč ur.
+        supporting_info: >
+          The present tense of "delati" is used for current actions, regular activities, and general statements about work or actions.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem delal/a
+          ti: si delal/a
+          on/ona: je delal/a
+          midva/midve: sva delala/i
+          vidva/vidve: sta delala/i
+          mi/me: smo delali/e
+          vi/ve: ste delali/e
+          oni/one: so delali/e
+        samples:
+          - Včeraj sem delal do poznih ur.
+          - Si delala na vrtu?
+          - Delali smo na tem projektu cel mesec.
+          - Oni so delali napake pri izračunu.
+          - Ste delali kaj zanimivega med počitnicami?
+        supporting_info: >
+          The past tense of "delati" is used to describe completed actions or states in the past.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom delal/a
+          ti: boš delal/a
+          on/ona: bo delal/a
+          midva/midve: bova delala/i
+          vidva/vidve: bosta delala/i
+          mi/me: bomo delali/e
+          vi/ve: boste delali/e
+          oni/one: bodo delali/e
+        samples:
+          - Jutri bom delal od doma.
+          - Boš delala za novo podjetje?
+          - Bomo delali na tem še cel teden.
+          - Oni bodo delali nadure ta mesec.
+          - Boste delali kaj posebnega za praznike?
+        supporting_info: >
+          The future tense of "delati" is used to express actions or states that will occur in the future.
+
+      - name: Conditional Mood (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi delal/a
+          ti: bi delal/a
+          on/ona: bi delal/a
+          midva/midve: bi delala/i
+          vidva/vidve: bi delala/i
+          mi/me: bi delali/e
+          vi/ve: bi delali/e
+          oni/one: bi delali/e
+        samples:
+          - Delal bi več, če bi imel čas.
+          - Bi delala z nami na tem projektu?
+          - Delali bi bolje, če bi imeli boljšo opremo.
+          - Oni bi delali od doma, če bi jim dovolili.
+          - Kaj bi delali, če bi zadeli na loteriji?
+        supporting_info: >
+          The conditional mood of "delati" is used to express hypothetical actions or polite requests.
+
+      - name: Imperative Mood (Velelnik)
+        level: A2
+        conjugation:
+          (ti): delaj
+          (vidva/vidve): delajta
+          (vi/ve): delajte
+        samples:
+          - Delaj hitro!
+          - Delajta skupaj na tej nalogi.
+          - Delajte, kar vam je bilo naročeno.
+          - Ne delaj tega, nevarno je.
+          - Delajte dobro in uspeh bo prišel.
+        supporting_info: >
+          The imperative mood of "delati" is used for commands, instructions, or strong suggestions related to work or actions.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "delati" v različnih časih in naklonih. 
+      Ali lahko sestaviš stavek za vsako obliko, ki smo jo obravnavali?
+
+    support_text: >
+      Remember, "delati" means "to work" or "to do". Think about various work situations or actions you perform. 
+      For the past tense, consider tasks you've completed. For the future, think about upcoming work or projects. 
+      The conditional can be used for hypothetical work situations, while the imperative is used for giving work-related instructions.
+
+  - verb: iti
+    meaning: to go
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: grem
+          ti: greš
+          on/ona: gre
+          midva/midve: greva
+          vidva/vidve: gresta
+          mi/me: gremo
+          vi/ve: greste
+          oni/one: grejo
+        samples:
+          - Jaz grem v šolo.
+          - Ti greš na izlet.
+          - Ona gre v trgovino.
+          - Midva greva na kavo.
+          - Vi greste domov.
+        supporting_info: >
+          The present tense of "iti" is used for current or near-future movements and actions.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem šel/šla
+          ti: si šel/šla
+          on/ona: je šel/šla
+          midva/midve: sva šla/šli
+          vidva/vidve: sta šla/šli
+          mi/me: smo šli/šle
+          vi/ve: ste šli/šle
+          oni/one: so šli/šle
+        samples:
+          - Včeraj sem šel v kino.
+          - Si šla na koncert?
+          - Šli smo na izlet v gore.
+          - Oni so šli na morje za vikend.
+          - Ste šli po nakupih?
+        supporting_info: >
+          The past tense of "iti" is used to describe completed movements or actions in the past.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom šel/šla
+          ti: boš šel/šla
+          on/ona: bo šel/šla
+          midva/midve: bova šla/šli
+          vidva/vidve: bosta šla/šli
+          mi/me: bomo šli/šle
+          vi/ve: boste šli/šle
+          oni/one: bodo šli/šle
+        samples:
+          - Jutri bom šel na sestanek.
+          - Boš šla z nami na piknik?
+          - Bomo šli na počitnice naslednji mesec.
+          - Oni bodo šli na turnejo po Evropi.
+          - Boste šli na predavanje?
+        supporting_info: >
+          The future tense of "iti" is used to express movements or actions that will occur in the future.
+
+      - name: Conditional Mood (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi šel/šla
+          ti: bi šel/šla
+          on/ona: bi šel/šla
+          midva/midve: bi šla/šli
+          vidva/vidve: bi šla/šli
+          mi/me: bi šli/šle
+          vi/ve: bi šli/šle
+          oni/one: bi šli/šle
+        samples:
+          - Šel bi v kino, če bi imel čas.
+          - Bi šla z mano na večerjo?
+          - Šli bi na potovanje, če bi imeli dovolj denarja.
+          - Oni bi šli peš, če ne bi bilo dežja.
+          - Kam bi šli, če bi lahko potovali kamorkoli?
+        supporting_info: >
+          The conditional mood of "iti" is used to express hypothetical movements or polite invitations.
+
+      - name: Imperative Mood (Velelnik)
+        level: A2
+        conjugation:
+          (ti): pojdi
+          (vidva/vidve): pojdita
+          (vi/ve): pojdite
+        samples:
+          - Pojdi v trgovino!
+          - Pojdita skupaj na sprehod.
+          - Pojdite po tej poti.
+          - Ne pojdi tja, nevarno je.
+          - Pojdite zdaj, da ne zamudite vlaka.
+        supporting_info: >
+          The imperative mood of "iti" is used for commands, instructions, or strong suggestions related to movement.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "iti" v različnih časih in naklonih. 
+      Ali lahko sestaviš stavek za vsako obliko, ki smo jo obravnavali?
+
+    support_text: >
+      Remember, "iti" means "to go". Think about various situations involving movement or travel. 
+      For the past tense, consider places you've been. For the future, think about upcoming trips or movements. 
+      The conditional can be used for hypothetical travel situations, while the imperative is used for giving directions or travel-related instructions.
+
+  - verb: biti
+    meaning: to be
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: sem
+          ti: si
+          on/ona: je
+          midva/midve: sva
+          vidva/vidve: sta
+          mi/me: smo
+          vi/ve: ste
+          oni/one: so
+        samples:
+          - Jaz sem učitelj.
+          - Ti si študent.
+          - Ona je zdravnica.
+          - Midva sva prijatelja.
+          - Vi ste iz Slovenije?
+        supporting_info: >
+          The present tense of "biti" is used for current states, identities, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem bil/bila
+          ti: si bil/bila
+          on/ona: je bil/bila
+          midva/midve: sva bila/bili
+          vidva/vidve: sta bila/bili
+          mi/me: smo bili/bile
+          vi/ve: ste bili/bile
+          oni/one: so bili/bile
+        samples:
+          - Včeraj sem bil utrujen.
+          - Si bila na zabavi?
+          - Bili smo presenečeni nad rezultati.
+          - Oni so bili na počitnicah prejšnji teden.
+          - Ste bili kdaj v Ljubljani?
+        supporting_info: >
+          The past tense of "biti" is used to describe past states or situations.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom
+          ti: boš
+          on/ona: bo
+          midva/midve: bova
+          vidva/vidve: bosta
+          mi/me: bomo
+          vi/ve: boste
+          oni/one: bodo
+        samples:
+          - Jutri bom doma.
+          - Boš pripravljen za izpit?
+          - Bomo veseli, če nas obiščeš.
+          - Oni bodo na voljo naslednji teden.
+          - Boste prisotni na sestanku?
+        supporting_info: >
+          The future tense of "biti" is used to express future states or situations.
+
+      - name: Conditional Mood (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi bil/bila
+          ti: bi bil/bila
+          on/ona: bi bil/bila
+          midva/midve: bi bila/bili
+          vidva/vidve: bi bila/bili
+          mi/me: bi bili/bile
+          vi/ve: bi bili/bile
+          oni/one: bi bili/bile
+        samples:
+          - Bil bi srečen, če bi dobil to službo.
+          - Bi bila pripravljena pomagati?
+          - Bili bi hvaležni za vašo pomoč.
+          - Oni bi bili uspešni, če bi več delali.
+          - Kaj bi bili, če bi lahko izbrali katerikoli poklic?
+        supporting_info: >
+          The conditional mood of "biti" is used to express hypothetical states or polite requests.
+
+      - name: Imperative Mood (Velelnik)
+        level: A2
+        conjugation:
+          (ti): bodi
+          (vidva/vidve): bodita
+          (vi/ve): bodite
+        samples:
+          - Bodi prijazen!
+          - Bodita pozorna na promet.
+          - Bodite tiho med predstavo.
+          - Ne bodi žalosten.
+          - Bodite pripravljeni ob 8:00.
+        supporting_info: >
+          The imperative mood of "biti" is used for commands, encouragement, or strong suggestions related to states or behavior.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "biti" v različnih časih in naklonih. 
+      Ali lahko sestaviš stavek za vsako obliko, ki smo jo obravnavali?
+
+    support_text: >
+      Remember, "biti" means "to be". This verb is essential in Slovene and is used to describe states, 
+      identities, and locations. For the past tense, think about how you or others were in the past. 
+      For the future, consider upcoming states or situations. The conditional can be used for hypothetical 
+      states, while the imperative is often used for encouragement or instructions about how to be.
+
+  - verb: jesti
+    meaning: to eat
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: jem
+          ti: ješ
+          on/ona: je
+          midva/midve: jeva
+          vidva/vidve: jesta
+          mi/me: jemo
+          vi/ve: jeste
+          oni/one: jedo
+        samples:
+          - Jaz jem jabolko.
+          - Ti ješ sendvič.
+          - Ona je solato.
+          - Midvajeva večerja je pripravljena.
+          - Vi jeste zelo hitro.
+        supporting_info: >
+          The present tense of "jest" is used for current actions related to eating or habitual eating practices.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem jedel/jedla
+          ti: si jedel/jedla
+          on/ona: je jedel/jedla
+          midva/midve: sva jedla/šli
+          vidva/vidve: sta jedla/šli
+          mi/me: smo jedli/jedle
+          vi/ve: ste jedli/jedle
+          oni/one: so jedli/jedle
+        samples:
+          - Včeraj sem jedel zrezek.
+          - Si jedla torto?
+          - Jedli smo v restavraciji.
+          - Oni so jedli za mizo.
+          - Ste jedli kaj posebnega?
+        supporting_info: >
+          The past tense of "jest" is used to describe completed actions or states related to eating in the past.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom jedel/jedla
+          ti: boš jedel/jedla
+          on/ona: bo jedel/jedla
+          midva/midve: bova jedla/šli
+          vidva/vidve: bosta jedla/šli
+          mi/me: bomo jedli/jedle
+          vi/ve: boste jedli/jedle
+          oni/one: bodo jedli/jedle
+        samples:
+          - Jutri bom jedel ribo.
+          - Boš jedla s prijatelji?
+          - Bomo jedli na pikniku.
+          - Oni bodo jedli v novem lokalu.
+          - Boste jedli zajtrk ob 8. uri?
+        supporting_info: >
+          The future tense of "jest" is used to express actions or states related to eating that will occur in the future.
+
+      - name: Conditional Mood (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi jedel/jedla
+          ti: bi jedel/jedla
+          on/ona: bi jedel/jedla
+          midva/midve: bi jedla/šli
+          vidva/vidve: bi jedla/šli
+          mi/me: bi jedli/jedle
+          vi/ve: bi jedli/jedle
+          oni/one: bi jedli/jedle
+        samples:
+          - Jedel bi bolj zdravo, če bi imel čas.
+          - Bi jedla z nami?
+          - Jedli bi skupaj, če bi se srečali.
+          - Oni bi jedli doma, če ne bi bili zaposleni.
+          - Kaj bi jedel, če bi lahko izbral?
+        supporting_info: >
+          The conditional mood of "jest" is used to express hypothetical situations or polite invitations related to eating.
+
+      - name: Imperative Mood (Velelnik)
+        level: A2
+        conjugation:
+           (ti): jej 
+           (vidva/vidve): jejta 
+           (vi/ve): jejte 
+        samples:
+           - Jej zdravo!
+           - Jejta skupaj z nami.
+           - Jejte počasi in uživajte v hrani.
+           - Ne jej preveč sladkarij!
+           - Jejte, preden se hrana ohladi!
+        supporting_info: >
+           The imperative mood of "jest" is used for commands or suggestions related to eating.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "jest" v različnih časih in naklonih. 
+      Ali lahko sestaviš stavek za vsako obliko, ki smo jo obravnavali?
+
+    support_text: >
+      Remember, "jest" means "to eat". Think about your meals and dining experiences. 
+      For the past tense, consider what you had for dinner last night. For the future, think about your next meal. 
+      The conditional can be used for hypothetical dining situations, while the imperative is often used for encouragement or instructions about eating.
+
+  - verb: piti 
+    meaning: to drink 
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1 
+        conjugation:
+           jaz: pijem 
+           ti: piješ 
+           on/ona: pije 
+           midva/midve: pijeva 
+           vidva/vidve: pijeta 
+           mi/me: pijemo 
+           vi/ve: pijete 
+           oni/one: pijejo 
+        samples:
+           - Jaz pijem vodo. 
+           - Ti piješ sok. 
+           - Ona pije čaj. 
+           - Midva pijeva kavo. 
+           - Vi pijete vino? 
+        supporting_info: >
+            The present tense of "piti" is used for current actions related to drinking or habitual drinking practices.
+
+      - name: Past Tense (Preteklik)
+        level: A2 
+        conjugation:
+            jaz : sem pil/pila  
+            ti : si pil/pila  
+            on/ona : je pil/pila  
+            midva/midve : sva pila/pili  
+            vidva/vidve : sta pila/pili  
+            mi/me : smo pili/pile  
+            vi/ve : ste pili/pile  
+            oni/one : so pili/pile  
+        samples:
+          - Včeraj sem pil kavo.  
+          - Si pila čaj?  
+          - Pili smo sok na zabavi.  
+          - Oni so pili pivo po delu.  
+          - Ste pili kaj posebnega?  
+        supporting_info : >
+            The past tense of "piti" is used to describe completed actions or states related to drinking in the past.
+
+      - name : Future Tense (Prihodnjik) 
+        level: A2 
+        conjugation :
+            jaz : bom pil/pila  
+            ti : boš pil/pila  
+            on/ona : bo pil/pila  
+            midva/midve : bova pila/pili  
+            vidva/vidve : bosta pila/pili  
+            mi/me : bomo pili/pile  
+            vi/ve : boste pili/pile  
+            oni/one : bodo pili/pile  
+        samples :
+            - Jutri bom pil sok.  
+            - Boš pila z nami?   
+            - Bomo pili vino na zabavi.   
+            - Oni bodo pili pivo ob vikendih.   
+            - Boste pili kavo zjutraj?   
+        supporting_info : >
+            The future tense of "piti" is used to express actions or states related to drinking that will occur in the future.
+
+      - name : Conditional Mood (Pogojnik)
+        level: B1 
+        conjugation :
+            jaz : bi pil/pila   
+            ti : bi pil/pila   
+            on/ona : bi pil/pila   
+            midva/midve : bi pili/pile   
+            vidva/vidve : bi pili/pile   
+            mi/me : bi pili/pile   
+            vi/ve : bi pili/pile   
+            oni/one : bi pili/pile   
+        samples :
+            - Pil bi čaj, če bi imel čas.    
+            - Bi pila z mano?    
+            - Pili bi skupaj, če se srečamo.    
+            - Oni bi pili več vode, če ne bi bili zaposleni.    
+            - Kaj bi pil, če bi lahko izbral?    
+        supporting_info :
+            The conditional mood of "piti" is used to express hypothetical situations or polite invitations related to drinking.
+
+      - name : Imperative Mood (Velelnik) 
+        level: A2 
+        conjugation :
+              (ti) : pij    
+              (vidva/vidve) : pijta    
+              (vi) : pijte    
+        samples :
+            - Pij zdravo!    
+            - Pijta skupaj z nami.    
+            - Pijte počasi in uživajte v napitku.    
+            - Ne pij preveč sladkih pijač!    
+            - Pijte vodo vsak dan!    
+        supporting_info :
+            The imperative mood of "piti" is used for commands or suggestions related to drinking.
+
+    action_text :
+       Zdaj je tvoja vrsta! Poskusi uporabiti glagol "piti" v različnih časih in naklonih.   
+       Ali lahko sestaviš stavek za vsako obliko, ki smo jo obravnavali?
+
+    support_text :
+       Remember, "piti" means "to drink". Think about your favorite beverages and drinking habits.   
+       For the past tense, consider what you drank last night. For the future, think about what you'll have with your next meal.   
+       The conditional can be used for hypothetical drinking situations, while the imperative is often used for giving instructions about drinking.
+
+  - verb: imeti
+    meaning: to have
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: imam
+          ti: imaš
+          on/ona/ono: ima
+          midva/medve: imava
+          vidva/vedve: imata
+          onadva/onidve: imata
+          mi: imamo
+          vi: imate
+          oni/one/ona: imajo
+        samples:
+          - Imam novo knjigo.
+          - Imaš čas za kavo?
+          - Ona ima lepo hišo.
+          - Imamo veliko dela.
+          - Ali imate kakšno vprašanje?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem imel/imela
+          ti: si imel/imela
+          on/ona/ono: je imel/imela
+          midva/medve: sva imela/imeli
+          vidva/vedve: sta imela/imeli
+          onadva/onidve: sta imela/imeli
+          mi: smo imeli/imele
+          vi: ste imeli/imele
+          oni/one/ona: so imeli/imele
+        samples:
+          - Včeraj sem imel pomemben sestanek.
+          - Ali si imela dober dan?
+          - Imeli smo težave z avtom.
+          - So imeli dovolj časa za pripravo?
+          - Imela sta srečo v nesreči.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom imel/imela
+          ti: boš imel/imela
+          on/ona/ono: bo imel/imela
+          midva/medve: bova imela/imeli
+          vidva/vedve: bosta imela/imeli
+          onadva/onidve: bosta imela/imeli
+          mi: bomo imeli/imele
+          vi: boste imeli/imele
+          oni/one/ona: bodo imeli/imele
+        samples:
+          - Jutri bom imel prosti dan.
+          - Boš imela čas za kosilo?
+          - Bomo imeli zabavo za rojstni dan.
+          - Ali boste imeli dovolj denarja?
+          - Bodo imeli težave z novim sistemom?
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi imel/imela
+          ti: bi imel/imela
+          on/ona/ono: bi imel/imela
+          midva/medve: bi imela/imeli
+          vidva/vedve: bi imela/imeli
+          onadva/onidve: bi imela/imeli
+          mi: bi imeli/imele
+          vi: bi imeli/imele
+          oni/one/ona: bi imeli/imele
+        samples:
+          - Rad bi imel več prostega časa.
+          - Če bi imela denar, bi potovala po svetu.
+          - Imeli bi zabavo, če bi bilo lepo vreme.
+          - Ali bi imeli kaj proti, če bi prišel kasneje?
+          - Oni bi imeli boljše rezultate, če bi več vadili.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): imej
+          (vidva/vedve): imejta
+          (vi): imejte
+        samples:
+          - Imej potrpljenje!
+          - Imejta to v mislih.
+          - Imejte lep dan!
+          - Imej se lepo na počitnicah!
+          - Imejte pripravljene dokumente.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj si ti na vrsti! Poskusi uporabiti glagol "imeti" v različnih časih.
+      Ali lahko ustvariš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "imeti" means "to have". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider things you've had. 
+      For the future, think about what you will have. The conditional can be used for hypothetical 
+      situations or polite requests. If you're having trouble, start with simple sentences like 
+      "I have a book" or "We will have time tomorrow".
+
+  - verb: hoditi
+    meaning: to walk, to go
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: hodim
+          ti: hodiš
+          on/ona/ono: hodi
+          midva/medve: hodiva
+          vidva/vedve: hodita
+          onadva/onidve: hodita
+          mi: hodimo
+          vi: hodite
+          oni/one/ona: hodijo
+        samples:
+          - Vsak dan hodim v službo.
+          - Ali hodiš na tečaj slovenščine?
+          - Ona hodi zelo hitro.
+          - Hodimo v hribe ob vikendih.
+          - Kam hodite na počitnice?
+        supporting_info: >
+          The present tense is used for regular actions, habits, and general statements.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem hodil/hodila
+          ti: si hodil/hodila
+          on/ona/ono: je hodil/hodila
+          midva/medve: sva hodila/hodili
+          vidva/vedve: sta hodila/hodili
+          onadva/onidve: sta hodila/hodili
+          mi: smo hodili/hodile
+          vi: ste hodili/hodile
+          oni/one/ona: so hodili/hodile
+        samples:
+          - Včeraj sem hodil po mestu.
+          - Ali si hodila v isto šolo kot jaz?
+          - Hodili smo po gozdu celo popoldne.
+          - Ste hodili na koncerte v mladosti?
+          - Oni so hodili na delo s kolesom.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom hodil/hodila
+          ti: boš hodil/hodila
+          on/ona/ono: bo hodil/hodila
+          midva/medve: bova hodila/hodili
+          vidva/vedve: bosta hodila/hodili
+          onadva/onidve: bosta hodila/hodili
+          mi: bomo hodili/hodile
+          vi: boste hodili/hodile
+          oni/one/ona: bodo hodili/hodile
+        samples:
+          - Jutri bom hodil na izlet.
+          - Boš hodila z mano v kino?
+          - Bomo hodili po novi poti.
+          - Ali boste hodili na tečaj joge?
+          - Oni bodo hodili na delo z avtobusom.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi hodil/hodila
+          ti: bi hodil/hodila
+          on/ona/ono: bi hodil/hodila
+          midva/medve: bi hodila/hodili
+          vidva/vedve: bi hodila/hodili
+          onadva/onidve: bi hodila/hodili
+          mi: bi hodili/hodile
+          vi: bi hodili/hodile
+          oni/one/ona: bi hodili/hodile
+        samples:
+          - Rad bi hodil v hribe vsak vikend.
+          - Če bi imela čas, bi hodila na tečaj plesa.
+          - Hodili bi več, če bi živeli bližje centru.
+          - Ali bi hodili z nami na piknik?
+          - Oni bi hodili v šolo peš, če bi živeli bližje.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): hodi
+          (vidva/vedve): hodita
+          (vi): hodite
+        samples:
+          - Hodi previdno po ledu!
+          - Hodita počasi, da vaju lahko dohitim.
+          - Hodite za menoj, prosim.
+          - Hodi redno na preglede.
+          - Hodite po označeni poti.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj je tvoja priložnost! Poskusi uporabiti glagol "hoditi" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "hoditi" means "to walk" or "to go" (regularly). Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider places you've walked to or gone to regularly. 
+      For the future, think about your plans for regular trips or walks. The conditional can be used for hypothetical 
+      situations or polite requests. If you're finding it difficult, start with simple sentences like 
+      "I walk to school" or "We will go to the park tomorrow".
+
+  - verb: pisati
+    meaning: to write
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: pišem
+          ti: pišeš
+          on/ona/ono: piše
+          midva/medve: piševa
+          vidva/vedve: pišeta
+          onadva/onidve: pišeta
+          mi: pišemo
+          vi: pišete
+          oni/one/ona: pišejo
+        samples:
+          - Vsak dan pišem dnevnik.
+          - Ali pišeš pesmi?
+          - On piše članek za časopis.
+          - Pišemo domačo nalogo.
+          - Kaj pišete v tem trenutku?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem pisal/pisala
+          ti: si pisal/pisala
+          on/ona/ono: je pisal/pisala
+          midva/medve: sva pisala/pisali
+          vidva/vedve: sta pisala/pisali
+          onadva/onidve: sta pisala/pisali
+          mi: smo pisali/pisale
+          vi: ste pisali/pisale
+          oni/one/ona: so pisali/pisale
+        samples:
+          - Včeraj sem pisal dolgo pismo.
+          - Ali si pisala dnevnik v mladosti?
+          - Pisali smo test celo uro.
+          - Ste pisali članke za revijo?
+          - Oni so pisali roman skupaj.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom pisal/pisala
+          ti: boš pisal/pisala
+          on/ona/ono: bo pisal/pisala
+          midva/medve: bova pisala/pisali
+          vidva/vedve: bosta pisala/pisali
+          onadva/onidve: bosta pisala/pisali
+          mi: bomo pisali/pisale
+          vi: boste pisali/pisale
+          oni/one/ona: bodo pisali/pisale
+        samples:
+          - Jutri bom pisal poročilo.
+          - Boš pisala razglednice s počitnic?
+          - Bomo pisali test naslednji teden.
+          - Ali boste pisali blog o svojem potovanju?
+          - Oni bodo pisali knjigo o zgodovini mesta.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi pisal/pisala
+          ti: bi pisal/pisala
+          on/ona/ono: bi pisal/pisala
+          midva/medve: bi pisala/pisali
+          vidva/vedve: bi pisala/pisali
+          onadva/onidve: bi pisala/pisali
+          mi: bi pisali/pisale
+          vi: bi pisali/pisale
+          oni/one/ona: bi pisali/pisale
+        samples:
+          - Rad bi pisal knjige, če bi imel čas.
+          - Če bi imela navdih, bi pisala pesmi.
+          - Pisali bi več pisem, če bi bila poštnina cenejša.
+          - Ali bi pisali članek o tem dogodku?
+          - Oni bi pisali bolje, če bi več vadili.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): piši
+          (vidva/vedve): pišita
+          (vi): pišite
+        samples:
+          - Piši mi vsak dan!
+          - Pišita počasi in razločno.
+          - Pišite, prosim, z velikimi črkami.
+          - Piši domačo nalogo takoj po šoli.
+          - Pišite svoje ime na vrh strani.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "pisati" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "pisati" means "to write". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider things you've written. 
+      For the future, think about what you will write. The conditional can be used for hypothetical 
+      situations or polite requests. If you're having trouble, start with simple sentences like 
+      "I write emails" or "We will write a letter tomorrow".
+
+  - verb: brati
+    meaning: to read
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: berem
+          ti: bereš
+          on/ona/ono: bere
+          midva/medve: bereva
+          vidva/vedve: bereta
+          onadva/onidve: bereta
+          mi: beremo
+          vi: berete
+          oni/one/ona: berejo
+        samples:
+          - Vsak večer berem knjigo.
+          - Ali bereš časopis vsak dan?
+          - Ona bere zelo hitro.
+          - Beremo zanimiv članek.
+          - Kaj berete trenutno?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem bral/brala
+          ti: si bral/brala
+          on/ona/ono: je bral/brala
+          midva/medve: sva brala/brali
+          vidva/vedve: sta brala/brali
+          onadva/onidve: sta brala/brali
+          mi: smo brali/brale
+          vi: ste brali/brale
+          oni/one/ona: so brali/brale
+        samples:
+          - Včeraj sem bral celo popoldne.
+          - Ali si brala to knjigo v šoli?
+          - Brali smo pesmi znanih pesnikov.
+          - Ste brali novice o tem dogodku?
+          - Oni so brali navodila, preden so začeli.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom bral/brala
+          ti: boš bral/brala
+          on/ona/ono: bo bral/brala
+          midva/medve: bova brala/brali
+          vidva/vedve: bosta brala/brali
+          onadva/onidve: bosta brala/brali
+          mi: bomo brali/brale
+          vi: boste brali/brale
+          oni/one/ona: bodo brali/brale
+        samples:
+          - Jutri bom bral novo knjigo.
+          - Boš brala to poročilo pred sestankom?
+          - Bomo brali ta roman za domače branje.
+          - Ali boste brali otrokom pravljice?
+          - Oni bodo brali svoje pesmi na literarnem večeru.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi bral/brala
+          ti: bi bral/brala
+          on/ona/ono: bi bral/brala
+          midva/medve: bi brala/brali
+          vidva/vedve: bi brala/brali
+          onadva/onidve: bi brala/brali
+          mi: bi brali/brale
+          vi: bi brali/brale
+          oni/one/ona: bi brali/brale
+        samples:
+          - Rad bi bral več, če bi imel čas.
+          - Če bi imela očala, bi brala brez težav.
+          - Brali bi več knjig, če bi imeli knjižnico v bližini.
+          - Ali bi brali to poročilo in mi povedali svoje mnenje?
+          - Oni bi brali v parku, če ne bi deževalo.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): beri
+          (vidva/vedve): berita
+          (vi): berite
+        samples:
+          - Beri glasno in razločno!
+          - Berita skupaj to poglavje.
+          - Berite navodila pred uporabo.
+          - Beri vsak dan, da izboljšaš svoje znanje.
+          - Berite, prosim, ta članek do konca.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj si na vrsti ti! Poskusi uporabiti glagol "brati" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "brati" means "to read". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider books or articles you've read. 
+      For the future, think about what you plan to read. The conditional can be used for hypothetical 
+      situations or polite requests. If you're finding it challenging, start with simple sentences like 
+      "I read books" or "We will read the newspaper tomorrow".
+
+  - verb: kuhati
+    meaning: to cook
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: kuham
+          ti: kuhaš
+          on/ona/ono: kuha
+          midva/medve: kuhava
+          vidva/vedve: kuhata
+          onadva/onidve: kuhata
+          mi: kuhamo
+          vi: kuhate
+          oni/one/ona: kuhajo
+        samples:
+          - Vsak dan kuham večerjo.
+          - Ali kuhaš rad?
+          - Ona kuha odlične jedi.
+          - Kuhamo tradicionalne slovenske jedi.
+          - Kaj kuhate za kosilo?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem kuhal/kuhala
+          ti: si kuhal/kuhala
+          on/ona/ono: je kuhal/kuhala
+          midva/medve: sva kuhala/kuhali
+          vidva/vedve: sta kuhala/kuhali
+          onadva/onidve: sta kuhala/kuhali
+          mi: smo kuhali/kuhale
+          vi: ste kuhali/kuhale
+          oni/one/ona: so kuhali/kuhale
+        samples:
+          - Včeraj sem kuhal celo popoldne.
+          - Ali si kuhala to juho sama?
+          - Kuhali smo za veliko družinsko praznovanje.
+          - Ste kuhali kdaj z babico?
+          - Oni so kuhali tradicionalne jedi za festival.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom kuhal/kuhala
+          ti: boš kuhal/kuhala
+          on/ona/ono: bo kuhal/kuhala
+          midva/medve: bova kuhala/kuhali
+          vidva/vedve: bosta kuhala/kuhali
+          onadva/onidve: bosta kuhala/kuhali
+          mi: bomo kuhali/kuhale
+          vi: boste kuhali/kuhale
+          oni/one/ona: bodo kuhali/kuhale
+        samples:
+          - Jutri bom kuhal za prijatelje.
+          - Boš kuhala kaj posebnega za rojstni dan?
+          - Bomo kuhali skupaj na tečaju kuhanja.
+          - Ali boste kuhali za praznike?
+          - Oni bodo kuhali na dobrodelnem dogodku.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi kuhal/kuhala
+          ti: bi kuhal/kuhala
+          on/ona/ono: bi kuhal/kuhala
+          midva/medve: bi kuhala/kuhali
+          vidva/vedve: bi kuhala/kuhali
+          onadva/onidve: bi kuhala/kuhali
+          mi: bi kuhali/kuhale
+          vi: bi kuhali/kuhale
+          oni/one/ona: bi kuhali/kuhale
+        samples:
+          - Rad bi kuhal bolj zdravo, če bi imel čas.
+          - Če bi imela vse sestavine, bi kuhala lazanjo.
+          - Kuhali bi več doma, če ne bi bili tako zaposleni.
+          - Ali bi kuhali za nas na pikniku?
+          - Oni bi kuhali bolje, če bi obiskovali tečaje kuhanja.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): kuhaj
+          (vidva/vedve): kuhajta
+          (vi): kuhajte
+        samples:
+          - Kuhaj na nizki temperaturi!
+          - Kuhajta skupaj, bo hitreje.
+          - Kuhajte previdno, da se ne opečete.
+          - Kuhaj z ljubeznijo in bo okusno.
+          - Kuhajte več domačih jedi.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj je tvoja priložnost! Poskusi uporabiti glagol "kuhati" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "kuhati" means "to cook". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider meals you've cooked. 
+      For the future, think about what you plan to cook. The conditional can be used for hypothetical 
+      situations or polite requests. If you're finding it difficult, start with simple sentences like 
+      "I cook dinner" or "We will cook pasta tomorrow".
+
+  - verb: potovati
+    meaning: to travel
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: potujem
+          ti: potuješ
+          on/ona/ono: potuje
+          midva/medve: potujeva
+          vidva/vedve: potujeta
+          onadva/onidve: potujeta
+          mi: potujemo
+          vi: potujete
+          oni/one/ona: potujejo
+        samples:
+          - Rad potujem po Evropi.
+          - Ali potuješ pogosto?
+          - Ona potuje zaradi službe.
+          - Potujemo z vlakom v Ljubljano.
+          - Kam potujete to poletje?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem potoval/potovala
+          ti: si potoval/potovala
+          on/ona/ono: je potoval/potovala
+          midva/medve: sva potovala/potovali
+          vidva/vedve: sta potovala/potovali
+          onadva/onidve: sta potovala/potovali
+          mi: smo potovali/potovale
+          vi: ste potovali/potovale
+          oni/one/ona: so potovali/potovale
+        samples:
+          - Lani sem potoval po Aziji.
+          - Ali si potovala kdaj v Afriko?
+          - Potovali smo z avtodomom po Evropi.
+          - Ste potovali že kdaj z letalom?
+          - Oni so potovali celo poletje.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom potoval/potovala
+          ti: boš potoval/potovala
+          on/ona/ono: bo potoval/potovala
+          midva/medve: bova potovala/potovali
+          vidva/vedve: bosta potovala/potovali
+          onadva/onidve: bosta potovala/potovali
+          mi: bomo potovali/potovale
+          vi: boste potovali/potovale
+          oni/one/ona: bodo potovali/potovale
+        samples:
+          - Naslednji mesec bom potoval v Pariz.
+          - Boš potovala z nami na morje?
+          - Bomo potovali z vlakom ali avtobusom?
+          - Ali boste potovali to zimo v tople kraje?
+          - Oni bodo potovali okoli sveta.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi potoval/potovala
+          ti: bi potoval/potovala
+          on/ona/ono: bi potoval/potovala
+          midva/medve: bi potovala/potovali
+          vidva/vedve: bi potovala/potovali
+          onadva/onidve: bi potovala/potovali
+          mi: bi potovali/potovale
+          vi: bi potovali/potovale
+          oni/one/ona: bi potovali/potovale
+        samples:
+          - Rad bi potoval več, če bi imel čas.
+          - Če bi imela dovolj denarja, bi potovala po vsem svetu.
+          - Potovali bi z letalom, če ne bi bilo tako drago.
+          - Ali bi potovali z nami, če bi organizirali izlet?
+          - Oni bi potovali pogosteje, če bi imeli več prostih dni.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): potuj
+          (vidva/vedve): potujta
+          (vi): potujte
+        samples:
+          - Potuj varno!
+          - Potujta skupaj, bo bolj zabavno.
+          - Potujte z odprtimi očmi in srcem.
+          - Potuj, dokler si mlad.
+          - Potujte in spoznavajte nove kulture.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "potovati" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "potovati" means "to travel". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider trips you've taken. 
+      For the future, think about travel plans you have. The conditional can be used for hypothetical 
+      situations or wishes about travel. If you're finding it challenging, start with simple sentences like 
+      "I travel often" or "We will travel to Italy next year".
+
+  - verb: učiti se
+    meaning: to learn, to study
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: se učim
+          ti: se učiš
+          on/ona/ono: se uči
+          midva/medve: se učiva
+          vidva/vedve: se učita
+          onadva/onidve: se učita
+          mi: se učimo
+          vi: se učite
+          oni/one/ona: se učijo
+        samples:
+          - Vsak dan se učim slovenščino.
+          - Ali se učiš za izpit?
+          - Ona se uči igrati klavir.
+          - Učimo se nove besede.
+          - Kaj se učite trenutno?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths. Note that "učiti se" is a reflexive verb, so the reflexive pronoun "se" is always used.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem se učil/učila
+          ti: si se učil/učila
+          on/ona/ono: se je učil/učila
+          midva/medve: sva se učila/učili
+          vidva/vedve: sta se učila/učili
+          onadva/onidve: sta se učila/učili
+          mi: smo se učili/učile
+          vi: ste se učili/učile
+          oni/one/ona: so se učili/učile
+        samples:
+          - Včeraj sem se učil celo popoldne.
+          - Ali si se učila francoščino v šoli?
+          - Učili smo se zgodovino Slovenije.
+          - Ste se učili voziti avto pri osemnajstih?
+          - Oni so se učili plavati lani poleti.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be), the reflexive pronoun "se", and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: se bom učil/učila
+          ti: se boš učil/učila
+          on/ona/ono: se bo učil/učila
+          midva/medve: se bova učila/učili
+          vidva/vedve: se bosta učila/učili
+          onadva/onidve: se bosta učila/učili
+          mi: se bomo učili/učile
+          vi: se boste učili/učile
+          oni/one/ona: se bodo učili/učile
+        samples:
+          - Jutri se bom učil matematiko.
+          - Se boš učila za izpit iz biologije?
+          - Učili se bomo nove pesmi za koncert.
+          - Ali se boste učili smučati to zimo?
+          - Oni se bodo učili programirati.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be), the reflexive pronoun "se", and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi se učil/učila
+          ti: bi se učil/učila
+          on/ona/ono: bi se učil/učila
+          midva/medve: bi se učila/učili
+          vidva/vedve: bi se učila/učili
+          onadva/onidve: bi se učila/učili
+          mi: bi se učili/učile
+          vi: bi se učili/učile
+          oni/one/ona: bi se učili/učile
+        samples:
+          - Rad bi se učil kitajščino, če bi imel čas.
+          - Če bi imela možnost, bi se učila slikarstva.
+          - Učili bi se več, če bi imeli boljše učbenike.
+          - Ali bi se učili kuhati, če bi imeli priložnost?
+          - Oni bi se učili bolje, če bi imeli mirnejši prostor.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests. The reflexive pronoun "se" is placed after "bi".
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): uči se
+          (vidva/vedve): učita se
+          (vi): učite se
+        samples:
+          - Uči se redno!
+          - Učita se skupaj, bo lažje.
+          - Učite se iz svojih napak.
+          - Uči se, dokler si mlad.
+          - Učite se novih veščin.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions. For reflexive verbs, the pronoun "se" is placed after the verb in the imperative.
+
+    action_text: >
+      Zdaj je tvoja priložnost! Poskusi uporabiti glagol "učiti se" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "učiti se" means "to learn" or "to study". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider subjects or skills you've learned. 
+      For the future, think about what you plan to study. The conditional can be used for hypothetical 
+      learning situations. If you're finding it challenging, start with simple sentences like 
+      "I study every day" or "We will learn a new language next year".
+
+  - verb: spati
+    meaning: to sleep
+    tenses:
+      - name: Present Tense (Sedanjik)
+        level: A1
+        conjugation:
+          jaz: spim
+          ti: spiš
+          on/ona/ono: spi
+          midva/medve: spiva
+          vidva/vedve: spita
+          onadva/onidve: spita
+          mi: spimo
+          vi: spite
+          oni/one/ona: spijo
+        samples:
+          - Vsako noč spim osem ur.
+          - Ali spiš dobro?
+          - Otrok spi mirno.
+          - Spimo v udobnih posteljah.
+          - Kako dolgo spite ob vikendih?
+        supporting_info: >
+          The present tense is used for current actions, habitual actions, and general truths.
+
+      - name: Past Tense (Preteklik)
+        level: A2
+        conjugation:
+          jaz: sem spal/spala
+          ti: si spal/spala
+          on/ona/ono: je spal/spala
+          midva/medve: sva spala/spali
+          vidva/vedve: sta spala/spali
+          onadva/onidve: sta spala/spali
+          mi: smo spali/spale
+          vi: ste spali/spale
+          oni/one/ona: so spali/spale
+        samples:
+          - Sinoči sem spal kot dojenček.
+          - Ali si spala dobro v novem hotelu?
+          - Spali smo dolgo, ker je bila nedelja.
+          - Ste spali na prostem med kampiranjem?
+          - Oni so spali celo popoldne po dolgem izletu.
+        supporting_info: >
+          The past tense is formed using the auxiliary verb "biti" (to be) and the past participle of the main verb.
+
+      - name: Future Tense (Prihodnjik)
+        level: A2
+        conjugation:
+          jaz: bom spal/spala
+          ti: boš spal/spala
+          on/ona/ono: bo spal/spala
+          midva/medve: bova spala/spali
+          vidva/vedve: bosta spala/spali
+          onadva/onidve: bosta spala/spali
+          mi: bomo spali/spale
+          vi: boste spali/spale
+          oni/one/ona: bodo spali/spale
+        samples:
+          - Nocoj bom spal zgodaj.
+          - Boš spala pri prijateljici?
+          - Spali bomo v novem apartmaju.
+          - Ali boste spali v šotoru na festivalu?
+          - Oni bodo spali dolgo jutri, ker je praznik.
+        supporting_info: >
+          The future tense is formed using the future form of "biti" (to be) and the past participle of the main verb.
+
+      - name: Conditional (Pogojnik)
+        level: B1
+        conjugation:
+          jaz: bi spal/spala
+          ti: bi spal/spala
+          on/ona/ono: bi spal/spala
+          midva/medve: bi spala/spali
+          vidva/vedve: bi spala/spali
+          onadva/onidve: bi spala/spali
+          mi: bi spali/spale
+          vi: bi spali/spale
+          oni/one/ona: bi spali/spale
+        samples:
+          - Rad bi spal dlje, če ne bi imel toliko dela.
+          - Če bi imela čas, bi spala vsak dan po kosilu.
+          - Spali bi bolje, če bi imeli udobnejše postelje.
+          - Ali bi spali v tej sobi, če bi bila cenejša?
+          - Oni bi spali zunaj, če ne bi bilo tako hladno.
+        supporting_info: >
+          The conditional mood is used to express hypothetical situations or polite requests.
+
+      - name: Imperative (Velelnik)
+        level: A2
+        conjugation:
+          (ti): spi
+          (vidva/vedve): spite
+          (vi): spite
+        samples:
+          - Spi dobro!
+          - Spite mirno, naj vas nič ne moti.
+          - Spi vsaj osem ur na noč.
+          - Spite udobno in varno.
+          - Spi zdaj, jutri te čaka naporen dan.
+        supporting_info: >
+          The imperative mood is used for commands, requests, or instructions.
+
+    action_text: >
+      Zdaj je tvoja vrsta! Poskusi uporabiti glagol "spati" v različnih časih.
+      Ali lahko sestaviš stavek za vsak čas, ki smo ga obravnavali?
+
+    support_text: >
+      Remember, "spati" means "to sleep". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider your sleep experiences. 
+      For the future, think about your sleep plans. The conditional can be used for hypothetical 
+      sleep situations. If you're finding it challenging, start with simple sentences like 
+      "I sleep eight hours every night" or "We will sleep in a tent tomorrow".

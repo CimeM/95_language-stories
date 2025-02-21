@@ -1,0 +1,134 @@
+
+Slovenian: 
+
+list important chapters when it coms to learning slovene language for level A1-A2 if i was writing curriculum for my language course. 
+then pick one chapter and make quizzes for students learnig slovenian language here is the format that output should have: ```question,options,correctOptionIndex,explanation
+"Kateri mesec pride po marcu?","April;Maj;Junij;Februar",0,'Kje je knjižnica?' means 'Where is the library?' which is the correct way to ask for directions."```  please provide at least 30 samples and also include another method of asking: fill in the blank.
+Qustions should make sense. Some of them can be in english. please also provide the explanation also when  multiple responses are possible. and also prepare the output in codeblock
+
+conjugation: >
+list important chapters when it comes to learning conjugating in slovene language  as if i was writing curriculum for my language course. 
+then pick one chapter and conjugate the verb. then add a supporting information too. all should be placed in yaml format. please provide 5 important time tenses for the verb conjugation. please provide at least 5 samples of use in a yaml list. Then also provide action text. Invite the student to use the verb in a phrase. So provide an example and ask the student to use the verb in a phrase of his own. If the explanation is difficult provide support text in english. . and also prepare the output in codeblock. make sure yaml format is correct. here is the sample yaml format: 
+verb_list:
+  - verb: parler
+    meaning: to speak
+    tenses:
+      - name: Present Tense (Présent)
+        level: A1
+        conjugation:
+          je: parle
+          tu: parles
+          il/elle/on: parle
+          nous: parlons
+          vous: parlez
+          ils/elles: parlent
+        samples:
+          - Je parle français.
+          - Tu parles trop vite.
+          - Elle parle à ses amis.
+          - Nous parlons de nos vacances.
+          - Vous parlez anglais ?
+        supporting_info: >
+          The present tense is used for actions happening now, habitual actions, and general truths.
+
+      - name: Compound Past (Passé Composé)
+        level: A2
+        conjugation:
+          je: ai parlé
+          tu: as parlé
+          il/elle/on: a parlé
+          nous: avons parlé
+          vous: avez parlé
+          ils/elles: ont parlé
+        samples:
+          - J'ai parlé à mon professeur hier.
+          - Tu as parlé de quoi avec Marie ?
+          - Nous avons parlé toute la nuit.
+          - Ils ont parlé de leur projet.
+          - Vous avez parlé trop fort.
+        supporting_info: >
+          The passé composé is used to express completed actions in the past.
+
+      - name: Imperfect (Imparfait)
+        level: A2
+        conjugation:
+          je: parlais
+          tu: parlais
+          il/elle/on: parlait
+          nous: parlions
+          vous: parliez
+          ils/elles: parlaient
+        samples:
+          - Je parlais souvent espagnol quand j'étais jeune.
+          - Tu parlais au téléphone quand je suis arrivé.
+          - Nous parlions de notre enfance.
+          - Ils parlaient fort pendant le film.
+          - Vous parliez toujours de vos voyages.
+        supporting_info: >
+          The imperfect is used for describing ongoing or habitual actions in the past.
+
+      - name: Simple Future (Futur Simple)
+        level: A2
+        conjugation:
+          je: parlerai
+          tu: parleras
+          il/elle/on: parlera
+          nous: parlerons
+          vous: parlerez
+          ils/elles: parleront
+        samples:
+          - Je parlerai à mon patron demain.
+          - Tu parleras mieux français après ton séjour à Paris.
+          - Nous parlerons de ce problème plus tard.
+          - Ils parleront de leur expérience lors de la conférence.
+          - Vous parlerez avec le directeur la semaine prochaine.
+        supporting_info: >
+          The simple future is used to express actions that will happen in the future.
+
+      - name: Conditional Present (Conditionnel Présent)
+        level: B1
+        conjugation:
+          je: parlerais
+          tu: parlerais
+          il/elle/on: parlerait
+          nous: parlerions
+          vous: parleriez
+          ils/elles: parleraient
+        samples:
+          - Je parlerais italien si j'avais le temps d'apprendre.
+          - Tu parlerais plus doucement, s'il te plaît ?
+          - Nous parlerions volontiers de ce sujet avec vous.
+          - Ils parleraient mieux s'ils pratiquaient plus souvent.
+          - Vous parleriez de quoi si vous étiez à ma place ?
+        supporting_info: >
+          The conditional is used to express hypothetical situations or polite requests.
+
+    action_text: >
+      Now it's your turn! Try using the verb "parler" in different tenses. 
+      Can you create a sentence for each tense we've covered?
+
+    support_text: >
+      Remember, "parler" means "to speak" or "to talk". Think about how you might use this verb 
+      in various situations and time frames. For the past tenses, consider conversations you've had. 
+      For the future, think about upcoming discussions. The conditional can be used for hypothetical 
+      situations or polite requests.
+
+
+French:
+list important chapters when it comes to learning french language for level A2-B1 if i was writing curriculum for my language course. 
+then pick one chapter and make quizzes for students learnig french language here is the format that output should have: ```question,options,correctOptionIndex,explanation
+"Kateri mesec pride po marcu?","April;Maj;Junij;Februar",0,'Kje je knjižnica?' means 'Where is the library?' which is the correct way to ask for directions."```  please provide at least 30 samples and also include another method of asking: fill in the blank.
+Qustions should make sense. Some of them can be in english. please also provide the explanation also when  multiple responses are possible. and also prepare the output in codeblock
+
+
+Spanish 
+list important chapters when it comes to learning spanish language for level A1-A2 if i was writing curriculum for my language course. 
+then pick one chapter and make quizzes for students learnig spanish language here is the format that output should have: ```question,options,correctOptionIndex,explanation
+"Kateri mesec pride po marcu?","April;Maj;Junij;Februar",0,'Kje je knjižnica?' means 'Where is the library?' which is the correct way to ask for directions."```  please provide at least 45 samples and also include another method of asking: fill in the blank.
+Qustions should make sense. Some of them can be in english. please also provide the explanation also when  multiple responses are possible. and also prepare the output in codeblock.
+
+italian
+list important chapters when it comes to learning italian language for level A2-B1 if i was writing curriculum for my language course. 
+then pick one chapter and make quizzes for students learnig italian language here is the format that output should have: ```question,options,correctOptionIndex,explanation
+"Kateri mesec pride po marcu?","April;Maj;Junij;Februar",0,'Kje je knjižnica?' means 'Where is the library?' which is the correct way to ask for directions."```  please provide at least 45 samples and also include another method of asking: fill in the blank.
+Qustions should make sense. Some of them can be in english. please also provide the explanation also when  multiple responses are possible. and also prepare the output in codeblock.
