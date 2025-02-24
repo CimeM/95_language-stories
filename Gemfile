@@ -20,4 +20,4 @@ gem "logger", "1.6.6"
 
 gem  "rexml", "3.4.1"
 
-gem "bigdecimal","3.1.8"
+gem "bigdecimal","3.1.9"
