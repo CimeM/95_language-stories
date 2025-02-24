@@ -1,0 +1,628 @@
+- question: "Come si dice 'ticket' in italiano?"
+  options:
+    - "Biglietto"
+    - "Carta"
+    - "Foglio"
+    - "Documento"
+  correctOptionIndex: 0
+  explanation: "'Biglietto' means 'ticket' in Italian."
+
+- question: "Qual è il mezzo di trasporto più veloce?"
+  options:
+    - "Bicicletta"
+    - "Aereo"
+    - "Autobus"
+    - "Treno"
+  correctOptionIndex: 1
+  explanation: "'Aereo' (airplane) is generally the fastest mode of transportation."
+
+- question: "Come si chiama il luogo dove si prende l'aereo?"
+  options:
+    - "Stazione"
+    - "Porto"
+    - "Aeroporto"
+    - "Fermata"
+  correctOptionIndex: 2
+  explanation: "'Aeroporto' means 'airport' in Italian."
+
+- question: "Quale di questi NON è un mezzo di trasporto pubblico?"
+  options:
+    - "Autobus"
+    - "Metropolitana"
+    - "Taxi"
+    - "Bicicletta privata"
+  correctOptionIndex: 3
+  explanation: "A private bicycle is not a form of public transportation."
+
+- question: "Come si dice 'to book' un viaggio in italiano?"
+  options:
+    - "Prenotare"
+    - "Comprare"
+    - "Vendere"
+    - "Cancellare"
+  correctOptionIndex: 0
+  explanation: "'Prenotare' means 'to book' in Italian."
+
+- question: "Qual è la parola italiana per 'luggage'?"
+  options:
+    - "Valigia"
+    - "Bagaglio"
+    - "Borsa"
+    - "Both A and B"
+  correctOptionIndex: 3
+  explanation: "Both 'valigia' and 'bagaglio' can be used to mean 'luggage'."
+
+- question: "Come si chiede l'orario di partenza di un treno?"
+  options:
+    - "A che ora parte il treno?"
+    - "Quando arriva il treno?"
+    - "Dove va il treno?"
+    - "Quanto costa il treno?"
+  correctOptionIndex: 0
+  explanation: "'A che ora parte il treno?' means 'What time does the train leave?'"
+
+- question: "Quale documento è necessario per viaggiare all'estero?"
+  options:
+    - "Patente"
+    - "Carta d'identità"
+    - "Passaporto"
+    - "Tessera sanitaria"
+  correctOptionIndex: 2
+  explanation: "A 'passaporto' (passport) is typically required for international travel."
+
+- question: "Come si dice 'round-trip ticket' in italiano?"
+  options:
+    - "Biglietto singolo"
+    - "Biglietto di andata e ritorno"
+    - "Biglietto giornaliero"
+    - "Abbonamento"
+  correctOptionIndex: 1
+  explanation: "'Biglietto di andata e ritorno' means 'round-trip ticket'."
+
+- question: "Qual è il contrario di 'partenza'?"
+  options:
+    - "Arrivo"
+    - "Viaggio"
+    - "Ritardo"
+    - "Cancellazione"
+  correctOptionIndex: 0
+  explanation: "'Arrivo' (arrival) is the opposite of 'partenza' (departure)."
+
+- question: "Come si chiede un taxi in italiano?"
+  options:
+    - "Posso avere un taxi?"
+    - "Chiamo un taxi"
+    - "Dov'è il taxi?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask for a taxi in Italian."
+
+- question: "Quale di questi NON è un tipo di treno in Italia?"
+  options:
+    - "Freccia Rossa"
+    - "Intercity"
+    - "Regionale"
+    - "Superveloce"
+  correctOptionIndex: 3
+  explanation: "'Superveloce' is not a type of train in Italy; it's a made-up name."
+
+- question: "Come si dice 'delayed' in italiano?"
+  options:
+    - "Cancellato"
+    - "In orario"
+    - "In ritardo"
+    - "In anticipo"
+  correctOptionIndex: 2
+  explanation: "'In ritardo' means 'delayed' in Italian."
+
+- question: "Qual è la parola italiana per 'platform' in una stazione?"
+  options:
+    - "Binario"
+    - "Piattaforma"
+    - "Strada"
+    - "Via"
+  correctOptionIndex: 0
+  explanation: "'Binario' is the Italian word for 'platform' in a train station."
+
+- question: "Come si chiede il prezzo di un biglietto?"
+  options:
+    - "Quanto costa il biglietto?"
+    - "Dove compro il biglietto?"
+    - "Quando parte il treno?"
+    - "Chi vende i biglietti?"
+  correctOptionIndex: 0
+  explanation: "'Quanto costa il biglietto?' means 'How much does the ticket cost?'"
+
+- question: "Quale di questi è un sinonimo di 'viaggiare'?"
+  options:
+    - "Dormire"
+    - "Mangiare"
+    - "Spostarsi"
+    - "Lavorare"
+  correctOptionIndex: 2
+  explanation: "'Spostarsi' (to move) is a synonym for 'viaggiare' (to travel)."
+
+- question: "Come si dice 'car rental' in italiano?"
+  options:
+    - "Noleggio auto"
+    - "Vendita auto"
+    - "Parcheggio auto"
+    - "Lavaggio auto"
+  correctOptionIndex: 0
+  explanation: "'Noleggio auto' means 'car rental' in Italian."
+
+- question: "Qual è il mezzo di trasporto sotterraneo nelle grandi città?"
+  options:
+    - "Tram"
+    - "Metropolitana"
+    - "Funicolare"
+    - "Monorotaia"
+  correctOptionIndex: 1
+  explanation: "'Metropolitana' (subway/underground) is the underground transport in big cities."
+
+- question: "Come si chiede indicazioni per una destinazione?"
+  options:
+    - "Come si arriva a...?"
+    - "Quanto dista...?"
+    - "Dov'è...?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask for directions in Italian."
+
+- question: "Quale documento serve per guidare in Italia?"
+  options:
+    - "Passaporto"
+    - "Carta d'identità"
+    - "Patente di guida"
+    - "Tessera sanitaria"
+  correctOptionIndex: 2
+  explanation: "A 'patente di guida' (driver's license) is required to drive in Italy."
+
+- question: "Come si dice 'to miss' un treno o un volo in italiano?"
+  options:
+    - "Perdere"
+    - "Saltare"
+    - "Dimenticare"
+    - "Cancellare"
+  correctOptionIndex: 0
+  explanation: "'Perdere' means 'to miss' in the context of missing a train or flight."
+
+- question: "Qual è la parola italiana per 'suitcase'?"
+  options:
+    - "Borsa"
+    - "Zaino"
+    - "Valigia"
+    - "Sacchetto"
+  correctOptionIndex: 2
+  explanation: "'Valigia' is the Italian word for 'suitcase'."
+
+- question: "Per viaggiare all'estero, ho bisogno del ________."
+  options:
+    - "Passaporto"
+  correctOptionIndex: 0
+  explanation: "'Passaporto' (passport) is typically required for international travel."
+
+- question: "Come si chiede se c'è un posto libero su un mezzo di trasporto?"
+  options:
+    - "È occupato questo posto?"
+    - "C'è un posto libero?"
+    - "Posso sedermi qui?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask if a seat is available."
+
+- question: "Quale di questi NON è un tipo di biglietto?"
+  options:
+    - "Andata"
+    - "Ritorno"
+    - "Andata e ritorno"
+    - "Partenza"
+  correctOptionIndex: 3
+  explanation: "'Partenza' (departure) is not a type of ticket."
+
+- question: "Come si dice 'map' in italiano?"
+  options:
+    - "Carta"
+    - "Mappa"
+    - "Disegno"
+    - "Both A and B"
+  correctOptionIndex: 3
+  explanation: "Both 'carta' and 'mappa' can be used to mean 'map' in Italian."
+
+- question: "Qual è il termine italiano per 'boarding pass'?"
+  options:
+    - "Carta d'imbarco"
+    - "Biglietto aereo"
+    - "Passaporto"
+    - "Visto"
+  correctOptionIndex: 0
+  explanation: "'Carta d'imbarco' is the Italian term for 'boarding pass'."
+
+- question: "Come si chiede l'ubicazione di una fermata dell'autobus?"
+  options:
+    - "Dov'è la fermata dell'autobus?"
+    - "Quando passa l'autobus?"
+    - "Quale autobus devo prendere?"
+    - "Quanto costa l'autobus?"
+  correctOptionIndex: 0
+  explanation: "'Dov'è la fermata dell'autobus?' means 'Where is the bus stop?'"
+
+- question: "Quale di questi è un sinonimo di 'biglietteria'?"
+  options:
+    - "Ristorante"
+    - "Bagno"
+    - "Sala d'attesa"
+    - "Botteghino"
+  correctOptionIndex: 3
+  explanation: "'Botteghino' is a synonym for 'biglietteria' (ticket office)."
+
+- question: "Il mio volo ha due ore di ________."
+  options:
+    - "Ritardo"
+  correctOptionIndex: 0
+  explanation: "'Ritardo' means 'delay' in Italian."
+
+- question: "Come si dice 'to cancel' una prenotazione in italiano?"
+  options:
+    - "Confermare"
+    - "Modificare"
+    - "Disdire"
+    - "Pagare"
+  correctOptionIndex: 2
+  explanation: "'Disdire' means 'to cancel' a reservation in Italian."
+
+- question: "Qual è la parola italiana per 'delay'?"
+  options:
+    - "Ritardo"
+    - "Anticipo"
+    - "Orario"
+    - "Partenza"
+  correctOptionIndex: 0
+  explanation: "'Ritardo' is the Italian word for 'delay'."
+
+- question: "Come si chiede se un treno è diretto o se bisogna cambiare?"
+  options:
+    - "È un treno diretto?"
+    - "Devo cambiare treno?"
+    - "Dove va questo treno?"
+    - "Both A and B"
+  correctOptionIndex: 3
+  explanation: "Both A and B are valid ways to ask if a train is direct or if you need to change."
+
+- question: "Quale di questi NON è un tipo di alloggio per viaggiatori?"
+  options:
+    - "Hotel"
+    - "Ostello"
+    - "Campeggio"
+    - "Ristorante"
+  correctOptionIndex: 3
+  explanation: "'Ristorante' (restaurant) is not a type of accommodation for travelers."
+
+- question: "Il treno per Roma parte dal ________ 5."
+  options:
+    - "Binario"
+  correctOptionIndex: 0
+  explanation: "'Binario' means 'platform' in a train station context."
+
+- question: "Come si dice 'travel agency' in italiano?"
+  options:
+    - "Agenzia di viaggi"
+    - "Ufficio turistico"
+    - "Centro viaggi"
+    - "Negozio di viaggi"
+  correctOptionIndex: 0
+  explanation: "'Agenzia di viaggi' means 'travel agency' in Italian."
+
+- question: "Qual è il termine italiano per 'check-in'?"
+  options:
+    - "Registrazione"
+    - "Partenza"
+    - "Arrivo"
+    - "Controllo"
+  correctOptionIndex: 0
+  explanation: "'Registrazione' is the Italian term for 'check-in'."
+
+- question: "Come si chiede il binario di partenza di un treno?"
+  options:
+    - "Da quale binario parte il treno?"
+    - "Quando parte il treno?"
+    - "Dove va il treno?"
+    - "Che tipo di treno è?"
+  correctOptionIndex: 0
+  explanation: "'Da quale binario parte il treno?' means 'From which platform does the train depart?'"
+
+- question: "Devo ________ un taxi per andare all'hotel."
+  options:
+    - "Chiamare"
+  correctOptionIndex: 0
+  explanation: "'Chiamare' (to call) is commonly used when you need to get a taxi."
+
+- question: "Quale di questi è un sinonomo di 'volo'?"
+  options:
+    - "Viaggio"
+    - "Tratta aerea"
+    - "Crociera"
+    - "Gita"
+  correctOptionIndex: 1
+  explanation: "'Tratta aerea' is a synonym for 'volo' (flight)."
+
+- question: "Come si dice 'to book' un hotel in italiano?"
+  options:
+    - "Prenotare"
+    - "Comprare"
+    - "Affittare"
+    - "Visitare"
+  correctOptionIndex: 0
+  explanation: "'Prenotare' means 'to book' in Italian, including for hotel reservations."
+
+- question: "Qual è la parola italiana per 'ticket inspector'?"
+  options:
+    - "Conducente"
+    - "Controllore"
+    - "Cassiere"
+    - "Receptionist"
+  correctOptionIndex: 1
+  explanation: "'Controllore' is the Italian word for 'ticket inspector'."
+
+- question: "Ho ________ il volo perché sono arrivato in ritardo all'aeroporto."
+  options:
+    - "Perso"
+  correctOptionIndex: 0
+  explanation: "'Perso' (missed) is used when you fail to catch a flight due to being late."
+
+- question: "Come si chiede se è necessario prenotare in anticipo?"
+  options:
+    - "È necessario prenotare?"
+    - "Posso prenotare ora?"
+    - "Quando devo prenotare?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask about the need for advance booking."
+
+- question: "Quale documento NON è necessario per un viaggio domestico in Italia?"
+  options:
+    - "Carta d'identità"
+    - "Patente di guida"
+    - "Passaporto"
+    - "Biglietto"
+  correctOptionIndex: 2
+  explanation: "A 'passaporto' (passport) is typically not required for domestic travel in Italy."
+
+- question: "Come si dice 'lost and found' in italiano?"
+  options:
+    - "Oggetti smarriti"
+    - "Cose perse"
+    - "Ufficio perdite"
+    - "Centro ritrovamenti"
+  correctOptionIndex: 0
+  explanation: "'Oggetti smarriti' is the Italian phrase for 'lost and found'."
+
+- question: "Qual è il termine italiano per 'gate' in un aeroporto?"
+  options:
+    - "Porta"
+    - "Cancello"
+    - "Uscita"
+    - "Gate"
+  correctOptionIndex: 1
+  explanation: "'Cancello' is the Italian term for 'gate' in an airport context."
+
+- question: "Come si chiede se c'è un deposito bagagli?"
+  options:
+    - "C'è un deposito bagagli?"
+    - "Dove posso lasciare i bagagli?"
+    - "Avete un guardaroba?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask about luggage storage."
+
+- question: "Quale di questi NON è un tipo di biglietto per il trasporto pubblico?"
+  options:
+    - "Biglietto singolo"
+    - "Abbonamento"
+    - "Biglietto giornaliero"
+    - "Biglietto di classe"
+  correctOptionIndex: 3
+  explanation: "'Biglietto di classe' is not a typical type of public transport ticket."
+- question: "Come si dice 'map' in italiano?"
+  options:
+    - "Carta"
+    - "Mappa"
+    - "Disegno"
+    - "Both A and B"
+  correctOptionIndex: 3
+  explanation: "Both 'carta' and 'mappa' can be used to mean 'map' in Italian."
+
+- question: "Qual è il termine italiano per 'boarding pass'?"
+  options:
+    - "Carta d'imbarco"
+    - "Biglietto aereo"
+    - "Passaporto"
+    - "Visto"
+  correctOptionIndex: 0
+  explanation: "'Carta d'imbarco' is the Italian term for 'boarding pass'."
+
+- question: "Come si chiede l'ubicazione di una fermata dell'autobus?"
+  options:
+    - "Dov'è la fermata dell'autobus?"
+    - "Quando passa l'autobus?"
+    - "Quale autobus devo prendere?"
+    - "Quanto costa l'autobus?"
+  correctOptionIndex: 0
+  explanation: "'Dov'è la fermata dell'autobus?' means 'Where is the bus stop?'"
+
+- question: "Quale di questi è un sinonimo di 'biglietteria'?"
+  options:
+    - "Ristorante"
+    - "Bagno"
+    - "Sala d'attesa"
+    - "Botteghino"
+  correctOptionIndex: 3
+  explanation: "'Botteghino' is a synonym for 'biglietteria' (ticket office)."
+
+- question: "Il mio volo ha due ore di ________."
+  options:
+    - "Ritardo"
+  correctOptionIndex: 0
+  explanation: "'Ritardo' means 'delay' in Italian."
+
+- question: "Come si dice 'to cancel' una prenotazione in italiano?"
+  options:
+    - "Confermare"
+    - "Modificare"
+    - "Disdire"
+    - "Pagare"
+  correctOptionIndex: 2
+  explanation: "'Disdire' means 'to cancel' a reservation in Italian."
+
+- question: "Qual è la parola italiana per 'delay'?"
+  options:
+    - "Ritardo"
+    - "Anticipo"
+    - "Orario"
+    - "Partenza"
+  correctOptionIndex: 0
+  explanation: "'Ritardo' is the Italian word for 'delay'."
+
+- question: "Come si chiede se un treno è diretto o se bisogna cambiare?"
+  options:
+    - "È un treno diretto?"
+    - "Devo cambiare treno?"
+    - "Dove va questo treno?"
+    - "Both A and B"
+  correctOptionIndex: 3
+  explanation: "Both A and B are valid ways to ask if a train is direct or if you need to change."
+
+- question: "Quale di questi NON è un tipo di alloggio per viaggiatori?"
+  options:
+    - "Hotel"
+    - "Ostello"
+    - "Campeggio"
+    - "Ristorante"
+  correctOptionIndex: 3
+  explanation: "'Ristorante' (restaurant) is not a type of accommodation for travelers."
+
+- question: "Il treno per Roma parte dal ________ 5."
+  options:
+    - "Binario"
+  correctOptionIndex: 0
+  explanation: "'Binario' means 'platform' in a train station context."
+
+- question: "Come si dice 'travel agency' in italiano?"
+  options:
+    - "Agenzia di viaggi"
+    - "Ufficio turistico"
+    - "Centro viaggi"
+    - "Negozio di viaggi"
+  correctOptionIndex: 0
+  explanation: "'Agenzia di viaggi' means 'travel agency' in Italian."
+
+- question: "Qual è il termine italiano per 'check-in'?"
+  options:
+    - "Registrazione"
+    - "Partenza"
+    - "Arrivo"
+    - "Controllo"
+  correctOptionIndex: 0
+  explanation: "'Registrazione' is the Italian term for 'check-in'."
+
+- question: "Come si chiede il binario di partenza di un treno?"
+  options:
+    - "Da quale binario parte il treno?"
+    - "Quando parte il treno?"
+    - "Dove va il treno?"
+    - "Che tipo di treno è?"
+  correctOptionIndex: 0
+  explanation: "'Da quale binario parte il treno?' means 'From which platform does the train depart?'"
+
+- question: "Devo ________ un taxi per andare all'hotel."
+  options:
+    - "Chiamare"
+  correctOptionIndex: 0
+  explanation: "'Chiamare' (to call) is commonly used when you need to get a taxi."
+
+- question: "Quale di questi è un sinonomo di 'volo'?"
+  options:
+    - "Viaggio"
+    - "Tratta aerea"
+    - "Crociera"
+    - "Gita"
+  correctOptionIndex: 1
+  explanation: "'Tratta aerea' is a synonym for 'volo' (flight)."
+
+- question: "Come si dice 'to book' un hotel in italiano?"
+  options:
+    - "Prenotare"
+    - "Comprare"
+    - "Affittare"
+    - "Visitare"
+  correctOptionIndex: 0
+  explanation: "'Prenotare' means 'to book' in Italian, including for hotel reservations."
+
+- question: "Qual è la parola italiana per 'ticket inspector'?"
+  options:
+    - "Conducente"
+    - "Controllore"
+    - "Cassiere"
+    - "Receptionist"
+  correctOptionIndex: 1
+  explanation: "'Controllore' is the Italian word for 'ticket inspector'."
+
+- question: "Ho ________ il volo perché sono arrivato in ritardo all'aeroporto."
+  options:
+    - "Perso"
+  correctOptionIndex: 0
+  explanation: "'Perso' (missed) is used when you fail to catch a flight due to being late."
+
+- question: "Come si chiede se è necessario prenotare in anticipo?"
+  options:
+    - "È necessario prenotare?"
+    - "Posso prenotare ora?"
+    - "Quando devo prenotare?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask about the need for advance booking."
+
+- question: "Quale documento NON è necessario per un viaggio domestico in Italia?"
+  options:
+    - "Carta d'identità"
+    - "Patente di guida"
+    - "Passaporto"
+    - "Biglietto"
+  correctOptionIndex: 2
+  explanation: "A 'passaporto' (passport) is typically not required for domestic travel in Italy."
+
+- question: "Come si dice 'lost and found' in italiano?"
+  options:
+    - "Oggetti smarriti"
+    - "Cose perse"
+    - "Ufficio perdite"
+    - "Centro ritrovamenti"
+  correctOptionIndex: 0
+  explanation: "'Oggetti smarriti' is the Italian phrase for 'lost and found'."
+
+- question: "Qual è il termine italiano per 'gate' in un aeroporto?"
+  options:
+    - "Porta"
+    - "Cancello"
+    - "Uscita"
+    - "Gate"
+  correctOptionIndex: 1
+  explanation: "'Cancello' is the Italian term for 'gate' in an airport context."
+
+- question: "Come si chiede se c'è un deposito bagagli?"
+  options:
+    - "C'è un deposito bagagli?"
+    - "Dove posso lasciare i bagagli?"
+    - "Avete un guardaroba?"
+    - "All of the above"
+  correctOptionIndex: 3
+  explanation: "All options are valid ways to ask about luggage storage."
+
+- question: "Quale di questi NON è un tipo di biglietto per il trasporto pubblico?"
+  options:
+    - "Biglietto singolo"
+    - "Abbonamento"
+    - "Biglietto giornaliero"
+    - "Biglietto di classe"
+  correctOptionIndex: 3
+  explanation: "'Biglietto di classe' is not a typical type of public transport ticket."

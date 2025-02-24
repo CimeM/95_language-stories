@@ -1,45 +1,396 @@
-question,options,correctOptionIndex
-"¿Dónde está la biblioteca?","Library;Bank;Hospital;School",0,"'¿Dónde está la biblioteca?' means 'Where is the library?' which is the correct way to ask for directions."
-"What does 'izquierda' mean?","Right;Left;Straight;Back",1,"'Izquierda' means 'left' in Spanish."
-"¿Cómo se dice 'turn right' en español?","Gira a la derecha;Gira a la izquierda;Sigue recto;Da la vuelta",0,"'Gira a la derecha' means 'turn right' in Spanish."
-"La farmacia está ___ la esquina.","en;a;de;por",0,"'En' is the correct preposition to indicate location in this context."
-"¿Cuál es la traducción de 'street'?","Calle;Avenida;Carretera;Camino",0,"'Calle' is the Spanish word for 'street'."
-"¿Qué significa 'semáforo'?","Traffic light;Stop sign;Crosswalk;Speed bump",0,"'Semáforo' means 'traffic light' in Spanish."
-"El banco está __ frente __ la iglesia.","en, de;a, de;en, a;por, de",1,"The correct expression is 'a frente de' meaning 'in front of'."
-"¿Cómo se pregunta 'How do I get to the museum?'","¿Cómo llego al museo?;¿Dónde está el museo?;¿Puedo ir al museo?;¿Cuál es el museo?",0,"'¿Cómo llego al museo?' is the correct way to ask 'How do I get to the museum?'"
-"La estación de tren está ___ del parque.","cerca;lejos;dentro;fuera",0,"'Cerca' means 'near' or 'close to'."
-"What is the meaning of 'cruzar'?","To cross;To turn;To go straight;To return",0,"'Cruzar' means 'to cross' in Spanish."
-"¿Cuál es la palabra para 'neighborhood'?","Barrio;Ciudad;Pueblo;País",0,"'Barrio' is the Spanish word for 'neighborhood'."
-"Siga todo ___ hasta llegar a la plaza.","recto;derecho;izquierdo;atrás",0,"'Recto' means 'straight' in this context."
-"The word for 'roundabout' in Spanish is:","Rotonda;Círculo;Vuelta;Giro",0,"'Rotonda' is the Spanish word for 'roundabout'."
-"¿Qué significa 'a dos cuadras'?","Two blocks away;Two streets over;Two turns;Two minutes",0,"'A dos cuadras' means 'two blocks away'."
-"La oficina de correos está ___ la esquina.","en;a;de;por",2,"'De' is used here to indicate 'on' the corner."
-"¿Cómo se dice 'go straight' en español?","Siga recto;Gire a la derecha;Cruce la calle;Dé la vuelta",0,"'Siga recto' means 'go straight' in Spanish."
-"What does 'manzana' mean in the context of a city?","Block;Apple;Square;Building",0,"In the context of a city, 'manzana' means 'block'."
-"El supermercado está ___ la calle del banco.","en;a;por;sobre",2,"'Por' is used here to mean 'down' or 'along' the street."
-"¿Cuál es la traducción de 'crosswalk'?","Paso de peatones;Cruce de calles;Semáforo;Acera",0,"'Paso de peatones' is the Spanish term for 'crosswalk'."
-"La parada de autobús está ___ la esquina.","a;en;de;por",1,"'En' is used to indicate 'on' the corner."
-"What is the meaning of 'doblar'?","To turn;To cross;To go straight;To stop",0,"'Doblar' means 'to turn' in the context of directions."
-"¿Cómo se dice 'one-way street' en español?","Calle de sentido único;Calle principal;Calle peatonal;Calle cerrada",0,"'Calle de sentido único' means 'one-way street' in Spanish."
-"El restaurante está ___ la derecha del banco.","a;en;de;por",0,"'A' is used here to mean 'on the right of'."
-"¿Qué significa 'acera'?","Sidewalk;Street;Road;Highway",0,"'Acera' means 'sidewalk' in Spanish."
-"La plaza está ___ el centro de la ciudad.","en;a;de;por",0,"'En' is used to indicate 'in' the center of the city."
-"What is the Spanish word for 'map'?","Mapa;Carta;Plano;Guía",0,"'Mapa' is the Spanish word for 'map'."
-"¿Cómo se pregunta 'Is it far from here?'","¿Está lejos de aquí?;¿Dónde está?;¿Cuánto tiempo tarda?;¿Cómo llego allí?",0,"'¿Está lejos de aquí?' means 'Is it far from here?' in Spanish."
-"El hotel está ___ la calle principal.","en;a;de;sobre",0,"'En' is used to indicate 'on' the main street."
-"¿Cuál es la traducción de 'traffic jam'?","Embotellamiento;Accidente;Desvío;Señal",0,"'Embotellamiento' is the Spanish term for 'traffic jam'."
-"Para llegar al museo, gire ___ la segunda calle.","en;a;por;de",1,"'A' is used here to mean 'at' the second street."
-"What does 'esquina' mean?","Corner;Square;Intersection;Roundabout",0,"'Esquina' means 'corner' in Spanish."
-"La estación de policía está ___ del ayuntamiento.","cerca;lejos;dentro;fuera",0,"'Cerca' means 'near' or 'close to'."
-"¿Cómo se dice 'pedestrian street' en español?","Calle peatonal;Calle principal;Calle de sentido único;Calle cerrada",0,"'Calle peatonal' means 'pedestrian street' in Spanish."
-"El parque está ___ cinco minutos a pie.","a;en;de;por",0,"'A' is used here to indicate 'at' or 'within' five minutes walking distance."
-"What is the meaning of 'cuadra'?","Block;Square;Street;Neighborhood",0,"'Cuadra' typically means 'block' in the context of city navigation."
-"¿Cuál es la palabra para 'downtown'?","Centro;Suburbio;Afueras;Barrio",0,"'Centro' is commonly used to refer to 'downtown' in Spanish."
-"La biblioteca está ___ la tercera planta.","en;a;de;por",0,"'En' is used to indicate 'on' the third floor."
-"How do you say 'turn left at the traffic light'?","Gire a la izquierda en el semáforo;Cruce en el semáforo;Siga recto en el semáforo;Pare en el semáforo",0,"'Gire a la izquierda en el semáforo' means 'turn left at the traffic light'."
-"El cine está ___ dos kilómetros del centro.","a;en;de;por",0,"'A' is used to indicate distance, meaning 'at' two kilometers from the center."
-"¿Qué significa 'callejón'?","Alley;Avenue;Boulevard;Highway",0,"'Callejón' means 'alley' in Spanish."
-"Para llegar al estadio, tome la segunda ___ a la derecha.","calle;avenida;carretera;salida",0,"'Calle' (street) is the most appropriate word in this context."
-"What is the Spanish word for 'landmark'?","Punto de referencia;Señal;Monumento;Atracción",0,"'Punto de referencia' is the Spanish term for 'landmark'."
-"El aeropuerto está ___ las afueras de la ciudad.","en;a;de;por",0,"'En' is used here to mean 'on' the outskirts of the city."
-"¿Cómo se dice 'shortcut' en español?","Atajo;Desvío;Ruta;Camino",0,"'Atajo' is the Spanish word for 'shortcut'."
+- question: "¿Dónde está la biblioteca?"
+  options:
+    - "Library"
+    - "Bank"
+    - "Hospital"
+    - "School"
+  correctOptionIndex: 0
+  explanation: "'¿Dónde está la biblioteca?' means 'Where is the library?' which is the correct way to ask for directions."
+
+- question: "What does 'izquierda' mean?"
+  options:
+    - "Right"
+    - "Left"
+    - "Straight"
+    - "Back"
+  correctOptionIndex: 1
+  explanation: "'Izquierda' means 'left' in Spanish."
+
+- question: "¿Cómo se dice 'turn right' en español?"
+  options:
+    - "Gira a la derecha"
+    - "Gira a la izquierda"
+    - "Sigue recto"
+    - "Da la vuelta"
+  correctOptionIndex: 0
+  explanation: "'Gira a la derecha' means 'turn right' in Spanish."
+
+- question: "La farmacia está ___ la esquina."
+  options:
+    - "en"
+    - "a"
+    - "de"
+    - "por"
+  correctOptionIndex: 0
+  explanation: "'En' is the correct preposition to indicate location in this context."
+
+- question: "¿Cuál es la traducción de 'street'?"
+  options:
+    - "Calle"
+    - "Avenida"
+    - "Carretera"
+    - "Camino"
+  correctOptionIndex: 0
+  explanation: "'Calle' is the Spanish word for 'street'."
+
+- question: "¿Qué significa 'semáforo'?"
+  options:
+    - "Traffic light"
+    - "Stop sign"
+    - "Crosswalk"
+    - "Speed bump"
+  correctOptionIndex: 0
+  explanation: "'Semáforo' means 'traffic light' in Spanish."
+
+- question: "El banco está __ frente __ la iglesia."
+  options:
+    - "en, de"
+    - "a, de"
+    - "en, a"
+    - "por, de"
+  correctOptionIndex: 1
+  explanation: "The correct expression is 'a frente de' meaning 'in front of'."
+
+- question: "¿Cómo se pregunta 'How do I get to the museum?'"
+  options:
+    - "¿Cómo llego al museo?"
+    - "¿Dónde está el museo?"
+    - "¿Puedo ir al museo?"
+    - "¿Cuál es el museo?"
+  correctOptionIndex: 0
+  explanation: "'¿Cómo llego al museo?' is the correct way to ask 'How do I get to the museum?'"
+
+- question: "La estación de tren está ___ del parque."
+  options:
+    - "cerca"
+    - "lejos"
+    - "dentro"
+    - "fuera"
+  correctOptionIndex: 0
+  explanation: "'Cerca' means 'near' or 'close to'."
+
+- question: "What is the meaning of 'cruzar'?"
+  options:
+    - "To cross"
+    - "To turn"
+    - "To go straight"
+    - "To return"
+  correctOptionIndex: 0
+  explanation: "'Cruzar' means 'to cross' in Spanish."
+
+- question: "¿Cuál es la palabra para 'neighborhood'?"
+  options:
+    - "Barrio"
+    - "Ciudad"
+    - "Pueblo"
+    - "País"
+  correctOptionIndex: 0
+  explanation: "'Barrio' is the Spanish word for 'neighborhood'."
+
+- question: "Siga todo ___ hasta llegar a la plaza."
+  options:
+    - "recto"
+    - "derecho"
+    - "izquierdo"
+    - "atrás"
+  correctOptionIndex: 0
+  explanation: "'Recto' means 'straight' in this context."
+
+- question: "The word for 'roundabout' in Spanish is:"
+  options:
+    - "Rotonda"
+    - "Círculo"
+    - "Vuelta"
+    - "Giro"
+  correctOptionIndex: 0
+  explanation: "'Rotonda' is the Spanish word for 'roundabout'."
+
+- question: "¿Qué significa 'a dos cuadras'?"
+  options:
+    - "Two blocks away"
+    - "Two streets over"
+    - "Two turns"
+    - "Two minutes"
+  correctOptionIndex: 0
+  explanation: "'A dos cuadras' means 'two blocks away'."
+
+- question: "La oficina de correos está ___ la esquina."
+  options:
+    - "en"
+    - "a"
+    - "de"
+    - "por"
+  correctOptionIndex: 2
+  explanation: "'De' is used here to indicate 'on' the corner."
+
+- question: "¿Cómo se dice 'go straight' en español?"
+  options:
+    - "Siga recto"
+    - "Gire a la derecha"
+    - "Cruce la calle"
+    - "Dé la vuelta"
+  correctOptionIndex: 0
+  explanation: "'Siga recto' means 'go straight' in Spanish."
+
+- question: "What does 'manzana' mean in the context of a city?"
+  options:
+    - "Block"
+    - "Apple"
+    - "Square"
+    - "Building"
+  correctOptionIndex: 0
+  explanation: "'Manzana' means 'block' in the context of city navigation."
+
+- question: "El supermercado está ___ la calle del banco."
+  options:
+    - "en"
+    - "a"
+    - "por" 
+    - sobre
+  
+correctOptionIndex :2
+explanation : "'Por' is used here to mean 'down' or 'along' the street."
+
+- question : ¿Cuál es la traducción de ‘crosswalk’?
+  options :
+  – Paso de peatones
+  – Cruce de calles
+  – Semáforo
+  – Acera
+correctOptionIndex :0
+explanation : ‘Paso de peatones’ is the Spanish term for ‘crosswalk’.
+
+- question : La parada de autobús está ___ la esquina.
+options :
+   – a
+   – en
+   – de
+   – por
+correctOptionIndex :1
+explanation : ‘En’ is used to indicate ‘on’ the corner.
+
+- question : What is the meaning of ‘doblar’?
+options :
+   – To turn
+   – To cross
+   – To go straight
+   – To stop
+correctOptionIndex :0
+explanation : ‘Doblar’ means ‘to turn’ in the context of directions.
+
+- question : ¿Cómo se dice ‘one-way street’ en español?
+options :
+   – Calle de sentido único
+   – Calle principal
+   – Calle peatonal
+   – Calle cerrada
+correctOptionIndex :0
+explanation : ‘Calle de sentido único’ means ‘one-way street’ in Spanish.
+
+- question : El restaurante está ___ la derecha del banco.
+options :
+   – a
+   – en
+   – de
+   – por
+correctOptionIndex :0
+explanation : ‘A’ is used here to mean ‘on the right of’.
+
+- question : ¿Qué significa ‘acera’?
+options :
+   – Sidewalk
+   – Street
+   – Road
+   – Highway
+correctOptionIndex :0
+explanation : ‘Acera’ means ‘sidewalk’ in Spanish.
+
+- question : La plaza está ___ el centro de la ciudad.
+options :
+   –en 
+   –a 
+   –de 
+   –por 
+correctOptionIndex :0 
+explanation : ‘En’ is used to indicate ‘in’ the center of the city.
+
+- question : What is the Spanish word for ‘map’?
+options :
+   –Mapa 
+   –Carta 
+   –Plano 
+   –Guía 
+correctOptionIndex :0 
+explanation : ‘Mapa’ is the Spanish word for ‘map.’
+
+- question : ¿Cómo se pregunta ‘Is it far from here?’?
+options :
+   –¿Está lejos de aquí? 
+   –¿Dónde está? 
+   –¿Cuánto tiempo tarda? 
+   –¿Cómo llego allí? 
+correctOptionIndex :0 
+explanation : ‘¿Está lejos de aquí?’ means ‘Is it far from here?’ in Spanish.
+
+- question : El hotel está ___ la calle principal.
+options :
+   –en 
+   –a 
+   –de 
+   –sobre 
+correctOptionIndex :0 
+explanation : ‘En’ is used to indicate ‘on’ the main street.
+
+- question : ¿Cuál es la traducción de ‘traffic jam’?
+options :
+   –Embotellamiento 
+   –Accidente 
+   –Desvío 
+   –Señal 
+correctOptionIndex :0 
+explanation : ‘Embotellamiento’ is the Spanish term for ‘traffic jam.’
+
+- question :"Para llegar al museo, gire ___ la segunda calle."
+options :
+     -"en"  
+     -"a"  
+     -"por"  
+     -"de"  
+correctOptionIndex :1  
+explanation :"‘A’ is used here to mean ‘at’ the second street." 
+
+- question :"What does ‘esquina’ mean?"  
+options :
+     -"Corner"  
+     -"Square"  
+     -"Intersection"  
+     -"Roundabout"  
+correctOptionIndex :0  
+explanation :"‘Esquina’ means ‘corner’ in Spanish." 
+
+- question :"La estación de policía está ___ del ayuntamiento."  
+options :
+     -"cerca"  
+     -"lejos"  
+     -"dentro"  
+     -"fuera"  
+correctOptionIndex :0  
+explanation :"‘Cerca’ means ‘near’ or ‘close to.’" 
+
+- question :"¿Cómo se dice ‘pedestrian street’ en español?"  
+options :
+     -"Calle peatonal"  
+     -"Calle principal"  
+     -"Calle de sentido único"  
+     -"Calle cerrada"  
+correctOptionIndex :0   
+explanation :"‘Calle peatonal’ means ‘pedestrian street’ in Spanish." 
+
+- question :"El parque está ___ cinco minutos a pie."   
+options :
+     -"a"   
+     -"en"   
+     -"de"   
+     -"por"   
+correctOptionIndex :0   
+explanation :"‘A’ is used here to indicate ‘at’ or ‘within’ five minutes walking distance." 
+
+- question :"What is the meaning of ‘cuadra’?"    
+options :
+     -"Block"    
+     -"Square"    
+     -"Street"    
+     -"Neighborhood"    
+correctOptionIndex :0    
+explanation :"‘Cuadra’ typically means ‘block’ in the context of city navigation." 
+
+- question :"¿Cuál es la palabra para ‘downtown’?"     
+options :
+      -"Centro"     
+      -"Suburbio"     
+      -"Afueras"     
+      -"Barrio"     
+correctOptionIndex :0     
+explanation :"‘Centro’ is commonly used to refer to ‘downtown’ in Spanish." 
+
+- question :"La biblioteca está ___ la tercera planta."      
+options :
+      -"en"      
+      -"a"      
+      -"de"      
+      -"por"      
+correctOptionIndex :0      
+explanation :"‘En’ is used to indicate ‘on’ the third floor." 
+
+- question :"How do you say ‘turn left at the traffic light’? "
+options :
+      -"Gire a la izquierda en el semáforo"      
+      -"Cruce en el semáforo"      
+      -"Siga recto en el semáforo"      
+      -"Pare en el semáforo"      
+correctOptionIndex :0      
+explanation :"‘Gire a la izquierda en el semáforo‘ means ’turn left at the traffic light.’ "
+
+- question :"El cine está ___ dos kilómetros del centro."     
+options :
+      -"a"     
+      -"en"     
+      -"de"     
+      -"por"     
+correctOptionIndex :0     
+explanation :"‘A‘ is used to indicate distance, meaning ’at‘ two kilometers from the center." 
+
+- question :"¿Qué significa ’callejón’? "
+options :
+      -"Alley"    
+      -"Avenue"    
+      -"Boulevard"    
+      -"Highway"    
+correctOptionIndex :0    
+explanation :"‘Callejón‘ means ’alley‘ in Spanish." 
+
+- question :"Para llegar al estadio, tome la segunda ___ a la derecha."    
+options :
+      -"calle"    
+      -"avenida"    
+      -"carretera"    
+      -"salida"    
+correctOptionIndex :0    
+explanation :"‘Calle‘ (street) is the most appropriate word in this context." 
+
+- question :"What is the Spanish word for ’landmark’? "
+options :
+      -"Punto de referencia"    
+      -"Señal"    
+      -"Monumento"    
+      -"Atracción"    
+correctOptionIndex :0    
+explanation :"‘Punto de referencia‘ is the Spanish term for ’landmark.’ "
+
+- question :"El aeropuerto está ___ las afueras de la ciudad."   
+  options :
+       "- en "
+       "- a "
+       "- de "
+       "- por "
+correctOptionIndex :-1   
+explanation :-"'En'is used here to mean'on'the outskirts ofthe city.'"
+
+- question:"¿Cómo se dice'shortcut'en español?"   
+options:
+- Atajo
+- Desvío
+- Ruta
+- Camino   
+correctoptionindex:-1,   
+explanation:-"'Atajo'is thespanishwordfor'shortcut.'"
