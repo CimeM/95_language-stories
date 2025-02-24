@@ -56,7 +56,7 @@ layout: default
 
         document.querySelector("#buttonList").innerHTML += `
           <button class="btn group btn btn-outline-secondary btn-outline-light bg-light bg-opacity-25 rounded-3 d-flex justify-content-center backdrop-blur-lg p-3 w-100"
-            onclick="setThisLanguage('${languageObj.lang}')"
+            onclick="handleUserSetsPreferedLanguage('${languageObj.lang}')"
           >
             <div class="flex-shrink-0 items-center gap-4 mb-3">
               <span class="fs-1 pe-3">${languageObj.icon}</span>
@@ -69,16 +69,17 @@ layout: default
         `;
       })
 
-      function setThisLanguage(lang) { 
+      function handleUserSetsPreferedLanguage(lang) { 
+        console.log("searching for:", lang);
         selectedLanguage = languages.filter(x => x.lang == lang)[0];
         console.log("you selected:", selectedLanguage);
-        updateLanguage(selectedLanguage);
+        user.saveLearningLanguage(selectedLanguage);
+        updateLanguageInUI(selectedLanguage);
         // close the menu
         togglelanguageSelectorMenu();
       }
-      function updateLanguage(lang){
+      function updateLanguageInUI(lang){
         // TODO add save language to user object
-        user.saveLearningLanguage(lang);
         document.querySelector("#languageselectheader h1").innerHTML = lang.lang;
         document.querySelector("#languageselectheader #languageflag").innerHTML = lang.icon;
       }
@@ -89,10 +90,21 @@ layout: default
         
       }
       async function setLanguageOnLoad(){
-        var selectedlanguage = await user.getLearningLanguage();
-        setThisLanguage(selectedlanguage)
+        try{ 
+          selectedlanguage = await user.getLearningLanguage();
+          console.log("selectedlanguage", selectedlanguage)
+          if( selectedlanguage == undefined ){  
+            console.log("Defaultig to default language")
+            updateLanguageInUI(languages[0]) }else{
+              console.log("setting to:", selectedlanguage )
+              updateLanguageInUI(selectedlanguage)
+          }
+        }catch{
+          
+        }
       }
-      try{setLanguageOnLoad}catch{}
+
+      
     </script>
     
     <div id="mainGameMenu">
@@ -236,6 +248,7 @@ layout: default
       <script>
         // unlock UI buttons when user is logged in
         document.addEventListener('DOMContentLoaded', () => {
+          setLanguageOnLoad()
           if (authManager.checkSessionToken() == true){
             document.querySelectorAll("#createAccountMessage").forEach(obj =>{ obj.classList.add("hidden"); })
             document.querySelector("#premiumaccountSignup").classList.remove("hidden");
@@ -245,6 +258,8 @@ layout: default
             button.href = button.getAttribute("provisionedlink")
           }
         })
+
+
       </script>
 
     </div>

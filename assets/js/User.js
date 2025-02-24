@@ -8,7 +8,8 @@ class UserAccount extends Syncable {
                 'numberOfRemainingLivesToday':3, 
                 'lastTimeLiveWasSpent': null,
                 'lastTimeDailyChalengeCompleted': null,
-                'numberOfRemainingStories':3 
+                'numberOfRemainingStories': 3,
+                'learningLanguage': {lang: "French", description:"The language of culture and diplomacy", icon:"🇫🇷"}
             }, 
             'syncableData',
             null, 
@@ -29,11 +30,13 @@ class UserAccount extends Syncable {
     // learningLanguage - language that user decided to learn
     // setter for learningLanguage datapoint
     async saveLearningLanguage(languageObj){
+        if(languageObj == undefined){ console.log("Error wrong object passed"); return }
+        console.log("Saving learning language: ", languageObj)
         await this.dataInitializePromise;
         this.data = { learningLanguage: languageObj }
     }
     // getter for learningLanguage datapoint
-    async getLearningLanguage(languageObj){
+    async getLearningLanguage(){
         await this.dataInitializePromise;
         if(Object.keys(this.data).includes('learningLanguage')){
             return user.data.learningLanguage
@@ -41,13 +44,11 @@ class UserAccount extends Syncable {
         // fallback value;
         return {lang: "French", description:"The language of culture and diplomacy", icon:"🇫🇷"} 
     }
-
     // setter for Email datapoint
     async saveEmail(email){
         await this.dataInitializePromise;
         this.data = {email: email}
     }
-
     async getAvatar(){
 
     }
@@ -61,7 +62,6 @@ class UserAccount extends Syncable {
         return this.data.avatar
         
     }
-
     async resetUsersHearts(){
         await this.dataInitializePromise;
        
@@ -71,7 +71,6 @@ class UserAccount extends Syncable {
             this.data = { 'numberOfRemainingLivesToday': 3, 'lastTimeLiveWasSpent': today }; 
         }
     }
-
     addPoints( numberOfPointsToAdd ){
         this.addContributionTimestamp()
         console.log(this.data)
@@ -123,7 +122,6 @@ class UserAccount extends Syncable {
         }
         return "Language learner" //this.data.username;
     }
-    
     _userLoginEvent(){
         super._userLoginEvent(); 
         this.log("_userLoginEvent")
