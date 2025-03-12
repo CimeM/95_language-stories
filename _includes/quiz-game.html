@@ -105,6 +105,7 @@
             if(mainContent[key].type == "quiz") {
                 if (mainContent[key].language.toLocaleLowerCase().includes( lng ) ) {
                     // found matching language
+                    console.log("found matching language", lng, key )
                     return mainContent[key]['challenges']
                 }
             }
