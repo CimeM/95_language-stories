@@ -96,6 +96,7 @@
 <script>
     async function loadChalengesInPreferedLanguage(){
         var selectedlanguage = await user.getLearningLanguage();
+        console.log("selectedlanguage", selectedlanguage)
         // find dataset that matches language name
         var quizfilekeys = Object.keys( mainContent );
         // var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase()) )
