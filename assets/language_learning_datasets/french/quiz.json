@@ -1,0 +1,662 @@
+[
+    {
+      "question": "Quelle expression utilise-t-on pour exprimer son accord ?",
+      "options": [
+        "Je suis d'accord",
+        "Je ne suis pas sûr",
+        "Je n'aime pas",
+        "Je ne comprends pas"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis d'accord' means 'I agree' and is used to express agreement."
+    },
+    {
+      "question": "Comment dit-on 'I think that' en français ?",
+      "options": [
+        "Je crois que",
+        "Je sais que",
+        "Je veux que",
+        "Je dois que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je crois que' means 'I think that' and is used to introduce an opinion."
+    },
+    {
+      "question": "Fill in the blank: Je _____ que ce film est intéressant.",
+      "options": [
+        "pense",
+        "pensons",
+        "penses",
+        "pensez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je pense que' means 'I think that' and is used to express an opinion."
+    },
+    {
+      "question": "Which phrase expresses disagreement?",
+      "options": [
+        "Je ne suis pas d'accord",
+        "J'adore ça",
+        "C'est génial",
+        "Je suis ravi"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je ne suis pas d'accord' means 'I disagree' and is used to express disagreement."
+    },
+    {
+      "question": "Quelle expression utilise-t-on pour exprimer la certitude ?",
+      "options": [
+        "Je suis sûr que",
+        "Je pense que",
+        "Je crois que",
+        "J'espère que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis sûr que' means 'I am sure that' and expresses certainty."
+    },
+    {
+      "question": "Fill in the blank: À mon _____ , c'est une bonne idée.",
+      "options": [
+        "avis",
+        "opinion",
+        "pensée",
+        "idée"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'À mon avis' means 'In my opinion' and is used to introduce a personal viewpoint."
+    },
+    {
+      "question": "How do you say 'I hope that' in French?",
+      "options": [
+        "J'espère que",
+        "Je veux que",
+        "Je dois que",
+        "Je peux que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'espère que' means 'I hope that' and is used to express hope or desire."
+    },
+    {
+      "question": "Quelle expression exprime le doute ?",
+      "options": [
+        "Je doute que",
+        "Je sais que",
+        "Je suis certain que",
+        "J'affirme que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je doute que' means 'I doubt that' and is used to express doubt. Note that it's followed by the subjunctive mood."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ que tu as raison.",
+      "options": [
+        "convaincu",
+        "sûr",
+        "certain",
+        "persuadé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "All options are correct. 'Je suis convaincu/sûr/certain/persuadé que' all mean 'I am convinced that' and express strong belief."
+    },
+    {
+      "question": "Which phrase means 'In my opinion'?",
+      "options": [
+        "À mon avis",
+        "Je pense",
+        "Je crois",
+        "D'après moi"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Both 'À mon avis' and 'D'après moi' mean 'In my opinion'. They are used to introduce a personal viewpoint."
+    },
+    {
+      "question": "Comment exprime-t-on la possibilité en français ?",
+      "options": [
+        "Il est possible que",
+        "Il faut que",
+        "Il est certain que",
+        "Il est interdit que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il est possible que' means 'It is possible that' and expresses possibility. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Fill in the blank: Je _____ content de te voir.",
+      "options": [
+        "suis",
+        "es",
+        "est",
+        "sommes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis content' means 'I am happy' and expresses a positive emotion."
+    },
+    {
+      "question": "Which phrase expresses disappointment?",
+      "options": [
+        "Je suis déçu",
+        "Je suis ravi",
+        "Je suis excité",
+        "Je suis fier"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis déçu' means 'I am disappointed' and expresses disappointment."
+    },
+    {
+      "question": "Quelle expression utilise-t-on pour exprimer la joie ?",
+      "options": [
+        "Je suis ravi",
+        "Je suis triste",
+        "Je suis fâché",
+        "Je suis inquiet"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis ravi' means 'I am delighted' and expresses joy or happiness."
+    },
+    {
+      "question": "Fill in the blank: Il me _____ que tu as tort.",
+      "options": [
+        "semble",
+        "sembles",
+        "semblent",
+        "semblez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il me semble que' means 'It seems to me that' and is used to express a personal impression."
+    },
+    {
+      "question": "How do you say 'I'm afraid that' in French?",
+      "options": [
+        "J'ai peur que",
+        "Je suis heureux que",
+        "Je suis sûr que",
+        "Je suis content que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'ai peur que' means 'I'm afraid that' and expresses fear or concern. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Quelle expression exprime l'indifférence ?",
+      "options": [
+        "Ça m'est égal",
+        "J'adore ça",
+        "Je déteste ça",
+        "C'est passionnant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Ça m'est égal' means 'It's all the same to me' or 'I don't care' and expresses indifference."
+    },
+    {
+      "question": "Fill in the blank: Je _____ que tu viennes à la fête.",
+      "options": [
+        "souhaite",
+        "souhaites",
+        "souhaitons",
+        "souhaitez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je souhaite que' means 'I wish that' and expresses a desire. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Which phrase means 'I don't mind'?",
+      "options": [
+        "Ça ne me dérange pas",
+        "Je m'en fiche",
+        "Peu importe",
+        "Ça m'est égal"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "All options are correct. They all express that something doesn't bother you or that you don't have a preference."
+    },
+    {
+      "question": "Comment exprime-t-on la surprise en français ?",
+      "options": [
+        "Je suis surpris",
+        "Je suis ennuyé",
+        "Je suis fatigué",
+        "Je suis occupé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis surpris' means 'I am surprised' and expresses surprise."
+    },
+    {
+      "question": "Fill in the blank: À ce qu'il _____ , le concert est annulé.",
+      "options": [
+        "paraît",
+        "paraîs",
+        "parais",
+        "paraissent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'À ce qu'il paraît' means 'It seems' or 'Apparently' and is used to report information that is not certain."
+    },
+    {
+      "question": "Which phrase expresses regret?",
+      "options": [
+        "Je regrette que",
+        "Je suis content que",
+        "Je suis sûr que",
+        "J'espère que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je regrette que' means 'I regret that' and expresses regret. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Quelle expression utilise-t-on pour exprimer l'ennui ?",
+      "options": [
+        "Je m'ennuie",
+        "Je m'amuse",
+        "Je m'excite",
+        "Je m'inquiète"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je m'ennuie' means 'I'm bored' and expresses boredom."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ de votre aide.",
+      "options": [
+        "reconnaissant",
+        "reconnaissante",
+        "reconnaissants",
+        "reconnaissantes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis reconnaissant(e)' means 'I am grateful' and expresses gratitude. Use 'reconnaissant' for masculine and 'reconnaissante' for feminine."
+    },
+    {
+      "question": "How do you say 'I feel like' in French?",
+      "options": [
+        "J'ai envie de",
+        "Je veux",
+        "J'aime",
+        "Je désire"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'ai envie de' means 'I feel like' or 'I want to' and expresses a desire or inclination."
+    },
+    {
+      "question": "Quelle expression exprime la confusion ?",
+      "options": [
+        "Je suis perdu",
+        "Je suis trouvé",
+        "Je suis gagné",
+        "Je suis perdu"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis perdu' means 'I am lost' and can express confusion or being overwhelmed."
+    },
+    {
+      "question": "Fill in the blank: Je _____ fier de toi.",
+      "options": [
+        "suis",
+        "es",
+        "est",
+        "sommes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis fier' means 'I am proud' and expresses pride."
+    },
+    {
+      "question": "Which phrase means 'I couldn't care less'?",
+      "options": [
+        "Je m'en fiche",
+        "Je m'en souviens",
+        "Je m'en vais",
+        "Je m'en occupe"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je m'en fiche' is an informal way to say 'I don't care' or 'I couldn't care less'."
+    },
+    {
+      "question": "Comment exprime-t-on l'enthousiasme en français ?",
+      "options": [
+        "Je suis emballé",
+        "Je suis déprimé",
+        "Je suis fatigué",
+        "Je suis stressé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis emballé' means 'I am excited' or 'I am thrilled' and expresses enthusiasm."
+    },
+    {
+      "question": "Fill in the blank: Il _____ que tu aies raison.",
+      "options": [
+        "se peut",
+        "se peux",
+        "se peuvent",
+        "se pouvez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il se peut que' means 'It's possible that' and expresses possibility. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Quelle expression signifie 'It seems to me'?",
+      "options": [
+        "Il me semble",
+        "Je pense",
+        "Je crois",
+        "À mon avis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il me semble' means 'It seems to me' and is used to express a personal impression."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ que tu aies réussi ton examen.",
+      "options": [
+        "ravi",
+        "ravie",
+        "ravis",
+        "ravies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis ravi(e)' means 'I am delighted'. Use 'ravi' for masculine and 'ravie' for feminine."
+    },
+    {
+      "question": "How do you say 'I'm fed up' in French?",
+      "options": [
+        "J'en ai marre",
+        "Je suis fatigué",
+        "Je suis ennuyé",
+        "Je suis déçu"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'en ai marre' is an informal way to say 'I'm fed up' or 'I've had enough'."
+    },
+    {
+      "question": "Quelle phrase exprime le soulagement ?",
+      "options": [
+        "Je suis soulagé",
+        "Je suis stressé",
+        "Je suis inquiet",
+        "Je suis anxieux"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis soulagé' means 'I am relieved' and expresses relief."
+    },
+    {
+      "question": "Fill in the blank: À mon _____ , ce n'est pas une bonne idée.",
+      "options": [
+        "sens",
+        "avis",
+        "opinion",
+        "idée"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Both 'sens' and 'avis' are correct. 'À mon sens' and 'À mon avis' both mean 'In my opinion'."
+    },
+    {
+      "question": "Which phrase means 'I wonder'?",
+      "options": [
+        "Je me demande",
+        "Je pense",
+        "Je crois",
+        "Je sais"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je me demande' means 'I wonder' and is used to express curiosity or uncertainty."
+    },
+    {
+      "question": "Comment dit-on 'I'm looking forward to' en français ?",
+      "options": [
+        "J'ai hâte de",
+        "J'espère",
+        "Je souhaite",
+        "J'attends"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'ai hâte de' means 'I'm looking forward to' and expresses anticipation."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ de votre décision.",
+      "options": [
+        "déçu",
+        "déçue",
+        "déçus",
+        "déçues"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis déçu(e)' means 'I am disappointed'. Use 'déçu' for masculine and 'déçue' for feminine."
+    },
+    {
+      "question": "Quelle expression signifie 'As far as I'm concerned'?",
+      "options": [
+        "En ce qui me concerne",
+        "À mon avis",
+        "Je pense que",
+        "D'après moi"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'En ce qui me concerne' means 'As far as I'm concerned' and is used to give a personal perspective."
+    },
+    {
+      "question": "How do you express doubt in French?",
+      "options": [
+        "Je doute que",
+        "Je suis sûr que",
+        "Je pense que",
+        "Je crois que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je doute que' means 'I doubt that' and expresses doubt. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Fill in the blank: Il est _____ que nous finissions à temps.",
+      "options": [
+        "peu probable",
+        "certain",
+        "sûr",
+        "évident"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il est peu probable que' means 'It is unlikely that' and expresses low probability. It's followed by the subjunctive mood."
+    },
+    {
+      "question": "Which phrase expresses annoyance?",
+      "options": [
+        "Ça m'agace",
+        "Ça me plaît",
+        "Ça m'amuse",
+        "Ça m'intéresse"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Ça m'agace' means 'It annoys me' and expresses irritation or annoyance."
+    },
+    {
+      "question": "Comment exprime-t-on l'inquiétude en français ?",
+      "options": [
+        "Je suis inquiet",
+        "Je suis content",
+        "Je suis ravi",
+        "Je suis amusé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis inquiet' means 'I am worried' and expresses concern or anxiety."
+    },
+    {
+      "question": "Fill in the blank: Je _____ impressionné par son talent.",
+      "options": [
+        "suis",
+        "es",
+        "est",
+        "sommes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis impressionné' means 'I am impressed' and expresses admiration."
+    },
+    {
+      "question": "How do you say 'I couldn't agree more' in French?",
+      "options": [
+        "Je suis tout à fait d'accord",
+        "Je ne suis pas d'accord",
+        "Je suis un peu d'accord",
+        "Je ne sais pas"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis tout à fait d'accord' means 'I completely agree' or 'I couldn't agree more'."
+    },
+    {
+      "question": "Quelle expression signifie 'I have the impression that'?",
+      "options": [
+        "J'ai l'impression que",
+        "Je pense que",
+        "Je crois que",
+        "Je suis sûr que"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'ai l'impression que' means 'I have the impression that' and is used to express a personal feeling or perception."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ de te voir.",
+      "options": [
+        "content",
+        "contente",
+        "contents",
+        "contentes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis content(e)' means 'I am happy'. Use 'content' for masculine and 'contente' for feminine."
+    },
+    {
+      "question": "Which phrase expresses indecision?",
+      "options": [
+        "J'hésite",
+        "Je suis sûr",
+        "Je sais",
+        "Je décide"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'J'hésite' means 'I'm hesitating' or 'I'm undecided' and expresses indecision."
+    },
+    {
+      "question": "Comment dit-on 'I can't stand it' en français ?",
+      "options": [
+        "Je ne supporte pas",
+        "J'adore",
+        "Je tolère",
+        "J'accepte"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je ne supporte pas' means 'I can't stand it' or 'I can't bear it' and expresses strong dislike or intolerance."
+    },
+    {
+      "question": "Fill in the blank: Il me _____ important de dire la vérité.",
+      "options": [
+        "semble",
+        "sembles",
+        "semblent",
+        "semblez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Il me semble important' means 'It seems important to me' and is used to express a personal opinion."
+    },
+    {
+      "question": "Quelle expression signifie 'I'm not convinced'?",
+      "options": [
+        "Je ne suis pas convaincu",
+        "Je suis sûr",
+        "Je suis certain",
+        "Je suis persuadé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je ne suis pas convaincu' means 'I'm not convinced' and expresses doubt or skepticism."
+    },
+    {
+      "question": "How do you express enthusiasm in French?",
+      "options": [
+        "Je suis enthousiaste",
+        "Je suis triste",
+        "Je suis fatigué",
+        "Je suis ennuyé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis enthousiaste' means 'I am enthusiastic' and expresses excitement or keen interest."
+    },
+    {
+      "question": "Fill in the blank: À ce qu'il _____ , le film est excellent.",
+      "options": [
+        "paraît",
+        "parais",
+        "paraissent",
+        "paraissez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'À ce qu'il paraît' means 'It seems' or 'Apparently' and is used to report information that is not certain."
+    },
+    {
+      "question": "Which phrase means 'I'm not sure'?",
+      "options": [
+        "Je ne suis pas sûr",
+        "Je suis certain",
+        "Je sais",
+        "Je suis convaincu"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je ne suis pas sûr' means 'I'm not sure' and expresses uncertainty."
+    },
+    {
+      "question": "Comment exprime-t-on la frustration en français ?",
+      "options": [
+        "Je suis frustré",
+        "Je suis satisfait",
+        "Je suis content",
+        "Je suis ravi"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis frustré' means 'I am frustrated' and expresses frustration or dissatisfaction."
+    },
+    {
+      "question": "Fill in the blank: Je _____ que tu as fait de ton mieux.",
+      "options": [
+        "comprends",
+        "comprend",
+        "comprenons",
+        "comprenez"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je comprends que' means 'I understand that' and is used to express comprehension or empathy."
+    },
+    {
+      "question": "How do you say 'I'm touched' in French?",
+      "options": [
+        "Je suis touché",
+        "Je suis frappé",
+        "Je suis blessé",
+        "Je suis atteint"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis touché' means 'I'm touched' or 'I'm moved' and expresses emotional impact."
+    },
+    {
+      "question": "Quelle expression signifie 'I couldn't care less'?",
+      "options": [
+        "Je m'en fiche",
+        "Je m'en souviens",
+        "Je m'en vais",
+        "Je m'en occupe"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je m'en fiche' is an informal way to say 'I don't care' or 'I couldn't care less'."
+    },
+    {
+      "question": "Fill in the blank: Je suis _____ de votre générosité.",
+      "options": [
+        "reconnaissant",
+        "reconnaissante",
+        "reconnaissants",
+        "reconnaissantes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis reconnaissant(e)' means 'I am grateful'. Use 'reconnaissant' for masculine and 'reconnaissante' for feminine."
+    },
+    {
+      "question": "Which phrase expresses astonishment?",
+      "options": [
+        "Je suis stupéfait",
+        "Je suis calme",
+        "Je suis indifférent",
+        "Je suis préparé"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Je suis stupéfait' means 'I am astonished' or 'I am amazed' and expresses great surprise."
+    }
+]

@@ -1,0 +1,258 @@
+[
+    {
+        "question": "¿Dónde está la biblioteca?",
+        "options": [
+            "Library",
+            "Bank",
+            "Hospital",
+            "School"
+        ]
+    },
+    {
+        "question": "What does 'izquierda' mean?",
+        "options": [
+            "Right",
+            "Left",
+            "Straight",
+            "Back"
+        ]
+    },
+    {
+        "question": "¿Cómo se dice 'turn right' en español?",
+        "options": [
+            "Gira a la derecha",
+            "Gira a la izquierda",
+            "Sigue recto",
+            "Da la vuelta"
+        ]
+    },
+    {
+        "question": "La farmacia está ___ la esquina.",
+        "options": [
+            "en",
+            "a",
+            "de",
+            "por"
+        ]
+    },
+    {
+        "question": "¿Cuál es la traducción de 'street'?",
+        "options": [
+            "Calle",
+            "Avenida",
+            "Carretera",
+            "Camino"
+        ]
+    },
+    {
+        "question": "¿Qué significa 'semáforo'?",
+        "options": [
+            "Traffic light",
+            "Stop sign",
+            "Crosswalk",
+            "Speed bump"
+        ]
+    },
+    {
+        "question": "El banco está __ frente __ la iglesia.",
+        "options": [
+            "en, de",
+            "a, de",
+            "en, a",
+            "por, de"
+        ]
+    },
+    {
+        "question": "¿Cómo se pregunta 'How do I get to the museum?'",
+        "options": [
+            "¿Cómo llego al museo?",
+            "¿Dónde está el museo?",
+            "¿Puedo ir al museo?",
+            "¿Cuál es el museo?"
+        ]
+    },
+    {
+        "question": "La estación de tren está ___ del parque.",
+        "options": [
+            "cerca",
+            "lejos",
+            "dentro",
+            "fuera"
+        ]
+    },
+    {
+        "question": "What is the meaning of 'cruzar'?",
+        "options": [
+            "To cross",
+            "To turn",
+            "To go straight",
+            "To return"
+        ]
+    }
+    ,
+    {
+        "question": "¿Cómo se dice 'one-way street' en español?",
+        "options": [
+            "Calle de sentido único",
+            "Calle principal",
+            "Calle peatonal",
+            "Calle cerrada"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Calle de sentido único' means 'one-way street' in Spanish."
+    },
+    {
+        "question": "El restaurante está ___ la derecha del banco.",
+        "options": [
+            "a",
+            "en",
+            "de",
+            "por"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'A' is used here to mean 'on the right of'."
+    },
+    {
+        "question": "¿Qué significa 'acera'?",
+        "options": [
+            "Sidewalk",
+            "Street",
+            "Road",
+            "Highway"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Acera' means 'sidewalk' in Spanish."
+    },
+    {
+        "question": "La plaza está ___ el centro de la ciudad.",
+        "options": [
+            "en",
+            "a",
+            "de",
+            "por"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'En' is used to indicate 'in' the center of the city."
+    },
+    {
+        "question": "What is the Spanish word for 'map'?",
+        "options": [
+            "Mapa",
+            "Carta",
+            "Plano",
+            "Guía"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Mapa' is the Spanish word for 'map.'"
+    },
+    {
+        "question": "¿Cómo se pregunta 'Is it far from here?'?",
+        "options": [
+            "¿Está lejos de aquí?",
+            "¿Dónde está?",
+            "¿Cuánto tiempo tarda?",
+            "¿Cómo llego allí?"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'¿Está lejos de aquí?' means 'Is it far from here?' in Spanish."
+    },
+    {
+        "question": "El hotel está ___ la calle principal.",
+        "options": [
+            "en",
+            "a",
+            "de",
+            "sobre"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'En' is used to indicate 'on' the main street."
+    },
+    {
+        "question": "¿Cuál es la traducción de 'traffic jam'?",
+        "options": [
+            "Embotellamiento",
+            "Accidente",
+            "Desvío",
+            "Señal"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "`Embotellamiento` is the Spanish term for `traffic jam.`"
+    },
+    {
+        "question": "Para llegar al museo, gire ___ la segunda calle.",
+        "options": [
+            "en",
+            "a",
+            "por",
+            "de"
+        ],
+        "correctOptionIndex": 1,
+        "explanation": "'A' is used here to mean 'at' the second street."
+    },
+    {
+        "question": "What does 'esquina' mean?",
+        "options": [
+            "Corner",
+            "Square",
+            "Intersection",
+            "Roundabout"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Esquina' means 'corner' in Spanish."
+    },
+    {
+        "question": "La estación de policía está ___ del ayuntamiento.",
+        "options": [
+            "cerca",
+            "lejos",
+            "dentro",
+            "fuera"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Cerca' means 'near' or 'close to.'"
+    },
+    {
+        "question": "¿Cómo se dice 'pedestrian street' en español?",
+        "options": [
+            "Calle peatonal",
+            "Calle principal",
+            "Calle de sentido único",
+            "Calle cerrada"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'Calle peatonal' means 'pedestrian street' in Spanish."
+    },
+    {
+        "question": "El parque está ___ cinco minutos a pie.",
+        "options": [
+            "a",
+            "en",
+            "de",
+            "por"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "'A' is used here to indicate 'at' or 'within' five minutes walking distance."
+    },
+    {
+        "question": "What is the meaning of 'cuadra'?",
+        "options": [
+            "Block",
+            "Square",
+            "Street",
+            "Neighborhood"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "`Cuadra` typically means `block` in the context of city navigation."
+    },
+    {
+        "question": "¿Cuál es la palabra para 'downtown'?",
+        "options": [
+            "Centro",
+            "Suburbio",
+            "Afueras",
+            "Barrio"
+        ],
+        "correctOptionIndex": 0,
+        "explanation": "`Centro` is commonly used to refer to `downtown` in Spanish."
+    }
+]

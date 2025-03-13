@@ -72,25 +72,11 @@
 
 
 
-<script>
-    
-    
-    var mainContent = {};
-</script>
+
 
 {% assign igposts = site.igposts %}
 {% assign ig_posts = igposts | where_exp: "igpost", "igpost.type == 'quiz'" %}
 {% for ig_post in ig_posts %}
-<script>
-    // add data to main object
-    mainContent["{{ ig_post.name  }}"] = 
-    {
-        'author': '{{ ig_post.author }}',
-        'language': '{{ ig_post.language }}',
-        'type': '{{ ig_post.type }}',
-        'challenges': {{ ig_post.challenges | jsonify }}
-    }
-</script>
 {% endfor %}
 
 <script>
@@ -98,20 +84,21 @@
         var selectedlanguage = await user.getLearningLanguage();
         console.log("selectedlanguage", selectedlanguage)
         // find dataset that matches language name
-        var quizfilekeys = Object.keys( mainContent );
-        // var key = Object.keys(mainContent).filter( x => x.toLocaleLowerCase().includes(selectedlanguage.lang.toLocaleLowerCase()) )
-        var lng = selectedlanguage.lang.toLocaleLowerCase().slice(0,3)
-        for (const key of quizfilekeys) {
-            if(mainContent[key].type == "quiz") {
-                if (mainContent[key].language.toLocaleLowerCase().includes( lng ) ) {
-                    // found matching language
-                    console.log("found matching language", lng, key )
-                    return mainContent[key]['challenges']
-                }
+        var lng = selectedlanguage.lang.toLocaleLowerCase() //.slice(0,3) // "italian" , "fre"
+        var url = `/assets/language_learning_datasets/${lng}/quiz.json`
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            const data = await response.json();
+            return data; // Now you can return the data
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            // return empty array if there is no languages detected
+            return []
         }
-        // fallback to default language
-        return mainContent[quizfilekeys[0]]['challenges']
     }
     function randomIntFromInterval(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -134,13 +121,16 @@
             return 
         }
         counter +=1
+        // load challenges in preferred lnguage
         var quizchallenges = await loadChalengesInPreferedLanguage();
+        
         var randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1));
-        // while( challengeIndexes.includes(randomNumber) != true ){
-        //     randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1));
-        // }
+        if (challengeIndexes.includes(randomNumber)){
+            // probability that the number will repeat is low
+            randomNumber = Math.floor(Math.random() * ( quizchallenges.length + 1))
+        }
         challengeIndexes.push(randomNumber)
-        console.log("randomNumber",randomNumber)
+        
         displayChallenge(quizchallenges[randomNumber], counter, maxChallenges)
     }
     async function displayChallenge(challenge, challengeIndex, maxChallengeNumber){
