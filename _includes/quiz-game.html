@@ -147,8 +147,8 @@
         challenge.options.forEach( option => {
             answerList.innerHTML += 
                 `<button id="quizAnswer" onclick="handleSelectQuizAnswer(this,${counter})" 
-                    isCorect="${challenge.right_answer==counter}" 
-                    corectIndex="${challenge.right_answer}" 
+                    isCorect="${challenge.correctOptionIndex==counter}" 
+                    corectIndex="${challenge.correctOptionIndex}" 
                     class="btn btn-lg text-start text-light bg-light bg-opacity-10" 
                     type="button">
                     ${"ABCDEFGHIJ"[counter]}: ${option.replace("“",'').replace("”",'').replace("\"",'')}
@@ -157,26 +157,31 @@
         })
         
     }
-    function handleSelectQuizAnswer(button, answerIndex){
+    function handleSelectQuizAnswer(pressedButton, answerIndex){
+        
         var greenCheck = `<i style="color:green;" class="ps-1 bi bi-check-circle-fill"></i>`
-        var redX = `<i style="color:red;" class="ps-1 bi bi-x-circle-fill"></i>`
+        var redXIcon = `<i style="color:red;" class="ps-1 bi bi-x-circle-fill"></i>`
         var allButtons = document.querySelectorAll("#quizAnswer");
-        if( button.getAttribute("isCorect") != "false" ){
+    
+        if( pressedButton.getAttribute("isCorect") != "false" ){
             quizPoints += 1;
-            button.innerHTML += greenCheck;
+            pressedButton.innerHTML += greenCheck;
             drawPointsScore();
         }else{
             livesLeft-=1;
             // mark the wrong answer buton
-            button.innerHTML += redX;
+            pressedButton.innerHTML += redXIcon;
             // mark the correct answer button
-            var correctNumberButtn = Number(button.getAttribute("corectIndex"));
+            var correctNumberButtn = Number(pressedButton.getAttribute("corectIndex"));
             allButtons[correctNumberButtn].innerHTML += greenCheck;
             drawLivesLeft();
         }
-        // disable buttons
+        // disable buttons for the transition
         allButtons.forEach(button => { button.setAttribute("onClick", "") });
+    
+        console.log("Error, no buttons found!")
         setTimeout(() => loadChallenge(), ( 1600 ));
+        
     }
 
     function drawLivesLeft(){
@@ -241,9 +246,7 @@
             gamescore.querySelector("#score").innerHTML = "You already played today. Next challenge in:" + timeUntilMidnight();
         }
     }
-    // if(authMana) {
-    //     document.querySelector("#notLoggedinActionItem")
-    // }    
+
     handleGameStart()
 
 </script>
