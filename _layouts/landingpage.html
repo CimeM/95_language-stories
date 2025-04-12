@@ -6,8 +6,7 @@ layout: default
 
 /* Hero section */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://images.unsplash.com/photo-1490131784822-b4626a8ec96a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
     background-size: cover;
     background-position: center;
     padding: 6rem 0;
@@ -85,30 +84,45 @@ layout: default
 
 <div class="min-vh-100">
   <!-- Hero Section -->
-  <div class="container-fluid hero-section py-5 w-100" style="">
-      <div class="container px-4">
-          <div class="row justify-content-center text-center">
-              <div class="col-lg-8">
-                  <h1 class="display-3 fw-bold text-light mb-4">
-                      Master French <span class="text-success">Naturally</span>
-                  </h1>
-                  <p class="lead text-light-emphasis mb-5">
-                      From casual learners to tech professionals – learn a new language through interactive stories, 
-                      real-world engineering scenarios, and engaging games.
-                  </p>
-                  <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                      <a href="/login" class="btn btn-success btn-lg px-5 rounded-pill">
-                          START LEARNING NOW
-                      </a>
-                      <a href="/gamemenu" class="btn btn-outline-light btn-lg px-5">
-                          I HAVE AN ACCOUNT
-                      </a>
-                  </div>
-              </div>
+  <div class="container-fluid hero-section py-5 w-100">
+    <div class="container px-4">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1 class="display-3 fw-bold text-light mb-4">
+            Master <span id="language" class="text-success">French</span> <span class="text-success">Naturally</span>
+          </h1>
+          <p class="lead text-light-emphasis mb-5">
+            From casual learners to tech professionals – learn a new language through interactive stories, 
+            real-world engineering scenarios, and engaging games.
+          </p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="/login" class="btn btn-success btn-lg px-5 rounded-pill">
+              START LEARNING NOW
+            </a>
+            <a href="/gamemenu" class="btn btn-outline-light btn-lg px-5">
+              I HAVE AN ACCOUNT
+            </a>
           </div>
+        </div>
       </div>
+    </div>
   </div>
-
+  
+  <script>
+    // Array of languages to cycle through
+    const languages = ["French", "Slovenian", "Spanish", "Italian"];
+    let currentIndex = 0;
+  
+    // Function to update the language text
+    function updateLanguage() {
+      const languageElement = document.getElementById("language");
+      currentIndex = (currentIndex + 1) % languages.length; // Cycle through the array
+      languageElement.textContent = languages[currentIndex];
+    }
+  
+    // Change the language every 2 seconds (2000 milliseconds)
+    setInterval(updateLanguage, 2000);
+  </script>
   <!-- Features Grid -->
   <div class="container px-4 py-5">
       <div class="row g-4">
