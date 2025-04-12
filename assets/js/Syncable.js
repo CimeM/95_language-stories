@@ -210,7 +210,7 @@ class Syncable {
         this.syncinterval = setInterval(() => {
             // if browser is online 
             // and if user is logged in ...
-            if (this.isBrowserOnline && authManager.checkSessionToken() ) {
+            if (this.isBrowserOnline && authManager.isUserLoggedIn() ) {
                 this.processQueue();
                 this.fetchLatestData();
             }

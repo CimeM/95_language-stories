@@ -235,7 +235,7 @@ layout: default
                 <h2 class="text-xl fw-bold text-gray-900">Interactive Stories</h2>
                 <p class="text-gray-600 mt-1">Test your comprehension with engaging stories.</p>
                 <!-- Disabled text -->
-                <p id="createaccountMessage" class="text-gray-600 mt-1">
+                <p id="createAccountMessage" class="text-gray-600 mt-1">
                   <i style = "color:yellow;" class="bi bi-stars yellow" ></i>
                   Create an account to unlock
                 </p>
@@ -265,7 +265,7 @@ layout: default
         // unlock UI buttons when user is logged in
         document.addEventListener('DOMContentLoaded', () => {
           setLanguageOnLoad()
-          if (authManager.checkSessionToken() == true){
+          if (authManager.isUserLoggedIn() == true){
             document.querySelectorAll("#createAccountMessage").forEach(obj =>{ obj.classList.add("hidden"); })
             document.querySelector("#premiumaccountSignup").classList.remove("hidden");
             // enable locked button

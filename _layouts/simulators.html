@@ -10,10 +10,10 @@ layout: default
         {% endunless %}
         
         <div id="scenarioSelector">
-            {% for scenario in site.simulators  limit:3 %}
+            {% for scenario in site.simulators %}
 
-            <div onclick="onSelect( {{  scenario | jsonify | escape }} )"
-                class=" p-3 rounded-4 m-2 mb-3 bg-light shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
+            <div id="oneScenario" onclick="onSelect( {{  scenario | jsonify | escape }} )"
+                class=" p-3 rounded-4 m-2 mb-3 bg-dark bg-opacity-50 shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
             >
                 <div class="d-flex items-center gap-3 mb-2">
                     <i class="bi bi-building"></i>
@@ -45,7 +45,7 @@ layout: default
             {% endfor %}
 
             
-            <div class=" p-3 rounded-4 m-2 bg-light shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
+            <div id="createAccountMessage" class=" p-3 rounded-4 m-2 bg-light bg-opacity-25 shadow-lg p-6 cursor-pointer hover:shadow-lg transition-shadow"
             >
                 <div class="d-flex items-center gap-3 mb-1">
                     
@@ -53,52 +53,93 @@ layout: default
                 </div>
 
                 <p class="text-gray-600 mb-4">Create an account and we will show more scenarios</p>
-                <a href="/login" class="btn btn-secondary">Log in / Create Account</a>
+                <button href="/login" class="btn btn-secondary bg-opacity-0">Log in / Create Account</button>
 
             </div>
 
 
         </div>
+
+        <script>
+
+            function hideSomeContent(){
+                // TODO fetch more scenarios 
+                var counter = 0;
+                document.querySelectorAll("#oneScenario").forEach(obj =>{ 
+                    counter +=1;
+                    if (counter >= 3){
+                        obj.classList.add("hidden"); 
+                        // obj.style.style.display = 'none';
+                    }
+                })
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                if (authManager.isUserLoggedIn() == true){
+                    document.querySelectorAll("#createAccountMessage").classList.add("hidden");
+                    
+                }else{
+                    // show only 2 scenarios, hide the rest
+                    hideSomeContent();
+                }
+            })
+        </script>
 
         <!-- <button class="btn btn-light" onclick="backToScenarioSelector()" >< Back</button> -->
-        <div id="dialogueSequence" class="rounded-4" style="display:none;">
-        
-            <!-- <h2 id="title" class="text-center"></h2>
-            <p id="context" class="text-center"></p> -->
+        <div id="dialogueSequence" class="card bg-light bg-opacity-10 text-light rounded-3" style="display:none;">
+            <div class="card-body">
+                <!-- <h2 id="title" class="text-center"></h2>
+                <p id="context" class="text-center"></p> -->
 
-            <div class="dialogue bg-light p-3 rounded" id="dialogue">
-                <p id="language" class="hidden"></p>
-                <p id="speaker" class="text-muted "></p>
-                <p id="text"></p>
-                <p id="translation" class="hidden fst-italic"></p>
-                <button id="toggleTranslation" onclick="toggleTranslation()" class="btn btn-link">Show Translation</button>
-                <button id="playButtonDialogueText" onclick="playDialogueAudio()" class="btn btn-link">
-                    <i class="bi bi-play-fill"></i>
-                    Play
-                </button>
+                <div class="dialogue p-3 rounded" id="dialogue">
+                    <p id="language" class="hidden"></p>
+                    <h3 id="speaker" class="text-light pb-2"></h3>
+                    <h4 id="text"></h4>
+                    <p id="translation" class="hidden fst-italic"></p>
+                    <button id="toggleTranslation" onclick="toggleTranslation()" class="btn btn-link">Show Translation</button>
+                    <button id="playButtonDialogueText" onclick="playDialogueAudio()" class="btn btn-link">
+                        <i class="bi bi-play-fill"></i>
+                        Play
+                    </button>
+                </div>
+
+                <div id="options" class="mt-3"></div>
+
+                <div id="feedback" class="feedback hidden p-3 rounded-2"></div>
+
+                <div class="d-grid gap-2 mt-3 pb-2">
+                    <button id="nextButton" onclick="showNextDailogue()" class="btn btn-lg btn-primary hidden">Next</button>
+                    
+                </div>
+
+                <p class="text-center" id="progressIndicator"></p>
             </div>
 
-            <div id="options" class="mt-3"></div>
-
-            <div id="feedback" class="feedback hidden p-3 rounded-2"></div>
-
-            <div class="d-grid gap-2 mt-3">
-                <button id="nextButton" onclick="showNextDailogue()" class="btn btn-primary hidden">Next</button>
-                
-            </div>
-
-            <p class="text-center" id="progressIndicator"></p>
         </div>
 
-        <div id="simulationResults" class="rounded-4 hidden" >
-            <h2 id="title">You've reached the end of this simulation</h2>
-            <p id="text"></p>
-            <div class="d-grid gap-2 mt-3">
-                <button id="nextButton" onclick="backToScenarioSelector()" class="btn btn-secondary">Back</button>
-                
+        <div id="simulationResults" class="card bg-light bg-opacity-10 text-light rounded-3" style="display:none" >
+            <div class="card-body">
+                <h3 id="title">You've reached the end of this simulation</h3>
+
+                <div id="challangeResultsRewardBadge">
+                    
+                </div>
+
+                <h4 id="text"></h4>
+
+                <div id="createAccountMessage" class="mt-5 bg-light text-light bg-gradient bg-opacity-25 p-4 rounded-3 border border-blue-200">
+                    <h3 class="text-lg font-semibold text-blue-900">
+                        <i style = "color:yellow;" class="bi bi-star-fill"></i> 
+                        Want to save your progress?</h3>
+                    <p class="text-blue-700 mt-2">Create an account to track your acchivements and maintain your streak!</p>
+                    <a href="/login" class="mt-4 btn btn-primary">Sign Up Now</a>
+                </div>
+
+                <div class="d-grid gap-2 mt-3 pb-2">
+                    <button id="nextButton" onclick="backToScenarioSelector()" class="btn btn-lg btn-secondary">Back</button>
+                </div>
+
             </div>
         </div>
-    </div>
 </div>
 
 <script defer>
@@ -131,7 +172,7 @@ layout: default
         selectedSimulation = inputJson;
         document.querySelector("#scenarioSelector").style.display='none';
         document.querySelector("#dialogueSequence").style.display='block';
-        document.querySelector("#simulationResults").classList.add("hidden");
+        document.querySelector("#simulationResults").style.display='block';
         showDailogue()
         
     }
@@ -150,7 +191,7 @@ layout: default
             // go back to main menu of all dialogues
             presentResults()
         }
-        document.querySelector("#progressIndicator").innerHTML= "Dailog "+ String(dailogueIndex+1) + " out of " + String(selectedSimulation.dialogues.length)
+        document.querySelector("#progressIndicator").innerHTML= "Dialog "+ String(dailogueIndex+1) + " out of " + String(selectedSimulation.dialogues.length)
     }
 
     function addPoint(){
@@ -160,8 +201,12 @@ layout: default
     function presentResults(){
         document.querySelector("#dialogueSequence").style.display='none'
         document.querySelector("#simulationResults").classList.remove("hidden")
-        document.querySelector("#simulationResults > #text").innerHTML = "You got " + String(pointCounter) + " points"
-        user.addPoint(pointCounter);
+        document.querySelector("#simulationResults #text").innerHTML = "You got " + String(pointCounter) + " points"
+        try{
+            user.addPoints(pointCounter);
+        }catch{
+            console.log("user selected", inputJson.title )
+        }
     }
     
     function backToScenarioSelector(){
@@ -188,7 +233,7 @@ layout: default
         var feedback        = document.querySelector('#dialogueSequence  #feedback')
         var nextButton      = document.querySelector('#dialogueSequence  #nextButton')
         
-        dialoguespeaker.innerHTML = dialogue.speaker;
+        dialoguespeaker.innerHTML = `<i class="bi bi-chat-fill" style = "color:green;"></i> ` + dialogue.speaker;
         dialoguelanguage.innerHTML = dialogue.language;
         dailoguetext.innerHTML = dialogue.text;
         dailoguetranslation.innerHTML = "\"" +dialogue.translation + "\"";
@@ -199,7 +244,7 @@ layout: default
         
         dialogue.options.forEach(option => {
             const optionButton = document.createElement('button');
-            optionButton.className = 'btn btn-outline-secondary w-100 mb-2';
+            optionButton.className = 'btn btn-lg w-100 mb-2 bg-light bg-opacity-10 text-light';
             
             optionButton.innerText = option.text;
 

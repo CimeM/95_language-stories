@@ -129,7 +129,11 @@ class FirebaseAuthManager {
         throw error;
       }
     }
-  
+    
+    isUserLoggedIn(){
+     return this.checkSessionToken();
+    }
+
     checkSessionToken() {
       const cookieToken = this.getCookie('sessionToken');
       const cookieTokenExpiration = this.getCookie('cookieTokenExpiration');

@@ -50,7 +50,7 @@
   );
   
   // trigger the first sync with the database once the user is signed in
-  if (authManager.checkSessionToken()){
+  if (authManager.isUserLoggedIn()){
     user.fetchLatestData()
   }
   

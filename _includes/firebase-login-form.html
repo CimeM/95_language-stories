@@ -102,7 +102,7 @@
 <script>
     // Check for existing session on page load
     document.addEventListener('DOMContentLoaded', () => {
-        if (authManager.checkSessionToken()){
+        if (authManager.isUserLoggedIn()){
             // resultDiv.innerHTML = `Logged in as ${user.email}`;
             logoutForm.style.display = 'block';
             loginForm.style.display = 'none';
