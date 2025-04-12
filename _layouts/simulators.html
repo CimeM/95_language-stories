@@ -116,7 +116,7 @@ layout: default
 
         </div>
 
-        <div id="simulationResults" class="card bg-light bg-opacity-10 text-light rounded-3" style="display:none" >
+        <div id="simulationResults" class="card bg-light bg-opacity-10 text-light rounded-3" style="display: none" >
             <div class="card-body">
                 <h3 id="title">You've reached the end of this simulation</h3>
 
@@ -172,7 +172,7 @@ layout: default
         selectedSimulation = inputJson;
         document.querySelector("#scenarioSelector").style.display='none';
         document.querySelector("#dialogueSequence").style.display='block';
-        document.querySelector("#simulationResults").style.display='block';
+        document.querySelector("#simulationResults").style.display='none';
         showDailogue()
         
     }
@@ -200,7 +200,7 @@ layout: default
     
     function presentResults(){
         document.querySelector("#dialogueSequence").style.display='none'
-        document.querySelector("#simulationResults").classList.remove("hidden")
+        document.querySelector("#simulationResults").style.display='block';
         document.querySelector("#simulationResults #text").innerHTML = "You got " + String(pointCounter) + " points"
         try{
             user.addPoints(pointCounter);
@@ -213,7 +213,7 @@ layout: default
         selectedSimulation = null;
         dailogueIndex = 0
         pointCounter = 0;
-        document.querySelector("#simulationResults").classList.add("hidden")
+        document.querySelector("#simulationResults").style.display='none';
         document.querySelector("#scenarioSelector").style.display='block';
         document.querySelector("#dialogueSequence").style.display='none';
     }
