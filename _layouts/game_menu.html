@@ -183,7 +183,9 @@ layout: default
             document.querySelector("#newChallengeBadge").classList.remove("hidden")
           }else{
             document.querySelector("#challengeButontext").innerHTML = 'Challenge completed!';
-            document.querySelector("#challengeButontextSupplementary").innerHTML = 'Next challenge at midnight!';
+            setInterval(function() {
+                document.querySelector("#challengeButontextSupplementary").innerHTML = timeUntilMidnight() ;
+            }, 1000); // 1000 milsec
             document.querySelector("#dailyChallengeButton").classList.add("disabled");
             document.querySelector("#dailyChallengeButton").classList.remove("btn-primary");
             document.querySelector("#challengeCompletedBadge").classList.remove("hidden");
@@ -192,8 +194,27 @@ layout: default
 
         try{ checkIfGameAvailable() }catch{}
 
+
+        function timeUntilMidnight() {
+          try{
+            const now = new Date(); // Current date and time
+            const midnight = new Date(); // Create a new Date object for midnight
+            midnight.setHours(24, 0, 0, 0); // Set hours to 24:00:00.000 (midnight of the next day)
+            
+            const millisecondsUntilMidnight = midnight - now; // Difference in milliseconds
+            const seconds = Math.floor(millisecondsUntilMidnight / 1000) % 60;
+            const minutes = Math.floor(millisecondsUntilMidnight / (1000 * 60)) % 60;
+            const hours = Math.floor(millisecondsUntilMidnight / (1000 * 60 * 60));
+            
+            return `${hours} hours, ${minutes} minutes, and ${seconds} seconds!`;
+          }
+          catch{
+            return "Next challenge at midnight!"
+          }
+        }
+
       </script>
-    
+
       
       <div class="row g-4">
         <div class="col-md-12">
