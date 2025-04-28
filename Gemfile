@@ -15,7 +15,7 @@ gem "json", "~> 2.10.1"
 gem "net-http", "~> 0.4.1"
 gem "uri", "~> 1.0.2"
 
-gem "faraday", "2.12.2"
+gem "faraday", "2.13.1"
 gem "logger", "1.6.6"
 
 gem  "rexml", "3.4.1"
