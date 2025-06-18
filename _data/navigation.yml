@@ -3,13 +3,13 @@ main:
   # - title: "Quick-Start Guide"
   #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   
-  - title: "Profile"
-    url: /userprofile/
-    icon: "fas fa-fw fa-list-square"
-    id: userprofile
+  # - title: "Profile"
+  #   url: /userprofile/
+  #   icon: "fas fa-fw fa-list-square"
+  #   id: userprofile
   
   - title: "Play now"
-    url: /gamemenu
+    url: "https://fluent95.rivieraapps.com"
     icon: "fas fa-fw fa-list-square"
 
   # - title: "Get more stories"
